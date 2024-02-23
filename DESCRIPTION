@@ -1,5 +1,5 @@
 Package: dtreg
-Title: What the Package Does (One Line, Title Case)
+Title: Uses dtrs and does things
 Version: 0.0.0.9000
 Authors@R: 
     c(
