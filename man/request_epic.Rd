@@ -4,7 +4,13 @@
 \alias{request_epic}
 \title{Title}
 \usage{
-request_epic(route)
+request_epic(epic_id)
+}
+\arguments{
+\item{epic_id}{The identifier of an ePIC object}
+}
+\value{
+Requested information about an ePIC object
 }
 \description{
 Title
