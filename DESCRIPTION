@@ -22,4 +22,5 @@ Suggests:
 Config/testthat/edition: 3
 Imports: 
     httr2,
-    jsonlite
+    jsonlite,
+    R6
