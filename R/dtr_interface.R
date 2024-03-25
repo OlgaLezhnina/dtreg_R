@@ -14,7 +14,7 @@ Epic <- R6::R6Class(
       self$template <- template
     },
     get_template = function(template_id) {
-      self$template = extractor_epic(template_id)
+      self$template <- extract_epic(template_id)
     }
   )
 )
