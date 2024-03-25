@@ -25,16 +25,16 @@ extract_epic <- function(epic_id) {
     identifier <- info$Identifier
     schema_df <- data.frame(name, identifier)
     all_props <- list()
-    if (info$Schema$Type == "Object" |
-        info$Schema$Type == "Array") {
+    if (info$Schema$Type == "Object" ||
+          info$Schema$Type == "Array") {
       for (prop in info$Schema$Properties) {
         specific_prop <- list()
         specific_prop[["predicate_label"]] <- prop$Name
         specific_prop[["nested_name"]] <- prop$Type
         specific_prop[["cardinality"]] <-
           prop$Properties$Cardinality
-        if (!is.null(prop$Type) &
-            !"nested_name" %in% names(extract_all)) {
+        if (!is.null(prop$Type) &&
+              !"nested_name" %in% names(extract_all)) {
           extractor_function(prop$Type)
         }
         all_props <- append(all_props, list(specific_prop))
