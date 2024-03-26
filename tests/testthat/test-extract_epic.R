@@ -10,6 +10,6 @@ test_that("extract_epic gives the specified template", {
                 "1 PIDINST-SchemaObject 21.T11969/1ea0e148d9bbe08335cd", "",
                 "$`PIDINST-SchemaObject`[[1]][[2]]",                     "list()",
                 "",                                                      "",
-                ""    )
+                "")
   expect_equal(string_representation, expected)
 })
