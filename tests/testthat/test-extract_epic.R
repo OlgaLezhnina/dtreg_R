@@ -4,8 +4,8 @@ test_that("extract_epic gives the specified template", {
   expected <- c("$`PIDINST-SchemaObject`",                               "$`PIDINST-SchemaObject`[[1]]",
                 "$`PIDINST-SchemaObject`[[1]][[1]]",                     "                  name                     identifier",
                 "1 PIDINST-SchemaObject 21.T11969/1ea0e148d9bbe08335cd", "",
-                "$`PIDINST-SchemaObject`[[1]][[2]]",                     "list()",
-                "",                                                      "",
-                "")
+                "$`PIDINST-SchemaObject`[[1]][[2]]",                     "[1] predicate_label nested_name     cardinality    ",
+                "<0 rows> (or 0-length row.names)",                      "",
+                "",                                                      "")
   expect_equal(string_representation, expected)
 })
