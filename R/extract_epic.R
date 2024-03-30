@@ -9,30 +9,33 @@ extract_epic <- function(epic_id) {
     info <- request_epic(epic_id)
     name <- info$name
     identifier <- info$Identifier
-    schema_df <- data.frame(name, identifier)
+    schema_type <- info$Schema$Type
+    schema_df <- data.frame(name, identifier, schema_type)
     i <- 0
     all_props <- data.frame(
-      predicate_label = character(),
-      nested_name = character(),
+      prop_name = character(),
+      type_id = character(),
       cardinality = character(),
-      # nested_template = logical(),
+      nested = logical(),
       stringsAsFactors = FALSE
     )
-    if (info$Schema$Type == "Object" ||
-        info$Schema$Type == "Array") {
-      for (prop in info$Schema$Properties) {
-        specific_prop <- list()
-        specific_prop[["predicate_label"]] <- prop$Name
-        specific_prop[["nested_name"]] <- prop$Type
+    for (prop in info$Schema$Properties) {
+      specific_prop <- list()
+      if (is.null(prop$Type)) {
+        specific_prop[["prop_name"]] <- prop$Property
+        specific_prop[["type_id"]] <- "value"
+        specific_prop[["cardinality"]] <- "no_info"
+        specific_prop[["nested"]] <- FALSE
+      } else {
+        specific_prop[["prop_name"]] <- prop$Name
+        specific_prop[["type_id"]] <- prop$Type
         specific_prop[["cardinality"]] <-
           prop$Properties$Cardinality
-        if (!is.null(prop$Type) &&
-            !"nested_name" %in% names(extract_all)) {
-          extractor_function(prop$Type)
-        }
-        i <- i + 1
-        all_props[i,] <- specific_prop
+        specific_prop[["nested"]] <- TRUE
+        extractor_function(prop$Type)
       }
+      i <- i + 1
+      all_props[i, ] <- specific_prop
     }
     extracted <- list(schema_df, all_props)
     extract_all[[name]] <<- list(extracted)
