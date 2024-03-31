@@ -17,7 +17,7 @@ load_objects <- function(template_doi) {
     r6_template <-
       paste(
         "R6::R6Class('",
-        paste(format_string(templ_data[[1]]$name), "_epic", sep = ""),
+        paste(format_string(templ_data[[1]]$name), "_r6", sep = ""),
         "',
         public = list(
         name = NULL,
