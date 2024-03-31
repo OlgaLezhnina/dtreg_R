@@ -32,7 +32,7 @@ extract_epic <- function(template_doi) {
         specific_prop[["cardinality"]] <-
           prop$Properties$Cardinality
         specific_prop[["nested"]] <- TRUE
-        extractor_function(prop$Type)
+        extractor_function(paste("https://doi.org/", prop$Type, sep = ""))
       }
       i <- i + 1
       all_props[i, ] <- specific_prop
