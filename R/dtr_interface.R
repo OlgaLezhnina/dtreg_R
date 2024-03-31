@@ -1,3 +1,4 @@
+dummy_r6 <- function() R6::R6Class
 #' R6 Class Representing a Data Type Registry
 #'
 #' @description
