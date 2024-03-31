@@ -4,13 +4,13 @@
 \alias{request_epic}
 \title{Title}
 \usage{
-request_epic(epic_id)
+request_epic(template_doi)
 }
 \arguments{
-\item{epic_id}{The identifier of an ePIC object}
+\item{template_doi}{The DOI of an ePIC template}
 }
 \value{
-Requested information about an ePIC object
+Requested information about an ePIC template
 }
 \description{
 Title

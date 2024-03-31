@@ -1,14 +1,15 @@
 #' Title
 #'
-#' @param template_id The identifier of a DTR template
+#' @param template_doi The DOI of a DTR template
 #'
 #' @return an R6 object
 #' @export
 #'
-#' @examples
-load_objects <- function(template_id) {
-  datypreg <- Epic$new()
-  datypreg$get_template(template_id)
+#' @examples load_objects("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
+#'
+load_objects <- function(template_doi) {
+  datypreg <- select_dtr(template_doi)
+  datypreg$get_template(template_doi)
   templ_info <- datypreg$template
   result <- list()
   for (t in seq_along(templ_info)) {

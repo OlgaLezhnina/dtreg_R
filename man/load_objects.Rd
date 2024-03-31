@@ -4,14 +4,18 @@
 \alias{load_objects}
 \title{Title}
 \usage{
-load_objects(template_id)
+load_objects(template_doi)
 }
 \arguments{
-\item{template_id}{The identifier of a DTR template}
+\item{template_doi}{The DOI of a DTR template}
 }
 \value{
 an R6 object
 }
 \description{
 Title
+}
+\examples{
+load_objects("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
+
 }

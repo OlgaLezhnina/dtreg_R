@@ -22,13 +22,13 @@ Tba
 \subsection{Method \code{get_template()}}{
 The function used in any DTR to get a template
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$get_template(template_id)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$get_template(template_doi)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{template_id}}{The identifier of a template}
+\item{\code{template_doi}}{The DOI of a DTR template}
 }
 \if{html}{\out{</div>}}
 }

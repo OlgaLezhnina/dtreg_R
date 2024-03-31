@@ -53,13 +53,13 @@ New template
 \subsection{Method \code{get_template()}}{
 Write information from an ePIC template
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$get_template(template_id)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Epic$get_template(template_doi)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{template_id}}{The identifier of an ePIC template}
+\item{\code{template_doi}}{The DOI of an ePIC template}
 }
 \if{html}{\out{</div>}}
 }

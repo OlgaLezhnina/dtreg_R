@@ -1,12 +1,12 @@
 #' Title
 #'
-#' @param epic_id The identifier of an ePIC object
-#' @return An R object that contains information about the ePIC object
+#' @param template_doi The DOI of an ePIC template
+#' @return An R object that contains information about the ePIC template
 #'
-extract_epic <- function(epic_id) {
+extract_epic <- function(template_doi) {
   extract_all <- list()
-  extractor_function <- function(epic_id) {
-    info <- request_epic(epic_id)
+  extractor_function <- function(template_doi) {
+    info <- request_epic(template_doi)
     name <- info$name
     identifier <- info$Identifier
     schema_type <- info$Schema$Type
@@ -41,6 +41,6 @@ extract_epic <- function(epic_id) {
     extract_all[[name]] <<- list(extracted)
     return(extract_all)
   }
-  extractor_function(epic_id)
+  extractor_function(template_doi)
   return(extract_all)
 }

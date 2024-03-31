@@ -7,10 +7,10 @@
 select_dtr(template_doi)
 }
 \arguments{
-\item{template_doi}{The DOI of a template in any DTR}
+\item{template_doi}{The DOI of a DTR template}
 }
 \value{
-An R6 object for the specific DTR
+An R6 class for the specific DTR
 }
 \description{
 Title

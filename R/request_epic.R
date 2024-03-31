@@ -1,11 +1,11 @@
 #' Title
 #'
-#' @param epic_id The identifier of an ePIC object
-#' @return Requested information about an ePIC object
+#' @param template_doi The DOI of an ePIC template
+#' @return Requested information about an ePIC template
 #'
-request_epic <- function(epic_id) {
+request_epic <- function(template_doi) {
   path <-
-    paste("https://doi.org/", epic_id, "?locatt=view:json", sep = "")
+    paste(template_doi, "?locatt=view:json", sep = "")
   req <- httr2::request(path)
   resp <- httr2::req_perform(req)
   info <- httr2::resp_body_json(resp)

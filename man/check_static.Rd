@@ -4,13 +4,13 @@
 \alias{check_static}
 \title{Title}
 \usage{
-check_static(epic_id)
+check_static(template_doi)
 }
 \arguments{
-\item{epic_id}{The identifier of an ePIC object}
+\item{template_doi}{The DOI of a DTR template}
 }
 \value{
-Boolean, whether the file is in the extdata
+Boolean, whether the template JSON file is in the static data
 }
 \description{
 Title
