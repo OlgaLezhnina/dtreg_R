@@ -5,9 +5,11 @@
 #'
 check_static <- function(template_doi) {
   part <- strsplit(template_doi, split = "[/ //]+")
-  name <- paste(part[[1]][[3]], part[[1]][[4]], "json", sep = ".")
-  all_static <-
-    system.file("extdata", package = "dtreg") |> list.files()
-  checked <- name %in% all_static
+  id <- paste(part[[1]][[3]], part[[1]][[4]], sep = "/")
+  checked <- id %in% TEMPLATE_1
   return(checked)
 }
+
+TEMPLATE_1 <- c("21.T11969/3df63b7acb0522da685d",
+                "21.T11969/33cc57788c0036ad3bdc",
+                "21.T11969/f9bdfd1810b999e3b11e")
