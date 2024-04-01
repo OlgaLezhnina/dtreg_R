@@ -1,0 +1,83 @@
+{
+  "String": [
+    [
+      [
+        {
+          "name": "String",
+          "identifier": "21.T11969/3df63b7acb0522da685d",
+          "schema_type": "String"
+        }
+      ],
+      []
+    ]
+  ],
+  "IdentifierType": [
+    [
+      [
+        {
+          "name": "IdentifierType",
+          "identifier": "21.T11969/33cc57788c0036ad3bdc",
+          "schema_type": "Enum"
+        }
+      ],
+      [
+        {
+          "prop_name": "String Enum",
+          "type_id": "value",
+          "cardinality": "no_info",
+          "nested": false
+        }
+      ]
+    ]
+  ],
+  "PIDINST-InstrumentIdentifier": [
+    [
+      [
+        {
+          "name": "PIDINST-InstrumentIdentifier",
+          "identifier": "21.T11969/f9bdfd1810b999e3b11e",
+          "schema_type": "Object"
+        }
+      ],
+      [
+        {
+          "prop_name": "identifierType",
+          "type_id": "21.T11969/33cc57788c0036ad3bdc",
+          "cardinality": "1",
+          "nested": true
+        },
+        {
+          "prop_name": "identifierValue",
+          "type_id": "21.T11969/3df63b7acb0522da685d",
+          "cardinality": "1",
+          "nested": true
+        }
+      ]
+    ]
+  ],
+  "PIDINST-InstrumentType": [
+    [
+      [
+        {
+          "name": "PIDINST-InstrumentType",
+          "identifier": "21.T11969/f76ad9d0324302fc47dd",
+          "schema_type": "Object"
+        }
+      ],
+      [
+        {
+          "prop_name": "instrumentTypeName",
+          "type_id": "21.T11969/3df63b7acb0522da685d",
+          "cardinality": "1",
+          "nested": true
+        },
+        {
+          "prop_name": "instrumentIdentifier",
+          "type_id": "21.T11969/f9bdfd1810b999e3b11e",
+          "cardinality": "0 - 1",
+          "nested": true
+        }
+      ]
+    ]
+  ]
+}
