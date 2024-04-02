@@ -9,8 +9,8 @@
 #'
 load_objects <- function(template_doi) {
   datypreg <- select_dtr(template_doi)
-  datypreg$get_template(template_doi)
-  templ_info <- datypreg$template
+  datypreg$get_template_info(template_doi)
+  templ_info <- datypreg$template_info
   result <- list()
   for (t in seq_along(templ_info)) {
     templ_data <- templ_info[[t]][[1]]

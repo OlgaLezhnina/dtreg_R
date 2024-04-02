@@ -12,17 +12,17 @@ Tba
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-DataTypeReg-get_template}{\code{DataTypeReg$get_template()}}
+\item \href{#method-DataTypeReg-get_template_info}{\code{DataTypeReg$get_template_info()}}
 \item \href{#method-DataTypeReg-clone}{\code{DataTypeReg$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-DataTypeReg-get_template"></a>}}
-\if{latex}{\out{\hypertarget{method-DataTypeReg-get_template}{}}}
-\subsection{Method \code{get_template()}}{
+\if{html}{\out{<a id="method-DataTypeReg-get_template_info"></a>}}
+\if{latex}{\out{\hypertarget{method-DataTypeReg-get_template_info}{}}}
+\subsection{Method \code{get_template_info()}}{
 The function used in any DTR to get a template
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$get_template(template_doi)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$get_template_info(template_doi)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{

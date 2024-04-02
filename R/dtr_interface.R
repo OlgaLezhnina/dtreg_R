@@ -13,7 +13,7 @@ DataTypeReg <- R6::R6Class("DataTypeReg",
                              #' The function used in any DTR to get a template
                              #' @param template_doi The DOI of a DTR template
                              #' @return Not implemented, this is an interface
-                             get_template = function(template_doi) {
+                             get_template_info = function(template_doi) {
                                #' Not implemented, this is an interface
                              }
                            ))
@@ -29,21 +29,21 @@ Epic <- R6::R6Class(
   "Epic",
   inherit = DataTypeReg,
   public = list(
-    #' @field template The template in a DTR
-    template = NULL,
+    #' @field template_info An ePIC template information
+    template_info = NULL,
     #' @description
-    #' Create a new ePIC object
-    #' @param template a template
-    #' @return New template
-    initialize = function(template = NA) {
-      self$template <- template
+    #' Create a new object with the template information
+    #' @param template_info An ePIC template information
+    #' @return A new object with the template information
+    initialize = function(template_info = NA) {
+      self$template_info <- template_info
     },
     #' @description
     #' Write information from an ePIC template
     #' @param template_doi The DOI of an ePIC template
     #' @return Extracted information from an ePIC template
-    get_template = function(template_doi) {
-      self$template <- extract_epic(template_doi)
+    get_template_info = function(template_doi) {
+      self$template_info <- extract_epic(template_doi)
     }
   )
 )

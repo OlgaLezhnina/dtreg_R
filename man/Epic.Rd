@@ -15,7 +15,7 @@ Tba
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{template}}{The template in a DTR}
+\item{\code{template_info}}{An ePIC template information}
 }
 \if{html}{\out{</div>}}
 }
@@ -23,7 +23,7 @@ Tba
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-Epic-new}{\code{Epic$new()}}
-\item \href{#method-Epic-get_template}{\code{Epic$get_template()}}
+\item \href{#method-Epic-get_template_info}{\code{Epic$get_template_info()}}
 \item \href{#method-Epic-clone}{\code{Epic$clone()}}
 }
 }
@@ -31,29 +31,29 @@ Tba
 \if{html}{\out{<a id="method-Epic-new"></a>}}
 \if{latex}{\out{\hypertarget{method-Epic-new}{}}}
 \subsection{Method \code{new()}}{
-Create a new ePIC object
+Create a new object with the template information
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$new(template = NA)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Epic$new(template_info = NA)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{template}}{a template}
+\item{\code{template_info}}{An ePIC template information}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-New template
+A new object with the template information
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Epic-get_template"></a>}}
-\if{latex}{\out{\hypertarget{method-Epic-get_template}{}}}
-\subsection{Method \code{get_template()}}{
+\if{html}{\out{<a id="method-Epic-get_template_info"></a>}}
+\if{latex}{\out{\hypertarget{method-Epic-get_template_info}{}}}
+\subsection{Method \code{get_template_info()}}{
 Write information from an ePIC template
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$get_template(template_doi)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Epic$get_template_info(template_doi)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
