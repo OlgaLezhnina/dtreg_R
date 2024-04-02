@@ -10,7 +10,7 @@ check_static(template_doi)
 \item{template_doi}{The DOI of a DTR template}
 }
 \value{
-Boolean, whether the template JSON file is in the static data
+The name of JSON file in the static data, or "none" if absent
 }
 \description{
 Title

@@ -43,7 +43,11 @@ Epic <- R6::R6Class(
     #' @param template_doi The DOI of an ePIC template
     #' @return Extracted information from an ePIC template
     get_template_info = function(template_doi) {
-      self$template_info <- extract_epic(template_doi)
+      static <- check_static(template_doi)
+      if (static == "none") {
+        self$template_info <- extract_epic(template_doi)
+      }
+      return(self$template_info)
     }
   )
 )
