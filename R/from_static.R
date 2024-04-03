@@ -9,16 +9,13 @@ from_static <- function(template_doi) {
   if (id %in% TEMPLATES) {
     for (i in length(TEMPLATES)) {
       if (id %in% TEMPLATES[[i]]) {
-        templ_number <- i
-      } else {
-        i <- i + 1
-      }
-    }
-    static_template <-
-      noquote(paste("the$template_", templ_number, sep = ""))
-    for (templ in static_template) {
-      if (id == templ[[1]][[1]]$identifier) {
-        final_template <- templ
+        static_template <-
+          noquote(paste("the$template_", i, sep = ""))
+        for (templ in static_template) {
+          if (id == templ[[1]][[1]]$identifier) {
+            final_template <- templ
+          }
+        }
       }
     }
   } else{
