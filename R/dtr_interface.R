@@ -46,6 +46,8 @@ Epic <- R6::R6Class(
       static <- from_static(template_doi)
       if (static == "none") {
         self$template_info <- extract_epic(template_doi)
+      } else {
+        self$template_info <- static
       }
       return(self$template_info)
     }
