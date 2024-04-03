@@ -11,6 +11,17 @@ load_objects <- function(template_doi) {
   datypreg <- select_dtr(template_doi)
   datypreg$get_template_info(template_doi)
   templ_info <- datypreg$template_info
+  result <- write_r6_classes(templ_info)
+  return(result)
+}
+
+
+#' Title
+#'
+#' @param templ_info an R object with a template structured information
+#' @return an R6 object for the template
+#'
+write_r6_classes <- function(templ_info) {
   result <- list()
   for (t in seq_along(templ_info)) {
     templ_data <- templ_info[[t]][[1]]
@@ -40,10 +51,11 @@ load_objects <- function(template_doi) {
         self$identifier = '",
         templ_data[[1]]$identifier,
         "'",
-        paste(
-          sprintf("\nself$%1$s = %1$s",
-                  format_string(templ_data[[2]]$prop_name)),
-          collapse = ""),
+        paste(sprintf(
+          "\nself$%1$s = %1$s",
+          format_string(templ_data[[2]]$prop_name)
+        ),
+        collapse = ""),
         "}))",
         sep = ""
       )
