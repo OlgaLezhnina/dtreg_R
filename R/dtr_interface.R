@@ -59,9 +59,9 @@ Epic <- R6::R6Class(
 #' @param template_doi The DOI of a DTR template
 #' @return An R6 class for the specific DTR
 #'
-select_dtr <- function(template_doi){
+select_dtr <- function(template_doi) {
   part <- strsplit(template_doi, split = "[/ //]+")
-  if(part[[1]][[3]] == "21.T11969"){
+  if (part[[1]][[3]] == "21.T11969") {
     datypreg <- Epic$new()
   }
   return(datypreg)

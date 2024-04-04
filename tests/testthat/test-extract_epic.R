@@ -6,6 +6,6 @@ test_that("extract_epic gives the specified template", {
                 "1 PIDINST-SchemaObject 21.T11969/1ea0e148d9bbe08335cd      Object", "",
                 "$`PIDINST-SchemaObject`[[1]][[2]]",                                 "[1] prop_name   type_id     cardinality nested     ",
                 "<0 rows> (or 0-length row.names)",                                  "",
-                "",                                                                  ""    )
+                "",                                                                  "")
   expect_equal(string_representation, expected)
 })
