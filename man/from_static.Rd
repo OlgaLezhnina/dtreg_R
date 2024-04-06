@@ -10,7 +10,7 @@ from_static(template_doi)
 \item{template_doi}{The DOI of a DTR template}
 }
 \value{
-The template information from a JSON file, or "none" if not in static
+The template information from a JSON file, or NULL if not in static
 }
 \description{
 Title
