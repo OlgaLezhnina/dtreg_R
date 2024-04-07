@@ -9,7 +9,7 @@ from_static <- function(template_doi) {
   final_template <- NULL
   for (static in the$static_all) {
     for (templ in static) {
-      if (id == templ[[1]][[1]]$identifier) {
+      if (id == templ[[1]]$identifier) {
         final_template <- list(templ)
       }
     }
