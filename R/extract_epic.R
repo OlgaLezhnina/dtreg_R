@@ -38,7 +38,7 @@ extract_epic <- function(template_doi) {
       all_props[i, ] <- specific_prop
     }
     extracted <- list(schema_df, all_props)
-    extract_all[[name]] <<- list(extracted)
+    extract_all[[name]] <<- extracted
     return(extract_all)
   }
   extractor_function(template_doi)

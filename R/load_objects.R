@@ -24,7 +24,7 @@ load_objects <- function(template_doi) {
 write_r6_classes <- function(templ_info) {
   result <- list()
   for (t in seq_along(templ_info)) {
-    templ_data <- templ_info[[t]][[1]]
+    templ_data <- templ_info[[t]]
     r6_template <-
       paste(
         "R6::R6Class('",
