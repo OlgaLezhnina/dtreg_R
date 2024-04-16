@@ -2,7 +2,7 @@
 #'
 #' @param template_doi The DOI of a DTR template
 #'
-#' @return an R6 object
+#' @return a list of objects for creating new instances
 #' @export
 #'
 #' @examples load_objects("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
@@ -11,10 +11,24 @@ load_objects <- function(template_doi) {
   datypreg <- select_dtr(template_doi)
   datypreg$get_template_info(template_doi)
   templ_info <- datypreg$template_info
-  result <- write_r6_classes(templ_info)
+  r6_objects <- write_r6_classes(templ_info)
+  result <- write_proxies(r6_objects)
   return(result)
 }
 
+#' Title
+#'
+#' @param object_list A list of R6 objects
+#' @return a list of objects for creating new instances
+#'
+write_proxies <- function(object_list) {
+  proxies <- list()
+  for (object in object_list) {
+    name <- stringr::str_sub(object$classname, end = -4)
+    proxies[[name]] <- object$new
+  }
+  return(proxies)
+}
 
 #' Title
 #'
