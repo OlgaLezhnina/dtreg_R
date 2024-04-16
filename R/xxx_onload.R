@@ -1,7 +1,8 @@
 .onLoad <- function(libname, pkgname) {
-  the$template_1 <-
-    jsonlite::fromJSON(system.file("extdata", "empty_schema.json", package = "dtreg"))
-  the$template_2 <-
-    jsonlite::fromJSON(system.file("extdata", "stat_test_diff.json", package = "dtreg"))
-  the$static_all <- list(the$template_1, the$template_2)
+  the$onloaded_all <-
+    system.file("extdata", package = "dtreg") |> list.files()
+  the$static_all <- list()
+  for (file in the$loaded_all) {
+    the$static_all[file] <- jsonlite::fromJSON(file)
+  }
 }
