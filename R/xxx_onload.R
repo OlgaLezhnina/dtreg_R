@@ -1,8 +1,10 @@
 .onLoad <- function(libname, pkgname) {
-  the$onloaded_all <-
+  file_names <-
     system.file("extdata", package = "dtreg") |> list.files()
   the$static_all <- list()
-  for (file in the$loaded_all) {
-    the$static_all[file] <- jsonlite::fromJSON(file)
+  for (name in file_names) {
+    the$static <- list(jsonlite::fromJSON(system.file("extdata", name, package = "dtreg")))
+    the$static_all[name] <- the$static
   }
 }
+
