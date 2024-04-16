@@ -1,0 +1,191 @@
+{
+  "String": [
+    [
+      {
+        "name": "String",
+        "identifier": "21.T11969/3df63b7acb0522da685d",
+        "schema_type": "String"
+      }
+    ],
+    []
+  ],
+  "URL": [
+    [
+      {
+        "name": "URL",
+        "identifier": "21.T11969/e0efc41346cda4ba84ca",
+        "schema_type": "String"
+      }
+    ],
+    [
+      {
+        "prop_name": "pattern",
+        "type_id": "value",
+        "cardinality": "no_info",
+        "nested": false
+      }
+    ]
+  ],
+  "integer_in_string": [
+    [
+      {
+        "name": "integer_in_string",
+        "identifier": "21.T11969/fb2e379f820c6f8f9e82",
+        "schema_type": "String"
+      }
+    ],
+    [
+      {
+        "prop_name": "pattern",
+        "type_id": "value",
+        "cardinality": "no_info",
+        "nested": false
+      }
+    ]
+  ],
+  "Column": [
+    [
+      {
+        "name": "Column",
+        "identifier": "21.T11969/65ba00e95e60fb8971e6",
+        "schema_type": "Object"
+      }
+    ],
+    [
+      {
+        "prop_name": "label",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "number",
+        "type_id": "21.T11969/fb2e379f820c6f8f9e82",
+        "cardinality": "1",
+        "nested": true
+      }
+    ]
+  ],
+  "Cell": [
+    [
+      {
+        "name": "Cell",
+        "identifier": "21.T11969/4607bc7c42ac8db29bfc",
+        "schema_type": "Object"
+      }
+    ],
+    [
+      {
+        "prop_name": "label",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "value",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "column",
+        "type_id": "21.T11969/fb2e379f820c6f8f9e82",
+        "cardinality": "1",
+        "nested": true
+      }
+    ]
+  ],
+  "Row": [
+    [
+      {
+        "name": "Row",
+        "identifier": "21.T11969/9bf7a8e8909bfd491b38",
+        "schema_type": "Object"
+      }
+    ],
+    [
+      {
+        "prop_name": "label",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "number",
+        "type_id": "21.T11969/fb2e379f820c6f8f9e82",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "cells",
+        "type_id": "21.T11969/4607bc7c42ac8db29bfc",
+        "cardinality": "0 - n",
+        "nested": true
+      }
+    ]
+  ],
+  "Table": [
+    [
+      {
+        "name": "Table",
+        "identifier": "21.T11969/0424f6e7026fa4bc2c4a",
+        "schema_type": "Object"
+      }
+    ],
+    [
+      {
+        "prop_name": "label",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "columns",
+        "type_id": "21.T11969/65ba00e95e60fb8971e6",
+        "cardinality": "0 - n",
+        "nested": true
+      },
+      {
+        "prop_name": "rows",
+        "type_id": "21.T11969/9bf7a8e8909bfd491b38",
+        "cardinality": "0 - n",
+        "nested": true
+      }
+    ]
+  ],
+  "inferential_test_output": [
+    [
+      {
+        "name": "inferential_test_output",
+        "identifier": "21.T11969/74bc7748b8cd520908bc",
+        "schema_type": "Object"
+      }
+    ],
+    [
+      {
+        "prop_name": "label",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "has_description",
+        "type_id": "21.T11969/e0efc41346cda4ba84ca",
+        "cardinality": "0 - n",
+        "nested": true
+      },
+      {
+        "prop_name": "comment",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "0 - n",
+        "nested": true
+      },
+      {
+        "prop_name": "has_format",
+        "type_id": "21.T11969/0424f6e7026fa4bc2c4a",
+        "cardinality": "0 - 1",
+        "nested": true
+      }
+    ]
+  ]
+}

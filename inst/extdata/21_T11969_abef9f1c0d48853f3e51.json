@@ -1,0 +1,122 @@
+{
+  "String": [
+    [
+      {
+        "name": "String",
+        "identifier": "21.T11969/3df63b7acb0522da685d",
+        "schema_type": "String"
+      }
+    ],
+    []
+  ],
+  "software": [
+    [
+      {
+        "name": "software",
+        "identifier": "21.T11969/c981d125d1a564c9f573",
+        "schema_type": "Object"
+      }
+    ],
+    [
+      {
+        "prop_name": "label",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "versionInfo",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "0 - 1",
+        "nested": true
+      }
+    ]
+  ],
+  "URL": [
+    [
+      {
+        "name": "URL",
+        "identifier": "21.T11969/e0efc41346cda4ba84ca",
+        "schema_type": "String"
+      }
+    ],
+    [
+      {
+        "prop_name": "pattern",
+        "type_id": "value",
+        "cardinality": "no_info",
+        "nested": false
+      }
+    ]
+  ],
+  "software_library": [
+    [
+      {
+        "name": "software_library",
+        "identifier": "21.T11969/4b99260369df9110f9bd",
+        "schema_type": "Object"
+      }
+    ],
+    [
+      {
+        "prop_name": "label",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "versionInfo",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "0 - 1",
+        "nested": true
+      },
+      {
+        "prop_name": "part_of",
+        "type_id": "21.T11969/c981d125d1a564c9f573",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "has_support_URL",
+        "type_id": "21.T11969/e0efc41346cda4ba84ca",
+        "cardinality": "0 - n",
+        "nested": true
+      }
+    ]
+  ],
+  "software_method": [
+    [
+      {
+        "name": "software_method",
+        "identifier": "21.T11969/abef9f1c0d48853f3e51",
+        "schema_type": "Object"
+      }
+    ],
+    [
+      {
+        "prop_name": "label",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "uses_software",
+        "type_id": "21.T11969/4b99260369df9110f9bd",
+        "cardinality": "0 - n",
+        "nested": true
+      },
+      {
+        "prop_name": "is_implemented_by",
+        "type_id": "21.T11969/e0efc41346cda4ba84ca",
+        "cardinality": "0 - n",
+        "nested": true
+      },
+      {
+        "prop_name": "has_support_URL",
+        "type_id": "21.T11969/e0efc41346cda4ba84ca",
+        "cardinality": "0 - n",
+        "nested": true
+      }
+    ]
+  ]
+}

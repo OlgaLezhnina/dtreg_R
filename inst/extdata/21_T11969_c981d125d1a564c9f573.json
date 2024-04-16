@@ -1,0 +1,35 @@
+{
+  "String": [
+    [
+      {
+        "name": "String",
+        "identifier": "21.T11969/3df63b7acb0522da685d",
+        "schema_type": "String"
+      }
+    ],
+    []
+  ],
+  "software": [
+    [
+      {
+        "name": "software",
+        "identifier": "21.T11969/c981d125d1a564c9f573",
+        "schema_type": "Object"
+      }
+    ],
+    [
+      {
+        "prop_name": "label",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "versionInfo",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "0 - 1",
+        "nested": true
+      }
+    ]
+  ]
+}

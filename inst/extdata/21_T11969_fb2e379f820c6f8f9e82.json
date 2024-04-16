@@ -1,0 +1,19 @@
+{
+  "integer_in_string": [
+    [
+      {
+        "name": "integer_in_string",
+        "identifier": "21.T11969/fb2e379f820c6f8f9e82",
+        "schema_type": "String"
+      }
+    ],
+    [
+      {
+        "prop_name": "pattern",
+        "type_id": "value",
+        "cardinality": "no_info",
+        "nested": false
+      }
+    ]
+  ]
+}

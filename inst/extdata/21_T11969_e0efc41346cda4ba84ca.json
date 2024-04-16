@@ -1,0 +1,19 @@
+{
+  "URL": [
+    [
+      {
+        "name": "URL",
+        "identifier": "21.T11969/e0efc41346cda4ba84ca",
+        "schema_type": "String"
+      }
+    ],
+    [
+      {
+        "prop_name": "pattern",
+        "type_id": "value",
+        "cardinality": "no_info",
+        "nested": false
+      }
+    ]
+  ]
+}

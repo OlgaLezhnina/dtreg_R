@@ -1,0 +1,52 @@
+{
+  "String": [
+    [
+      {
+        "name": "String",
+        "identifier": "21.T11969/3df63b7acb0522da685d",
+        "schema_type": "String"
+      }
+    ],
+    []
+  ],
+  "integer_in_string": [
+    [
+      {
+        "name": "integer_in_string",
+        "identifier": "21.T11969/fb2e379f820c6f8f9e82",
+        "schema_type": "String"
+      }
+    ],
+    [
+      {
+        "prop_name": "pattern",
+        "type_id": "value",
+        "cardinality": "no_info",
+        "nested": false
+      }
+    ]
+  ],
+  "sample_size": [
+    [
+      {
+        "name": "sample_size",
+        "identifier": "21.T11969/a002397ab31c7535f1be",
+        "schema_type": "Object"
+      }
+    ],
+    [
+      {
+        "prop_name": "label",
+        "type_id": "21.T11969/3df63b7acb0522da685d",
+        "cardinality": "1",
+        "nested": true
+      },
+      {
+        "prop_name": "has_specified_numeric_value",
+        "type_id": "21.T11969/fb2e379f820c6f8f9e82",
+        "cardinality": "1",
+        "nested": true
+      }
+    ]
+  ]
+}
