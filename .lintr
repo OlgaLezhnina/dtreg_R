@@ -1,0 +1,8 @@
+linters: linters_with_defaults() # see vignette("lintr")
+encoding: "UTF-8"
+exclusions: list(
+  "tests/testthat/test-extract_epic.R" = list(
+    line_length_linter = Inf),
+  "tests/testthat/test-dtr-interface.R" = list(
+    line_length_linter = Inf,
+    indentation_linter = Inf))
