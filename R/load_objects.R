@@ -5,7 +5,8 @@
 #' @return a list of objects for creating new instances
 #' @export
 #'
-#' @examples load_objects("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
+#' @examples
+#' pd <- load_objects("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
 #'
 load_objects <- function(template_doi) {
   datypreg <- select_dtr(template_doi)

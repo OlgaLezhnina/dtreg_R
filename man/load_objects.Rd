@@ -16,6 +16,6 @@ a list of objects for creating new instances
 Title
 }
 \examples{
-load_objects("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
+pd <- load_objects("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
 
 }
