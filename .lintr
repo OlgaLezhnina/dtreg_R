@@ -1,8 +1,13 @@
 linters: linters_with_defaults() # see vignette("lintr")
 encoding: "UTF-8"
 exclusions: list(
+  "R/dtr_interface.R" = list(
+    object_name_linter = Inf),
+  "tests/testthat/test-helpers.R" = list(
+    line_length_linter = Inf),
   "tests/testthat/test-extract_epic.R" = list(
     line_length_linter = Inf),
-  "tests/testthat/test-dtr-interface.R" = list(
-    line_length_linter = Inf,
-    indentation_linter = Inf))
+  "tests/testthat/test-dtr_interface.R" = list(
+    line_length_linter = Inf),
+  "tests/testthat/test-from_static.R" = list(
+    line_length_linter = Inf))
