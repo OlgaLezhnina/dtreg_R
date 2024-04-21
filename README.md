@@ -7,9 +7,9 @@
 <!-- badges: end -->
 
 The goal of dtreg is to help the user interact with various data type
-registries (dtr). The user can load a dtr schema as an R object and
-create their own instance of this schema. This instance can be then
-written as a machine actionable JSON-LD file.
+registries (DTRs). The user can load a DTR schema as an R object and
+create their own instance of the schema. This instance can be written as
+a machine-actionable JSON-LD file.
 
 ## Installation
 
@@ -23,33 +23,27 @@ devtools::install_github("OlgaLezhnina/dtreg")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+This example shows you how to work with a schema from a DTR; you need to
+know the DOI of the schema. The schema we use as an example belongs to
+the ePIC DTR with DOI
+“<https://doi.org/21.T11969/74bc7748b8cd520908bc>”.
 
 ``` r
 library(dtreg)
-## basic example code
+## load objects for the schema you need
+dt <- dtreg::load_objects("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+## check the schema names to select object(s) you intend to use
+names(dt)
+#> [1] "string"                  "url"                    
+#> [3] "integer_in_string"       "column"                 
+#> [5] "cell"                    "row"                    
+#> [7] "table"                   "inferential_test_output"
+## for the object you will use, e.g., dt$inferential_test_output(), check the fields names
+dtreg::show_fields(dt$inferential_test_output())
+#> [1] "has_format"      "comment"         "has_description" "label"
+## create your own instance by filling the fields of your choice
+my_inst <- dt$inferential_test_output(label = "my_results")
+## write a JSON-LD file
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+For more information, please see XXX.
