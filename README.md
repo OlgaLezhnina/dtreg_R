@@ -6,7 +6,10 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of dtreg is to …
+The goal of dtreg is to help the user interact with various data type
+registries (dtr). The user can load a dtr schema as an R object and
+create their own instance of this schema. This instance can be then
+written as a machine actionable JSON-LD file.
 
 ## Installation
 
