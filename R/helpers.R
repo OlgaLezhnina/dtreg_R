@@ -18,7 +18,7 @@ format_string  <- function(text) {
 #' @export
 #'
 #' @examples
-#' pd <- load_objects("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
+#' pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
 #' show_fields(pd$pidinst_schemaobject())
 #'
 show_fields <- function(object) {

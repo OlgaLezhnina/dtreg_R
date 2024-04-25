@@ -6,9 +6,9 @@
 #' @export
 #'
 #' @examples
-#' pd <- load_objects("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
+#' pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
 #'
-load_objects <- function(template_doi) {
+load_datatype <- function(template_doi) {
   datypreg <- select_dtr(template_doi)
   datypreg$get_template_info(template_doi)
   templ_info <- datypreg$template_info

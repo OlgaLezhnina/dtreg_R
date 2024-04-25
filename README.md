@@ -30,15 +30,15 @@ the ePIC DTR with DOI
 
 ``` r
 library(dtreg)
-## load objects for the schema you need
-dt <- dtreg::load_objects("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-## check the schema names to select object(s) you intend to use
+## load the schema you need
+dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+## check the schema names to select the one(s) you intend to use
 names(dt)
 #> [1] "string"                  "url"                    
 #> [3] "integer_in_string"       "column"                 
 #> [5] "cell"                    "row"                    
 #> [7] "table"                   "inferential_test_output"
-## for the object you will use, e.g., dt$inferential_test_output(), check the fields names
+## for the schema you use, e.g., dt$inferential_test_output(), check the fields names
 dtreg::show_fields(dt$inferential_test_output())
 #> [1] "has_format"      "comment"         "has_description" "label"
 ## create your own instance by filling the fields of your choice
