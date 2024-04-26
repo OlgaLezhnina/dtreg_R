@@ -26,11 +26,14 @@ to_jsonld <- function(instance) {
       for (field in field_list) {
         instance_field <-
           eval(parse(text = paste0("instance$", field)))
-        if (inherits(instance_field, "R6")) {
-          result[[field]] <-
-            differ_length(instance_field, write_info)
+        if (length(instance_field) == 1 && is.na(instance_field)) {
+          next
         } else {
-          result[[field]] <- list(instance_field)
+          if (inherits(instance_field, "R6")) {
+            result[[field]] <- write_info(instance_field)
+          } else {
+            result[[field]] <- list(instance_field)
+          }
         }
       }
     }
