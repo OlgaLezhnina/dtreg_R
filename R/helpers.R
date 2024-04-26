@@ -42,7 +42,7 @@ show_fields <- function(object) {
                "identifier")
   output <- all_fields[!(all_fields %in% written)]
   if (length(output) == 0) {
-    output <- "no fields"
+    output <- NULL
   }
   return(output)
 }
