@@ -10,6 +10,18 @@ format_string  <- function(text) {
   ))
 }
 
+#' Generate a counting function
+#' used for assigning unique identifiers
+#' @return The counting function
+#'
+generate_uid <- function() {
+  i <- 0
+  return(function() {
+    i <<- i + 1
+    return(i)
+  })
+}
+
 #' Title
 #'
 #' @param object An object from dtreg::load_objects
