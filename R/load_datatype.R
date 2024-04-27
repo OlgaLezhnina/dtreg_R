@@ -41,9 +41,9 @@ write_r6_classes <- function(templ_info) {
   for (t in seq_along(templ_info)) {
     templ_data <- templ_info[[t]]
     r6_template <-
-      paste(
+      paste0(
         "R6::R6Class('",
-        paste(format_string(templ_data[[1]]$name), "_r6", sep = ""),
+        paste0(format_string(templ_data[[1]]$name), "_r6"),
         "',
         public = list(
         name = NULL,
@@ -71,8 +71,7 @@ write_r6_classes <- function(templ_info) {
           format_string(templ_data[[2]]$prop_name)
         ),
         collapse = ""),
-        "}))",
-        sep = ""
+        "}))"
       )
     result[[format_string(templ_data[[1]]$name)]] <-
       eval(parse(text = r6_template))
