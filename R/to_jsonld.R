@@ -19,8 +19,14 @@ differ_length <- function(input, func) {
 #' @examples
 #'
 to_jsonld <- function(instance) {
+  the$uid <- generate_uid()
+  context <- list()
+  context[[instance$identifier]] <- paste0("https://doi.org/", instance$identifier)
   write_info <- function(instance) {
     result <- list()
+    result[["@id"]] <- paste0("_:n", the$uid())
+    result[["label"]] <- instance$label
+    result[["@type"]] <- paste0("https://doi.org/", instance$identifier)
     field_list <- show_fields(instance)
     if (!is.null(field_list)) {
       for (field in field_list) {
@@ -40,6 +46,7 @@ to_jsonld <- function(instance) {
     return(result)
   }
   result <- write_info(instance)
+  result[["@context"]] <- context
   inst_json <-
     jsonlite::toJSON(result, pretty = TRUE, auto_unbox = TRUE)
   return(inst_json)
