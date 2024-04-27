@@ -21,25 +21,25 @@ differ_length <- function(input, func) {
 to_jsonld <- function(instance) {
   the$uid <- generate_uid()
   context <- list()
-  context[[instance$identifier]] <- paste0("https://doi.org/", instance$identifier)
+  context[[instance$identifier]] <-
+    paste0("https://doi.org/", instance$identifier)
   write_info <- function(instance) {
     result <- list()
     result[["@id"]] <- paste0("_:n", the$uid())
     result[["label"]] <- instance$label
-    result[["@type"]] <- paste0("https://doi.org/", instance$identifier)
+    result[["@type"]] <-
+      paste0("https://doi.org/", instance$identifier)
     field_list <- show_fields(instance)
-    if (!is.null(field_list)) {
-      for (field in field_list) {
-        instance_field <-
-          eval(parse(text = paste0("instance$", field)))
-        if (length(instance_field) == 1 && is.na(instance_field)) {
-          next
+    for (field in field_list) {
+      instance_field <-
+        eval(parse(text = paste0("instance$", field)))
+      if (length(instance_field) == 1 && is.na(instance_field)) {
+        next
+      } else {
+        if (inherits(instance_field, "R6")) {
+          result[[field]] <- write_info(instance_field)
         } else {
-          if (inherits(instance_field, "R6")) {
-            result[[field]] <- write_info(instance_field)
-          } else {
-            result[[field]] <- list(instance_field)
-          }
+          result[[field]] <- list(instance_field)
         }
       }
     }
