@@ -2,7 +2,7 @@
 % Please edit documentation in R/to_jsonld.R
 \name{differ_length}
 \alias{differ_length}
-\title{Detect the input length to apply or lapply a function}
+\title{Detects the input length to apply or lapply a function}
 \usage{
 differ_length(input, func)
 }
@@ -15,5 +15,5 @@ differ_length(input, func)
 The result of the function applied in the differentiated way
 }
 \description{
-Detect the input length to apply or lapply a function
+Detects the input length to apply or lapply a function
 }

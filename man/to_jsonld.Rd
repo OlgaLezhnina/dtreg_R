@@ -2,7 +2,7 @@
 % Please edit documentation in R/to_jsonld.R
 \name{to_jsonld}
 \alias{to_jsonld}
-\title{Write an instance as JSON-LD}
+\title{Writes an instance as JSON-LD}
 \usage{
 to_jsonld(instance)
 }
@@ -13,5 +13,5 @@ to_jsonld(instance)
 JSON string in JSON-LD format
 }
 \description{
-Write an instance as JSON-LD
+Writes an instance as JSON-LD
 }
