@@ -31,8 +31,7 @@ to_jsonld <- function(instance) {
       paste0("https://doi.org/", instance$identifier)
     field_list <- show_fields(instance)
     for (field in field_list) {
-      instance_field <-
-        eval(parse(text = paste0("instance$", field)))
+      instance_field <- instance[[field]]
       if (length(instance_field) == 1 && is.na(instance_field)) {
         next
       } else {
