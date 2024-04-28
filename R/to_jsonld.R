@@ -1,26 +1,14 @@
-#' Detects the input length to apply or lapply a function
-#' @param input A single element or a list
-#' @param func A function to be applied to the input
-#' @return The result of the function applied in the differentiated way
-#'
-differ_length <- function(input, func) {
-  if (length(input) == 1) {
-    output <- func(input)
-  } else {
-    output <- lapply(input, func)
-  }
-  return(output)
-}
-
-#' Reprocess the input to be used in JSON-LD depending on its type
-#' @param input A dataframe, a tuple, or another basic data type
-#' @return The resulting R object to be used in JSON-LD
+#' An internal function to deal differently with inputs of different types
+#' @param input Can be NA, a dataframe, a tuple, or another input
+#' @return The resulting R object to be used by to_jsonld function
 #'
 differ_type <- function(input) {
   if (methods::is(input, "data.frame")) {
     output <- df_structure(df = input, label = "Table")
   } else if (methods::is(input, "tuple")) {
     output <- df_structure(df = input[[1]], label = input[[2]])
+  } else if (length(input) == 1 && is.na(input)) {
+    output <- NULL
   } else {
     output <- list(input)
   }
@@ -96,14 +84,10 @@ to_jsonld <- function(instance) {
     field_list <- show_fields(instance)
     for (field in field_list) {
       instance_field <- instance[[field]]
-      if (length(instance_field) == 1 && is.na(instance_field)) {
-        next
+      if (inherits(instance_field, "R6")) {
+        result[[field]] <- write_info(instance_field)
       } else {
-        if (inherits(instance_field, "R6")) {
-          result[[field]] <- write_info(instance_field)
-        } else {
-          result[[field]] <- differ_type(instance_field)
-        }
+        result[[field]] <- differ_type(instance_field)
       }
     }
     return(result)

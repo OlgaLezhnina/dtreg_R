@@ -2,16 +2,16 @@
 % Please edit documentation in R/to_jsonld.R
 \name{differ_type}
 \alias{differ_type}
-\title{Reprocess the input to be used in JSON-LD depending on its type}
+\title{An internal function to deal differently with inputs of different types}
 \usage{
 differ_type(input)
 }
 \arguments{
-\item{input}{A dataframe, a tuple, or another basic data type}
+\item{input}{Can be NA, a dataframe, a tuple, or another input}
 }
 \value{
-The resulting R object to be used in JSON-LD
+The resulting R object to be used by to_jsonld function
 }
 \description{
-Reprocess the input to be used in JSON-LD depending on its type
+An internal function to deal differently with inputs of different types
 }
