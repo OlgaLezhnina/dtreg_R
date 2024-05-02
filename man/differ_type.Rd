@@ -10,7 +10,7 @@ differ_type(input)
 \item{input}{Can be NA, a dataframe, a tuple, or another input}
 }
 \value{
-The resulting R object to be used by to_jsonld function
+An R object to be used by to_jsonld function
 }
 \description{
 An internal function to deal differently with inputs of different types
