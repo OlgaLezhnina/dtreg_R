@@ -43,7 +43,8 @@ dtreg::show_fields(dt$inferential_test_output())
 #> [1] "has_format"      "comment"         "has_description" "label"
 ## create your own instance by filling the fields of your choice
 my_inst <- dt$inferential_test_output(label = "my_results")
-## write a JSON-LD file
+## write the instance in JSON-LD format
+my_json <- dtreg::to_jsonld(my_inst)
 ```
 
 For more information, please see XXX.
