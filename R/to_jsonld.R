@@ -73,14 +73,14 @@ df_structure <- function(df, label) {
 to_jsonld <- function(instance) {
   the$uid <- generate_uid()
   context <- list()
-  context[[instance$identifier]] <-
+  context[[instance$name]] <-
     paste0("https://doi.org/", instance$identifier)
   write_info <- function(instance) {
     result <- list()
     result[["@id"]] <- paste0("_:n", the$uid())
-    result[["label"]] <- instance$label
     result[["@type"]] <-
       paste0("https://doi.org/", instance$identifier)
+    result[["label"]] <- instance$label
     field_list <- show_fields(instance)
     for (field in field_list) {
       instance_field <- instance[[field]]
@@ -92,9 +92,10 @@ to_jsonld <- function(instance) {
     }
     return(result)
   }
-  result <- write_info(instance)
-  result[["@context"]] <- context
+  result_all <- list()
+  result_all[[instance$name]] <- write_info(instance)
+  result_all[["@context"]] <- context
   inst_json <-
-    jsonlite::toJSON(result, pretty = TRUE, auto_unbox = TRUE)
+    jsonlite::toJSON(result_all, pretty = TRUE, auto_unbox = TRUE)
   return(inst_json)
 }
