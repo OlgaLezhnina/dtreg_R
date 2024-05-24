@@ -1,36 +1,39 @@
 #' Title
 #'
-#' @param template_doi The DOI of an ePIC template
-#' @return An R object that contains information about the ePIC template
+#' @param dt_id The DOI of an ePIC schema
+#' @return An R object that contains information about the ePIC schema
 #'
-extract_epic <- function(template_doi) {
+extract_epic <- function(dt_id) {
   extract_all <- list()
-  extractor_function <- function(template_doi) {
-    info <- request_epic(template_doi)
-    name <- info$name
-    identifier <- info$Identifier
-    schema_type <- info$Schema$Type
-    schema_df <- data.frame(name, identifier, schema_type)
+  extractor_function <- function(dt_id) {
+    info <- request_dtr(paste0(dt_id, "?locatt=view:json"))
+    dt_name <- info$name
+    dt_id <- info$Identifier
+    dt_class <- info$Schema$Type
+    schema_df <- data.frame(dt_name, dt_id, dt_class)
     i <- 0
     all_props <- data.frame(
-      prop_name = character(),
-      type_id = character(),
-      cardinality = character(),
+      dtp_name = character(),
+      dtp_id = character(),
+      dtp_cardinality = character(),
+      dtp_value_type = character(),
       nested = logical(),
       stringsAsFactors = FALSE
     )
     for (prop in info$Schema$Properties) {
       specific_prop <- list()
       if (is.null(prop$Type)) {
-        specific_prop[["prop_name"]] <- prop$Property
-        specific_prop[["type_id"]] <- "value"
-        specific_prop[["cardinality"]] <- "no_info"
+        specific_prop[["dtp_name"]] <- prop$Property
+        specific_prop[["dtp_id"]] <- paste0(dt_id, "#", prop$Property)
+        specific_prop[["dtp_cardinality"]] <- "no_info"
+        specific_prop[["dtp_value_type"]] <- prop$Value
         specific_prop[["nested"]] <- FALSE
       } else {
-        specific_prop[["prop_name"]] <- prop$Name
-        specific_prop[["type_id"]] <- prop$Type
-        specific_prop[["cardinality"]] <-
+        specific_prop[["dtp_name"]] <- prop$Name
+        specific_prop[["dtp_id"]] <- paste0(dt_id, "#", prop$Name)
+        specific_prop[["dtp_cardinality"]] <-
           prop$Properties$Cardinality
+        specific_prop[["dtp_value_type"]] <- prop$Type
         specific_prop[["nested"]] <- TRUE
         extractor_function(paste0("https://doi.org/", prop$Type))
       }
@@ -38,9 +41,9 @@ extract_epic <- function(template_doi) {
       all_props[i, ] <- specific_prop
     }
     extracted <- list(schema_df, all_props)
-    extract_all[[name]] <<- extracted
+    extract_all[[dt_name]] <<- extracted
     return(extract_all)
   }
-  extractor_function(template_doi)
+  extractor_function(dt_id)
   return(extract_all)
 }

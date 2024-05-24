@@ -4,13 +4,13 @@
 \alias{extract_epic}
 \title{Title}
 \usage{
-extract_epic(template_doi)
+extract_epic(dt_id)
 }
 \arguments{
-\item{template_doi}{The DOI of an ePIC template}
+\item{dt_id}{The DOI of an ePIC schema}
 }
 \value{
-An R object that contains information about the ePIC template
+An R object that contains information about the ePIC schema
 }
 \description{
 Title
