@@ -3,3 +3,9 @@ test_that("select_dtr creates an ePIC object for an ePIC template_doi", {
   expected <- c(".__enclos_env__", "template_info",        "clone",           "get_template_info",    "initialize")
   expect_equal(names(templ), expected)
 })
+
+test_that("select_dtr creates an ORKG object for an ORKG template URL", {
+  templ <- select_dtr("https://incubating.orkg.org/template/R937648")
+  expected <- c(".__enclos_env__", "template_info",        "clone",           "get_template_info",    "initialize")
+  expect_equal(names(templ), expected)
+})
