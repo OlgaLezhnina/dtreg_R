@@ -17,7 +17,6 @@ extract_epic <- function(dt_id) {
       dtp_id = character(),
       dtp_cardinality = character(),
       dtp_value_type = character(),
-      nested = logical(),
       stringsAsFactors = FALSE
     )
     for (prop in info$Schema$Properties) {
@@ -27,14 +26,12 @@ extract_epic <- function(dt_id) {
         specific_prop[["dtp_id"]] <- paste0(dt_id, "#", prop$Property)
         specific_prop[["dtp_cardinality"]] <- "no_info"
         specific_prop[["dtp_value_type"]] <- prop$Value
-        specific_prop[["nested"]] <- FALSE
       } else {
         specific_prop[["dtp_name"]] <- prop$Name
         specific_prop[["dtp_id"]] <- paste0(dt_id, "#", prop$Name)
         specific_prop[["dtp_cardinality"]] <-
           prop$Properties$Cardinality
         specific_prop[["dtp_value_type"]] <- prop$Type
-        specific_prop[["nested"]] <- TRUE
         extractor_function(paste0("https://doi.org/", prop$Type))
       }
       i <- i + 1

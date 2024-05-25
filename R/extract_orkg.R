@@ -20,7 +20,6 @@ extract_orkg <- function(dt_id) {
       dtp_id = character(),
       dtp_cardinality = character(),
       dtp_value_type = character(),
-      nested = logical(),
       stringsAsFactors = FALSE
     )
     for (prop in info$properties) {
@@ -30,16 +29,12 @@ extract_orkg <- function(dt_id) {
       if (is.null(prop$class$id)) {
         specific_prop[["dtp_cardinality"]] <- "todo"
         specific_prop[["dtp_value_type"]] <- prop$datatype$id
-        specific_prop[["nested"]] <- FALSE
       } else {
         specific_prop[["dtp_cardinality"]] <- "todo"
         specific_prop[["dtp_value_type"]] <- prop$class$id
         info_n <-
           request_dtr(paste0(orkg_prefix, "?target_class=", prop$class$id))
-        if (!length(info_n$content)) {
-          specific_prop[["nested"]] <- FALSE
-        } else {
-          specific_prop[["nested"]] <- TRUE
+        if (length(info_n$content) > 0) {
           nested_id <- info_n$content[[1]]$id
           nested_name <- info_n$content[[1]]$label
           if (!nested_name %in% names(extract_all)) {
@@ -47,7 +42,7 @@ extract_orkg <- function(dt_id) {
           }
         }
         i <- i + 1
-        all_props[i,] <- specific_prop
+        all_props[i, ] <- specific_prop
       }
     }
     extracted <- list(schema_df, all_props)
