@@ -26,11 +26,11 @@ extract_orkg <- function(dt_id) {
       specific_prop <- list()
       specific_prop[["dtp_name"]] <- prop$path$label
       specific_prop[["dtp_id"]] <- prop$path$id
+      specific_prop[["dtp_card_min"]] <- as.character(prop$min_count)
+      specific_prop[["dtp_card_max"]] <- as.character(prop$max_count)
       if (is.null(prop$class$id)) {
-        specific_prop[["dtp_cardinality"]] <- "todo"
         specific_prop[["dtp_value_type"]] <- prop$datatype$id
       } else {
-        specific_prop[["dtp_cardinality"]] <- "todo"
         specific_prop[["dtp_value_type"]] <- prop$class$id
         info_n <-
           request_dtr(paste0(orkg_prefix, "?target_class=", prop$class$id))

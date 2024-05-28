@@ -8,7 +8,6 @@ test_that("extract_orkg gives the specified template", {
                 "",
                 "$measurement_scale[[2]]",
                 "[1] dtp_name        dtp_id          dtp_cardinality dtp_value_type ",
-                "[5] nested         ",
                 "<0 rows> (or 0-length row.names)",
                 "",
                  "")

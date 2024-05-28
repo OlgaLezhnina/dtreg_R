@@ -10,6 +10,26 @@ format_string  <- function(text) {
   ))
 }
 
+#' Split an ePIC cardinality string into min and max values
+#' @param range_str An ePIC string for cardinality range
+#' @return A named list with min and max values as strings
+#'
+range_split <- function(range_str) {
+  output <- list()
+  range_parts <- strsplit(range_str, split = "")[[1]]
+  if (length(range_parts) == 1) {
+    output[["min"]] <- range_str
+    output[["max"]] <- range_str
+  } else {
+    output[["min"]] <- range_parts[[1]]
+    output[["max"]] <- range_parts[[3]]
+    if (output[["max"]] == "n") {
+      output[["max"]] <- as.character(NULL)
+    }
+  }
+  return(output)
+}
+
 #' Generate a counting function
 #' used for assigning unique identifiers
 #' @return The counting function
