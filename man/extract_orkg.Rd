@@ -4,7 +4,7 @@
 \alias{extract_orkg}
 \title{Title}
 \usage{
-extract_orkg(dt_id)
+extract_orkg(datatype_id)
 }
 \arguments{
 \item{dt_id}{The URL of an ORKG template}

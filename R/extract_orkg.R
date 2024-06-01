@@ -3,13 +3,14 @@
 #' @param dt_id The URL of an ORKG template
 #' @return An R object that contains information about the ORKG template
 #'
-extract_orkg <- function(dt_id) {
+extract_orkg <- function(datatype_id) {
+  part <- strsplit(dt_id, split = "[/ //]+")[[1]]
+  orkg_hostname <- paste0(part[[1]], "//", part[[2]])
+  resource_id <- part[[4]]
   extract_all <- list()
-  extractor_function <- function(dt_id) {
-    part <- strsplit(dt_id, split = "[/ //]+")[[1]]
-    orkg_prefix <-
-      paste0(part[[1]], "/", part[[2]], "//api/templates/")
-    info <- request_dtr(paste0(orkg_prefix, part[[4]]))
+  extractor_function <- function(resource_id) {
+    info <-
+      request_dtr(paste0(orkg_hostname, "/api/templates/", resource_id))
     dt_name <- info$label
     dt_id <- info$id
     dt_class <- info$target_class$id
@@ -18,7 +19,8 @@ extract_orkg <- function(dt_id) {
     all_props <- data.frame(
       dtp_name = character(),
       dtp_id = character(),
-      dtp_cardinality = character(),
+      dtp_card_min = integer(),
+      dtp_card_max = integer(),
       dtp_value_type = character(),
       stringsAsFactors = FALSE
     )
@@ -36,7 +38,7 @@ extract_orkg <- function(dt_id) {
       } else {
         specific_prop[["dtp_value_type"]] <- prop$class$id
         info_n <-
-          request_dtr(paste0(orkg_prefix, "?target_class=", prop$class$id))
+          request_dtr(paste0(orkg_hostname, "/api/templates/?target_class=", prop$class$id))
         if (length(info_n$content) > 0) {
           nested_id <- info_n$content[[1]]$id
           nested_name <- info_n$content[[1]]$label
@@ -45,12 +47,12 @@ extract_orkg <- function(dt_id) {
           }
         }
         i <- i + 1
-        all_props[i, ] <- specific_prop
+        all_props[i,] <- specific_prop
       }
     }
     extracted <- list(schema_df, all_props)
     extract_all[[dt_name]] <<- extracted
   }
-  extractor_function(dt_id)
+  extractor_function(resource_id)
   return(extract_all)
 }
