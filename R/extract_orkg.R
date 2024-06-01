@@ -4,7 +4,7 @@
 #' @return An R object that contains information about the ORKG template
 #'
 extract_orkg <- function(datatype_id) {
-  part <- strsplit(dt_id, split = "[/ //]+")[[1]]
+  part <- strsplit(datatype_id, split = "[/ //]+")[[1]]
   orkg_hostname <- paste0(part[[1]], "//", part[[2]])
   resource_id <- part[[4]]
   extract_all <- list()
