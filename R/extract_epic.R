@@ -41,7 +41,6 @@ extract_epic <- function(dt_id) {
     }
     extracted <- list(schema_df, all_props)
     extract_all[[dt_name]] <<- extracted
-    return(extract_all)
   }
   extractor_function(dt_id)
   return(extract_all)

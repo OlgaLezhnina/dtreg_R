@@ -28,6 +28,9 @@ extract_orkg <- function(dt_id) {
       specific_prop[["dtp_id"]] <- prop$path$id
       specific_prop[["dtp_card_min"]] <- prop$min_count
       specific_prop[["dtp_card_max"]] <- prop$max_count
+      if (is.null(specific_prop[["dtp_card_max"]])) {
+        specific_prop[["dtp_card_max"]] <- NA
+      }
       if (is.null(prop$class$id)) {
         specific_prop[["dtp_value_type"]] <- prop$datatype$id
       } else {
@@ -47,7 +50,6 @@ extract_orkg <- function(dt_id) {
     }
     extracted <- list(schema_df, all_props)
     extract_all[[dt_name]] <<- extracted
-    return(extract_all)
   }
   extractor_function(dt_id)
   return(extract_all)
