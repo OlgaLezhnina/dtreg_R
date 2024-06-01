@@ -2,9 +2,9 @@
   "String": [
     [
       {
-        "name": "String",
-        "identifier": "21.T11969/3df63b7acb0522da685d",
-        "schema_type": "String"
+        "dt_name": "String",
+        "dt_id": "21.T11969/3df63b7acb0522da685d",
+        "dt_class": "String"
       }
     ],
     []
@@ -12,46 +12,50 @@
   "integer_in_string": [
     [
       {
-        "name": "integer_in_string",
-        "identifier": "21.T11969/fb2e379f820c6f8f9e82",
-        "schema_type": "String"
+        "dt_name": "integer_in_string",
+        "dt_id": "21.T11969/fb2e379f820c6f8f9e82",
+        "dt_class": "String"
       }
     ],
     [
       {
-        "prop_name": "pattern",
-        "type_id": "value",
-        "cardinality": "no_info",
-        "nested": false
+        "dtp_name": "pattern",
+        "dtp_id": "21.T11969/fb2e379f820c6f8f9e82#pattern",
+        "dtp_card_min": null,
+        "dtp_card_max": null,
+        "dtp_value_type": "^[0-9]+$"
       }
     ]
   ],
   "Cell": [
     [
       {
-        "name": "Cell",
-        "identifier": "21.T11969/4607bc7c42ac8db29bfc",
-        "schema_type": "Object"
+        "dt_name": "Cell",
+        "dt_id": "21.T11969/4607bc7c42ac8db29bfc",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/4607bc7c42ac8db29bfc#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "value",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "value",
+        "dtp_id": "21.T11969/4607bc7c42ac8db29bfc#value",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "column",
-        "type_id": "21.T11969/fb2e379f820c6f8f9e82",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "column",
+        "dtp_id": "21.T11969/4607bc7c42ac8db29bfc#column",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
       }
     ]
   ]

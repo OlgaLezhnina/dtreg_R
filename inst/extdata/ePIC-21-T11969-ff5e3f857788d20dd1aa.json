@@ -2,9 +2,9 @@
   "String": [
     [
       {
-        "name": "String",
-        "identifier": "21.T11969/3df63b7acb0522da685d",
-        "schema_type": "String"
+        "dt_name": "String",
+        "dt_id": "21.T11969/3df63b7acb0522da685d",
+        "dt_class": "String"
       }
     ],
     []
@@ -12,516 +12,569 @@
   "software": [
     [
       {
-        "name": "software",
-        "identifier": "21.T11969/c981d125d1a564c9f573",
-        "schema_type": "Object"
+        "dt_name": "software",
+        "dt_id": "21.T11969/c981d125d1a564c9f573",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/c981d125d1a564c9f573#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "versionInfo",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "0 - 1",
-        "nested": true
+        "dtp_name": "versionInfo",
+        "dtp_id": "21.T11969/c981d125d1a564c9f573#versionInfo",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       }
     ]
   ],
   "URL": [
     [
       {
-        "name": "URL",
-        "identifier": "21.T11969/e0efc41346cda4ba84ca",
-        "schema_type": "String"
+        "dt_name": "URL",
+        "dt_id": "21.T11969/e0efc41346cda4ba84ca",
+        "dt_class": "String"
       }
     ],
     [
       {
-        "prop_name": "pattern",
-        "type_id": "value",
-        "cardinality": "no_info",
-        "nested": false
+        "dtp_name": "pattern",
+        "dtp_id": "21.T11969/e0efc41346cda4ba84ca#pattern",
+        "dtp_card_min": null,
+        "dtp_card_max": null,
+        "dtp_value_type": "^http(s)?:(\\/\\/([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?$"
       }
     ]
   ],
   "software_library": [
     [
       {
-        "name": "software_library",
-        "identifier": "21.T11969/4b99260369df9110f9bd",
-        "schema_type": "Object"
+        "dt_name": "software_library",
+        "dt_id": "21.T11969/4b99260369df9110f9bd",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/4b99260369df9110f9bd#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "versionInfo",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "0 - 1",
-        "nested": true
+        "dtp_name": "versionInfo",
+        "dtp_id": "21.T11969/4b99260369df9110f9bd#versionInfo",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "part_of",
-        "type_id": "21.T11969/c981d125d1a564c9f573",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "part_of",
+        "dtp_id": "21.T11969/4b99260369df9110f9bd#part_of",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/c981d125d1a564c9f573"
       },
       {
-        "prop_name": "has_support_URL",
-        "type_id": "21.T11969/e0efc41346cda4ba84ca",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "has_support_URL",
+        "dtp_id": "21.T11969/4b99260369df9110f9bd#has_support_URL",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
       }
     ]
   ],
   "software_method": [
     [
       {
-        "name": "software_method",
-        "identifier": "21.T11969/abef9f1c0d48853f3e51",
-        "schema_type": "Object"
+        "dt_name": "software_method",
+        "dt_id": "21.T11969/abef9f1c0d48853f3e51",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/abef9f1c0d48853f3e51#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "uses_software",
-        "type_id": "21.T11969/4b99260369df9110f9bd",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "uses_software",
+        "dtp_id": "21.T11969/abef9f1c0d48853f3e51#uses_software",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/4b99260369df9110f9bd"
       },
       {
-        "prop_name": "is_implemented_by",
-        "type_id": "21.T11969/e0efc41346cda4ba84ca",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "is_implemented_by",
+        "dtp_id": "21.T11969/abef9f1c0d48853f3e51#is_implemented_by",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
       },
       {
-        "prop_name": "has_support_URL",
-        "type_id": "21.T11969/e0efc41346cda4ba84ca",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "has_support_URL",
+        "dtp_id": "21.T11969/abef9f1c0d48853f3e51#has_support_URL",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
       }
     ]
   ],
   "statistical_variable": [
     [
       {
-        "name": "statistical_variable",
-        "identifier": "21.T11969/b95ff265a13137c31655",
-        "schema_type": "Object"
+        "dt_name": "statistical_variable",
+        "dt_id": "21.T11969/b95ff265a13137c31655",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/b95ff265a13137c31655#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "has_format",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "0 - 1",
-        "nested": true
+        "dtp_name": "has_format",
+        "dtp_id": "21.T11969/b95ff265a13137c31655#has_format",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "seeAlso",
-        "type_id": "21.T11969/e0efc41346cda4ba84ca",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "seeAlso",
+        "dtp_id": "21.T11969/b95ff265a13137c31655#seeAlso",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
       }
     ]
   ],
   "integer_in_string": [
     [
       {
-        "name": "integer_in_string",
-        "identifier": "21.T11969/fb2e379f820c6f8f9e82",
-        "schema_type": "String"
+        "dt_name": "integer_in_string",
+        "dt_id": "21.T11969/fb2e379f820c6f8f9e82",
+        "dt_class": "String"
       }
     ],
     [
       {
-        "prop_name": "pattern",
-        "type_id": "value",
-        "cardinality": "no_info",
-        "nested": false
+        "dtp_name": "pattern",
+        "dtp_id": "21.T11969/fb2e379f820c6f8f9e82#pattern",
+        "dtp_card_min": null,
+        "dtp_card_max": null,
+        "dtp_value_type": "^[0-9]+$"
       }
     ]
   ],
   "sample_size": [
     [
       {
-        "name": "sample_size",
-        "identifier": "21.T11969/a002397ab31c7535f1be",
-        "schema_type": "Object"
+        "dt_name": "sample_size",
+        "dt_id": "21.T11969/a002397ab31c7535f1be",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/a002397ab31c7535f1be#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "has_specified_numeric_value",
-        "type_id": "21.T11969/fb2e379f820c6f8f9e82",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "has_specified_numeric_value",
+        "dtp_id": "21.T11969/a002397ab31c7535f1be#has_specified_numeric_value",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
       }
     ]
   ],
   "Column": [
     [
       {
-        "name": "Column",
-        "identifier": "21.T11969/65ba00e95e60fb8971e6",
-        "schema_type": "Object"
+        "dt_name": "Column",
+        "dt_id": "21.T11969/65ba00e95e60fb8971e6",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/65ba00e95e60fb8971e6#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "number",
-        "type_id": "21.T11969/fb2e379f820c6f8f9e82",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "number",
+        "dtp_id": "21.T11969/65ba00e95e60fb8971e6#number",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
       }
     ]
   ],
   "Cell": [
     [
       {
-        "name": "Cell",
-        "identifier": "21.T11969/4607bc7c42ac8db29bfc",
-        "schema_type": "Object"
+        "dt_name": "Cell",
+        "dt_id": "21.T11969/4607bc7c42ac8db29bfc",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/4607bc7c42ac8db29bfc#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "value",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "value",
+        "dtp_id": "21.T11969/4607bc7c42ac8db29bfc#value",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "column",
-        "type_id": "21.T11969/fb2e379f820c6f8f9e82",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "column",
+        "dtp_id": "21.T11969/4607bc7c42ac8db29bfc#column",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
       }
     ]
   ],
   "Row": [
     [
       {
-        "name": "Row",
-        "identifier": "21.T11969/9bf7a8e8909bfd491b38",
-        "schema_type": "Object"
+        "dt_name": "Row",
+        "dt_id": "21.T11969/9bf7a8e8909bfd491b38",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/9bf7a8e8909bfd491b38#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "number",
-        "type_id": "21.T11969/fb2e379f820c6f8f9e82",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "number",
+        "dtp_id": "21.T11969/9bf7a8e8909bfd491b38#number",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
       },
       {
-        "prop_name": "cells",
-        "type_id": "21.T11969/4607bc7c42ac8db29bfc",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "cells",
+        "dtp_id": "21.T11969/9bf7a8e8909bfd491b38#cells",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/4607bc7c42ac8db29bfc"
       }
     ]
   ],
   "Table": [
     [
       {
-        "name": "Table",
-        "identifier": "21.T11969/0424f6e7026fa4bc2c4a",
-        "schema_type": "Object"
+        "dt_name": "Table",
+        "dt_id": "21.T11969/0424f6e7026fa4bc2c4a",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/0424f6e7026fa4bc2c4a#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "columns",
-        "type_id": "21.T11969/65ba00e95e60fb8971e6",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "columns",
+        "dtp_id": "21.T11969/0424f6e7026fa4bc2c4a#columns",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/65ba00e95e60fb8971e6"
       },
       {
-        "prop_name": "rows",
-        "type_id": "21.T11969/9bf7a8e8909bfd491b38",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "rows",
+        "dtp_id": "21.T11969/0424f6e7026fa4bc2c4a#rows",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/9bf7a8e8909bfd491b38"
       }
     ]
   ],
   "data_input": [
     [
       {
-        "name": "data_input",
-        "identifier": "21.T11969/aff130c76e68ead3862e",
-        "schema_type": "Object"
+        "dt_name": "data_input",
+        "dt_id": "21.T11969/aff130c76e68ead3862e",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/aff130c76e68ead3862e#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "source",
-        "type_id": "21.T11969/e0efc41346cda4ba84ca",
-        "cardinality": "0 - 1",
-        "nested": true
+        "dtp_name": "source",
+        "dtp_id": "21.T11969/aff130c76e68ead3862e#source",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
       },
       {
-        "prop_name": "has_part",
-        "type_id": "21.T11969/b95ff265a13137c31655",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "has_part",
+        "dtp_id": "21.T11969/aff130c76e68ead3862e#has_part",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
       },
       {
-        "prop_name": "has_characteristic",
-        "type_id": "21.T11969/a002397ab31c7535f1be",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "has_characteristic",
+        "dtp_id": "21.T11969/aff130c76e68ead3862e#has_characteristic",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/a002397ab31c7535f1be"
       },
       {
-        "prop_name": "has_format",
-        "type_id": "21.T11969/0424f6e7026fa4bc2c4a",
-        "cardinality": "0 - 1",
-        "nested": true
+        "dtp_name": "has_format",
+        "dtp_id": "21.T11969/aff130c76e68ead3862e#has_format",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/0424f6e7026fa4bc2c4a"
       }
     ]
   ],
   "outcome_variable": [
     [
       {
-        "name": "outcome_variable",
-        "identifier": "21.T11969/540c1a27569dc7ce906b",
-        "schema_type": "Object"
+        "dt_name": "outcome_variable",
+        "dt_id": "21.T11969/540c1a27569dc7ce906b",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/540c1a27569dc7ce906b#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "requires",
-        "type_id": "21.T11969/b95ff265a13137c31655",
-        "cardinality": "1 - n",
-        "nested": true
+        "dtp_name": "requires",
+        "dtp_id": "21.T11969/540c1a27569dc7ce906b#requires",
+        "dtp_card_min": 1,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
       }
     ]
   ],
   "grouping_factor": [
     [
       {
-        "name": "grouping_factor",
-        "identifier": "21.T11969/1f4df47aacf6562bc07b",
-        "schema_type": "Object"
+        "dt_name": "grouping_factor",
+        "dt_id": "21.T11969/1f4df47aacf6562bc07b",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/1f4df47aacf6562bc07b#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "requires",
-        "type_id": "21.T11969/b95ff265a13137c31655",
-        "cardinality": "1 - n",
-        "nested": true
+        "dtp_name": "requires",
+        "dtp_id": "21.T11969/1f4df47aacf6562bc07b#requires",
+        "dtp_card_min": 1,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
       }
     ]
   ],
   "interaction_effect": [
     [
       {
-        "name": "interaction_effect",
-        "identifier": "21.T11969/af3a26d0e0b9e2fdc05c",
-        "schema_type": "Object"
+        "dt_name": "interaction_effect",
+        "dt_id": "21.T11969/af3a26d0e0b9e2fdc05c",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/af3a26d0e0b9e2fdc05c#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "requires",
-        "type_id": "21.T11969/b95ff265a13137c31655",
-        "cardinality": "1 - n",
-        "nested": true
+        "dtp_name": "requires",
+        "dtp_id": "21.T11969/af3a26d0e0b9e2fdc05c#requires",
+        "dtp_card_min": 1,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
       }
     ]
   ],
   "covariate": [
     [
       {
-        "name": "covariate",
-        "identifier": "21.T11969/9445db970678d3b0c7ec",
-        "schema_type": "Object"
+        "dt_name": "covariate",
+        "dt_id": "21.T11969/9445db970678d3b0c7ec",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/9445db970678d3b0c7ec#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "requires",
-        "type_id": "21.T11969/b95ff265a13137c31655",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "requires",
+        "dtp_id": "21.T11969/9445db970678d3b0c7ec#requires",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/b95ff265a13137c31655"
       }
     ]
   ],
   "inferential_test_output": [
     [
       {
-        "name": "inferential_test_output",
-        "identifier": "21.T11969/74bc7748b8cd520908bc",
-        "schema_type": "Object"
+        "dt_name": "inferential_test_output",
+        "dt_id": "21.T11969/74bc7748b8cd520908bc",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/74bc7748b8cd520908bc#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "has_description",
-        "type_id": "21.T11969/e0efc41346cda4ba84ca",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "has_description",
+        "dtp_id": "21.T11969/74bc7748b8cd520908bc#has_description",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
       },
       {
-        "prop_name": "comment",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "comment",
+        "dtp_id": "21.T11969/74bc7748b8cd520908bc#comment",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "has_format",
-        "type_id": "21.T11969/0424f6e7026fa4bc2c4a",
-        "cardinality": "0 - 1",
-        "nested": true
+        "dtp_name": "has_format",
+        "dtp_id": "21.T11969/74bc7748b8cd520908bc#has_format",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/0424f6e7026fa4bc2c4a"
       }
     ]
   ],
   "statistical_test_of_difference": [
     [
       {
-        "name": "statistical_test_of_difference",
-        "identifier": "21.T11969/ff5e3f857788d20dd1aa",
-        "schema_type": "Object"
+        "dt_name": "statistical_test_of_difference",
+        "dt_id": "21.T11969/ff5e3f857788d20dd1aa",
+        "dt_class": "Object"
       }
     ],
     [
       {
-        "prop_name": "label",
-        "type_id": "21.T11969/3df63b7acb0522da685d",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "label",
+        "dtp_id": "21.T11969/ff5e3f857788d20dd1aa#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "prop_name": "executes",
-        "type_id": "21.T11969/abef9f1c0d48853f3e51",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "executes",
+        "dtp_id": "21.T11969/ff5e3f857788d20dd1aa#executes",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/abef9f1c0d48853f3e51"
       },
       {
-        "prop_name": "has_specified_input",
-        "type_id": "21.T11969/aff130c76e68ead3862e",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "has_specified_input",
+        "dtp_id": "21.T11969/ff5e3f857788d20dd1aa#has_specified_input",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/aff130c76e68ead3862e"
       },
       {
-        "prop_name": "evaluates",
-        "type_id": "21.T11969/540c1a27569dc7ce906b",
-        "cardinality": "1 - n",
-        "nested": true
+        "dtp_name": "evaluates",
+        "dtp_id": "21.T11969/ff5e3f857788d20dd1aa#evaluates",
+        "dtp_card_min": 1,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/540c1a27569dc7ce906b"
       },
       {
-        "prop_name": "difference_between",
-        "type_id": "21.T11969/1f4df47aacf6562bc07b",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "difference_between",
+        "dtp_id": "21.T11969/ff5e3f857788d20dd1aa#difference_between",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/1f4df47aacf6562bc07b"
       },
       {
-        "prop_name": "has_part",
-        "type_id": "21.T11969/af3a26d0e0b9e2fdc05c",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "has_part",
+        "dtp_id": "21.T11969/ff5e3f857788d20dd1aa#has_part",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/af3a26d0e0b9e2fdc05c"
       },
       {
-        "prop_name": "has_characteristic",
-        "type_id": "21.T11969/9445db970678d3b0c7ec",
-        "cardinality": "0 - n",
-        "nested": true
+        "dtp_name": "has_characteristic",
+        "dtp_id": "21.T11969/ff5e3f857788d20dd1aa#has_characteristic",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/9445db970678d3b0c7ec"
       },
       {
-        "prop_name": "has_specified_output",
-        "type_id": "21.T11969/74bc7748b8cd520908bc",
-        "cardinality": "1",
-        "nested": true
+        "dtp_name": "has_specified_output",
+        "dtp_id": "21.T11969/ff5e3f857788d20dd1aa#has_specified_output",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/74bc7748b8cd520908bc"
       }
     ]
   ]
