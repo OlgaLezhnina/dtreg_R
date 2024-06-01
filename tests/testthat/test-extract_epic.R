@@ -5,7 +5,7 @@ test_that("extract_epic gives the specified template", {
                 "               dt_name                          dt_id dt_class",
                 "1 PIDINST-SchemaObject 21.T11969/1ea0e148d9bbe08335cd   Object",
                 "", "$`PIDINST-SchemaObject`[[2]]",
-                "[1] dtp_name        dtp_id          dtp_cardinality dtp_value_type ",
+                "[1] dtp_name       dtp_id         dtp_card_min   dtp_card_max   dtp_value_type",
                 "<0 rows> (or 0-length row.names)",
                 "","")
   expect_equal(string_representation, expected)
