@@ -43,37 +43,37 @@ write_r6_classes <- function(templ_info) {
     r6_template <-
       paste0(
         "R6::R6Class('",
-        paste0(format_string(templ_data[[1]]$name), "_r6"),
+        paste0(format_string(templ_data[[1]]$dt_name), "_r6"),
         "',
         public = list(
-        name = NULL,
-        identifier = NULL",
+        dt_name = NULL,
+        dt_id = NULL",
         paste(sprintf(
           ",\n%s = NULL",
-          format_string(templ_data[[2]]$prop_name)
+          format_string(templ_data[[2]]$dtp_name)
         ), collapse = ""),
         ",
         initialize = function(
-        name = NA",
+        dt_name = NA",
         paste(sprintf(
           ",\n%s = NA",
-          format_string(templ_data[[2]]$prop_name)
+          format_string(templ_data[[2]]$dtp_name)
         ), collapse = ""),
         ") {
-        self$name = '",
-        format_string(templ_data[[1]]$name),
+        self$dt_name = '",
+        format_string(templ_data[[1]]$dt_name),
         "'
-        self$identifier = '",
-        templ_data[[1]]$identifier,
+        self$dt_id = '",
+        templ_data[[1]]$dt_id,
         "'",
         paste(sprintf(
           "\nself$%1$s = %1$s",
-          format_string(templ_data[[2]]$prop_name)
+          format_string(templ_data[[2]]$dtp_name)
         ),
         collapse = ""),
         "}))"
       )
-    result[[format_string(templ_data[[1]]$name)]] <-
+    result[[format_string(templ_data[[1]]$dt_name)]] <-
       eval(parse(text = r6_template))
   }
   return(result)
