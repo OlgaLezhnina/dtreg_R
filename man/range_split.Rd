@@ -10,7 +10,7 @@ range_split(range_str)
 \item{range_str}{An ePIC string for cardinality range}
 }
 \value{
-A named list with min and max values as strings
+A named list with min and max values as integer or NA
 }
 \description{
 Split an ePIC cardinality string into min and max values

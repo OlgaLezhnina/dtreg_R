@@ -26,8 +26,8 @@ extract_orkg <- function(dt_id) {
       specific_prop <- list()
       specific_prop[["dtp_name"]] <- prop$path$label
       specific_prop[["dtp_id"]] <- prop$path$id
-      specific_prop[["dtp_card_min"]] <- as.character(prop$min_count)
-      specific_prop[["dtp_card_max"]] <- as.character(prop$max_count)
+      specific_prop[["dtp_card_min"]] <- prop$min_count
+      specific_prop[["dtp_card_max"]] <- prop$max_count
       if (is.null(prop$class$id)) {
         specific_prop[["dtp_value_type"]] <- prop$datatype$id
       } else {

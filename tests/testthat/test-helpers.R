@@ -3,7 +3,7 @@ test_that("format_string makes text lowcase, spaces and dashes to underscores", 
 })
 
 test_that("range_split outputs a named list for range", {
-  expect_equal(range_split("0-1"), list(min = "0", max = "1"))
+  expect_equal(range_split("0 - 1"), list(min = 0, max = 1))
 })
 
 test_that("show_fileds outputs no fields", {

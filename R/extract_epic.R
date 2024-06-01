@@ -25,8 +25,8 @@ extract_epic <- function(dt_id) {
       if (is.null(prop$Type)) {
         specific_prop[["dtp_name"]] <- prop$Property
         specific_prop[["dtp_id"]] <- paste0(dt_id, "#", prop$Property)
-        specific_prop[["dtp_card_min"]] <- as.character(NULL)
-        specific_prop[["dtp_card_max"]] <- as.character(NULL)
+        specific_prop[["dtp_card_min"]] <- NA
+        specific_prop[["dtp_card_max"]] <- NA
         specific_prop[["dtp_value_type"]] <- prop$Value
       } else {
         specific_prop[["dtp_name"]] <- prop$Name
