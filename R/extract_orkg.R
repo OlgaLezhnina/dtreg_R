@@ -38,7 +38,11 @@ extract_orkg <- function(datatype_id) {
       } else {
         specific_prop[["dtp_value_type"]] <- prop$class$id
         info_n <-
-          request_dtr(paste0(orkg_hostname, "/api/templates/?target_class=", prop$class$id))
+          request_dtr(paste0(
+            orkg_hostname,
+            "/api/templates/?target_class=",
+            prop$class$id
+          ))
         if (length(info_n$content) > 0) {
           nested_id <- info_n$content[[1]]$id
           nested_name <- info_n$content[[1]]$label
@@ -46,9 +50,9 @@ extract_orkg <- function(datatype_id) {
             extractor_function(nested_id)
           }
         }
-        i <- i + 1
-        all_props[i,] <- specific_prop
       }
+      i <- i + 1
+      all_props[i, ] <- specific_prop
     }
     extracted <- list(schema_df, all_props)
     extract_all[[dt_name]] <<- extracted
