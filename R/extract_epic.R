@@ -15,13 +15,13 @@ extract_epic <- function(dt_id) {
     all_props <- data.frame(
       dtp_name = character(),
       dtp_id = character(),
-      dtp_cardinality = character(),
+      dtp_card_min = integer(),
+      dtp_card_max = integer(),
       dtp_value_type = character(),
       stringsAsFactors = FALSE
     )
     for (prop in info$Schema$Properties) {
       specific_prop <- list()
-      card <- range_split(prop$Properties$Cardinality)
       if (is.null(prop$Type)) {
         specific_prop[["dtp_name"]] <- prop$Property
         specific_prop[["dtp_id"]] <- paste0(dt_id, "#", prop$Property)
@@ -31,6 +31,7 @@ extract_epic <- function(dt_id) {
       } else {
         specific_prop[["dtp_name"]] <- prop$Name
         specific_prop[["dtp_id"]] <- paste0(dt_id, "#", prop$Name)
+        card <- range_split(prop$Properties$Cardinality)
         specific_prop[["dtp_card_min"]] <- card[["min"]]
         specific_prop[["dtp_card_max"]] <- card[["max"]]
         specific_prop[["dtp_value_type"]] <- prop$Type
