@@ -7,7 +7,7 @@ test_that("extract_orkg gives the specified template", {
                 "1 measurement_scale R937648   C75002",
                 "",
                 "$measurement_scale[[2]]",
-                "[1] dtp_name        dtp_id          dtp_cardinality dtp_value_type ",
+                "[1] dtp_name       dtp_id         dtp_card_min   dtp_card_max   dtp_value_type",
                 "<0 rows> (or 0-length row.names)",
                 "",
                  "")
