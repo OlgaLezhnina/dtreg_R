@@ -79,12 +79,7 @@ Orkg <- R6::R6Class(
     #' @param template_doi The URL of an ORKG template
     #' @return Extracted information from an ORKG template
     get_template_info = function(template_doi) {
-      static <- from_static(template_doi)
-      if (is.null(static)) {
-        self$template_info <- extract_orkg(template_doi)
-      } else {
-        self$template_info <- static
-      }
+      self$template_info <- extract_orkg(template_doi)
       return(self$template_info)
     }
   )
