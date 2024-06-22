@@ -7,7 +7,7 @@
 extract_orkg(datatype_id)
 }
 \arguments{
-\item{dt_id}{The URL of an ORKG template}
+\item{datatype_id}{The URL of an ORKG template}
 }
 \value{
 An R object that contains information about the ORKG template
