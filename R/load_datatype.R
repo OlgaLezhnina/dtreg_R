@@ -9,10 +9,7 @@
 #' pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
 #'
 load_datatype <- function(template_doi) {
-  datypreg <- select_dtr(template_doi)
-  datypreg$get_template_info(template_doi)
-  templ_info <- datypreg$template_info
-  r6_objects <- write_r6_classes(templ_info)
+  r6_objects <- write_r6_classes(template_doi)
   result <- write_proxies(r6_objects)
   return(result)
 }
@@ -33,10 +30,12 @@ write_proxies <- function(object_list) {
 
 #' Title
 #'
-#' @param templ_info an R object with a template structured information
+#' @param template_doi The DOI of a DTR template
 #' @return an R6 object for the template
 #'
-write_r6_classes <- function(templ_info) {
+write_r6_classes <- function(template_doi) {
+  selected_class <- select_dtr(template_doi)
+  templ_info <- selected_class$new()$get_template_info(template_doi)
   result <- list()
   for (t in seq_along(templ_info)) {
     templ_data <- templ_info[[t]]
@@ -45,6 +44,8 @@ write_r6_classes <- function(templ_info) {
         "R6::R6Class('",
         paste0(format_string(templ_data[[1]]$dt_name), "_r6"),
         "',
+        inherit = ",
+        selected_class$classname,",
         public = list(
         dt_name = NULL,
         dt_id = NULL",

@@ -94,9 +94,9 @@ Orkg <- R6::R6Class(
 select_dtr <- function(template_doi) {
   part <- strsplit(template_doi, split = "[/ //]+")[[1]]
   if (part[[3]] == "21.T11969") {
-    datypreg <- Epic$new()
+    datypreg <- Epic
   } else if (stringr::str_detect(part[[2]], "orkg.org")) {
-    datypreg <- Orkg$new()
+    datypreg <- Orkg
   } else {
     stop("Please check whether the schema belongs to the ePIC or the ORKG dtr")
   }

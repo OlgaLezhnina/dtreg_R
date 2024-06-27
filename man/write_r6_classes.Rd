@@ -4,10 +4,10 @@
 \alias{write_r6_classes}
 \title{Title}
 \usage{
-write_r6_classes(templ_info)
+write_r6_classes(template_doi)
 }
 \arguments{
-\item{templ_info}{an R object with a template structured information}
+\item{template_doi}{The DOI of a DTR template}
 }
 \value{
 an R6 object for the template
