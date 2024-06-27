@@ -59,6 +59,8 @@ show_fields <- function(object) {
   written <- c(".__enclos_env__",
                "clone",
                "initialize",
+               "template_info",
+               "get_template_info",
                "dt_name",
                "dt_id")
   output <- all_fields[!(all_fields %in% written)]
