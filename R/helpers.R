@@ -9,6 +9,15 @@ format_string  <- function(text) {
     ""
   ))
 }
+#' Format a string
+#' @param string A URL string
+#' @return The string which is the prefix of the URL
+#'
+get_prefix <- function(string) {
+  part <- strsplit(string, split = "[/ //]+")[[1]]
+  prefix <- paste0(part[[1]], "//", part[[2]], "/")
+  return(prefix)
+}
 
 #' Split an ePIC cardinality string into min and max values
 #' @param range_str An ePIC string for cardinality range
