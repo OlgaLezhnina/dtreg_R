@@ -27,6 +27,13 @@ Tba
 \item \href{#method-Orkg-clone}{\code{Orkg$clone()}}
 }
 }
+\if{html}{\out{
+<details open><summary>Inherited methods</summary>
+<ul>
+<li><span class="pkg-link" data-pkg="dtreg" data-topic="DataTypeReg" data-id="add_context"><a href='../../dtreg/html/DataTypeReg.html#method-DataTypeReg-add_context'><code>dtreg::DataTypeReg$add_context()</code></a></span></li>
+</ul>
+</details>
+}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orkg-new"></a>}}
 \if{latex}{\out{\hypertarget{method-Orkg-new}{}}}

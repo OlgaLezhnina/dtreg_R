@@ -24,6 +24,7 @@ Tba
 \itemize{
 \item \href{#method-Epic-new}{\code{Epic$new()}}
 \item \href{#method-Epic-get_template_info}{\code{Epic$get_template_info()}}
+\item \href{#method-Epic-add_context}{\code{Epic$add_context()}}
 \item \href{#method-Epic-clone}{\code{Epic$clone()}}
 }
 }
@@ -65,6 +66,19 @@ Write information from an ePIC template
 }
 \subsection{Returns}{
 Extracted information from an ePIC template
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Epic-add_context"></a>}}
+\if{latex}{\out{\hypertarget{method-Epic-add_context}{}}}
+\subsection{Method \code{add_context()}}{
+Give ePIC-specific context for writing JSON-LD
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Epic$add_context()}\if{html}{\out{</div>}}
+}
+
+\subsection{Returns}{
+Context to include in JSON-LD file
 }
 }
 \if{html}{\out{<hr>}}

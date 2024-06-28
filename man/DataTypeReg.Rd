@@ -13,6 +13,7 @@ Tba
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-DataTypeReg-get_template_info}{\code{DataTypeReg$get_template_info()}}
+\item \href{#method-DataTypeReg-add_context}{\code{DataTypeReg$add_context()}}
 \item \href{#method-DataTypeReg-clone}{\code{DataTypeReg$clone()}}
 }
 }
@@ -32,6 +33,20 @@ The function used in any DTR to get a template
 }
 \if{html}{\out{</div>}}
 }
+\subsection{Returns}{
+Not implemented, this is an interface
+Not implemented, this is an interface
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DataTypeReg-add_context"></a>}}
+\if{latex}{\out{\hypertarget{method-DataTypeReg-add_context}{}}}
+\subsection{Method \code{add_context()}}{
+The function to write context for JSON-LD
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$add_context()}\if{html}{\out{</div>}}
+}
+
 \subsection{Returns}{
 Not implemented, this is an interface
 Not implemented, this is an interface

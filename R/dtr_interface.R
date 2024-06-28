@@ -15,6 +15,12 @@ DataTypeReg <- R6::R6Class("DataTypeReg",
                              #' @return Not implemented, this is an interface
                              get_template_info = function(template_doi) {
                                #' Not implemented, this is an interface
+                             },
+                             #' @description
+                             #' The function to write context for JSON-LD
+                             #' @return Not implemented, this is an interface
+                             add_context = function() {
+                               #' Not implemented, this is an interface
                              }
                            ))
 
@@ -50,6 +56,14 @@ Epic <- R6::R6Class(
         self$template_info <- static
       }
       return(self$template_info)
+    },
+    #' @description
+    #' Give ePIC-specific context for writing JSON-LD
+    #' @return Context to include in JSON-LD file
+    add_context = function() {
+      context_info <- list()
+      context_info[["doi:"]] <- "https://doi.org/"
+      return(context_info)
     }
   )
 )
