@@ -47,6 +47,7 @@ write_r6_classes <- function(template_doi) {
         inherit = ",
         selected_class$classname,",
         public = list(
+        prefix = NULL,
         dt_name = NULL,
         dt_id = NULL",
         paste(sprintf(
@@ -55,12 +56,16 @@ write_r6_classes <- function(template_doi) {
         ), collapse = ""),
         ",
         initialize = function(
+        prefix = NA,
         dt_name = NA",
         paste(sprintf(
           ",\n%s = NA",
           format_string(templ_data[[2]]$dtp_name)
         ), collapse = ""),
         ") {
+        self$prefix = '",
+        get_prefix(template_doi),
+        "'
         self$dt_name = '",
         format_string(templ_data[[1]]$dt_name),
         "'
