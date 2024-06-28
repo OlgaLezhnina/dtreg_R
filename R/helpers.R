@@ -61,6 +61,7 @@ show_fields <- function(object) {
                "initialize",
                "template_info",
                "get_template_info",
+               "add_context",
                "dt_name",
                "dt_id")
   output <- all_fields[!(all_fields %in% written)]
