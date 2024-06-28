@@ -90,7 +90,7 @@ to_jsonld <- function(instance) {
   }
   result_all <- list()
   result_all[[instance$dt_name]] <- write_info(instance)
-  result_all[["@context"]] <- instance$add_context()
+  result_all[["@context"]] <- instance$add_context(instance$prefix)
   inst_json <-
     jsonlite::toJSON(result_all, pretty = TRUE, auto_unbox = TRUE)
   return(inst_json)

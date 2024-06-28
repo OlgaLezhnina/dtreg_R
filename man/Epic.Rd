@@ -74,9 +74,16 @@ Extracted information from an ePIC template
 \subsection{Method \code{add_context()}}{
 Give ePIC-specific context for writing JSON-LD
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$add_context()}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Epic$add_context(prefix)}\if{html}{\out{</div>}}
 }
 
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{prefix}}{The URL prefix}
+}
+\if{html}{\out{</div>}}
+}
 \subsection{Returns}{
 Context to include in JSON-LD file
 }

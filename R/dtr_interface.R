@@ -18,8 +18,9 @@ DataTypeReg <- R6::R6Class("DataTypeReg",
                              },
                              #' @description
                              #' The function to write context for JSON-LD
+                             #' @param prefix The URL prefix
                              #' @return Not implemented, this is an interface
-                             add_context = function() {
+                             add_context = function(prefix) {
                                #' Not implemented, this is an interface
                              }
                            ))
@@ -59,10 +60,11 @@ Epic <- R6::R6Class(
     },
     #' @description
     #' Give ePIC-specific context for writing JSON-LD
+    #' @param prefix The URL prefix
     #' @return Context to include in JSON-LD file
-    add_context = function() {
+    add_context = function(prefix) {
       context_info <- list()
-      context_info[["doi:"]] <- "https://doi.org/"
+      context_info[["doi:"]] <- prefix
       return(context_info)
     }
   )
