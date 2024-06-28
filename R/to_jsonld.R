@@ -72,8 +72,6 @@ df_structure <- function(df, label) {
 #'
 to_jsonld <- function(instance) {
   the$uid <- generate_uid()
-  context <- list()
-  context[["doi:"]] <- "https://doi.org/"
   write_info <- function(instance) {
     result <- list()
     result[["@id"]] <- paste0("_:n", the$uid())
@@ -92,7 +90,7 @@ to_jsonld <- function(instance) {
   }
   result_all <- list()
   result_all[[instance$dt_name]] <- write_info(instance)
-  result_all[["@context"]] <- context
+  result_all[["@context"]] <- instance$add_context()
   inst_json <-
     jsonlite::toJSON(result_all, pretty = TRUE, auto_unbox = TRUE)
   return(inst_json)
