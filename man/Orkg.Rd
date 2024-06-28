@@ -24,16 +24,10 @@ Tba
 \itemize{
 \item \href{#method-Orkg-new}{\code{Orkg$new()}}
 \item \href{#method-Orkg-get_template_info}{\code{Orkg$get_template_info()}}
+\item \href{#method-Orkg-add_context}{\code{Orkg$add_context()}}
 \item \href{#method-Orkg-clone}{\code{Orkg$clone()}}
 }
 }
-\if{html}{\out{
-<details open><summary>Inherited methods</summary>
-<ul>
-<li><span class="pkg-link" data-pkg="dtreg" data-topic="DataTypeReg" data-id="add_context"><a href='../../dtreg/html/DataTypeReg.html#method-DataTypeReg-add_context'><code>dtreg::DataTypeReg$add_context()</code></a></span></li>
-</ul>
-</details>
-}}
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orkg-new"></a>}}
 \if{latex}{\out{\hypertarget{method-Orkg-new}{}}}
@@ -72,6 +66,26 @@ Write information from an ORKG template
 }
 \subsection{Returns}{
 Extracted information from an ORKG template
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Orkg-add_context"></a>}}
+\if{latex}{\out{\hypertarget{method-Orkg-add_context}{}}}
+\subsection{Method \code{add_context()}}{
+Give ORKG-specific context for writing JSON-LD
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Orkg$add_context(prefix)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{prefix}}{The URL prefix}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+Context to include in JSON-LD file
 }
 }
 \if{html}{\out{<hr>}}

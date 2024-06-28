@@ -97,6 +97,16 @@ Orkg <- R6::R6Class(
     get_template_info = function(template_doi) {
       self$template_info <- extract_orkg(template_doi)
       return(self$template_info)
+    },
+    #' @description
+    #' Give ORKG-specific context for writing JSON-LD
+    #' @param prefix The URL prefix
+    #' @return Context to include in JSON-LD file
+    add_context = function(prefix) {
+      context_info <- list()
+      context_info[["orkgr:"]] <- paste0(prefix, "resource/")
+      context_info[["orkgp:"]] <- paste0(prefix, "property/")
+      return(context_info)
     }
   )
 )
