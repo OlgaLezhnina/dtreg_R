@@ -72,7 +72,8 @@ show_fields <- function(object) {
                "get_template_info",
                "add_context",
                "dt_name",
-               "dt_id")
+               "dt_id",
+               "prefix")
   output <- all_fields[!(all_fields %in% written)]
   if (length(output) == 0) {
     output <- NULL
