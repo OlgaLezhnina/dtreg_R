@@ -25,6 +25,7 @@ Tba
 \item \href{#method-Epic-new}{\code{Epic$new()}}
 \item \href{#method-Epic-get_template_info}{\code{Epic$get_template_info()}}
 \item \href{#method-Epic-add_context}{\code{Epic$add_context()}}
+\item \href{#method-Epic-add_dt_type}{\code{Epic$add_dt_type()}}
 \item \href{#method-Epic-clone}{\code{Epic$clone()}}
 }
 }
@@ -86,6 +87,26 @@ Give ePIC-specific context for writing JSON-LD
 }
 \subsection{Returns}{
 Context to include in JSON-LD file
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Epic-add_dt_type"></a>}}
+\if{latex}{\out{\hypertarget{method-Epic-add_dt_type}{}}}
+\subsection{Method \code{add_dt_type()}}{
+Give ePIC-specific schema type for writing JSON-LD
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Epic$add_dt_type(input)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{input}}{The schema identifier}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+Type to include in JSON-LD file
 }
 }
 \if{html}{\out{<hr>}}

@@ -71,6 +71,7 @@ show_fields <- function(object) {
                "template_info",
                "get_template_info",
                "add_context",
+               "add_dt_type",
                "dt_name",
                "dt_id",
                "prefix")

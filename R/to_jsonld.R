@@ -75,7 +75,7 @@ to_jsonld <- function(instance) {
   write_info <- function(instance) {
     result <- list()
     result[["@id"]] <- paste0("_:n", the$uid())
-    result[["@type"]] <- paste0("doi:", instance$dt_id)
+    result[["@type"]] <- instance$add_dt_type(instance$dt_id)
     result[["label"]] <- instance$label
     field_list <- show_fields(instance)
     for (field in field_list) {

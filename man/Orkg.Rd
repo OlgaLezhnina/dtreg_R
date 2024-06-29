@@ -25,6 +25,7 @@ Tba
 \item \href{#method-Orkg-new}{\code{Orkg$new()}}
 \item \href{#method-Orkg-get_template_info}{\code{Orkg$get_template_info()}}
 \item \href{#method-Orkg-add_context}{\code{Orkg$add_context()}}
+\item \href{#method-Orkg-add_dt_type}{\code{Orkg$add_dt_type()}}
 \item \href{#method-Orkg-clone}{\code{Orkg$clone()}}
 }
 }
@@ -86,6 +87,26 @@ Give ORKG-specific context for writing JSON-LD
 }
 \subsection{Returns}{
 Context to include in JSON-LD file
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Orkg-add_dt_type"></a>}}
+\if{latex}{\out{\hypertarget{method-Orkg-add_dt_type}{}}}
+\subsection{Method \code{add_dt_type()}}{
+Give ORKG-specific schema type for writing JSON-LD
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Orkg$add_dt_type(input)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{input}}{The schema identifier}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+Type to include in JSON-LD file
 }
 }
 \if{html}{\out{<hr>}}

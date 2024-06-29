@@ -66,6 +66,14 @@ Epic <- R6::R6Class(
       context_info <- list()
       context_info[["doi:"]] <- prefix
       return(context_info)
+    },
+    #' @description
+    #' Give ePIC-specific schema type for writing JSON-LD
+    #' @param input The schema identifier
+    #' @return Type to include in JSON-LD file
+    add_dt_type = function(input) {
+      dt_type <- paste0("doi:", input)
+      return(dt_type)
     }
   )
 )
@@ -107,6 +115,14 @@ Orkg <- R6::R6Class(
       context_info[["orkgr:"]] <- paste0(prefix, "resource/")
       context_info[["orkgp:"]] <- paste0(prefix, "property/")
       return(context_info)
+    },
+    #' @description
+    #' Give ORKG-specific schema type for writing JSON-LD
+    #' @param input The schema identifier
+    #' @return Type to include in JSON-LD file
+    add_dt_type = function(input) {
+      dt_type <- paste0("orkgr:", input)
+      return(dt_type)
     }
   )
 )
