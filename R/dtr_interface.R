@@ -69,11 +69,19 @@ Epic <- R6::R6Class(
     },
     #' @description
     #' Give ePIC-specific schema type for writing JSON-LD
-    #' @param input The schema identifier
+    #' @param identifier The schema identifier
     #' @return Type to include in JSON-LD file
-    add_dt_type = function(input) {
-      dt_type <- paste0("doi:", input)
+    add_dt_type = function(identifier) {
+      dt_type <- paste0("doi:", identifier)
       return(dt_type)
+    },
+    #' @description
+    #' Give ePIC-specific property type for writing JSON-LD
+    #' @param identifier The property identifier
+    #' @return Type to include in JSON-LD file
+    add_dtp_type = function(identifier) {
+      dtp_type <- paste0("doi:", identifier)
+      return(dtp_type)
     }
   )
 )
@@ -118,11 +126,19 @@ Orkg <- R6::R6Class(
     },
     #' @description
     #' Give ORKG-specific schema type for writing JSON-LD
-    #' @param input The schema identifier
+    #' @param identifier The schema identifier
     #' @return Type to include in JSON-LD file
-    add_dt_type = function(input) {
-      dt_type <- paste0("orkgr:", input)
+    add_dt_type = function(identifier) {
+      dt_type <- paste0("orkgr:", identifier)
       return(dt_type)
+    },
+    #' @description
+    #' Give ORKG-specific property type for writing JSON-LD
+    #' @param identifier The property identifier
+    #' @return Type to include in JSON-LD file
+    add_dtp_type = function(identifier) {
+      dtp_type <- paste0("orkgp:", identifier)
+      return(dtp_type)
     }
   )
 )

@@ -26,6 +26,7 @@ Tba
 \item \href{#method-Epic-get_template_info}{\code{Epic$get_template_info()}}
 \item \href{#method-Epic-add_context}{\code{Epic$add_context()}}
 \item \href{#method-Epic-add_dt_type}{\code{Epic$add_dt_type()}}
+\item \href{#method-Epic-add_dtp_type}{\code{Epic$add_dtp_type()}}
 \item \href{#method-Epic-clone}{\code{Epic$clone()}}
 }
 }
@@ -95,13 +96,33 @@ Context to include in JSON-LD file
 \subsection{Method \code{add_dt_type()}}{
 Give ePIC-specific schema type for writing JSON-LD
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$add_dt_type(input)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Epic$add_dt_type(identifier)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{input}}{The schema identifier}
+\item{\code{identifier}}{The schema identifier}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+Type to include in JSON-LD file
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Epic-add_dtp_type"></a>}}
+\if{latex}{\out{\hypertarget{method-Epic-add_dtp_type}{}}}
+\subsection{Method \code{add_dtp_type()}}{
+Give ePIC-specific property type for writing JSON-LD
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Epic$add_dtp_type(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{The property identifier}
 }
 \if{html}{\out{</div>}}
 }
