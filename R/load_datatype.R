@@ -40,47 +40,28 @@ write_r6_classes <- function(template_doi) {
   for (t in seq_along(templ_info)) {
     templ_data <- templ_info[[t]]
     r6_template <-
-      paste0(
-        "R6::R6Class('",
+      R6::R6Class(
         paste0(format_string(templ_data[[1]]$dt_name), "_r6"),
-        "',
-        inherit = ",
-        selected_class$classname,",
-        public = list(
-        prefix = NULL,
-        dt_name = NULL,
-        dt_id = NULL",
-        paste(sprintf(
-          ",\n%s = NULL",
-          format_string(templ_data[[2]]$dtp_name)
-        ), collapse = ""),
-        ",
-        initialize = function(
-        prefix = NA,
-        dt_name = NA",
-        paste(sprintf(
-          ",\n%s = NA",
-          format_string(templ_data[[2]]$dtp_name)
-        ), collapse = ""),
-        ") {
-        self$prefix = '",
-        get_prefix(template_doi),
-        "'
-        self$dt_name = '",
-        format_string(templ_data[[1]]$dt_name),
-        "'
-        self$dt_id = '",
-        templ_data[[1]]$dt_id,
-        "'",
-        paste(sprintf(
-          "\nself$%1$s = %1$s",
-          format_string(templ_data[[2]]$dtp_name)
-        ),
-        collapse = ""),
-        "}))"
+        inherit = selected_class,
+        public = c(
+          list(
+            prefix = get_prefix(template_doi),
+            dt_name = format_string(templ_data[[1]]$dt_name),
+            dt_id = templ_data[[1]]$dt_id,
+            prop_names = format_string(templ_data[[2]]$dtp_name),
+            initialize = function(...) {
+              args <- list(...)
+              for (dtp_name in self$prop_names) {
+                self[[dtp_name]] <- args[[dtp_name]]
+              }
+            }
+          ),
+          sapply(format_string(templ_data[[2]]$dtp_name), function(x)
+            NULL)
+        )
       )
-    result[[format_string(templ_data[[1]]$dt_name)]] <-
-      eval(parse(text = r6_template))
+    result[[format_string(templ_data[[1]]$dt_name)]] <- r6_template
   }
   return(result)
 }
+
