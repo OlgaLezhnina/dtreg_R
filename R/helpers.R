@@ -75,7 +75,8 @@ show_fields <- function(object) {
                "add_dtp_type",
                "dt_name",
                "dt_id",
-               "prefix")
+               "prefix",
+               "prop_names")
   output <- all_fields[!(all_fields %in% written)]
   if (length(output) == 0) {
     output <- NULL
