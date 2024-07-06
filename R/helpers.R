@@ -15,7 +15,11 @@ format_string  <- function(text) {
 #'
 get_prefix <- function(string) {
   part <- strsplit(string, split = "[/ //]+")[[1]]
-  prefix <- paste0(part[[1]], "//", part[[2]], "/")
+  if (stringr::str_detect(part[[2]], "orkg.org")) {
+    prefix <- paste0(part[[1]], "//", part[[2]], "/")
+  } else if (part[[3]] == "21.T11969") {
+    prefix <- paste0(part[[1]], "//", part[[2]], "/", part[[3]], "/")
+  }
   return(prefix)
 }
 
