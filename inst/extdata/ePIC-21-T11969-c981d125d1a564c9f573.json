@@ -3,7 +3,7 @@
     [
       {
         "dt_name": "String",
-        "dt_id": "21.T11969/3df63b7acb0522da685d",
+        "dt_id": "3df63b7acb0522da685d",
         "dt_class": "String"
       }
     ],
@@ -13,21 +13,21 @@
     [
       {
         "dt_name": "software",
-        "dt_id": "21.T11969/c981d125d1a564c9f573",
+        "dt_id": "c981d125d1a564c9f573",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "21.T11969/c981d125d1a564c9f573#label",
+        "dtp_id": "c981d125d1a564c9f573#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "versionInfo",
-        "dtp_id": "21.T11969/c981d125d1a564c9f573#versionInfo",
+        "dtp_id": "c981d125d1a564c9f573#versionInfo",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"

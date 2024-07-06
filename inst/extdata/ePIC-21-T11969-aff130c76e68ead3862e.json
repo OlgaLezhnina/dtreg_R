@@ -3,7 +3,7 @@
     [
       {
         "dt_name": "String",
-        "dt_id": "21.T11969/3df63b7acb0522da685d",
+        "dt_id": "3df63b7acb0522da685d",
         "dt_class": "String"
       }
     ],
@@ -13,14 +13,14 @@
     [
       {
         "dt_name": "URL",
-        "dt_id": "21.T11969/e0efc41346cda4ba84ca",
+        "dt_id": "e0efc41346cda4ba84ca",
         "dt_class": "String"
       }
     ],
     [
       {
         "dtp_name": "pattern",
-        "dtp_id": "21.T11969/e0efc41346cda4ba84ca#pattern",
+        "dtp_id": "e0efc41346cda4ba84ca#pattern",
         "dtp_card_min": null,
         "dtp_card_max": null,
         "dtp_value_type": "^http(s)?:(\\/\\/([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?$"
@@ -31,28 +31,28 @@
     [
       {
         "dt_name": "statistical_variable",
-        "dt_id": "21.T11969/b95ff265a13137c31655",
+        "dt_id": "b95ff265a13137c31655",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "21.T11969/b95ff265a13137c31655#label",
+        "dtp_id": "b95ff265a13137c31655#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "has_format",
-        "dtp_id": "21.T11969/b95ff265a13137c31655#has_format",
+        "dtp_id": "b95ff265a13137c31655#has_format",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "seeAlso",
-        "dtp_id": "21.T11969/b95ff265a13137c31655#seeAlso",
+        "dtp_id": "b95ff265a13137c31655#seeAlso",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
@@ -63,14 +63,14 @@
     [
       {
         "dt_name": "integer_in_string",
-        "dt_id": "21.T11969/fb2e379f820c6f8f9e82",
+        "dt_id": "fb2e379f820c6f8f9e82",
         "dt_class": "String"
       }
     ],
     [
       {
         "dtp_name": "pattern",
-        "dtp_id": "21.T11969/fb2e379f820c6f8f9e82#pattern",
+        "dtp_id": "fb2e379f820c6f8f9e82#pattern",
         "dtp_card_min": null,
         "dtp_card_max": null,
         "dtp_value_type": "^[0-9]+$"
@@ -81,21 +81,21 @@
     [
       {
         "dt_name": "sample_size",
-        "dt_id": "21.T11969/a002397ab31c7535f1be",
+        "dt_id": "a002397ab31c7535f1be",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "21.T11969/a002397ab31c7535f1be#label",
+        "dtp_id": "a002397ab31c7535f1be#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "has_specified_numeric_value",
-        "dtp_id": "21.T11969/a002397ab31c7535f1be#has_specified_numeric_value",
+        "dtp_id": "a002397ab31c7535f1be#has_specified_numeric_value",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
@@ -106,21 +106,21 @@
     [
       {
         "dt_name": "Column",
-        "dt_id": "21.T11969/65ba00e95e60fb8971e6",
+        "dt_id": "65ba00e95e60fb8971e6",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "21.T11969/65ba00e95e60fb8971e6#label",
+        "dtp_id": "65ba00e95e60fb8971e6#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "number",
-        "dtp_id": "21.T11969/65ba00e95e60fb8971e6#number",
+        "dtp_id": "65ba00e95e60fb8971e6#number",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
@@ -131,28 +131,28 @@
     [
       {
         "dt_name": "Cell",
-        "dt_id": "21.T11969/4607bc7c42ac8db29bfc",
+        "dt_id": "4607bc7c42ac8db29bfc",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "21.T11969/4607bc7c42ac8db29bfc#label",
+        "dtp_id": "4607bc7c42ac8db29bfc#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "value",
-        "dtp_id": "21.T11969/4607bc7c42ac8db29bfc#value",
+        "dtp_id": "4607bc7c42ac8db29bfc#value",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "column",
-        "dtp_id": "21.T11969/4607bc7c42ac8db29bfc#column",
+        "dtp_id": "4607bc7c42ac8db29bfc#column",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
@@ -163,28 +163,28 @@
     [
       {
         "dt_name": "Row",
-        "dt_id": "21.T11969/9bf7a8e8909bfd491b38",
+        "dt_id": "9bf7a8e8909bfd491b38",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "21.T11969/9bf7a8e8909bfd491b38#label",
+        "dtp_id": "9bf7a8e8909bfd491b38#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "number",
-        "dtp_id": "21.T11969/9bf7a8e8909bfd491b38#number",
+        "dtp_id": "9bf7a8e8909bfd491b38#number",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
       },
       {
         "dtp_name": "cells",
-        "dtp_id": "21.T11969/9bf7a8e8909bfd491b38#cells",
+        "dtp_id": "9bf7a8e8909bfd491b38#cells",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/4607bc7c42ac8db29bfc"
@@ -195,28 +195,28 @@
     [
       {
         "dt_name": "Table",
-        "dt_id": "21.T11969/0424f6e7026fa4bc2c4a",
+        "dt_id": "0424f6e7026fa4bc2c4a",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "21.T11969/0424f6e7026fa4bc2c4a#label",
+        "dtp_id": "0424f6e7026fa4bc2c4a#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "columns",
-        "dtp_id": "21.T11969/0424f6e7026fa4bc2c4a#columns",
+        "dtp_id": "0424f6e7026fa4bc2c4a#columns",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/65ba00e95e60fb8971e6"
       },
       {
         "dtp_name": "rows",
-        "dtp_id": "21.T11969/0424f6e7026fa4bc2c4a#rows",
+        "dtp_id": "0424f6e7026fa4bc2c4a#rows",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/9bf7a8e8909bfd491b38"
@@ -227,42 +227,42 @@
     [
       {
         "dt_name": "data_input",
-        "dt_id": "21.T11969/aff130c76e68ead3862e",
+        "dt_id": "aff130c76e68ead3862e",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "21.T11969/aff130c76e68ead3862e#label",
+        "dtp_id": "aff130c76e68ead3862e#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "source",
-        "dtp_id": "21.T11969/aff130c76e68ead3862e#source",
+        "dtp_id": "aff130c76e68ead3862e#source",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
       },
       {
         "dtp_name": "has_part",
-        "dtp_id": "21.T11969/aff130c76e68ead3862e#has_part",
+        "dtp_id": "aff130c76e68ead3862e#has_part",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/b95ff265a13137c31655"
       },
       {
         "dtp_name": "has_characteristic",
-        "dtp_id": "21.T11969/aff130c76e68ead3862e#has_characteristic",
+        "dtp_id": "aff130c76e68ead3862e#has_characteristic",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/a002397ab31c7535f1be"
       },
       {
         "dtp_name": "has_format",
-        "dtp_id": "21.T11969/aff130c76e68ead3862e#has_format",
+        "dtp_id": "aff130c76e68ead3862e#has_format",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/0424f6e7026fa4bc2c4a"

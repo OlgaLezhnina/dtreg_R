@@ -3,7 +3,7 @@
     [
       {
         "dt_name": "String",
-        "dt_id": "21.T11969/3df63b7acb0522da685d",
+        "dt_id": "3df63b7acb0522da685d",
         "dt_class": "String"
       }
     ],
@@ -13,14 +13,14 @@
     [
       {
         "dt_name": "URL",
-        "dt_id": "21.T11969/e0efc41346cda4ba84ca",
+        "dt_id": "e0efc41346cda4ba84ca",
         "dt_class": "String"
       }
     ],
     [
       {
         "dtp_name": "pattern",
-        "dtp_id": "21.T11969/e0efc41346cda4ba84ca#pattern",
+        "dtp_id": "e0efc41346cda4ba84ca#pattern",
         "dtp_card_min": null,
         "dtp_card_max": null,
         "dtp_value_type": "^http(s)?:(\\/\\/([^/?#]*))?([^?#]*)(\\?([^#]*))?(#(.*))?$"
@@ -31,28 +31,28 @@
     [
       {
         "dt_name": "statistical_variable",
-        "dt_id": "21.T11969/b95ff265a13137c31655",
+        "dt_id": "b95ff265a13137c31655",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "21.T11969/b95ff265a13137c31655#label",
+        "dtp_id": "b95ff265a13137c31655#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "has_format",
-        "dtp_id": "21.T11969/b95ff265a13137c31655#has_format",
+        "dtp_id": "b95ff265a13137c31655#has_format",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "seeAlso",
-        "dtp_id": "21.T11969/b95ff265a13137c31655#seeAlso",
+        "dtp_id": "b95ff265a13137c31655#seeAlso",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
@@ -63,21 +63,21 @@
     [
       {
         "dt_name": "outcome_variable",
-        "dt_id": "21.T11969/540c1a27569dc7ce906b",
+        "dt_id": "540c1a27569dc7ce906b",
         "dt_class": "Object"
       }
     ],
     [
       {
         "dtp_name": "label",
-        "dtp_id": "21.T11969/540c1a27569dc7ce906b#label",
+        "dtp_id": "540c1a27569dc7ce906b#label",
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "requires",
-        "dtp_id": "21.T11969/540c1a27569dc7ce906b#requires",
+        "dtp_id": "540c1a27569dc7ce906b#requires",
         "dtp_card_min": 1,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/b95ff265a13137c31655"

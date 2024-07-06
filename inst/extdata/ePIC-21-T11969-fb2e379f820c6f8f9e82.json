@@ -3,14 +3,14 @@
     [
       {
         "dt_name": "integer_in_string",
-        "dt_id": "21.T11969/fb2e379f820c6f8f9e82",
+        "dt_id": "fb2e379f820c6f8f9e82",
         "dt_class": "String"
       }
     ],
     [
       {
         "dtp_name": "pattern",
-        "dtp_id": "21.T11969/fb2e379f820c6f8f9e82#pattern",
+        "dtp_id": "fb2e379f820c6f8f9e82#pattern",
         "dtp_card_min": null,
         "dtp_card_max": null,
         "dtp_value_type": "^[0-9]+$"
