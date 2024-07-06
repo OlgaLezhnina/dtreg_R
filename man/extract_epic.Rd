@@ -4,10 +4,10 @@
 \alias{extract_epic}
 \title{Title}
 \usage{
-extract_epic(dt_id)
+extract_epic(datatype_id)
 }
 \arguments{
-\item{dt_id}{The DOI of an ePIC schema}
+\item{datatype_id}{The DOI of an ePIC schema}
 }
 \value{
 An R object that contains information about the ePIC schema

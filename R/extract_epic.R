@@ -1,14 +1,14 @@
 #' Title
 #'
-#' @param dt_id The DOI of an ePIC schema
+#' @param datatype_id The DOI of an ePIC schema
 #' @return An R object that contains information about the ePIC schema
 #'
-extract_epic <- function(dt_id) {
+extract_epic <- function(datatype_id) {
   extract_all <- list()
-  extractor_function <- function(dt_id) {
-    info <- request_dtr(paste0(dt_id, "?locatt=view:json"))
+  extractor_function <- function(datatype_id) {
+    info <- request_dtr(paste0(datatype_id, "?locatt=view:json"))
     dt_name <- info$name
-    dt_id <- info$Identifier
+    dt_id <- stringr::str_split_i(info$Identifier, "/", 2)
     dt_class <- info$Schema$Type
     schema_df <- data.frame(dt_name, dt_id, dt_class)
     i <- 0
@@ -43,6 +43,6 @@ extract_epic <- function(dt_id) {
     extracted <- list(schema_df, all_props)
     extract_all[[dt_name]] <<- extracted
   }
-  extractor_function(dt_id)
+  extractor_function(datatype_id)
   return(extract_all)
 }
