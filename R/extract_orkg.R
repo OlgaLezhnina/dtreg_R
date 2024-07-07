@@ -11,7 +11,7 @@ extract_orkg <- function(datatype_id) {
   extractor_function <- function(resource_id) {
     info <-
       request_dtr(paste0(orkg_hostname, "/api/templates/", resource_id))
-    dt_name <- info$label
+    dt_name <- format_string(info$label)
     dt_id <- info$id
     dt_class <- info$target_class$id
     schema_df <- data.frame(dt_name, dt_id, dt_class)
@@ -26,7 +26,7 @@ extract_orkg <- function(datatype_id) {
     )
     for (prop in info$properties) {
       specific_prop <- list()
-      specific_prop[["dtp_name"]] <- prop$path$label
+      specific_prop[["dtp_name"]] <- format_string(prop$path$label)
       specific_prop[["dtp_id"]] <- prop$path$id
       specific_prop[["dtp_card_min"]] <- prop$min_count
       specific_prop[["dtp_card_max"]] <- prop$max_count

@@ -7,7 +7,7 @@ extract_epic <- function(datatype_id) {
   extract_all <- list()
   extractor_function <- function(datatype_id) {
     info <- request_dtr(paste0(datatype_id, "?locatt=view:json"))
-    dt_name <- info$name
+    dt_name <- format_string(info$name)
     dt_id <- stringr::str_split_i(info$Identifier, "/", 2)
     dt_class <- info$Schema$Type
     schema_df <- data.frame(dt_name, dt_id, dt_class)
@@ -23,14 +23,14 @@ extract_epic <- function(datatype_id) {
     for (prop in info$Schema$Properties) {
       specific_prop <- list()
       if (is.null(prop$Type)) {
-        specific_prop[["dtp_name"]] <- prop$Property
-        specific_prop[["dtp_id"]] <- paste0(dt_id, "#", prop$Property)
+        specific_prop[["dtp_name"]] <- format_string(prop$Property)
+        specific_prop[["dtp_id"]] <- paste0(dt_id, "#", format_string(prop$Property))
         specific_prop[["dtp_card_min"]] <- NA
         specific_prop[["dtp_card_max"]] <- NA
         specific_prop[["dtp_value_type"]] <- prop$Value
       } else {
-        specific_prop[["dtp_name"]] <- prop$Name
-        specific_prop[["dtp_id"]] <- paste0(dt_id, "#", prop$Name)
+        specific_prop[["dtp_name"]] <- format_string(prop$Name)
+        specific_prop[["dtp_id"]] <- paste0(dt_id, "#", format_string(prop$Name))
         card <- range_split(prop$Properties$Cardinality)
         specific_prop[["dtp_card_min"]] <- card[["min"]]
         specific_prop[["dtp_card_max"]] <- card[["max"]]

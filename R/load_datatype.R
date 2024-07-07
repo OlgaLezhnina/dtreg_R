@@ -41,14 +41,14 @@ write_r6_classes <- function(template_doi) {
     templ_data <- templ_info[[t]]
     r6_template <-
       R6::R6Class(
-        paste0(format_string(templ_data[[1]]$dt_name), "_r6"),
+        paste0(templ_data[[1]]$dt_name, "_r6"),
         inherit = selected_class,
         public = c(
           list(
             prefix = get_prefix(template_doi),
-            dt_name = format_string(templ_data[[1]]$dt_name),
+            dt_name = templ_data[[1]]$dt_name,
             dt_id = templ_data[[1]]$dt_id,
-            prop_names = format_string(templ_data[[2]]$dtp_name),
+            prop_names = templ_data[[2]]$dtp_name,
             prop_info = templ_data[[2]],
             initialize = function(...) {
               args <- list(...)
@@ -57,7 +57,7 @@ write_r6_classes <- function(template_doi) {
               }
             }
           ),
-          sapply(format_string(templ_data[[2]]$dtp_name), function(x)
+          sapply(templ_data[[2]]$dtp_name, function(x)
             NULL)
         )
       )
@@ -65,4 +65,3 @@ write_r6_classes <- function(template_doi) {
   }
   return(result)
 }
-
