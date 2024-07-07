@@ -2,7 +2,7 @@
 #' @param input Can be NA, a dataframe, a tuple, or another input
 #' @return An R object to be used by to_jsonld function
 #'
-differ_type <- function(input) {
+differ_input <- function(input) {
   if (methods::is(input, "data.frame")) {
     output <- df_structure(df = input, label = "Table")
   } else if (methods::is(input, "tuple")) {
@@ -76,17 +76,22 @@ to_jsonld <- function(instance) {
     result[["@type"]] <- instance$add_dt_type(instance$dt_id)
     result[["label"]] <- instance$label
     field_list <- show_fields(instance)
+    prop_result <- list()
     for (field in field_list) {
       instance_field <- instance[[field]]
-      if (is.null(instance_field)){
+      prop_id <-
+        instance$prop_info$dtp_id[instance$prop_info$dtp_name == field]
+      if (is.null(instance_field)) {
         next
       }
       else if (inherits(instance_field, "R6")) {
         result[[field]] <- write_info(instance_field)
       } else {
-        result[[field]] <- differ_type(instance_field)
+        result[[field]] <- differ_input(instance_field)
       }
+      prop_result[[field]] <- instance$add_dtp_type(prop_id)
     }
+    result[["types_of_props"]] <- prop_result
     return(result)
   }
   result_all <- list()
