@@ -49,6 +49,7 @@ write_r6_classes <- function(template_doi) {
             dt_name = format_string(templ_data[[1]]$dt_name),
             dt_id = templ_data[[1]]$dt_id,
             prop_names = format_string(templ_data[[2]]$dtp_name),
+            prop_info = templ_data[[2]],
             initialize = function(...) {
               args <- list(...)
               for (dtp_name in self$prop_names) {
