@@ -77,6 +77,7 @@ show_fields <- function(object) {
                "add_context",
                "add_dt_type",
                "add_dtp_type",
+               "add_df_constants",
                "dt_name",
                "dt_id",
                "prefix",

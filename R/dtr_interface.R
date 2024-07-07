@@ -82,6 +82,16 @@ Epic <- R6::R6Class(
     add_dtp_type = function(identifier) {
       dtp_type <- paste0("doi:", identifier)
       return(dtp_type)
+    },
+    #' @description
+    #' Give ORKG-specific context for writing JSON-LD
+    #' @param prefix The URL prefix
+    #' @return Context to include in JSON-LD file
+    add_df_constants = function() {
+      df_constants <- list()
+      df_constants[["row"]] <- "row_epic"
+      df_constants[["column"]] <- "column_epic"
+      return(df_constants)
     }
   )
 )
@@ -139,6 +149,16 @@ Orkg <- R6::R6Class(
     add_dtp_type = function(identifier) {
       dtp_type <- paste0("orkgp:", identifier)
       return(dtp_type)
+    },
+    #' @description
+    #' Give ORKG-specific context for writing JSON-LD
+    #' @param prefix The URL prefix
+    #' @return Context to include in JSON-LD file
+    add_df_constants = function() {
+      df_constants <- list()
+      df_constants[["row"]] <- "row_orkg"
+      df_constants[["column"]] <- "column_orkg"
+      return(df_constants)
     }
   )
 )

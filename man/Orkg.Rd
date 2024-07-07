@@ -27,6 +27,7 @@ Tba
 \item \href{#method-Orkg-add_context}{\code{Orkg$add_context()}}
 \item \href{#method-Orkg-add_dt_type}{\code{Orkg$add_dt_type()}}
 \item \href{#method-Orkg-add_dtp_type}{\code{Orkg$add_dtp_type()}}
+\item \href{#method-Orkg-add_df_constants}{\code{Orkg$add_df_constants()}}
 \item \href{#method-Orkg-clone}{\code{Orkg$clone()}}
 }
 }
@@ -128,6 +129,26 @@ Give ORKG-specific property type for writing JSON-LD
 }
 \subsection{Returns}{
 Type to include in JSON-LD file
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-Orkg-add_df_constants"></a>}}
+\if{latex}{\out{\hypertarget{method-Orkg-add_df_constants}{}}}
+\subsection{Method \code{add_df_constants()}}{
+Give ORKG-specific context for writing JSON-LD
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{Orkg$add_df_constants()}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{prefix}}{The URL prefix}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+Context to include in JSON-LD file
 }
 }
 \if{html}{\out{<hr>}}

@@ -27,8 +27,7 @@ df_structure <- function(df, label) {
   result[["columns"]] <- list()
   for (i in seq_len(ncol(df))) {
     column <- list()
-    column[["@type"]] <-
-      "https://doi.org/21.T11969/65ba00e95e60fb8971e6"
+    column[["@type"]] <- the$constants$column
     column[["titles"]] <- colnames(df)[i]
     column[["number"]] <- i
     column[["@id"]] <- paste0("_:n", the$uid())
@@ -69,6 +68,7 @@ df_structure <- function(df, label) {
 #' @examples
 #'
 to_jsonld <- function(instance) {
+  the$constants <- instance$add_df_constants()
   the$uid <- generate_uid()
   write_info <- function(instance) {
     result <- list()
