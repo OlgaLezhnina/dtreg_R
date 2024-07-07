@@ -7,8 +7,6 @@ differ_type <- function(input) {
     output <- df_structure(df = input, label = "Table")
   } else if (methods::is(input, "tuple")) {
     output <- df_structure(df = input[[1]], label = input[[2]])
-  } else if (length(input) == 1 && is.na(input)) {
-    output <- NULL
   } else {
     output <- list(input)
   }
@@ -80,7 +78,10 @@ to_jsonld <- function(instance) {
     field_list <- show_fields(instance)
     for (field in field_list) {
       instance_field <- instance[[field]]
-      if (inherits(instance_field, "R6")) {
+      if (is.null(instance_field)){
+        next
+      }
+      else if (inherits(instance_field, "R6")) {
         result[[field]] <- write_info(instance_field)
       } else {
         result[[field]] <- differ_type(instance_field)
