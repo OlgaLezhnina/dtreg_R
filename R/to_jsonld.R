@@ -76,22 +76,20 @@ to_jsonld <- function(instance) {
     result[["@type"]] <- instance$add_dt_type(instance$dt_id)
     result[["label"]] <- instance$label
     field_list <- show_fields(instance)
-    prop_result <- list()
     for (field in field_list) {
       instance_field <- instance[[field]]
       prop_id <-
         instance$prop_info$dtp_id[instance$prop_info$dtp_name == field]
+      prop_type <- instance$add_dtp_type(prop_id)
       if (is.null(instance_field)) {
         next
       }
       else if (inherits(instance_field, "R6")) {
-        result[[field]] <- write_info(instance_field)
+        result[[prop_type]] <- write_info(instance_field)
       } else {
-        result[[field]] <- differ_input(instance_field)
+        result[[prop_type]] <- differ_input(instance_field)
       }
-      prop_result[[field]] <- instance$add_dtp_type(prop_id)
     }
-    result[["types_of_props"]] <- prop_result
     return(result)
   }
   result_all <- list()
