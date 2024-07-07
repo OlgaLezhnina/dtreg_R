@@ -80,7 +80,8 @@ show_fields <- function(object) {
                "dt_name",
                "dt_id",
                "prefix",
-               "prop_names")
+               "prop_names",
+               "prop_info")
   output <- all_fields[!(all_fields %in% written)]
   if (length(output) == 0) {
     output <- NULL
