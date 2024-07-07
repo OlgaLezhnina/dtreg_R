@@ -1,8 +1,8 @@
 {
-  "URL": [
+  "url": [
     [
       {
-        "dt_name": "URL",
+        "dt_name": "url",
         "dt_id": "e0efc41346cda4ba84ca",
         "dt_class": "String"
       }

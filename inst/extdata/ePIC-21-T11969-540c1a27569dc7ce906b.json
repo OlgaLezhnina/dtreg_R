@@ -1,18 +1,18 @@
 {
-  "String": [
+  "string": [
     [
       {
-        "dt_name": "String",
+        "dt_name": "string",
         "dt_id": "3df63b7acb0522da685d",
         "dt_class": "String"
       }
     ],
     []
   ],
-  "URL": [
+  "url": [
     [
       {
-        "dt_name": "URL",
+        "dt_name": "url",
         "dt_id": "e0efc41346cda4ba84ca",
         "dt_class": "String"
       }
@@ -51,8 +51,8 @@
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
-        "dtp_name": "seeAlso",
-        "dtp_id": "b95ff265a13137c31655#seeAlso",
+        "dtp_name": "seealso",
+        "dtp_id": "b95ff265a13137c31655#seealso",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"

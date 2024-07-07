@@ -1,8 +1,8 @@
 {
-  "String": [
+  "string": [
     [
       {
-        "dt_name": "String",
+        "dt_name": "string",
         "dt_id": "3df63b7acb0522da685d",
         "dt_class": "String"
       }
@@ -27,10 +27,10 @@
       }
     ]
   ],
-  "Column": [
+  "column": [
     [
       {
-        "dt_name": "Column",
+        "dt_name": "column",
         "dt_id": "65ba00e95e60fb8971e6",
         "dt_class": "Object"
       }

@@ -1,18 +1,18 @@
 {
-  "String": [
+  "string": [
     [
       {
-        "dt_name": "String",
+        "dt_name": "string",
         "dt_id": "3df63b7acb0522da685d",
         "dt_class": "String"
       }
     ],
     []
   ],
-  "URL": [
+  "url": [
     [
       {
-        "dt_name": "URL",
+        "dt_name": "url",
         "dt_id": "e0efc41346cda4ba84ca",
         "dt_class": "String"
       }
@@ -45,10 +45,10 @@
       }
     ]
   ],
-  "Column": [
+  "column": [
     [
       {
-        "dt_name": "Column",
+        "dt_name": "column",
         "dt_id": "65ba00e95e60fb8971e6",
         "dt_class": "Object"
       }
@@ -70,10 +70,10 @@
       }
     ]
   ],
-  "Cell": [
+  "cell": [
     [
       {
-        "dt_name": "Cell",
+        "dt_name": "cell",
         "dt_id": "4607bc7c42ac8db29bfc",
         "dt_class": "Object"
       }
@@ -102,10 +102,10 @@
       }
     ]
   ],
-  "Row": [
+  "row": [
     [
       {
-        "dt_name": "Row",
+        "dt_name": "row",
         "dt_id": "9bf7a8e8909bfd491b38",
         "dt_class": "Object"
       }
@@ -134,10 +134,10 @@
       }
     ]
   ],
-  "Table": [
+  "table": [
     [
       {
-        "dt_name": "Table",
+        "dt_name": "table",
         "dt_id": "0424f6e7026fa4bc2c4a",
         "dt_class": "Object"
       }
