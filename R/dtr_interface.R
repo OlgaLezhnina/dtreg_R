@@ -89,8 +89,10 @@ Epic <- R6::R6Class(
     #' @return Context to include in JSON-LD file
     add_df_constants = function() {
       df_constants <- list()
-      df_constants[["row"]] <- "row_epic"
-      df_constants[["column"]] <- "column_epic"
+      df_constants[["table"]] <- "doi:21.T11969/0424f6e7026fa4bc2c4a"
+      df_constants[["row"]] <- "doi:9bf7a8e8909bfd491b38"
+      df_constants[["column"]] <- "doi:65ba00e95e60fb8971e6"
+      df_constants[["cell"]] <- "doi:4607bc7c42ac8db29bfc"
       return(df_constants)
     }
   )
@@ -156,8 +158,11 @@ Orkg <- R6::R6Class(
     #' @return Context to include in JSON-LD file
     add_df_constants = function() {
       df_constants <- list()
-      df_constants[["row"]] <- "row_orkg"
-      df_constants[["column"]] <- "column_orkg"
+      df_constants <- list()
+      df_constants[["table"]] <- "orkgp:TODO"
+      df_constants[["row"]] <- "orkgp:CSVW_Rows"
+      df_constants[["column"]] <- "orkgp:CSVW_Column"
+      df_constants[["cell"]] <- "orkgp:CSVW_Cell"
       return(df_constants)
     }
   )

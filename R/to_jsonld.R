@@ -20,8 +20,7 @@ differ_input <- function(input) {
 #'
 df_structure <- function(df, label) {
   result <- list()
-  result[["@type"]] <-
-    "https://doi.org/21.T11969/0424f6e7026fa4bc2c4a"
+  result[["@type"]] <- the$constants$table
   result[["label"]] <- label
   index <- list()
   result[["columns"]] <- list()
@@ -38,15 +37,13 @@ df_structure <- function(df, label) {
   result[["rows"]] <- list()
   for (i in seq_len(nrow(df))) {
     row <- list()
-    row[["@type"]] <-
-      "https://doi.org/21.T11969/9bf7a8e8909bfd491b38"
+    row[["@type"]] <- the$constants$row
     row[["number"]] <- i
     row[["titles"]] <- rownames(df)[i]
     row[["cells"]] <- list()
     for (y in seq_len(ncol(df))) {
       cell <- list()
-      cell[["@type"]] <-
-        "https://doi.org/21.T11969/4607bc7c42ac8db29bfc"
+      cell[["@type"]] <- the$constants$cell
       if (!is.null(df[[y]][[i]])) {
         cell[["value"]] <- as.character(df[[y]][[i]])
       } else {
