@@ -141,6 +141,7 @@ Orkg <- R6::R6Class(
     #' @return Context to include in JSON-LD file
     add_context = function(prefix) {
       context_info <- list()
+      context_info[["orkgc:"]] <- paste0(prefix, "class/")
       context_info[["orkgr:"]] <- paste0(prefix, "resource/")
       context_info[["orkgp:"]] <- paste0(prefix, "property/")
       return(context_info)
@@ -169,17 +170,17 @@ Orkg <- R6::R6Class(
       df_constants <- list()
       df_constants <- list()
       df_constants <- list()
-      df_constants[["table"]] <- "orkgr:Table_TODO"
+      df_constants[["table"]] <- "orkgc:Table"
       df_constants[["columns_p"]] <- "orkgp:CSVW_Columns"
-      df_constants[["column"]] <- "orkgr:Column_TODO"
+      df_constants[["column"]] <- "orkgc:Column"
       df_constants[["col_number_p"]] <- "orkgp:CSVW_Number"
       df_constants[["col_titles_p"]] <- "orkgp:CSVW_Titles"
       df_constants[["rows_p"]] <- "orkgp:CSVW_Rows"
-      df_constants[["row"]] <- "orkgr:Row_TODO"
+      df_constants[["row"]] <- "orkgc:Row"
       df_constants[["row_number_p"]] <- "orkgp:CSVW_Number"
       df_constants[["row_titles_p"]] <- "orkgp:CSVW_Titles"
       df_constants[["cells_p"]] <- "orkgp:CSVW_Cells"
-      df_constants[["cell"]] <- "orkgr:Cell_TODO"
+      df_constants[["cell"]] <- "orkgc:Cell"
       df_constants[["column_p"]] <- "orkgp:CSVW_Column"
       df_constants[["value_p"]] <- "orkgp:CSVW_Value"
       return(df_constants)
