@@ -168,8 +168,6 @@ Orkg <- R6::R6Class(
     #' @return Context to include in JSON-LD file
     add_df_constants = function() {
       df_constants <- list()
-      df_constants <- list()
-      df_constants <- list()
       df_constants[["table"]] <- "orkgc:Table"
       df_constants[["columns_p"]] <- "orkgp:CSVW_Columns"
       df_constants[["column"]] <- "orkgc:Column"
