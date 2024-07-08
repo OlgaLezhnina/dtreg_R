@@ -89,10 +89,19 @@ Epic <- R6::R6Class(
     #' @return Context to include in JSON-LD file
     add_df_constants = function() {
       df_constants <- list()
-      df_constants[["table"]] <- "doi:21.T11969/0424f6e7026fa4bc2c4a"
-      df_constants[["row"]] <- "doi:9bf7a8e8909bfd491b38"
+      df_constants[["table"]] <- "doi:0424f6e7026fa4bc2c4a"
+      df_constants[["columns_p"]] <- "doi:0424f6e7026fa4bc2c4a#columns"
       df_constants[["column"]] <- "doi:65ba00e95e60fb8971e6"
+      df_constants[["col_number_p"]] <- "doi:65ba00e95e60fb8971e6#number"
+      df_constants[["col_titles_p"]] <- "doi:65ba00e95e60fb8971e6#titles"
+      df_constants[["rows_p"]] <- "doi:0424f6e7026fa4bc2c4a#rows"
+      df_constants[["row"]] <- "doi:9bf7a8e8909bfd491b38"
+      df_constants[["row_number_p"]] <- "doi:9bf7a8e8909bfd491b38#number"
+      df_constants[["row_titles_p"]] <- "doi:9bf7a8e8909bfd491b38#titles"
+      df_constants[["cells_p"]] <- "doi:9bf7a8e8909bfd491b38#cells"
       df_constants[["cell"]] <- "doi:4607bc7c42ac8db29bfc"
+      df_constants[["column_p"]] <- "doi:4607bc7c42ac8db29bfc#column"
+      df_constants[["value_p"]] <- "doi:4607bc7c42ac8db29bfc#value"
       return(df_constants)
     }
   )
@@ -159,10 +168,20 @@ Orkg <- R6::R6Class(
     add_df_constants = function() {
       df_constants <- list()
       df_constants <- list()
-      df_constants[["table"]] <- "orkgp:TODO"
-      df_constants[["row"]] <- "orkgp:CSVW_Rows"
-      df_constants[["column"]] <- "orkgp:CSVW_Column"
-      df_constants[["cell"]] <- "orkgp:CSVW_Cell"
+      df_constants <- list()
+      df_constants[["table"]] <- "orkgr:Table_TODO"
+      df_constants[["columns_p"]] <- "orkgp:CSVW_Columns"
+      df_constants[["column"]] <- "orkgr:Column_TODO"
+      df_constants[["col_number_p"]] <- "orkgp:CSVW_Number"
+      df_constants[["col_titles_p"]] <- "orkgp:CSVW_Titles"
+      df_constants[["rows_p"]] <- "orkgp:CSVW_Rows"
+      df_constants[["row"]] <- "orkgr:Row_TODO"
+      df_constants[["row_number_p"]] <- "orkgp:CSVW_Number"
+      df_constants[["row_titles_p"]] <- "orkgp:CSVW_Titles"
+      df_constants[["cells_p"]] <- "orkgp:CSVW_Cells"
+      df_constants[["cell"]] <- "orkgr:Cell_TODO"
+      df_constants[["column_p"]] <- "orkgp:CSVW_Column"
+      df_constants[["value_p"]] <- "orkgp:CSVW_Value"
       return(df_constants)
     }
   )
