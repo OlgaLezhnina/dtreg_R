@@ -27,8 +27,8 @@ df_structure <- function(df, label) {
   for (i in seq_len(ncol(df))) {
     column <- list()
     column[["@type"]] <- the$constants$column
-    column[["titles"]] <- colnames(df)[i]
-    column[["number"]] <- i
+    column[["col_titles"]] <- colnames(df)[i]
+    column[["col_number"]] <- i
     column[["@id"]] <- paste0("_:n", the$uid())
     index <- append(index, column[["@id"]])
     result[["columns"]] <-
@@ -38,8 +38,8 @@ df_structure <- function(df, label) {
   for (i in seq_len(nrow(df))) {
     row <- list()
     row[["@type"]] <- the$constants$row
-    row[["number"]] <- i
-    row[["titles"]] <- rownames(df)[i]
+    row[["row_number"]] <- i
+    row[["row_titles"]] <- rownames(df)[i]
     row[["cells"]] <- list()
     for (y in seq_len(ncol(df))) {
       cell <- list()
