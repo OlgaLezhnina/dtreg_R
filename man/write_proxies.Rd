@@ -2,16 +2,16 @@
 % Please edit documentation in R/load_datatype.R
 \name{write_proxies}
 \alias{write_proxies}
-\title{Title}
+\title{Write proxies}
 \usage{
-write_proxies(object_list)
+write_proxies(r6_classes)
 }
 \arguments{
-\item{object_list}{A list of R6 objects}
+\item{r6_classes}{A list of R6 classes for a specified datatype}
 }
 \value{
 a list of objects for creating new instances
 }
 \description{
-Title
+Write proxies
 }

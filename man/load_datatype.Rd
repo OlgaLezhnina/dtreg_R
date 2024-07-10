@@ -2,18 +2,18 @@
 % Please edit documentation in R/load_datatype.R
 \name{load_datatype}
 \alias{load_datatype}
-\title{Title}
+\title{Load datatype}
 \usage{
-load_datatype(template_doi)
+load_datatype(datatype_id)
 }
 \arguments{
-\item{template_doi}{The DOI of a DTR template}
+\item{datatype_id}{The identifier of a datatype}
 }
 \value{
-a list of objects for creating new instances
+a list of schemata for creating new instances
 }
 \description{
-Title
+Load datatype
 }
 \examples{
 pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")

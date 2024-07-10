@@ -2,16 +2,16 @@
 % Please edit documentation in R/load_datatype.R
 \name{write_r6_classes}
 \alias{write_r6_classes}
-\title{Title}
+\title{Write R6 classes for a specified datatype}
 \usage{
-write_r6_classes(template_doi)
+write_r6_classes(datatype_id)
 }
 \arguments{
-\item{template_doi}{The DOI of a DTR template}
+\item{datatype_id}{The identifier of a datatype}
 }
 \value{
-an R6 object for the template
+a list of R6 classes for the datatype
 }
 \description{
-Title
+Write R6 classes for a specified datatype
 }
