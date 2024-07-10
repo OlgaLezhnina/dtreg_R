@@ -2,8 +2,8 @@ test_that("format_string makes text lowcase, spaces and dashes to underscores", 
   expect_equal(format_string("a-B c"), "a_b_c")
 })
 
-test_that("range_split outputs a named list for range", {
-  expect_equal(range_split("0 - 1"), list(min = 0, max = 1))
+test_that("specify_cardinality outputs the specific list for min_max", {
+  expect_equal(specify_cardinality("0 - 1"), list(min = 0, max = 1))
 })
 
 test_that("show_fileds outputs no fields", {

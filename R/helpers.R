@@ -23,25 +23,25 @@ get_prefix <- function(url_string) {
   return(prefix)
 }
 
-#' Split an ePIC cardinality string into min and max values
-#' @param range_str An ePIC string for cardinality range
-#' @return A named list with min and max values as integer or NA
+#' Specify cardinality of an ePIC property
+#' @param cardinality_string An ePIC string for cardinality
+#' @return A named list with min and max values as integers or NA
 #'
-range_split <- function(range_str) {
-  output <- list()
-  range_parts <- strsplit(range_str, split = " - ")[[1]]
-  if (length(range_parts) == 1) {
-    output[["min"]] <- as.integer(range_str)
-    output[["max"]] <- as.integer(range_str)
+specify_cardinality <- function(cardinality_string) {
+  min_max <- list()
+  card_parts <- strsplit(cardinality_string, split = " - ")[[1]]
+  if (length(card_parts) == 1) {
+    min_max[["min"]] <- as.integer(cardinality_string)
+    min_max[["max"]] <- as.integer(cardinality_string)
   } else {
-    output[["min"]] <- as.integer(range_parts[[1]])
-    if (range_parts[[2]] == "n") {
-      output[["max"]] <- NA
+    min_max[["min"]] <- as.integer(card_parts[[1]])
+    if (card_parts[[2]] == "n") {
+      min_max[["max"]] <- NA
     } else {
-      output[["max"]] <- as.integer(range_parts[[2]])
+      min_max[["max"]] <- as.integer(card_parts[[2]])
     }
   }
-  return(output)
+  return(min_max)
 }
 
 #' Generate a counting function
