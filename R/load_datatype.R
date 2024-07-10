@@ -45,7 +45,7 @@ write_r6_classes <- function(datatype_id) {
         inherit = selected_class,
         public = c(
           list(
-            prefix = get_prefix(template_doi),
+            prefix = get_prefix(datatype_id),
             dt_name = schema_data[[1]]$dt_name,
             dt_id = schema_data[[1]]$dt_id,
             prop_names = schema_data[[2]]$dtp_name,
