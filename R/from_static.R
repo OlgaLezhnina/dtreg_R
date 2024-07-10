@@ -1,17 +1,17 @@
-#' Title
+#' From static, to get information from static files
 #'
-#' @param template_doi The DOI of a DTR template
-#' @return The template information from a JSON file, or NULL if not in static
+#' @param datatype_id The identifier, such as URL, of a datatype
+#' @return The R object with schema from a JSON file, or NULL if not in static
 #'
-from_static <- function(template_doi) {
-  id <- strsplit(template_doi, split = "/+")[[1]][[4]]
-  final_template <- NULL
+from_static <- function(datatype_id) {
+  id <- strsplit(datatype_id, split = "/+")[[1]][[4]]
+  schema_info <- NULL
   static_names <- names(the$static_all)
   for (name in static_names) {
     if (stringr::str_detect(name, id)) {
-      final_template <- the$static_all[[name]]
+      schema_info <- the$static_all[[name]]
       break
     }
   }
-  return(final_template)
+  return(schema_info)
 }

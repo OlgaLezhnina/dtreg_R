@@ -2,16 +2,16 @@
 % Please edit documentation in R/from_static.R
 \name{from_static}
 \alias{from_static}
-\title{Title}
+\title{From static, to get information from static files}
 \usage{
-from_static(template_doi)
+from_static(datatype_id)
 }
 \arguments{
-\item{template_doi}{The DOI of a DTR template}
+\item{datatype_id}{The identifier, such as URL, of a datatype}
 }
 \value{
-The template information from a JSON file, or NULL if not in static
+The R object with schema from a JSON file, or NULL if not in static
 }
 \description{
-Title
+From static, to get information from static files
 }
