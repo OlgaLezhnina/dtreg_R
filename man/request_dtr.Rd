@@ -2,7 +2,7 @@
 % Please edit documentation in R/request_dtr.R
 \name{request_dtr}
 \alias{request_dtr}
-\title{Title}
+\title{Request datatype registry}
 \usage{
 request_dtr(route)
 }
@@ -13,5 +13,5 @@ request_dtr(route)
 Requested information about a dtr schema
 }
 \description{
-Title
+Request datatype registry
 }

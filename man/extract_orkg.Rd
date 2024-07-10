@@ -2,16 +2,16 @@
 % Please edit documentation in R/extract_orkg.R
 \name{extract_orkg}
 \alias{extract_orkg}
-\title{Title}
+\title{Extract ORKG template information}
 \usage{
 extract_orkg(datatype_id)
 }
 \arguments{
-\item{datatype_id}{The URL of an ORKG template}
+\item{datatype_id}{The identifier of an ORKG template}
 }
 \value{
 An R object that contains information about the ORKG template
 }
 \description{
-Title
+Extract ORKG template information
 }

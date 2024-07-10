@@ -1,6 +1,6 @@
-#' Title
+#' Extract ePIC schema information
 #'
-#' @param datatype_id The DOI of an ePIC schema
+#' @param datatype_id The identifier of an ePIC schema
 #' @return An R object that contains information about the ePIC schema
 #'
 extract_epic <- function(datatype_id) {

@@ -1,4 +1,4 @@
-#' Title
+#' Request datatype registry
 #'
 #' @param route The path for requesting a dtr API
 #' @return Requested information about a dtr schema

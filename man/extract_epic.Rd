@@ -2,16 +2,16 @@
 % Please edit documentation in R/extract_epic.R
 \name{extract_epic}
 \alias{extract_epic}
-\title{Title}
+\title{Extract ePIC schema information}
 \usage{
 extract_epic(datatype_id)
 }
 \arguments{
-\item{datatype_id}{The DOI of an ePIC schema}
+\item{datatype_id}{The identifier of an ePIC schema}
 }
 \value{
 An R object that contains information about the ePIC schema
 }
 \description{
-Title
+Extract ePIC schema information
 }
