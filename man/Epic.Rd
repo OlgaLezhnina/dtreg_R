@@ -15,7 +15,7 @@ Tba
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{template_info}}{An ePIC template information}
+\item{\code{schema_info}}{An ePIC schema information}
 }
 \if{html}{\out{</div>}}
 }
@@ -23,7 +23,7 @@ Tba
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-Epic-new}{\code{Epic$new()}}
-\item \href{#method-Epic-get_template_info}{\code{Epic$get_template_info()}}
+\item \href{#method-Epic-get_schema_info}{\code{Epic$get_schema_info()}}
 \item \href{#method-Epic-add_context}{\code{Epic$add_context()}}
 \item \href{#method-Epic-add_dt_type}{\code{Epic$add_dt_type()}}
 \item \href{#method-Epic-add_dtp_type}{\code{Epic$add_dtp_type()}}
@@ -35,40 +35,40 @@ Tba
 \if{html}{\out{<a id="method-Epic-new"></a>}}
 \if{latex}{\out{\hypertarget{method-Epic-new}{}}}
 \subsection{Method \code{new()}}{
-Create a new object with the template information
+Create a new object with the schema information
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$new(template_info = NA)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Epic$new(schema_info = NA)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{template_info}}{An ePIC template information}
+\item{\code{schema_info}}{An ePIC schema information}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-A new object with the template information
+A new object with the schema information
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Epic-get_template_info"></a>}}
-\if{latex}{\out{\hypertarget{method-Epic-get_template_info}{}}}
-\subsection{Method \code{get_template_info()}}{
-Write information from an ePIC template
+\if{html}{\out{<a id="method-Epic-get_schema_info"></a>}}
+\if{latex}{\out{\hypertarget{method-Epic-get_schema_info}{}}}
+\subsection{Method \code{get_schema_info()}}{
+Write information from an ePIC schema
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$get_template_info(template_doi)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Epic$get_schema_info(datatype_id)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{template_doi}}{The DOI of an ePIC template}
+\item{\code{datatype_id}}{The identifier of a datatype}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-Extracted information from an ePIC template
+Extracted information from an ePIC schema
 }
 }
 \if{html}{\out{<hr>}}
@@ -103,7 +103,7 @@ Give ePIC-specific schema type for writing JSON-LD
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{identifier}}{The schema identifier}
+\item{\code{identifier}}{The ePIC schema identifier}
 }
 \if{html}{\out{</div>}}
 }
@@ -123,7 +123,7 @@ Give ePIC-specific property type for writing JSON-LD
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{identifier}}{The property identifier}
+\item{\code{identifier}}{The ePIC property identifier}
 }
 \if{html}{\out{</div>}}
 }
@@ -135,20 +135,13 @@ Type to include in JSON-LD file
 \if{html}{\out{<a id="method-Epic-add_df_constants"></a>}}
 \if{latex}{\out{\hypertarget{method-Epic-add_df_constants}{}}}
 \subsection{Method \code{add_df_constants()}}{
-Give ORKG-specific context for writing JSON-LD
+Give ePIC-specific dataframe constants for writing JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Epic$add_df_constants()}\if{html}{\out{</div>}}
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{prefix}}{The URL prefix}
-}
-\if{html}{\out{</div>}}
-}
 \subsection{Returns}{
-Context to include in JSON-LD file
+Dataframe constants to include in JSON-LD file
 }
 }
 \if{html}{\out{<hr>}}

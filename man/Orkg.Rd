@@ -15,7 +15,7 @@ Tba
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{template_info}}{An ORKG template information}
+\item{\code{schema_info}}{An ORKG template information}
 }
 \if{html}{\out{</div>}}
 }
@@ -23,7 +23,7 @@ Tba
 \subsection{Public methods}{
 \itemize{
 \item \href{#method-Orkg-new}{\code{Orkg$new()}}
-\item \href{#method-Orkg-get_template_info}{\code{Orkg$get_template_info()}}
+\item \href{#method-Orkg-get_schema_info}{\code{Orkg$get_schema_info()}}
 \item \href{#method-Orkg-add_context}{\code{Orkg$add_context()}}
 \item \href{#method-Orkg-add_dt_type}{\code{Orkg$add_dt_type()}}
 \item \href{#method-Orkg-add_dtp_type}{\code{Orkg$add_dtp_type()}}
@@ -37,13 +37,13 @@ Tba
 \subsection{Method \code{new()}}{
 Create a new object with the template information
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orkg$new(template_info = NA)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Orkg$new(schema_info = NA)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{template_info}}{An ORKG template information}
+\item{\code{schema_info}}{An ORKG template information}
 }
 \if{html}{\out{</div>}}
 }
@@ -52,18 +52,18 @@ A new object with the template information
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Orkg-get_template_info"></a>}}
-\if{latex}{\out{\hypertarget{method-Orkg-get_template_info}{}}}
-\subsection{Method \code{get_template_info()}}{
+\if{html}{\out{<a id="method-Orkg-get_schema_info"></a>}}
+\if{latex}{\out{\hypertarget{method-Orkg-get_schema_info}{}}}
+\subsection{Method \code{get_schema_info()}}{
 Write information from an ORKG template
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orkg$get_template_info(template_doi)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{Orkg$get_schema_info(datatype_id)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{template_doi}}{The URL of an ORKG template}
+\item{\code{datatype_id}}{The identifier of an ORKG template}
 }
 \if{html}{\out{</div>}}
 }
@@ -95,7 +95,7 @@ Context to include in JSON-LD file
 \if{html}{\out{<a id="method-Orkg-add_dt_type"></a>}}
 \if{latex}{\out{\hypertarget{method-Orkg-add_dt_type}{}}}
 \subsection{Method \code{add_dt_type()}}{
-Give ORKG-specific schema type for writing JSON-LD
+Give ORKG-specific template type for writing JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Orkg$add_dt_type(identifier)}\if{html}{\out{</div>}}
 }
@@ -103,7 +103,7 @@ Give ORKG-specific schema type for writing JSON-LD
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{identifier}}{The schema identifier}
+\item{\code{identifier}}{The ORKG template identifier}
 }
 \if{html}{\out{</div>}}
 }
@@ -123,7 +123,7 @@ Give ORKG-specific property type for writing JSON-LD
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{identifier}}{The property identifier}
+\item{\code{identifier}}{The ORKG property identifier}
 }
 \if{html}{\out{</div>}}
 }
@@ -135,20 +135,13 @@ Type to include in JSON-LD file
 \if{html}{\out{<a id="method-Orkg-add_df_constants"></a>}}
 \if{latex}{\out{\hypertarget{method-Orkg-add_df_constants}{}}}
 \subsection{Method \code{add_df_constants()}}{
-Give ORKG-specific context for writing JSON-LD
+Give ORKG-specific dataframe constants for writing JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Orkg$add_df_constants()}\if{html}{\out{</div>}}
 }
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{prefix}}{The URL prefix}
-}
-\if{html}{\out{</div>}}
-}
 \subsection{Returns}{
-Context to include in JSON-LD file
+Constants to include in JSON-LD file
 }
 }
 \if{html}{\out{<hr>}}

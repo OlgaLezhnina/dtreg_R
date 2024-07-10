@@ -2,16 +2,16 @@
 % Please edit documentation in R/dtr_interface.R
 \name{select_dtr}
 \alias{select_dtr}
-\title{Title}
+\title{Select datatype registry}
 \usage{
-select_dtr(template_doi)
+select_dtr(datatype_id)
 }
 \arguments{
-\item{template_doi}{The DOI of a DTR template}
+\item{datatype_id}{The identifier of a datatype}
 }
 \value{
-An R6 class for the specific DTR
+An R6 class for the specific datatype registry
 }
 \description{
-Title
+Select datatype registry
 }

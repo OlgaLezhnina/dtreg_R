@@ -12,24 +12,27 @@ Tba
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{
-\item \href{#method-DataTypeReg-get_template_info}{\code{DataTypeReg$get_template_info()}}
+\item \href{#method-DataTypeReg-get_schema_info}{\code{DataTypeReg$get_schema_info()}}
 \item \href{#method-DataTypeReg-add_context}{\code{DataTypeReg$add_context()}}
+\item \href{#method-DataTypeReg-add_dt_type}{\code{DataTypeReg$add_dt_type()}}
+\item \href{#method-DataTypeReg-add_dtp_type}{\code{DataTypeReg$add_dtp_type()}}
+\item \href{#method-DataTypeReg-add_df_constants}{\code{DataTypeReg$add_df_constants()}}
 \item \href{#method-DataTypeReg-clone}{\code{DataTypeReg$clone()}}
 }
 }
 \if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-DataTypeReg-get_template_info"></a>}}
-\if{latex}{\out{\hypertarget{method-DataTypeReg-get_template_info}{}}}
-\subsection{Method \code{get_template_info()}}{
+\if{html}{\out{<a id="method-DataTypeReg-get_schema_info"></a>}}
+\if{latex}{\out{\hypertarget{method-DataTypeReg-get_schema_info}{}}}
+\subsection{Method \code{get_schema_info()}}{
 The function used in any DTR to get a template
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$get_template_info(template_doi)}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$get_schema_info(datatype_id)}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{template_doi}}{The DOI of a DTR template}
+\item{\code{datatype_id}}{The identifier of a datatype}
 }
 \if{html}{\out{</div>}}
 }
@@ -54,6 +57,62 @@ The function to write context for JSON-LD
 }
 \if{html}{\out{</div>}}
 }
+\subsection{Returns}{
+Not implemented, this is an interface
+Not implemented, this is an interface
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DataTypeReg-add_dt_type"></a>}}
+\if{latex}{\out{\hypertarget{method-DataTypeReg-add_dt_type}{}}}
+\subsection{Method \code{add_dt_type()}}{
+The function to write schema type for JSON-LD
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$add_dt_type(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{The schema identifier}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+Not implemented, this is an interface
+Not implemented, this is an interface
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DataTypeReg-add_dtp_type"></a>}}
+\if{latex}{\out{\hypertarget{method-DataTypeReg-add_dtp_type}{}}}
+\subsection{Method \code{add_dtp_type()}}{
+The function to write property for JSON-LD
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$add_dtp_type(identifier)}\if{html}{\out{</div>}}
+}
+
+\subsection{Arguments}{
+\if{html}{\out{<div class="arguments">}}
+\describe{
+\item{\code{identifier}}{The property identifier}
+}
+\if{html}{\out{</div>}}
+}
+\subsection{Returns}{
+Not implemented, this is an interface
+Not implemented, this is an interface
+}
+}
+\if{html}{\out{<hr>}}
+\if{html}{\out{<a id="method-DataTypeReg-add_df_constants"></a>}}
+\if{latex}{\out{\hypertarget{method-DataTypeReg-add_df_constants}{}}}
+\subsection{Method \code{add_df_constants()}}{
+The function to write dataframe constants for JSON-LD
+\subsection{Usage}{
+\if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$add_df_constants()}\if{html}{\out{</div>}}
+}
+
 \subsection{Returns}{
 Not implemented, this is an interface
 Not implemented, this is an interface
