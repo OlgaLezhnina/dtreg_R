@@ -2,18 +2,18 @@
 % Please edit documentation in R/helpers.R
 \name{show_fields}
 \alias{show_fields}
-\title{Title}
+\title{Show fields that can be filled by the user when writing a datatype instance}
 \usage{
-show_fields(object)
+show_fields(datatype)
 }
 \arguments{
-\item{object}{An object from dtreg::load_objects}
+\item{datatype}{An R object from dtreg::load_datatype}
 }
 \value{
-Fields to use in an instance
+Fields that can be used in an instance
 }
 \description{
-Title
+Show fields that can be filled by the user when writing a datatype instance
 }
 \examples{
 pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")

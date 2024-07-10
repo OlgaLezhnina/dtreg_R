@@ -56,20 +56,20 @@ generate_uid <- function() {
   })
 }
 
-#' Title
+#' Show fields that can be filled by the user when writing a datatype instance
 #'
-#' @param object An object from dtreg::load_objects
+#' @param datatype An R object from dtreg::load_datatype
 #'
-#' @return Fields to use in an instance
+#' @return Fields that can be used in an instance
 #' @export
 #'
 #' @examples
 #' pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
 #' show_fields(pd$pidinst_schemaobject())
 #'
-show_fields <- function(object) {
-  all_fields <- names(object)
-  written <- c(".__enclos_env__",
+show_fields <- function(datatype) {
+  all_fields <- names(datatype)
+  implicit <- c(".__enclos_env__",
                "clone",
                "initialize",
                "template_info",
@@ -83,9 +83,9 @@ show_fields <- function(object) {
                "prefix",
                "prop_names",
                "prop_info")
-  output <- all_fields[!(all_fields %in% written)]
-  if (length(output) == 0) {
-    output <- NULL
+  fields_to_show <- all_fields[!(all_fields %in% implicit)]
+  if (length(fields_to_show) == 0) {
+    fields_to_show <- NULL
   }
-  return(output)
+  return(fields_to_show)
 }
