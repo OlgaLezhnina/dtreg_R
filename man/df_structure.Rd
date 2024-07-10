@@ -2,7 +2,7 @@
 % Please edit documentation in R/to_jsonld.R
 \name{df_structure}
 \alias{df_structure}
-\title{An internal function to help writing a dataframe into JSON-LD}
+\title{Df structure function writes a dataframe into JSON-LD}
 \usage{
 df_structure(df, label)
 }
@@ -15,5 +15,5 @@ df_structure(df, label)
 An R object to be used by to_jsonld function
 }
 \description{
-An internal function to help writing a dataframe into JSON-LD
+Df structure function writes a dataframe into JSON-LD
 }

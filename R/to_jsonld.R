@@ -1,6 +1,7 @@
-#' An internal function to deal differently with inputs of different types
+#' Differ input deals differently with inputs of different types
 #' @param input Can be NA, a dataframe, a tuple, or another input
-#' @return An R object to be used by to_jsonld function
+#' @return An input-dependent R object or the df_structure function call
+#' to be further used by to_jsonld function
 #'
 differ_input <- function(input) {
   if (methods::is(input, "data.frame")) {
@@ -13,7 +14,7 @@ differ_input <- function(input) {
   return(output)
 }
 
-#' An internal function to help writing a dataframe into JSON-LD
+#' Df structure function writes a dataframe into JSON-LD
 #' @param df A dataframe
 #' @param label A character string
 #' @return An R object to be used by to_jsonld function
@@ -58,7 +59,7 @@ df_structure <- function(df, label) {
   return(result)
 }
 
-#' Writes an instance as JSON-LD
+#' To_jsonld writes an instance as JSON-LD
 #' @param instance An instance of an R6 class
 #' @return JSON string in JSON-LD format
 #' @export

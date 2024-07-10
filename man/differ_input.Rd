@@ -2,7 +2,7 @@
 % Please edit documentation in R/to_jsonld.R
 \name{differ_input}
 \alias{differ_input}
-\title{An internal function to deal differently with inputs of different types}
+\title{Differ input deals differently with inputs of different types}
 \usage{
 differ_input(input)
 }
@@ -10,8 +10,9 @@ differ_input(input)
 \item{input}{Can be NA, a dataframe, a tuple, or another input}
 }
 \value{
-An R object to be used by to_jsonld function
+An input-dependent R object or the df_structure function call
+to be further used by to_jsonld function
 }
 \description{
-An internal function to deal differently with inputs of different types
+Differ input deals differently with inputs of different types
 }

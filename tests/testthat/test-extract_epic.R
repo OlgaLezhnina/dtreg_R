@@ -1,4 +1,4 @@
-test_that("extract_epic gives the specified template", {
+test_that("extract_epic gives the specified schema", {
   result_extract_epic <- extract_epic("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
   string_representation <- capture.output(print(result_extract_epic))
   expected <- c("$pidinst_schemaobject", "$pidinst_schemaobject[[1]]",
