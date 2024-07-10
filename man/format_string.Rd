@@ -4,10 +4,10 @@
 \alias{format_string}
 \title{Format a string}
 \usage{
-format_string(text)
+format_string(string)
 }
 \arguments{
-\item{text}{A character vector}
+\item{string}{A character vector}
 }
 \value{
 A character vector formatted in the required way

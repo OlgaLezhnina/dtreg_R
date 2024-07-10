@@ -2,16 +2,16 @@
 % Please edit documentation in R/helpers.R
 \name{get_prefix}
 \alias{get_prefix}
-\title{Format a string}
+\title{Get prefix}
 \usage{
-get_prefix(string)
+get_prefix(url_string)
 }
 \arguments{
-\item{string}{A URL string}
+\item{url_string}{A URL string}
 }
 \value{
-The string which is the prefix of the URL
+The prefix string indicating the datatype
 }
 \description{
-Format a string
+Get prefix
 }

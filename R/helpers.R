@@ -1,20 +1,20 @@
 #' Format a string
-#' @param text A character vector
+#' @param string A character vector
 #' @return A character vector formatted in the required way
 #'
-format_string  <- function(text) {
+format_string  <- function(string) {
   return(stringr::str_replace_all(
-    stringr::str_replace_all(tolower(text), "[ -]", "_"),
+    stringr::str_replace_all(tolower(string), "[ -]", "_"),
     "[^a-zA-Z0-9_]",
     ""
   ))
 }
-#' Format a string
-#' @param string A URL string
-#' @return The string which is the prefix of the URL
+#' Get prefix
+#' @param url_string A URL string
+#' @return The prefix string indicating the datatype
 #'
-get_prefix <- function(string) {
-  part <- strsplit(string, split = "[/ //]+")[[1]]
+get_prefix <- function(url_string) {
+  part <- strsplit(url_string, split = "[/ //]+")[[1]]
   if (stringr::str_detect(part[[2]], "orkg.org")) {
     prefix <- paste0(part[[1]], "//", part[[2]], "/")
   } else if (part[[3]] == "21.T11969") {
