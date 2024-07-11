@@ -5,9 +5,17 @@ exclusions: list(
     object_name_linter = Inf),
   "tests/testthat/test-helpers.R" = list(
     line_length_linter = Inf),
+  "tests/testthat/test-request_dtr.R" = list(
+    line_length_linter = Inf),
   "tests/testthat/test-extract_epic.R" = list(
+    line_length_linter = Inf),
+  "tests/testthat/test-extract_orkg.R" = list(
     line_length_linter = Inf),
   "tests/testthat/test-dtr_interface.R" = list(
     line_length_linter = Inf),
   "tests/testthat/test-from_static.R" = list(
+    line_length_linter = Inf),
+  "tests/testthat/test-load_datatype.R" = list(
+    line_length_linter = Inf),
+  "tests/testthat/test-to_jsonld.R" = list(
     line_length_linter = Inf))

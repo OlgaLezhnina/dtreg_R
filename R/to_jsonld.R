@@ -81,9 +81,8 @@ to_jsonld <- function(instance) {
       prop_type <- instance$add_dtp_type(prop_id)
       if (is.null(instance_field)) {
         next
-      }
-      else if (is.list(instance_field) &&
-               inherits(instance_field[[1]], "R6")) {
+      } else if (is.list(instance_field) &&
+                   inherits(instance_field[[1]], "R6")) {
         result[[prop_type]] <- lapply(instance_field, write_info)
       } else if (inherits(instance_field, "R6")) {
         result[[prop_type]] <- write_info(instance_field)

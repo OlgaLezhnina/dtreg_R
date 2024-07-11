@@ -13,6 +13,6 @@ test_that("select_dtr selects class ORKG for an ORKG template URL", {
 })
 
 test_that("select_dtr gives error when the URL is neither ePIC nor ORKG", {
-  wrong_URL <- "https://stackoverflow.com/questions"
-  expect_error(select_dtr(wrong_URL), "Please check whether the schema belongs to the ePIC or the ORKG dtr", fixed = TRUE)
+  wrong_url <- "https://stackoverflow.com/questions"
+  expect_error(select_dtr(wrong_url), "Please check whether the schema belongs to the ePIC or the ORKG dtr", fixed = TRUE)
 })

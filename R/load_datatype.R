@@ -57,8 +57,7 @@ write_r6_classes <- function(datatype_id) {
               }
             }
           ),
-          sapply(schema_data[[2]]$dtp_name, function(x)
-            NULL)
+          sapply(schema_data[[2]]$dtp_name, function(x) NULL)
         )
       )
     all_classes[[format_string(schema_data[[1]]$dt_name)]] <- r6_class

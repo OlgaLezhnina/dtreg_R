@@ -70,19 +70,19 @@ generate_uid <- function() {
 show_fields <- function(datatype) {
   all_fields <- names(datatype)
   implicit <- c(".__enclos_env__",
-               "clone",
-               "initialize",
-               "schema_info",
-               "get_schema_info",
-               "add_context",
-               "add_dt_type",
-               "add_dtp_type",
-               "add_df_constants",
-               "dt_name",
-               "dt_id",
-               "prefix",
-               "prop_names",
-               "prop_info")
+                "clone",
+                "initialize",
+                "schema_info",
+                "get_schema_info",
+                "add_context",
+                "add_dt_type",
+                "add_dtp_type",
+                "add_df_constants",
+                "dt_name",
+                "dt_id",
+                "prefix",
+                "prop_names",
+                "prop_info")
   fields_to_show <- all_fields[!(all_fields %in% implicit)]
   if (length(fields_to_show) == 0) {
     fields_to_show <- NULL

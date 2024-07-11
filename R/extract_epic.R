@@ -24,13 +24,15 @@ extract_epic <- function(datatype_id) {
       specific_prop <- list()
       if (is.null(prop$Type)) {
         specific_prop[["dtp_name"]] <- format_string(prop$Property)
-        specific_prop[["dtp_id"]] <- paste0(dt_id, "#", format_string(prop$Property))
+        specific_prop[["dtp_id"]] <-
+          paste0(dt_id, "#", format_string(prop$Property))
         specific_prop[["dtp_card_min"]] <- NA
         specific_prop[["dtp_card_max"]] <- NA
         specific_prop[["dtp_value_type"]] <- prop$Value
       } else {
         specific_prop[["dtp_name"]] <- format_string(prop$Name)
-        specific_prop[["dtp_id"]] <- paste0(dt_id, "#", format_string(prop$Name))
+        specific_prop[["dtp_id"]] <-
+          paste0(dt_id, "#", format_string(prop$Name))
         card <- specify_cardinality(prop$Properties$Cardinality)
         specific_prop[["dtp_card_min"]] <- card[["min"]]
         specific_prop[["dtp_card_max"]] <- card[["max"]]

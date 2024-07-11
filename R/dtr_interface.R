@@ -106,15 +106,24 @@ Epic <- R6::R6Class(
     add_context = function(prefix) {
       context_info <- list()
       context_info[["doi:"]] <- prefix
-      context_info[["columns:"]] <- paste0(prefix, "0424f6e7026fa4bc2c4a#columns")
-      context_info[["col_number:"]] <- paste0(prefix, "65ba00e95e60fb8971e6#number")
-      context_info[["col_titles:"]] <- paste0(prefix, "65ba00e95e60fb8971e6#titles")
-      context_info[["rows:"]] <- paste0(prefix, "0424f6e7026fa4bc2c4a#rows")
-      context_info[["row_number:"]] <- paste0(prefix, "9bf7a8e8909bfd491b38#number")
-      context_info[["row_titles:"]] <- paste0(prefix, "9bf7a8e8909bfd491b38#titles")
-      context_info[["cells:"]] <- paste0(prefix, "9bf7a8e8909bfd491b38#cells")
-      context_info[["column:"]] <- paste0(prefix, "4607bc7c42ac8db29bfc#column")
-      context_info[["value:"]] <- paste0(prefix, "4607bc7c42ac8db29bfc#value")
+      context_info[["columns:"]] <-
+        paste0(prefix, "0424f6e7026fa4bc2c4a#columns")
+      context_info[["col_number:"]] <-
+        paste0(prefix, "65ba00e95e60fb8971e6#number")
+      context_info[["col_titles:"]] <-
+        paste0(prefix, "65ba00e95e60fb8971e6#titles")
+      context_info[["rows:"]] <-
+        paste0(prefix, "0424f6e7026fa4bc2c4a#rows")
+      context_info[["row_number:"]] <-
+        paste0(prefix, "9bf7a8e8909bfd491b38#number")
+      context_info[["row_titles:"]] <-
+        paste0(prefix, "9bf7a8e8909bfd491b38#titles")
+      context_info[["cells:"]] <-
+        paste0(prefix, "9bf7a8e8909bfd491b38#cells")
+      context_info[["column:"]] <-
+        paste0(prefix, "4607bc7c42ac8db29bfc#column")
+      context_info[["value:"]] <-
+        paste0(prefix, "4607bc7c42ac8db29bfc#value")
       return(context_info)
     },
     #' @description
@@ -186,11 +195,15 @@ Orkg <- R6::R6Class(
       context_info[["orkgr:"]] <- paste0(prefix, "resource/")
       context_info[["orkgp:"]] <- paste0(prefix, "property/")
       context_info[["columns:"]] <- paste0(prefix, "property/", "CSVW_Columns")
-      context_info[["col_number:"]] <- paste0(prefix, "property/", "CSVW_Number")
-      context_info[["col_titles:"]] <- paste0(prefix, "property/", "CSVW_Titles")
+      context_info[["col_number:"]] <-
+        paste0(prefix, "property/", "CSVW_Number")
+      context_info[["col_titles:"]] <-
+        paste0(prefix, "property/", "CSVW_Titles")
       context_info[["rows:"]] <- paste0(prefix, "property/", "CSVW_Rows")
-      context_info[["row_number:"]] <- paste0(prefix, "property/", "CSVW_Number")
-      context_info[["row_titles:"]] <- paste0(prefix, "property/", "CSVW_Titles")
+      context_info[["row_number:"]] <-
+        paste0(prefix, "property/", "CSVW_Number")
+      context_info[["row_titles:"]] <-
+        paste0(prefix, "property/", "CSVW_Titles")
       context_info[["cells:"]] <- paste0(prefix, "property/", "CSVW_Cells")
       context_info[["column:"]] <- paste0(prefix, "property/", "CSVW_Column")
       context_info[["value:"]] <- paste0(prefix, "property/", "CSVW_Value")
