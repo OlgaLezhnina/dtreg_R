@@ -10,3 +10,10 @@ test_that("extract_epic gives the specified schema", {
                 "","")
   expect_equal(string_representation, expected)
 })
+
+test_that("extract_epic extracts properties correctly", {
+  dt <- extract_epic("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+  prop_names <- dt$inferential_test_output[[2]]$dtp_name
+  expected <- c("label", "has_description", "comment", "has_format")
+  expect_equal(prop_names, expected)
+})

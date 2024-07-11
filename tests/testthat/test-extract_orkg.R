@@ -13,3 +13,10 @@ test_that("extract_orkg gives the specified template", {
                  "")
   expect_equal(string_representation, expected)
 })
+
+test_that("extract_orkg extracts properties correctly", {
+  dt <- extract_orkg("https://incubating.orkg.org/template/R855534")
+  prop_names <- dt$inferential_test_output[[2]]$dtp_name
+  expected <- c("has_format", "has_description", "comment")
+  expect_equal(prop_names, expected)
+})
