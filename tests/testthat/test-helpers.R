@@ -14,6 +14,10 @@ test_that("specify_cardinality outputs the specific list for min_max", {
   expect_equal(specify_cardinality("0 - 1"), list(min = 0, max = 1))
 })
 
+test_that("generate_uid returns a function", {
+  expect_equal(class(generate_uid()), "function")
+})
+
 test_that("show_fileds outputs no fields", {
   pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
   no_fields <- show_fields(pd$pidinst_schemaobject())
