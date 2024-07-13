@@ -18,7 +18,7 @@ test_that("generate_uid returns a function", {
   expect_equal(class(generate_uid()), "function")
 })
 
-test_that("show_fileds outputs no fields", {
+test_that("show_fields outputs no fields", {
   pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
   no_fields <- show_fields(pd$pidinst_schemaobject())
   expect_equal(no_fields, NULL)
