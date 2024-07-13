@@ -24,6 +24,13 @@ test_that("df_structure writes column titles", {
   expect_equal(result$columns[[1]]$col_titles, "A")
 })
 
+test_that("df_structure writes missing values", {
+  df <- data.frame(A = 1, B = NA, stringsAsFactors = FALSE)
+  the$uid <- generate_uid()
+  result <- df_structure(df, label = "Table")
+  expect_equal(is.na(result$rows[[1]]$cells[[2]]$value), TRUE)
+})
+
 test_that("to_jsonld writes an ePIC instance into JSONLD", {
   dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
   instance <- dt$inferential_test_output(has_format = dt$table(label = "Table"))
