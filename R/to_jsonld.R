@@ -64,6 +64,9 @@ df_structure <- function(df, label) {
 #' @return JSON string in JSON-LD format
 #' @export
 #' @examples
+#' dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+#' instance <- dt$inferential_test_output(label = "my_results")
+#' result <- to_jsonld(instance)
 #'
 to_jsonld <- function(instance) {
   the$constants <- instance$add_df_constants()

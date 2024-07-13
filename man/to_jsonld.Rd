@@ -15,3 +15,9 @@ JSON string in JSON-LD format
 \description{
 To_jsonld writes an instance as JSON-LD
 }
+\examples{
+dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+instance <- dt$inferential_test_output(label = "my_results")
+result <- to_jsonld(instance)
+
+}
