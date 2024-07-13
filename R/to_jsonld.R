@@ -1,3 +1,47 @@
+#' To_jsonld writes an instance as JSON-LD
+#' @param instance An instance of an R6 class
+#' @return JSON string in JSON-LD format
+#' @export
+#' @examples
+#' dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+#' instance <- dt$inferential_test_output(label = "my_results")
+#' result <- to_jsonld(instance)
+#'
+to_jsonld <- function(instance) {
+  the$constants <- instance$add_df_constants()
+  the$uid <- generate_uid()
+  write_info <- function(instance) {
+    result <- list()
+    result[["@id"]] <- paste0("_:n", the$uid())
+    result[["@type"]] <- instance$add_dt_type(instance$dt_id)
+    result[["label"]] <- instance$label
+    field_list <- show_fields(instance)
+    for (field in field_list) {
+      instance_field <- instance[[field]]
+      prop_id <-
+        instance$prop_info$dtp_id[instance$prop_info$dtp_name == field]
+      prop_type <- instance$add_dtp_type(prop_id)
+      if (is.null(instance_field)) {
+        next
+      } else if (is.list(instance_field) &&
+                 inherits(instance_field[[1]], "R6")) {
+        result[[prop_type]] <- lapply(instance_field, write_info)
+      } else if (inherits(instance_field, "R6")) {
+        result[[prop_type]] <- write_info(instance_field)
+      } else {
+        result[[prop_type]] <- differ_input(instance_field)
+      }
+    }
+    return(result)
+  }
+  result_all <- list()
+  result_all[[instance$dt_name]] <- write_info(instance)
+  result_all[["@context"]] <- instance$add_context(instance$prefix)
+  inst_json <-
+    jsonlite::toJSON(result_all, pretty = TRUE, auto_unbox = TRUE)
+  return(inst_json)
+}
+
 #' Differ input deals differently with inputs of different types
 #' @param input Can be NA, a dataframe, a tuple, or another input
 #' @return An input-dependent R object or the df_structure function call
@@ -57,48 +101,4 @@ df_structure <- function(df, label) {
   }
   result[["@id"]] <- paste0("_:n", the$uid())
   return(result)
-}
-
-#' To_jsonld writes an instance as JSON-LD
-#' @param instance An instance of an R6 class
-#' @return JSON string in JSON-LD format
-#' @export
-#' @examples
-#' dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-#' instance <- dt$inferential_test_output(label = "my_results")
-#' result <- to_jsonld(instance)
-#'
-to_jsonld <- function(instance) {
-  the$constants <- instance$add_df_constants()
-  the$uid <- generate_uid()
-  write_info <- function(instance) {
-    result <- list()
-    result[["@id"]] <- paste0("_:n", the$uid())
-    result[["@type"]] <- instance$add_dt_type(instance$dt_id)
-    result[["label"]] <- instance$label
-    field_list <- show_fields(instance)
-    for (field in field_list) {
-      instance_field <- instance[[field]]
-      prop_id <-
-        instance$prop_info$dtp_id[instance$prop_info$dtp_name == field]
-      prop_type <- instance$add_dtp_type(prop_id)
-      if (is.null(instance_field)) {
-        next
-      } else if (is.list(instance_field) &&
-                   inherits(instance_field[[1]], "R6")) {
-        result[[prop_type]] <- lapply(instance_field, write_info)
-      } else if (inherits(instance_field, "R6")) {
-        result[[prop_type]] <- write_info(instance_field)
-      } else {
-        result[[prop_type]] <- differ_input(instance_field)
-      }
-    }
-    return(result)
-  }
-  result_all <- list()
-  result_all[[instance$dt_name]] <- write_info(instance)
-  result_all[["@context"]] <- instance$add_context(instance$prefix)
-  inst_json <-
-    jsonlite::toJSON(result_all, pretty = TRUE, auto_unbox = TRUE)
-  return(inst_json)
 }

@@ -38,18 +38,18 @@ write_r6_classes <- function(datatype_id) {
   schema_info <- selected_class$new()$get_schema_info(datatype_id)
   all_classes <- list()
   for (t in seq_along(schema_info)) {
-    schema_data <- schema_info[[t]]
+    schema <- schema_info[[t]]
     r6_class <-
       R6::R6Class(
-        paste0(schema_data[[1]]$dt_name, "_r6"),
+        paste0(schema[[1]]$dt_name, "_r6"),
         inherit = selected_class,
         public = c(
           list(
             prefix = get_prefix(datatype_id),
-            dt_name = schema_data[[1]]$dt_name,
-            dt_id = schema_data[[1]]$dt_id,
-            prop_names = schema_data[[2]]$dtp_name,
-            prop_info = schema_data[[2]],
+            dt_name = schema[[1]]$dt_name,
+            dt_id = schema[[1]]$dt_id,
+            prop_names = schema[[2]]$dtp_name,
+            prop_info = schema[[2]],
             initialize = function(...) {
               args <- list(...)
               for (dtp_name in self$prop_names) {
@@ -57,10 +57,10 @@ write_r6_classes <- function(datatype_id) {
               }
             }
           ),
-          sapply(schema_data[[2]]$dtp_name, function(x) NULL)
+          sapply(schema[[2]]$dtp_name, function(x) NULL)
         )
       )
-    all_classes[[format_string(schema_data[[1]]$dt_name)]] <- r6_class
+    all_classes[[format_string(schema[[1]]$dt_name)]] <- r6_class
   }
   return(all_classes)
 }

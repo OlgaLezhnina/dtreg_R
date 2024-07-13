@@ -24,7 +24,7 @@ Tba
 \if{html}{\out{<a id="method-DataTypeReg-get_schema_info"></a>}}
 \if{latex}{\out{\hypertarget{method-DataTypeReg-get_schema_info}{}}}
 \subsection{Method \code{get_schema_info()}}{
-The function used in any DTR to get a template
+The function used in any DTR to get a schema
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$get_schema_info(datatype_id)}\if{html}{\out{</div>}}
 }

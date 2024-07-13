@@ -29,7 +29,7 @@ DataTypeReg <- R6::R6Class(
   "DataTypeReg",
   public = list(
     #' @description
-    #' The function used in any DTR to get a template
+    #' The function used in any DTR to get a schema
     #' @param datatype_id The identifier of a datatype
     #' @return Not implemented, this is an interface
     get_schema_info = function(datatype_id) {
