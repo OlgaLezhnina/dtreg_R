@@ -24,7 +24,7 @@ to_jsonld <- function(instance) {
       if (is.null(instance_field)) {
         next
       } else if (is.list(instance_field) &&
-                 inherits(instance_field[[1]], "R6")) {
+                   inherits(instance_field[[1]], "R6")) {
         result[[prop_type]] <- lapply(instance_field, write_info)
       } else if (inherits(instance_field, "R6")) {
         result[[prop_type]] <- write_info(instance_field)
