@@ -16,7 +16,7 @@ test_that("df_structure writes column titles", {
   expect_equal(result$columns[[1]]$col_titles, "A")
 })
 
-test_that("to_jsonld writes an instance into JSONLD", {
+test_that("to_jsonld writes an ePIC instance into JSONLD", {
   dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
   instance <- dt$inferential_test_output(label = "my_results")
   result <- to_jsonld(instance)
@@ -39,6 +39,64 @@ test_that("to_jsonld writes an instance into JSONLD", {
                 "    \"cells:\": \"https://doi.org/21.T11969/9bf7a8e8909bfd491b38#cells\",",
                 "    \"column:\": \"https://doi.org/21.T11969/4607bc7c42ac8db29bfc#column\",",
                 "    \"value:\": \"https://doi.org/21.T11969/4607bc7c42ac8db29bfc#value\"",
+                "  }",
+                "} ")
+
+  expect_equal(capture.output(print(result)), expected)
+})
+
+test_that("to_jsonld writes an ORKG instance into JSONLD", {
+  dt <- dtreg::load_datatype("https://incubating.orkg.org/template/R855534")
+  df <- data.frame(A = 1, stringsAsFactors = FALSE)
+  instance <- dt$inferential_test_output(has_format = df)
+  result <- dtreg::to_jsonld(instance)
+  expected <- c(
+                "{",
+                "  \"inferential_test_output\": {",
+                "    \"@id\": \"_:n1\",",
+                "    \"@type\": \"orkgr:R855534\",",
+                "    \"orkgp:P114000\": {",
+                "      \"@type\": \"orkgc:Table\",",
+                "      \"label\": \"Table\",",
+                "      \"columns\": [",
+                "        {",
+                "          \"@type\": \"orkgc:Column\",",
+                "          \"col_titles\": \"A\",",
+                "          \"col_number\": 1,",
+                "          \"@id\": \"_:n2\"",
+                "        }",
+                "      ],",
+                "      \"rows\": [",
+                "        {",
+                "          \"@type\": \"orkgc:Row\",",
+                "          \"row_number\": 1,",
+                "          \"row_titles\": \"1\",",
+                "          \"cells\": [",
+                "            {",
+                "              \"@type\": \"orkgc:Cell\",",
+                "              \"value\": \"1\",",
+                "              \"column\": \"_:n2\"",
+                "            }",
+                "          ]",
+                "        }",
+                "      ],",
+                "      \"@id\": \"_:n3\"",
+                "    }",
+                "  },",
+                "  \"@context\": {",
+                "    \"orkgc:\": \"https://incubating.orkg.org/class/\",",
+                "    \"orkgr:\": \"https://incubating.orkg.org/resource/\",",
+                "    \"orkgp:\": \"https://incubating.orkg.org/property/\",",
+                "    \"columns:\": \"https://incubating.orkg.org/property/CSVW_Columns\",",
+                "    \"col_number:\": \"https://incubating.orkg.org/property/CSVW_Number\",",
+                "    \"col_titles:\": \"https://incubating.orkg.org/property/CSVW_Titles\",",
+                "    \"rows:\": \"https://incubating.orkg.org/property/CSVW_Rows\",",
+                "    \"row_number:\": \"https://incubating.orkg.org/property/CSVW_Number\",",
+                "    \"row_titles:\": \"https://incubating.orkg.org/property/CSVW_Titles\",",
+                "    \"cells:\": \"https://incubating.orkg.org/property/CSVW_Cells\",",
+                "    \"column:\": \"https://incubating.orkg.org/property/CSVW_Column\",",
+                "    \"value:\": \"https://incubating.orkg.org/property/CSVW_Value\",",
+                "    \"label\": \"http://www.w3.org/2000/01/rdf-schema#label\"",
                 "  }",
                 "} ")
 
