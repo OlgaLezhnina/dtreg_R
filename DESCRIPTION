@@ -25,4 +25,5 @@ Imports:
     jsonlite,
     methods,
     R6,
+    sets,
     stringr

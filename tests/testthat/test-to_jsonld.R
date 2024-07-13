@@ -9,6 +9,14 @@ test_that("differ_input calls the df_structure for a dataframe", {
   expect_equal(result$rows[[1]]$cells[[1]]$value, "1")
 })
 
+test_that("differ_input calls the df_structure for a tuple", {
+  df <- data.frame(A = 1, B = 2, stringsAsFactors = FALSE)
+  my_tuple <- sets::tuple(df, "my_tuple")
+  the$uid <- generate_uid()
+  result <- differ_input(my_tuple)
+  expect_equal(result$rows[[1]]$cells[[1]]$value, "1")
+})
+
 test_that("df_structure writes column titles", {
   df <- data.frame(A = 1, B = 2, stringsAsFactors = FALSE)
   the$uid <- generate_uid()
