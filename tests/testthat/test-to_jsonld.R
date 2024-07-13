@@ -42,3 +42,32 @@ test_that("to_jsonld writes an instance in a specified way", {
 
   expect_equal(capture.output(print(result)), expected)
 })
+
+test_that("to_jsonld captures properties of an instance", {
+  dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+  instance <- dt$inferential_test_output(label = "my_results")
+  result <- to_jsonld(instance)
+  expected <- c(
+                "{",
+                "  \"inferential_test_output\": {",
+                "    \"@id\": \"_:n1\",",
+                "    \"@type\": \"doi:74bc7748b8cd520908bc\",",
+                "    \"label\": \"my_results\",",
+                "    \"doi:74bc7748b8cd520908bc#label\": \"my_results\"",
+                "  },",
+                "  \"@context\": {",
+                "    \"doi:\": \"https://doi.org/21.T11969/\",",
+                "    \"columns:\": \"https://doi.org/21.T11969/0424f6e7026fa4bc2c4a#columns\",",
+                "    \"col_number:\": \"https://doi.org/21.T11969/65ba00e95e60fb8971e6#number\",",
+                "    \"col_titles:\": \"https://doi.org/21.T11969/65ba00e95e60fb8971e6#titles\",",
+                "    \"rows:\": \"https://doi.org/21.T11969/0424f6e7026fa4bc2c4a#rows\",",
+                "    \"row_number:\": \"https://doi.org/21.T11969/9bf7a8e8909bfd491b38#number\",",
+                "    \"row_titles:\": \"https://doi.org/21.T11969/9bf7a8e8909bfd491b38#titles\",",
+                "    \"cells:\": \"https://doi.org/21.T11969/9bf7a8e8909bfd491b38#cells\",",
+                "    \"column:\": \"https://doi.org/21.T11969/4607bc7c42ac8db29bfc#column\",",
+                "    \"value:\": \"https://doi.org/21.T11969/4607bc7c42ac8db29bfc#value\"",
+                "  }",
+                "} ")
+
+  expect_equal(capture.output(print(result)), expected)
+})
