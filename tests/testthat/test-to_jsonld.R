@@ -26,15 +26,19 @@ test_that("df_structure writes column titles", {
 
 test_that("to_jsonld writes an ePIC instance into JSONLD", {
   dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-  instance <- dt$inferential_test_output(label = "my_results")
+  instance <- dt$inferential_test_output(has_format = dt$table(label = "Table"))
   result <- to_jsonld(instance)
   expected <- c(
                 "{",
                 "  \"inferential_test_output\": {",
                 "    \"@id\": \"_:n1\",",
                 "    \"@type\": \"doi:74bc7748b8cd520908bc\",",
-                "    \"label\": \"my_results\",",
-                "    \"doi:74bc7748b8cd520908bc#label\": \"my_results\"",
+                "    \"doi:74bc7748b8cd520908bc#has_format\": {",
+                "      \"@id\": \"_:n2\",",
+                "      \"@type\": \"doi:0424f6e7026fa4bc2c4a\",",
+                "      \"label\": \"Table\",",
+                "      \"doi:0424f6e7026fa4bc2c4a#label\": \"Table\"",
+                "    }",
                 "  },",
                 "  \"@context\": {",
                 "    \"doi:\": \"https://doi.org/21.T11969/\",",
