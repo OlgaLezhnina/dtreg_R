@@ -89,10 +89,10 @@ df_structure <- function(df, label) {
     for (y in seq_len(ncol(df))) {
       cell <- list()
       cell[["@type"]] <- the$constants$cell
-      if (!is.null(df[[y]][[i]])) {
-        cell[["value"]] <- as.character(df[[y]][[i]])
+      if (is.na(df[[y]][[i]])) {
+        cell["value"] <- NA
       } else {
-        cell["value"] <- list(NULL)
+        cell[["value"]] <- as.character(df[[y]][[i]])
       }
       cell[["column"]] <- index[[y]]
       row[["cells"]] <- append(row[["cells"]], list(cell))
