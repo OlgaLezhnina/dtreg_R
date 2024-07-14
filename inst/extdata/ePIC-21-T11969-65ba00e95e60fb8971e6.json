@@ -49,6 +49,13 @@
         "dtp_card_min": 1,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
+      },
+      {
+        "dtp_name": "titles",
+        "dtp_id": "65ba00e95e60fb8971e6#titles",
+        "dtp_card_min": 1,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       }
     ]
   ]
