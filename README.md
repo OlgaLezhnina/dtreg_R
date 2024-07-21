@@ -30,9 +30,9 @@ the ePIC DTR with DOI
 
 ``` r
 library(dtreg)
-## load the schema you need
+## load the datatype schema you need
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-## check the schema names to select the one(s) you intend to use
+## check the names to select the one(s) you intend to use
 names(dt)
 #> [1] "string"                  "url"                    
 #> [3] "integer_in_string"       "column"                 

@@ -38,9 +38,9 @@ The schema we use as an example belongs to the ePIC DTR with DOI "https://doi.or
 
 ```{r example}
 library(dtreg)
-## load the schema you need
+## load the datatype schema you need
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-## check the schema names to select the one(s) you intend to use
+## check the names to select the one(s) you intend to use
 names(dt)
 ## for the schema you use, e.g., dt$inferential_test_output(), check the fields names
 dtreg::show_fields(dt$inferential_test_output())
