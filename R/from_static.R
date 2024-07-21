@@ -1,6 +1,7 @@
-#' From static, to get information from static files
-#'
-#' @param datatype_id The identifier, such as URL, of a datatype
+#' From static
+#' @description
+#' Get schema information from static files, or NULL if not in static
+#' @param datatype_id The identifier of a datatype, such as URL
 #' @return The R object with schema from a JSON file, or NULL if not in static
 #'
 from_static <- function(datatype_id) {

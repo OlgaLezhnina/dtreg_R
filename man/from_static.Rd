@@ -2,16 +2,16 @@
 % Please edit documentation in R/from_static.R
 \name{from_static}
 \alias{from_static}
-\title{From static, to get information from static files}
+\title{From static}
 \usage{
 from_static(datatype_id)
 }
 \arguments{
-\item{datatype_id}{The identifier, such as URL, of a datatype}
+\item{datatype_id}{The identifier of a datatype, such as URL}
 }
 \value{
 The R object with schema from a JSON file, or NULL if not in static
 }
 \description{
-From static, to get information from static files
+Get schema information from static files, or NULL if not in static
 }

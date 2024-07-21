@@ -2,7 +2,7 @@
 % Please edit documentation in R/request_dtr.R
 \name{request_dtr}
 \alias{request_dtr}
-\title{Request datatype registry}
+\title{Request dtr}
 \usage{
 request_dtr(route)
 }
@@ -10,8 +10,8 @@ request_dtr(route)
 \item{route}{The path for requesting a dtr API}
 }
 \value{
-Requested information about a dtr schema
+Requested information about a datatype schema
 }
 \description{
-Request datatype registry
+Request an API of a datatype registry
 }
