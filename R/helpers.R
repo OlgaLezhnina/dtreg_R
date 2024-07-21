@@ -1,4 +1,6 @@
 #' Format a string
+#' @description
+#' Format a string to lowercase, spaces and dashes as underscores
 #' @param string A character vector
 #' @return A character vector formatted in the required way
 #'
@@ -10,8 +12,10 @@ format_string  <- function(string) {
   ))
 }
 #' Get prefix
+#' @description
+#' Get prefix of a URL string
 #' @param url_string A URL string
-#' @return The prefix string indicating the datatype
+#' @return The prefix string indicating a datatype
 #'
 get_prefix <- function(url_string) {
   part <- strsplit(url_string, split = "[/ //]+")[[1]]
@@ -23,7 +27,8 @@ get_prefix <- function(url_string) {
   return(prefix)
 }
 
-#' Specify cardinality of an ePIC property
+#' Specify cardinality
+#' @description Write cardinality of an ePIC property as a named list
 #' @param cardinality_string An ePIC string for cardinality
 #' @return A named list with min and max values as integers or NA
 #'
@@ -44,8 +49,9 @@ specify_cardinality <- function(cardinality_string) {
   return(min_max)
 }
 
-#' Generate a counting function
-#' used for assigning unique identifiers
+#' Generate uid function
+#' @description
+#' Generate a counting function for assigning identifiers
 #' @return The counting function
 #'
 generate_uid <- function() {
@@ -56,16 +62,17 @@ generate_uid <- function() {
   })
 }
 
-#' Show fields that can be filled by the user when writing a datatype instance
-#'
+#' Show fields
+#' @description
+#' Show fields of a schema that can be used for creating an instance
 #' @param datatype An R object from dtreg::load_datatype
 #'
 #' @return Fields that can be used in an instance
 #' @export
 #'
 #' @examples
-#' pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
-#' show_fields(pd$pidinst_schemaobject())
+#' dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+#' dtreg::show_fields(dt$inferential_test_output())
 #'
 show_fields <- function(datatype) {
   all_fields <- names(datatype)

@@ -13,5 +13,5 @@ format_string(string)
 A character vector formatted in the required way
 }
 \description{
-Format a string
+Format a string to lowercase, spaces and dashes as underscores
 }

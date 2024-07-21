@@ -2,7 +2,7 @@
 % Please edit documentation in R/helpers.R
 \name{show_fields}
 \alias{show_fields}
-\title{Show fields that can be filled by the user when writing a datatype instance}
+\title{Show fields}
 \usage{
 show_fields(datatype)
 }
@@ -13,10 +13,10 @@ show_fields(datatype)
 Fields that can be used in an instance
 }
 \description{
-Show fields that can be filled by the user when writing a datatype instance
+Show fields of a schema that can be used for creating an instance
 }
 \examples{
-pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
-show_fields(pd$pidinst_schemaobject())
+dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+dtreg::show_fields(dt$inferential_test_output())
 
 }

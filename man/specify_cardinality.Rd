@@ -2,7 +2,7 @@
 % Please edit documentation in R/helpers.R
 \name{specify_cardinality}
 \alias{specify_cardinality}
-\title{Specify cardinality of an ePIC property}
+\title{Specify cardinality}
 \usage{
 specify_cardinality(cardinality_string)
 }
@@ -13,5 +13,5 @@ specify_cardinality(cardinality_string)
 A named list with min and max values as integers or NA
 }
 \description{
-Specify cardinality of an ePIC property
+Write cardinality of an ePIC property as a named list
 }

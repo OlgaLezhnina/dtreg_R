@@ -10,8 +10,8 @@ get_prefix(url_string)
 \item{url_string}{A URL string}
 }
 \value{
-The prefix string indicating the datatype
+The prefix string indicating a datatype
 }
 \description{
-Get prefix
+Get prefix of a URL string
 }
