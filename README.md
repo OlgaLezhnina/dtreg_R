@@ -32,13 +32,13 @@ the ePIC DTR with DOI
 library(dtreg)
 ## load the datatype schema you need
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-## check the names to select the one(s) you intend to use
+## look at schemata to select the one(s) you intend to use
 names(dt)
 #> [1] "string"                  "url"                    
 #> [3] "integer_in_string"       "column"                 
 #> [5] "cell"                    "row"                    
 #> [7] "table"                   "inferential_test_output"
-## for the schema you use, e.g., dt$inferential_test_output(), check the fields names
+## check available fields for your schema
 dtreg::show_fields(dt$inferential_test_output())
 #> [1] "has_format"      "comment"         "has_description" "label"
 ## create your own instance by filling the fields of your choice
