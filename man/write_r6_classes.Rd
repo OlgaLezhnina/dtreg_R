@@ -7,7 +7,7 @@
 write_r6_classes(datatype_id)
 }
 \arguments{
-\item{datatype_id}{The identifier of a datatype}
+\item{datatype_id}{The identifier of a datatype schema, such as URL}
 }
 \value{
 a list of R6 classes for the datatype

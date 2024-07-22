@@ -7,11 +7,11 @@
 write_proxies(r6_classes)
 }
 \arguments{
-\item{r6_classes}{A list of R6 classes for a specified datatype}
+\item{r6_classes}{A list of R6 classes}
 }
 \value{
 a list of objects for creating new instances
 }
 \description{
-Write proxies
+Rewrite R6 classes to facilitate easier instance writing by the user
 }

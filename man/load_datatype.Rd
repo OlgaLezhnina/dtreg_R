@@ -7,15 +7,15 @@
 load_datatype(datatype_id)
 }
 \arguments{
-\item{datatype_id}{The identifier of a datatype}
+\item{datatype_id}{The identifier of a datatype schema, such as URL}
 }
 \value{
-a list of schemata for creating new instances
+a list of schemata as R objects
 }
 \description{
-Load datatype
+Load R objects with datatype schema information for creating a new instance
 }
 \examples{
-pd <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
+dt <- dtreg::load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
 
 }
