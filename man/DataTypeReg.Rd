@@ -2,12 +2,9 @@
 % Please edit documentation in R/dtr_interface.R
 \name{DataTypeReg}
 \alias{DataTypeReg}
-\title{R6 Class Representing a Data Type Registry}
+\title{DatatypReg}
 \description{
-Tba
-}
-\details{
-Tba
+Interface for R6 class representing a datatype registry
 }
 \section{Methods}{
 \subsection{Public methods}{
@@ -24,7 +21,7 @@ Tba
 \if{html}{\out{<a id="method-DataTypeReg-get_schema_info"></a>}}
 \if{latex}{\out{\hypertarget{method-DataTypeReg-get_schema_info}{}}}
 \subsection{Method \code{get_schema_info()}}{
-The function used in any DTR to get a schema
+Obtain information from a datatype schema
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$get_schema_info(datatype_id)}\if{html}{\out{</div>}}
 }
@@ -45,7 +42,7 @@ Not implemented, this is an interface
 \if{html}{\out{<a id="method-DataTypeReg-add_context"></a>}}
 \if{latex}{\out{\hypertarget{method-DataTypeReg-add_context}{}}}
 \subsection{Method \code{add_context()}}{
-The function to write context for JSON-LD
+Write dtr-specific context for JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$add_context(prefix)}\if{html}{\out{</div>}}
 }
@@ -57,6 +54,10 @@ The function to write context for JSON-LD
 }
 \if{html}{\out{</div>}}
 }
+\subsection{Details}{
+The dtr-specific information is provided by the dtr
+}
+
 \subsection{Returns}{
 Not implemented, this is an interface
 Not implemented, this is an interface
@@ -66,7 +67,7 @@ Not implemented, this is an interface
 \if{html}{\out{<a id="method-DataTypeReg-add_dt_type"></a>}}
 \if{latex}{\out{\hypertarget{method-DataTypeReg-add_dt_type}{}}}
 \subsection{Method \code{add_dt_type()}}{
-The function to write schema type for JSON-LD
+Write schema type for JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$add_dt_type(identifier)}\if{html}{\out{</div>}}
 }
@@ -87,7 +88,7 @@ Not implemented, this is an interface
 \if{html}{\out{<a id="method-DataTypeReg-add_dtp_type"></a>}}
 \if{latex}{\out{\hypertarget{method-DataTypeReg-add_dtp_type}{}}}
 \subsection{Method \code{add_dtp_type()}}{
-The function to write property for JSON-LD
+Write property type for JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$add_dtp_type(identifier)}\if{html}{\out{</div>}}
 }
@@ -108,7 +109,7 @@ Not implemented, this is an interface
 \if{html}{\out{<a id="method-DataTypeReg-add_df_constants"></a>}}
 \if{latex}{\out{\hypertarget{method-DataTypeReg-add_df_constants}{}}}
 \subsection{Method \code{add_df_constants()}}{
-The function to write dataframe constants for JSON-LD
+Write dataframe constants for JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{DataTypeReg$add_df_constants()}\if{html}{\out{</div>}}
 }

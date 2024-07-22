@@ -1,6 +1,7 @@
-#' Select datatype registry
-#'
-#' @param datatype_id The identifier of a datatype
+#' Select dtr
+#' @description
+#' Select a dtr-related class based on the identifier
+#' @param datatype_id The identifier of a datatype, such as URL
 #' @return An R6 class for the specific datatype registry
 #'
 select_dtr <- function(datatype_id) {
@@ -15,50 +16,48 @@ select_dtr <- function(datatype_id) {
   return(selected_class)
 }
 
-
+#' A dummy function explicitly referring to R6 package to declare the dependency
 dummy_r6 <- function() R6::R6Class
-#' R6 Class Representing a Data Type Registry
-#'
-#' @description
-#' Tba
-#'
-#' @details
-#' Tba
 
+#' DatatypReg
+#' @description
+#' Interface for R6 class representing a datatype registry
+#'
 DataTypeReg <- R6::R6Class(
   "DataTypeReg",
   public = list(
     #' @description
-    #' The function used in any DTR to get a schema
+    #' Obtain information from a datatype schema
     #' @param datatype_id The identifier of a datatype
     #' @return Not implemented, this is an interface
     get_schema_info = function(datatype_id) {
       #' Not implemented, this is an interface
     },
     #' @description
-    #' The function to write context for JSON-LD
+    #' Write dtr-specific context for JSON-LD
+    #' @details
+    #' The dtr-specific information is provided by the dtr
     #' @param prefix The URL prefix
     #' @return Not implemented, this is an interface
     add_context = function(prefix) {
       #' Not implemented, this is an interface
     },
     #' @description
-    #' The function to write schema type for JSON-LD
+    #' Write schema type for JSON-LD
     #' @param identifier The schema identifier
     #' @return Not implemented, this is an interface
     add_dt_type = function(identifier) {
       #' Not implemented, this is an interface
     },
     #' @description
-    #' The function to write property for JSON-LD
+    #' Write property type for JSON-LD
     #' @param identifier The property identifier
     #' @return Not implemented, this is an interface
     add_dtp_type = function(identifier) {
       #' Not implemented, this is an interface
     },
     #' @description
-    #' The function to write dataframe constants for JSON-LD
-    #'
+    #' Write dataframe constants for JSON-LD
     #' @return Not implemented, this is an interface
     add_df_constants = function() {
       #' Not implemented, this is an interface
@@ -66,13 +65,10 @@ DataTypeReg <- R6::R6Class(
   )
 )
 
+#' Epic
+#' @description
 #' R6 Class Representing the ePIC DTR
 #'
-#' @description
-#' Tba
-#'
-#' @details
-#' Tba
 Epic <- R6::R6Class(
   "Epic",
   inherit = DataTypeReg,
@@ -82,12 +78,12 @@ Epic <- R6::R6Class(
     #' @description
     #' Create a new object with the schema information
     #' @param schema_info An ePIC schema information
-    #' @return A new object with the schema information
+    #' @return A new object with the ePIC schema information
     initialize = function(schema_info = NA) {
       self$schema_info <- schema_info
     },
     #' @description
-    #' Write information from an ePIC schema
+    #' Obtain information from an ePIC schema
     #' @param datatype_id The identifier of a datatype
     #' @return Extracted information from an ePIC schema
     get_schema_info = function(datatype_id) {
@@ -100,7 +96,9 @@ Epic <- R6::R6Class(
       return(self$schema_info)
     },
     #' @description
-    #' Give ePIC-specific context for writing JSON-LD
+    #' Write ePIC-specific context for JSON-LD
+    #' @details
+    #' The ePIC-specific information is provided by the dtr
     #' @param prefix The URL prefix
     #' @return Context to include in JSON-LD file
     add_context = function(prefix) {
@@ -127,7 +125,7 @@ Epic <- R6::R6Class(
       return(context_info)
     },
     #' @description
-    #' Give ePIC-specific schema type for writing JSON-LD
+    #' Write ePIC-specific schema type for writing JSON-LD
     #' @param identifier The ePIC schema identifier
     #' @return Type to include in JSON-LD file
     add_dt_type = function(identifier) {
@@ -135,7 +133,7 @@ Epic <- R6::R6Class(
       return(dt_type)
     },
     #' @description
-    #' Give ePIC-specific property type for writing JSON-LD
+    #' Write ePIC-specific property type for writing JSON-LD
     #' @param identifier The ePIC property identifier
     #' @return Type to include in JSON-LD file
     add_dtp_type = function(identifier) {
@@ -143,8 +141,7 @@ Epic <- R6::R6Class(
       return(dtp_type)
     },
     #' @description
-    #' Give ePIC-specific dataframe constants for writing JSON-LD
-    #'
+    #' Write ePIC-specific dataframe constants for writing JSON-LD
     #' @return Dataframe constants to include in JSON-LD file
     add_df_constants = function() {
       df_constants <- list()
@@ -157,13 +154,10 @@ Epic <- R6::R6Class(
   )
 )
 
+#' ORKG
+#' @description
 #' R6 Class Representing the ORKG DTR
 #'
-#' @description
-#' Tba
-#'
-#' @details
-#' Tba
 Orkg <- R6::R6Class(
   "Orkg",
   inherit = DataTypeReg,
@@ -171,14 +165,14 @@ Orkg <- R6::R6Class(
     #' @field schema_info An ORKG template information
     schema_info = NULL,
     #' @description
-    #' Create a new object with the template information
+    #' Create a new object with the schema information
     #' @param schema_info An ORKG template information
-    #' @return A new object with the template information
+    #' @return A new object with the ORKG template information
     initialize = function(schema_info = NA) {
       self$schema_info <- schema_info
     },
     #' @description
-    #' Write information from an ORKG template
+    #' Obtain information from an ORKG template
     #' @param datatype_id The identifier of an ORKG template
     #' @return Extracted information from an ORKG template
     get_schema_info = function(datatype_id) {
@@ -186,7 +180,9 @@ Orkg <- R6::R6Class(
       return(self$schema_info)
     },
     #' @description
-    #' Give ORKG-specific context for writing JSON-LD
+    #' Write ORKG-specific context for JSON-LD
+    #' @details
+    #' The ORKG-specific information is provided by the dtr
     #' @param prefix The URL prefix
     #' @return Context to include in JSON-LD file
     add_context = function(prefix) {
@@ -211,7 +207,7 @@ Orkg <- R6::R6Class(
       return(context_info)
     },
     #' @description
-    #' Give ORKG-specific template type for writing JSON-LD
+    #' Write ORKG-specific template type for writing JSON-LD
     #' @param identifier The ORKG template identifier
     #' @return Type to include in JSON-LD file
     add_dt_type = function(identifier) {
@@ -219,7 +215,7 @@ Orkg <- R6::R6Class(
       return(dt_type)
     },
     #' @description
-    #' Give ORKG-specific property type for writing JSON-LD
+    #' Write ORKG-specific property type for writing JSON-LD
     #' @param identifier The ORKG property identifier
     #' @return Type to include in JSON-LD file
     add_dtp_type = function(identifier) {
@@ -227,8 +223,7 @@ Orkg <- R6::R6Class(
       return(dtp_type)
     },
     #' @description
-    #' Give ORKG-specific dataframe constants for writing JSON-LD
-    #'
+    #' Write ORKG-specific dataframe constants for writing JSON-LD
     #' @return Constants to include in JSON-LD file
     add_df_constants = function() {
       df_constants <- list()

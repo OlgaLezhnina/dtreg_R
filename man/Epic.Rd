@@ -2,12 +2,9 @@
 % Please edit documentation in R/dtr_interface.R
 \name{Epic}
 \alias{Epic}
-\title{R6 Class Representing the ePIC DTR}
+\title{Epic}
 \description{
-Tba
-}
-\details{
-Tba
+R6 Class Representing the ePIC DTR
 }
 \section{Super class}{
 \code{\link[dtreg:DataTypeReg]{dtreg::DataTypeReg}} -> \code{Epic}
@@ -48,14 +45,14 @@ Create a new object with the schema information
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-A new object with the schema information
+A new object with the ePIC schema information
 }
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Epic-get_schema_info"></a>}}
 \if{latex}{\out{\hypertarget{method-Epic-get_schema_info}{}}}
 \subsection{Method \code{get_schema_info()}}{
-Write information from an ePIC schema
+Obtain information from an ePIC schema
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Epic$get_schema_info(datatype_id)}\if{html}{\out{</div>}}
 }
@@ -75,7 +72,7 @@ Extracted information from an ePIC schema
 \if{html}{\out{<a id="method-Epic-add_context"></a>}}
 \if{latex}{\out{\hypertarget{method-Epic-add_context}{}}}
 \subsection{Method \code{add_context()}}{
-Give ePIC-specific context for writing JSON-LD
+Write ePIC-specific context for JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Epic$add_context(prefix)}\if{html}{\out{</div>}}
 }
@@ -87,6 +84,10 @@ Give ePIC-specific context for writing JSON-LD
 }
 \if{html}{\out{</div>}}
 }
+\subsection{Details}{
+The ePIC-specific information is provided by the dtr
+}
+
 \subsection{Returns}{
 Context to include in JSON-LD file
 }
@@ -95,7 +96,7 @@ Context to include in JSON-LD file
 \if{html}{\out{<a id="method-Epic-add_dt_type"></a>}}
 \if{latex}{\out{\hypertarget{method-Epic-add_dt_type}{}}}
 \subsection{Method \code{add_dt_type()}}{
-Give ePIC-specific schema type for writing JSON-LD
+Write ePIC-specific schema type for writing JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Epic$add_dt_type(identifier)}\if{html}{\out{</div>}}
 }
@@ -115,7 +116,7 @@ Type to include in JSON-LD file
 \if{html}{\out{<a id="method-Epic-add_dtp_type"></a>}}
 \if{latex}{\out{\hypertarget{method-Epic-add_dtp_type}{}}}
 \subsection{Method \code{add_dtp_type()}}{
-Give ePIC-specific property type for writing JSON-LD
+Write ePIC-specific property type for writing JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Epic$add_dtp_type(identifier)}\if{html}{\out{</div>}}
 }
@@ -135,7 +136,7 @@ Type to include in JSON-LD file
 \if{html}{\out{<a id="method-Epic-add_df_constants"></a>}}
 \if{latex}{\out{\hypertarget{method-Epic-add_df_constants}{}}}
 \subsection{Method \code{add_df_constants()}}{
-Give ePIC-specific dataframe constants for writing JSON-LD
+Write ePIC-specific dataframe constants for writing JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Epic$add_df_constants()}\if{html}{\out{</div>}}
 }

@@ -2,12 +2,9 @@
 % Please edit documentation in R/dtr_interface.R
 \name{Orkg}
 \alias{Orkg}
-\title{R6 Class Representing the ORKG DTR}
+\title{ORKG}
 \description{
-Tba
-}
-\details{
-Tba
+R6 Class Representing the ORKG DTR
 }
 \section{Super class}{
 \code{\link[dtreg:DataTypeReg]{dtreg::DataTypeReg}} -> \code{Orkg}
@@ -35,7 +32,7 @@ Tba
 \if{html}{\out{<a id="method-Orkg-new"></a>}}
 \if{latex}{\out{\hypertarget{method-Orkg-new}{}}}
 \subsection{Method \code{new()}}{
-Create a new object with the template information
+Create a new object with the schema information
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Orkg$new(schema_info = NA)}\if{html}{\out{</div>}}
 }
@@ -48,14 +45,14 @@ Create a new object with the template information
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-A new object with the template information
+A new object with the ORKG template information
 }
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-Orkg-get_schema_info"></a>}}
 \if{latex}{\out{\hypertarget{method-Orkg-get_schema_info}{}}}
 \subsection{Method \code{get_schema_info()}}{
-Write information from an ORKG template
+Obtain information from an ORKG template
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Orkg$get_schema_info(datatype_id)}\if{html}{\out{</div>}}
 }
@@ -75,7 +72,7 @@ Extracted information from an ORKG template
 \if{html}{\out{<a id="method-Orkg-add_context"></a>}}
 \if{latex}{\out{\hypertarget{method-Orkg-add_context}{}}}
 \subsection{Method \code{add_context()}}{
-Give ORKG-specific context for writing JSON-LD
+Write ORKG-specific context for JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Orkg$add_context(prefix)}\if{html}{\out{</div>}}
 }
@@ -87,6 +84,10 @@ Give ORKG-specific context for writing JSON-LD
 }
 \if{html}{\out{</div>}}
 }
+\subsection{Details}{
+The ORKG-specific information is provided by the dtr
+}
+
 \subsection{Returns}{
 Context to include in JSON-LD file
 }
@@ -95,7 +96,7 @@ Context to include in JSON-LD file
 \if{html}{\out{<a id="method-Orkg-add_dt_type"></a>}}
 \if{latex}{\out{\hypertarget{method-Orkg-add_dt_type}{}}}
 \subsection{Method \code{add_dt_type()}}{
-Give ORKG-specific template type for writing JSON-LD
+Write ORKG-specific template type for writing JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Orkg$add_dt_type(identifier)}\if{html}{\out{</div>}}
 }
@@ -115,7 +116,7 @@ Type to include in JSON-LD file
 \if{html}{\out{<a id="method-Orkg-add_dtp_type"></a>}}
 \if{latex}{\out{\hypertarget{method-Orkg-add_dtp_type}{}}}
 \subsection{Method \code{add_dtp_type()}}{
-Give ORKG-specific property type for writing JSON-LD
+Write ORKG-specific property type for writing JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Orkg$add_dtp_type(identifier)}\if{html}{\out{</div>}}
 }
@@ -135,7 +136,7 @@ Type to include in JSON-LD file
 \if{html}{\out{<a id="method-Orkg-add_df_constants"></a>}}
 \if{latex}{\out{\hypertarget{method-Orkg-add_df_constants}{}}}
 \subsection{Method \code{add_df_constants()}}{
-Give ORKG-specific dataframe constants for writing JSON-LD
+Write ORKG-specific dataframe constants for writing JSON-LD
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{Orkg$add_df_constants()}\if{html}{\out{</div>}}
 }
