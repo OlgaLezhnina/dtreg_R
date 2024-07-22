@@ -2,18 +2,18 @@
 % Please edit documentation in R/to_jsonld.R
 \name{df_structure}
 \alias{df_structure}
-\title{Df structure function writes a dataframe into JSON-LD}
+\title{Dataframe structure}
 \usage{
 df_structure(df, label)
 }
 \arguments{
 \item{df}{A dataframe}
 
-\item{label}{A character string}
+\item{label}{A string}
 }
 \value{
-An R object to be used by to_jsonld function
+A named list to be used by to_jsonld function
 }
 \description{
-Df structure function writes a dataframe into JSON-LD
+Prepare a dataframe or a tuple for to_jsonld function
 }

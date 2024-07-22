@@ -1,11 +1,13 @@
-#' To_jsonld writes an instance as JSON-LD
-#' @param instance An instance of an R6 class
+#' Write JSON-LD
+#' @description
+#' Write an instance into JSON-LD file
+#' @param instance An instance of a datatype-related R6 class
 #' @return JSON string in JSON-LD format
 #' @export
 #' @examples
-#' dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+#' dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
 #' instance <- dt$inferential_test_output(label = "my_results")
-#' result <- to_jsonld(instance)
+#' result <- dtreg::to_jsonld(instance)
 #'
 to_jsonld <- function(instance) {
   the$constants <- instance$add_df_constants()
@@ -42,10 +44,11 @@ to_jsonld <- function(instance) {
   return(inst_json)
 }
 
-#' Differ input deals differently with inputs of different types
-#' @param input Can be NA, a dataframe, a tuple, or another input
-#' @return An input-dependent R object or the df_structure function call
-#' to be further used by to_jsonld function
+#' Differ input
+#' @description
+#' Differentiate input for further use by to_jsonld function
+#' @param input An object to be differentiated as a dataframe, a tuple, or another type
+#' @return The result of calling the df_structure function, or the input unchanged
 #'
 differ_input <- function(input) {
   if (methods::is(input, "data.frame")) {
@@ -58,10 +61,12 @@ differ_input <- function(input) {
   return(output)
 }
 
-#' Df structure function writes a dataframe into JSON-LD
+#' Dataframe structure
+#' @description
+#' Prepare a dataframe or a tuple for to_jsonld function
 #' @param df A dataframe
-#' @param label A character string
-#' @return An R object to be used by to_jsonld function
+#' @param label A string
+#' @return A named list to be used by to_jsonld function
 #'
 df_structure <- function(df, label) {
   result <- list()

@@ -2,22 +2,22 @@
 % Please edit documentation in R/to_jsonld.R
 \name{to_jsonld}
 \alias{to_jsonld}
-\title{To_jsonld writes an instance as JSON-LD}
+\title{Write JSON-LD}
 \usage{
 to_jsonld(instance)
 }
 \arguments{
-\item{instance}{An instance of an R6 class}
+\item{instance}{An instance of a datatype-related R6 class}
 }
 \value{
 JSON string in JSON-LD format
 }
 \description{
-To_jsonld writes an instance as JSON-LD
+Write an instance into JSON-LD file
 }
 \examples{
-dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
 instance <- dt$inferential_test_output(label = "my_results")
-result <- to_jsonld(instance)
+result <- dtreg::to_jsonld(instance)
 
 }
