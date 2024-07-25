@@ -8,9 +8,9 @@
 
 The goal of dtreg is to help the user interact with various data type
 registries (DTRs). Currently, the ePIC and the ORKG DTRs are supported.
-The user can load a DTR schema as an R object and create their own
-instance of the schema. This instance can be written as a
-machine-actionable JSON-LD file.
+The user can load a DTR schema (e.g., an ePIC datatype or an ORKG
+template) as an R object and create their own instance of the schema.
+This instance can be written as a machine-actionable JSON-LD file.
 
 ## Installation
 
