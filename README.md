@@ -7,9 +7,10 @@
 <!-- badges: end -->
 
 The goal of dtreg is to help the user interact with various data type
-registries (DTRs). The user can load a DTR schema as an R object and
-create their own instance of the schema. This instance can be written as
-a machine-actionable JSON-LD file.
+registries (DTRs). Currently, the ePIC and the ORKG DTRs are supported.
+The user can load a DTR schema as an R object and create their own
+instance of the schema. This instance can be written as a
+machine-actionable JSON-LD file.
 
 ## Installation
 
@@ -24,9 +25,11 @@ devtools::install_github("OlgaLezhnina/dtreg")
 ## Example
 
 This example shows you how to work with a schema from a DTR; you need to
-know the DOI of the schema. The schema we use as an example belongs to
-the ePIC DTR with DOI
-“<https://doi.org/21.T11969/74bc7748b8cd520908bc>”.
+know the identifier (URL) of the schema. The schema we use as an example
+belongs to the ePIC DTR with DOI
+“<https://doi.org/21.T11969/74bc7748b8cd520908bc>”. For the ORKG, please
+use a template URL, such as
+“<https://incubating.orkg.org/template/R855534>”.
 
 ``` r
 library(dtreg)
