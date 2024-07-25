@@ -1,5 +1,5 @@
 Package: dtreg
-Title:  Interact with Data Type Registries and Create Machine Actionable Data
+Title:  Interact with Data Type Registries and Create Machine-Actionable Data
 Version: 0.0.0.9000
 Authors@R: 
     c(
@@ -10,10 +10,10 @@ Authors@R:
     person("Markus", "Stocker", , "markus.stocker@tib.eu", role = c("aut"),
            comment = c(ORCID = "0000-0001-5492-3212"))
            )
-Description: You can load a schema from a data type registry (DTR) as an R object. 
-    Currently, the ePIC and the ORKG DTRs are supported.  
-    Use this schema to write results of your data analysis.
-    Write the created instance in JSON-LD format to make it machine-actionable.  
+Description: You can load a schema from a data type registry (DTR) as an R object.
+    Currently, the ePIC and the ORKG DTRs are supported.
+    Use this schema to create an instance for reporting your research results.
+    Write the instance in JSON-LD format to make it machine-actionable.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
