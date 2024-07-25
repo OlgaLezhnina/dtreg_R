@@ -18,10 +18,11 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of dtreg is to help the user interact with various data type registries (DTRs).
-Currently, the ePIC and the ORKG DTRs are supported.
-The user can load a DTR schema (e.g., an ePIC datatype or an ORKG template) as an R object and create their own instance of the schema.
-This instance can be written as a machine-actionable JSON-LD file. 
+The goal of dtreg is to help the users interact with various data type registries (DTRs) and write research results in the machine-actionable format.  
+Currently, the ePIC and the ORKG DTRs are supported. 
+The user can load a DTR schema (an ePIC datatype or an ORKG template) as an R object.
+The next step is to create a new instance of the schema by filling the relevant fields.
+Finally, the instance can be written as a machine-actionable JSON-LD file. 
 
 ## Installation
 
@@ -34,15 +35,15 @@ devtools::install_github("OlgaLezhnina/dtreg")
 
 ## Example
 
-This example shows you how to work with a schema from a DTR; you need to know the identifier (URL) of the schema.
-The schema we use as an example belongs to the ePIC DTR with DOI "https://doi.org/21.T11969/74bc7748b8cd520908bc".
-For the ORKG, please use a template URL, such as "https://incubating.orkg.org/template/R855534".
+This example shows you how to work with a DTR schema; you need to know the schema identifier.
+As an example, the ePIC schema (datatype) with the DOI "https://doi.org/21.T11969/74bc7748b8cd520908bc" is used.
+For the ORKG, please use the schema (template) URL, such as "https://incubating.orkg.org/template/R855534".
 
 ```{r example}
 library(dtreg)
-## load the datatype schema you need
+## load the schema you need
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-## look at schemata to select the one(s) you intend to use
+## look at the schemata to select the one(s) you intend to use
 names(dt)
 ## check available fields for your schema
 dtreg::show_fields(dt$inferential_test_output())
