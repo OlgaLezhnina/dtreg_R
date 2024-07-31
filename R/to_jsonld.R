@@ -47,8 +47,8 @@ to_jsonld <- function(instance) {
 #' Differ input
 #' @description
 #' Differentiate input for further use by to_jsonld function
-#' @param input An object to be differentiated as a dataframe, a tuple, or another type
-#' @return The result of calling the df_structure function, or the input unchanged
+#' @param input A dataframe, a tuple, or another object
+#' @return The result of the df_structure function, or the input unchanged
 #'
 differ_input <- function(input) {
   if (methods::is(input, "data.frame")) {

@@ -7,10 +7,10 @@
 differ_input(input)
 }
 \arguments{
-\item{input}{An object to be differentiated as a dataframe, a tuple, or another type}
+\item{input}{A dataframe, a tuple, or another object}
 }
 \value{
-The result of calling the df_structure function, or the input unchanged
+The result of the df_structure function, or the input unchanged
 }
 \description{
 Differentiate input for further use by to_jsonld function
