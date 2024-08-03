@@ -60,7 +60,48 @@ labelled_inst <- dt$statistical_test_of_difference(label = "my_test_results")
 ```
 
 However, the results of your data analysis are more complex than this.
-Thus, it is recommendable to consult the help page XXX which explains whether a field requires a schema or a specific type of input (e.g., numeric).  
+Thus, it is recommendable to consult the help page XXX which explains whether a field requires a schema or a specific type of data (e.g., numeric).  
+
+### String, numeric, and data frame
+
+Most frequently used types are string, numeric, and data frame.
+Strings are used for labels and comments, and URLs are also presented as strings:
+
+```{r}
+method_URL <- dt$software_method(
+                 has_support_URL = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test")
+```
+
+Numeric values are also typical:
+
+```{r}
+sample_size <- dt$sample_size(has_specified_numeric_value = 148)
+```
+
+Some fields, such as "has_format", require a data frame: 
+
+```{r}
+my_dataframe <- data.frame(p = 0.026, t = 2.3, df = 48, stringsAsFactors = FALSE)
+output_dataframe <- dt$inferential_test_output(has_format = my_dataframe)
+
+```
+
+You can use a tuple instead. A tuple helps you to give your data fame a name if you do not want it to be assigned a generic name "Table". When creating a tuple, please always include first the data frame and then the name as a string. 
+
+```{r}
+my_tuple <- sets::tuple(my_dataframe, "the Wilcoxon results")
+output_tuple <- dt$inferential_test_output(has_format = my_dataframe)
+```
+### More than one input in a field
+
+Sometimes a few objects should be written in one field.
+In this case simply concatenate them:
+
+```{r}
+var_1 <- dt$statistical_variable()
+var_2 <- dt$statistical_variable()
+two_vars <- dt$statistical_test_of_difference(evaluates = c(var_1, var_2))
+```
 
 ### Nested structure
 
@@ -74,16 +115,17 @@ nested_inst <- dt$statistical_test_of_difference(
                       part_of = dt$software(label = "R"))))
 ```
 
-This nested structure is informed by machine-actionability of the data and might seem a bit complicated at first. We intend to make it simpler with dtreg: for now, we explain how to more effectively write the instance, and later versions will suggest very simple wrappers which will write the results for you.
+This nested structure is informed by machine-actionability of the data and might seem a bit complicated at first. We intend to make it simpler with dtreg, and later versions will suggest very simple wrappers which will write the results for you.
 
-### Nested structure
-
-In the "data_input" and the "data_output", the field "has_format" requires a data frame or a tuple. A tuple helps you to give your data fame a name; otherwise, a generic name "Table" will be assigned to it. With the tuple, please always conform to the order: first the data frame and then the name. 
-
-```{r}
-my_dataframe <- data.frame(p = 0.026, t = 2.3, df = 48, stringsAsFactors = FALSE)
-my_tuple <- sets::tuple(my_dataframe, "the t-test results")
-
-```
+### Gather all info to write an instance 
 
 For a more structured presentation, let us first write all field inputs and then gather them for the instance. 
+
+## Convert the instance into a JSON-LD file
+
+This stage is simple:
+
+
+```{r}
+my_json <- dtreg::to_jsonld(labelled_inst)
+```
