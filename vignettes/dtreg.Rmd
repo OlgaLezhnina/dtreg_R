@@ -43,32 +43,42 @@ names(dt)
 ```
 ## Create an instance 
 
-To write down the data analysis results, dtreg uses R6 classes. Therefore, you need to create an instance of a specific R6 class.
+To write down the data analysis results, dtreg uses R6 classes. Therefore, you need to create an instance of a specific class.
+
+### Fields 
+
 For doing that, you first need to know which fields you can use: 
 
 ```{r}
 dtreg::show_fields(dt$statistical_test_of_difference())
 ```
 
-For example, if your instance included only a label, it would be:
+For example, there is the field "label". If your instance included only a label, it would be:
 
 ```{r}
 labelled_inst <- dt$statistical_test_of_difference(label = "my_test_results")
 ```
 
-However, actual results of your data analysis are probably more complex than this.
-Thus, it is recommendable to consult the help page XXX which explains what exactly to write in which field. It is important to know whether a field requires a separate schema or a specific type of input (e.g., numeric), and what is the meaning of this input.  
+However, the results of your data analysis are more complex than this.
+Thus, it is recommendable to consult the help page XXX which explains whether a field requires a schema or a specific type of input (e.g., numeric).  
 
-On the help page, you can read about the fields you can use for the "statistical test of difference" instance. The field "label" is the name of your instance, it accepts a string, and we have already written it in the code above. The field "has_specified input" requires the schema "data_input", so we need to take a look on this schema in turn. The same applied to the field "executes" that requires the schema "software method", and when we look at the "software method", some of its fields also require their own schemata, e.g., the field "uses software" requires the schema "software library". 
+### Nested structure
+
+On the help page for the "statistical_test_of_difference", you can see that the field "executes" requires the schema "software method", which in turn has the field "uses software" requiring the schema "software library": 
 
 
 ```{r}
-nested_inst <- dt$statistical_test_of_difference(executes = dt$software_method(uses_software = dt$software_library(part_of = dt$software(label = "R"))))
+nested_inst <- dt$statistical_test_of_difference(
+                  executes = dt$software_method(
+                    uses_software = dt$software_library(
+                      part_of = dt$software(label = "R"))))
 ```
 
-This nested structure is informed by machine-actionability of the data and might seem a bit complicated at first. We intend to make writing the instance simpler with dtreg. Please notice that the mentioned schemata - "data input", "software method", "software library" and others - are in the list you saw above when looking at the names(dt). You do not need to load them anew, just use what is already there in the dt object.  
+This nested structure is informed by machine-actionability of the data and might seem a bit complicated at first. We intend to make it simpler with dtreg: for now, we explain how to more effectively write the instance, and later versions will suggest very simple wrappers which will write the results for you.
 
-LATER The field "has_format" requires a data frame or a tuple. A tuple helps you to give your data fame a name; otherwise, a generic name "Table" will be assigned to it. With the tuple, please always conform to the order: first the data frame and then the name. 
+### Nested structure
+
+In the "data_input" and the "data_output", the field "has_format" requires a data frame or a tuple. A tuple helps you to give your data fame a name; otherwise, a generic name "Table" will be assigned to it. With the tuple, please always conform to the order: first the data frame and then the name. 
 
 ```{r}
 my_dataframe <- data.frame(p = 0.026, t = 2.3, df = 48, stringsAsFactors = FALSE)
