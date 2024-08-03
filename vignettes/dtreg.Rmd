@@ -17,3 +17,63 @@ knitr::opts_chunk$set(
 ```{r setup}
 library(dtreg)
 ```
+You can use dtreg for the following tasks:
+
+* Interact with data type registries (DTRs): currently, the ePIC and the ORKG DTRs.
+
+* Write down the results of your data analysis in accordance with a DTR schema.
+
+* Convert the results into a machine-actionable JSON-LD file. 
+
+## Load a DTR schema 
+
+To load a DTR schema, you need to know it identifier.
+For the EPIC, it is the datatype DOI, such as "https://doi.org/21.T11969/ff5e3f857788d20dd1aa".
+For the ORKG, it is the template URL, such as "https://incubating.orkg.org/template/R836000".
+If a valid identifier is used, you get an R object containing information about the DTR schema.
+
+```{r}
+dt <- dtreg::load_datatype("https://doi.org/21.T11969/ff5e3f857788d20dd1aa")
+```
+In addition to the schema you requested, you get related schemata, which could be  useful for reporting your results.
+You can look at the list of these schemata:
+
+```{r}
+names(dt)
+```
+## Create an instance 
+
+To write down the data analysis results, dtreg uses R6 classes. Therefore, you need to create an instance of a specific R6 class.
+For doing that, you first need to know which fields you can use: 
+
+```{r}
+dtreg::show_fields(dt$statistical_test_of_difference())
+```
+
+For example, if your instance included only a label, it would be:
+
+```{r}
+labelled_inst <- dt$statistical_test_of_difference(label = "my_test_results")
+```
+
+However, actual results of your data analysis are probably more complex than this.
+Thus, it is recommendable to consult the help page XXX which explains what exactly to write in which field. It is important to know whether a field requires a separate schema or a specific type of input (e.g., numeric), and what is the meaning of this input.  
+
+On the help page, you can read about the fields you can use for the "statistical test of difference" instance. The field "label" is the name of your instance, it accepts a string, and we have already written it in the code above. The field "has_specified input" requires the schema "data_input", so we need to take a look on this schema in turn. The same applied to the field "executes" that requires the schema "software method", and when we look at the "software method", some of its fields also require their own schemata, e.g., the field "uses software" requires the schema "software library". 
+
+
+```{r}
+nested_inst <- dt$statistical_test_of_difference(executes = dt$software_method(uses_software = dt$software_library(part_of = dt$software(label = "R"))))
+```
+
+This nested structure is informed by machine-actionability of the data and might seem a bit complicated at first. We intend to make writing the instance simpler with dtreg. Please notice that the mentioned schemata - "data input", "software method", "software library" and others - are in the list you saw above when looking at the names(dt). You do not need to load them anew, just use what is already there in the dt object.  
+
+LATER The field "has_format" requires a data frame or a tuple. A tuple helps you to give your data fame a name; otherwise, a generic name "Table" will be assigned to it. With the tuple, please always conform to the order: first the data frame and then the name. 
+
+```{r}
+my_dataframe <- data.frame(p = 0.026, t = 2.3, df = 48, stringsAsFactors = FALSE)
+my_tuple <- sets::tuple(my_dataframe, "the t-test results")
+
+```
+
+For a more structured presentation, let us first write all field inputs and then gather them for the instance. 
