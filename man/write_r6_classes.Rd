@@ -15,3 +15,4 @@ a list of R6 classes for the datatype
 \description{
 Write R6 classes for a specified datatype
 }
+\keyword{internal}

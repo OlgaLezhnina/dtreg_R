@@ -15,3 +15,4 @@ The result of the df_structure function, or the input unchanged
 \description{
 Differentiate input for further use by to_jsonld function
 }
+\keyword{internal}

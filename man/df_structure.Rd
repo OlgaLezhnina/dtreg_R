@@ -17,3 +17,4 @@ A named list to be used by to_jsonld function
 \description{
 Prepare a dataframe or a tuple for to_jsonld function
 }
+\keyword{internal}

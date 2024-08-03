@@ -15,3 +15,4 @@ An R object that contains information about the ORKG template
 \description{
 Extract ORKG template information
 }
+\keyword{internal}

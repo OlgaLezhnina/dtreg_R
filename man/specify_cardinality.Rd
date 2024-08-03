@@ -15,3 +15,4 @@ A named list with min and max values as integers or NA
 \description{
 Write cardinality of an ePIC property as a named list
 }
+\keyword{internal}

@@ -15,3 +15,4 @@ The R object with schema from a JSON file, or NULL if not in static
 \description{
 Get schema information from static files, or NULL if not in static
 }
+\keyword{internal}

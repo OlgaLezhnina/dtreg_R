@@ -6,6 +6,7 @@
 \description{
 Interface for R6 class representing a datatype registry
 }
+\keyword{internal}
 \section{Methods}{
 \subsection{Public methods}{
 \itemize{

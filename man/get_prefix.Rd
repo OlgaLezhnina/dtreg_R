@@ -15,3 +15,4 @@ The prefix string indicating a datatype
 \description{
 Get prefix of a URL string
 }
+\keyword{internal}

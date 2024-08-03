@@ -15,3 +15,4 @@ Requested information about a datatype schema
 \description{
 Request an API of a datatype registry
 }
+\keyword{internal}

@@ -9,3 +9,4 @@ dummy_r6()
 \description{
 A dummy function explicitly referring to R6 package to declare the dependency
 }
+\keyword{internal}

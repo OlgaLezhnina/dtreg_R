@@ -6,6 +6,7 @@
 \description{
 R6 Class Representing the ORKG DTR
 }
+\keyword{internal}
 \section{Super class}{
 \code{\link[dtreg:DataTypeReg]{dtreg::DataTypeReg}} -> \code{Orkg}
 }

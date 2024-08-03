@@ -15,3 +15,4 @@ a list of objects for creating new instances
 \description{
 Rewrite R6 classes to facilitate easier instance writing by the user
 }
+\keyword{internal}

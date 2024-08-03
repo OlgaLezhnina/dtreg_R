@@ -3,6 +3,7 @@
 #' Select a dtr-related class based on the identifier
 #' @param datatype_id The identifier of a datatype, such as URL
 #' @return An R6 class for the specific datatype registry
+#' @keywords internal
 #'
 select_dtr <- function(datatype_id) {
   part <- strsplit(datatype_id, split = "[/ //]+")[[1]]
@@ -17,11 +18,13 @@ select_dtr <- function(datatype_id) {
 }
 
 #' A dummy function explicitly referring to R6 package to declare the dependency
+#' @keywords internal
 dummy_r6 <- function() R6::R6Class
 
 #' DatatypReg
 #' @description
 #' Interface for R6 class representing a datatype registry
+#' @keywords internal
 #'
 DataTypeReg <- R6::R6Class(
   "DataTypeReg",
@@ -68,6 +71,7 @@ DataTypeReg <- R6::R6Class(
 #' Epic
 #' @description
 #' R6 Class Representing the ePIC DTR
+#' @keywords internal
 #'
 Epic <- R6::R6Class(
   "Epic",
@@ -157,6 +161,7 @@ Epic <- R6::R6Class(
 #' ORKG
 #' @description
 #' R6 Class Representing the ORKG DTR
+#' @keywords internal
 #'
 Orkg <- R6::R6Class(
   "Orkg",

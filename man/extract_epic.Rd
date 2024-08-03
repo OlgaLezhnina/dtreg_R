@@ -15,3 +15,4 @@ An R object that contains information about the ePIC schema
 \description{
 Extract ePIC schema information
 }
+\keyword{internal}

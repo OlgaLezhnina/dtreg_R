@@ -15,3 +15,4 @@ A character vector formatted in the required way
 \description{
 Format a string to lowercase, spaces and dashes as underscores
 }
+\keyword{internal}

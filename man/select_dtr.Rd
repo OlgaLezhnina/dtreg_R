@@ -15,3 +15,4 @@ An R6 class for the specific datatype registry
 \description{
 Select a dtr-related class based on the identifier
 }
+\keyword{internal}

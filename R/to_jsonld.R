@@ -49,6 +49,7 @@ to_jsonld <- function(instance) {
 #' Differentiate input for further use by to_jsonld function
 #' @param input A dataframe, a tuple, or another object
 #' @return The result of the df_structure function, or the input unchanged
+#' @keywords internal
 #'
 differ_input <- function(input) {
   if (methods::is(input, "data.frame")) {
@@ -67,6 +68,7 @@ differ_input <- function(input) {
 #' @param df A dataframe
 #' @param label A string
 #' @return A named list to be used by to_jsonld function
+#' @keywords internal
 #'
 df_structure <- function(df, label) {
   result <- list()
