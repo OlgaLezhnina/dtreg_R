@@ -53,6 +53,7 @@ specify_cardinality <- function(cardinality_string) {
 #' @description
 #' Generate a counting function for assigning identifiers
 #' @return The counting function
+#' @keywords internal
 #'
 generate_uid <- function() {
   i <- 0

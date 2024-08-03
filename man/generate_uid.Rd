@@ -12,3 +12,4 @@ The counting function
 \description{
 Generate a counting function for assigning identifiers
 }
+\keyword{internal}
