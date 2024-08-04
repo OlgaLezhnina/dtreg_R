@@ -3,6 +3,7 @@ title: "dtreg"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{dtreg}
+  %\VignetteDepends{sets}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
