@@ -89,6 +89,7 @@ output_dataframe <- dt$inferential_test_output(has_format = my_dataframe)
 By default, a data frame is assigned a generic name "Table". If you want to give your data frame a name, you can use a tuple. Please always include first the data frame and then the name as a string in the tuple. 
 
 ```{r}
+library(sets)
 my_tuple <- sets::tuple(my_dataframe, "the Wilcoxon results")
 output_tuple <- dt$inferential_test_output(has_format = my_dataframe)
 ```
