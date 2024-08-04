@@ -1,8 +1,8 @@
 ---
-title: "dtreg"
+title: "Introduction to dtreg"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{dtreg}
+  %\VignetteIndexEntry{Introduction to dtreg}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
