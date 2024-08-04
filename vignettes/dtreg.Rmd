@@ -72,7 +72,7 @@ method_URL <- dt$software_method(
                  has_support_URL = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test")
 ```
 
-Numeric values are also typical:
+Numeric values are also frequently used:
 
 ```{r}
 sample_size <- dt$sample_size(has_specified_numeric_value = 148)
@@ -86,7 +86,7 @@ output_dataframe <- dt$inferential_test_output(has_format = my_dataframe)
 
 ```
 
-You can use a tuple instead. A tuple helps you to give your data fame a name if you do not want it to be assigned a generic name "Table". When creating a tuple, please always include first the data frame and then the name as a string. 
+By default, a data frame is assigned a generic name "Table". If you want to give your data frame a name, you can use a tuple. Please always include first the data frame and then the name as a string in the tuple. 
 
 ```{r}
 my_tuple <- sets::tuple(my_dataframe, "the Wilcoxon results")
@@ -98,28 +98,31 @@ Sometimes a few objects should be written in one field.
 In this case simply concatenate them:
 
 ```{r}
-var_1 <- dt$statistical_variable()
-var_2 <- dt$statistical_variable()
+var_1 <- dt$statistical_variable(label = "var_1")
+var_2 <- dt$statistical_variable(label = "var_2")
 two_vars <- dt$statistical_test_of_difference(evaluates = c(var_1, var_2))
 ```
 
 ### Nested structure
 
-On the help page for the "statistical_test_of_difference", you can see that the field "executes" requires the schema "software method", which in turn has the field "uses software" requiring the schema "software library": 
+In the example above you can see that a field of a schema might require another schema. It can be also written this way, depending on what is more convenient for you: 
 
 
 ```{r}
-nested_inst <- dt$statistical_test_of_difference(
-                  executes = dt$software_method(
-                    uses_software = dt$software_library(
-                      part_of = dt$software(label = "R"))))
+two_vars <- 
+  dt$statistical_test_of_difference(
+    evaluates = c(
+      dt$statistical_variable(label = "var_1"),
+      dt$statistical_variable(label = "var_2")
+    )
+  )
 ```
 
-This nested structure is informed by machine-actionability of the data and might seem a bit complicated at first. We intend to make it simpler with dtreg, and later versions will suggest very simple wrappers which will write the results for you.
+This nested structure is informed by machine-actionability of the data. The further versions of dtreg will suggest very simple wrappers to write the results for you.
 
 ### Gather all info to write an instance 
 
-For a more structured presentation, let us first write all field inputs and then gather them for the instance. 
+Let us write down all components of the data analysis results and gather them into an instance. 
 
 ## Convert the instance into a JSON-LD file
 
