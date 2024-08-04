@@ -3,7 +3,6 @@ title: "dtreg"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{dtreg}
-  %\VignetteDepends{sets}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -88,12 +87,8 @@ output_dataframe <- dt$inferential_test_output(has_format = my_dataframe)
 ```
 
 By default, a data frame is assigned a generic name "Table". If you want to give your data frame a name, you can use a tuple. Please always include first the data frame and then the name as a string in the tuple. 
+There was some code I removed because of the whatever problem with the sets. 
 
-```{r}
-library(sets)
-my_tuple <- sets::tuple(my_dataframe, "the Wilcoxon results")
-output_tuple <- dt$inferential_test_output(has_format = my_dataframe)
-```
 ### More than one input in a field
 
 Sometimes a few objects should be written in one field.
