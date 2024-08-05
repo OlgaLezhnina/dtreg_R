@@ -17,7 +17,7 @@ write the instance as a machine-actionable JSON-LD file.
 ## Installation
 
 You can install the development version of dtreg from
-[GitHub](https://github.com/) with:
+[GitHub](https://github.com/) (TODO CRAN) with:
 
 ``` r
 # install.packages("devtools")
