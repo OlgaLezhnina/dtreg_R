@@ -25,9 +25,9 @@ You can use dtreg for the following tasks:
 
 * Convert the results into a machine-readable JSON-LD file. 
 
-## Load a DTR schema 
+## 1. Load a DTR schema 
 
-To load a DTR schema, you need to know it identifier.
+To load a DTR schema, you need to know its identifier.
 For the EPIC, it is the datatype DOI, such as "https://doi.org/21.T11969/ff5e3f857788d20dd1aa".
 For the ORKG, it is the template URL, such as "https://incubating.orkg.org/template/R836000".
 If a valid identifier is used, you get an R object containing information about the DTR schema.
@@ -41,7 +41,7 @@ You can look at the list of these schemata:
 ```{r}
 names(dt)
 ```
-## Create an instance 
+## 2. Create an instance 
 
 To write down the data analysis results, dtreg uses R6 classes. Therefore, you need to create an instance of a specific class.
 
@@ -55,7 +55,6 @@ dtreg::show_fields(dt$statistical_test_of_difference())
 
 For example, there is the field "label". If your instance included only a label, it would be:
 
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
@@ -68,8 +67,8 @@ knitr::opts_chunk$set(
 labelled_inst <- dt$statistical_test_of_difference(label = "my_test_results")
 ```
 
-However, the results of your data analysis are more complex than this.
-Thus, it is recommendable to consult the help page XXX which explains whether a field requires a schema or a specific type of data (e.g., numeric).  
+However, the data you want to write are usually more complex than this.
+If you want to write down the results of your data analysis, we recommend consulting the help page XXX. There you can see whether a field of the schema requires another schema or a specific type of data (e.g., numeric).
 
 ### String, numeric, and data frame
 
@@ -101,7 +100,7 @@ my_tuple <- sets::tuple(my_dataframe, "the Wilcoxon results")
 output_tuple <- dt$inferential_test_output(has_format = my_tuple)
 ```
 
-There was some code I removed because of the whatever problem with the sets. 
+These are most frequently used types of input that you write in a field. 
 
 ### More than one input in a field
 
@@ -116,8 +115,9 @@ two_vars <- dt$statistical_test_of_difference(evaluates = c(var_1, var_2))
 
 ### Nested structure
 
-In the example above you can see that a field of a schema might require another schema. It can be also written this way, depending on what is more convenient for you: 
-
+In the example above you can see that a field of a schema might require another schema.
+This nested structure is important for making the data machine readable.
+It can be also written this way, and you can choose which is more convenient for you: 
 
 ```{r}
 two_vars <- 
@@ -129,17 +129,26 @@ two_vars <-
   )
 ```
 
-This nested structure is informed by machine-readability of the data. The further versions of dtreg will suggest very simple wrappers to write the results for you.
+None of the fields are mandatory: you will not get an error message if you leave any field, or all of them, empty. It makes sense, though, to create a useful JSON-LD file.
 
-### Gather all info to write an instance 
+### Example: writing down the Wilcoxon test results 
 
-Let us write down all components of the data analysis results and gather them into an instance. 
-
-## Convert the instance into a JSON-LD file
-
-This stage is simple:
+Explanations above referred to the results of Wilcoxon test.
+Now, we will write an instance including the relevant data in accordance with suggestions on the help page XXX.
 
 
 ```{r}
-my_json <- dtreg::to_jsonld(labelled_inst)
+var_1 <- dt$statistical_variable(label = "var_1")
+var_2 <- dt$statistical_variable(label = "var_2")
+two_vars <- dt$statistical_test_of_difference(evaluates = c(var_1, var_2))
 ```
+
+
+## 3. Convert the instance into a JSON-LD file
+
+This stage is simple:
+
+```{r}
+my_json <- dtreg::to_jsonld(my_instance)
+```
+The resulting JSON-LD file is machine readable. It can be submitted etc. 
