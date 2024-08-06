@@ -4,9 +4,9 @@
 \name{dtreg-package}
 \alias{dtreg}
 \alias{dtreg-package}
-\title{dtreg: Interact with Data Type Registries and Create Machine-Actionable Data}
+\title{dtreg: Interact with Data Type Registries and Create Machine-Readable Data}
 \description{
-You can load a schema from a data type registry (DTR) as an R object. Currently, the ePIC and the ORKG DTRs are supported. Use this schema to create an instance for reporting your research results. Write the instance in JSON-LD format to make it machine-actionable.
+You can load a schema from a data type registry (DTR) as an R object. Currently, the ePIC and the ORKG DTRs are supported. Use this schema to write your data in JSON-LD format to make it machine readable.
 }
 \seealso{
 Useful links:

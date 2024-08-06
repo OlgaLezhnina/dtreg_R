@@ -23,7 +23,7 @@ You can use dtreg for the following tasks:
 
 * Write down the results of your data analysis in accordance with a DTR schema.
 
-* Convert the results into a machine-actionable JSON-LD file. 
+* Convert the results into a machine-readable JSON-LD file. 
 
 ## Load a DTR schema 
 
@@ -115,7 +115,7 @@ two_vars <-
   )
 ```
 
-This nested structure is informed by machine-actionability of the data. The further versions of dtreg will suggest very simple wrappers to write the results for you.
+This nested structure is informed by machine-readability of the data. The further versions of dtreg will suggest very simple wrappers to write the results for you.
 
 ### Gather all info to write an instance 
 

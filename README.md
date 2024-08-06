@@ -7,7 +7,7 @@
 <!-- badges: end -->
 
 The goal of dtreg is to help the users interact with various data type
-registries (DTRs) and create machine-actionable data. Currently, we
+registries (DTRs) and create machine-readable data. Currently, we
 support the [ePIC](https://fc4e-t4-3.github.io/) and the
 [ORKG](https://orkg.org/) DTRs.
 
@@ -17,7 +17,7 @@ support the [ePIC](https://fc4e-t4-3.github.io/) and the
 - Then, create a new instance of the schema by filling in the relevant
   fields.
 
-- Finally, write the instance as a machine-actionable JSON-LD file.
+- Finally, write the instance as a machine-readable JSON-LD file.
 
 ## Installation
 
