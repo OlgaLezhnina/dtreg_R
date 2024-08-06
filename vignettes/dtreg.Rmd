@@ -55,6 +55,15 @@ dtreg::show_fields(dt$statistical_test_of_difference())
 
 For example, there is the field "label". If your instance included only a label, it would be:
 
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  eval = FALSE,
+  comment = "#>"
+)
+```
+
 ```{r}
 labelled_inst <- dt$statistical_test_of_difference(label = "my_test_results")
 ```
@@ -83,17 +92,13 @@ Some fields, such as "has_format", require a data frame:
 ```{r}
 my_dataframe <- data.frame(p = 0.026, t = 2.3, df = 48, stringsAsFactors = FALSE)
 output_dataframe <- dt$inferential_test_output(has_format = my_dataframe)
-
 ```
 
 By default, a data frame is assigned a generic name "Table". If you want to give your data frame a name, you can use a tuple. Please always include first the data frame and then the name as a string in the tuple. 
 
 ```{r}
-if (require("sets", quietly = TRUE)) {
-  my_tuple <- sets::tuple(my_dataframe, "the Wilcoxon results")
-  output_tuple <-
-    dt$inferential_test_output(has_format = my_tuple)
-}
+my_tuple <- sets::tuple(my_dataframe, "the Wilcoxon results")
+output_tuple <- dt$inferential_test_output(has_format = my_tuple)
 ```
 
 There was some code I removed because of the whatever problem with the sets. 
