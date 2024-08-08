@@ -166,9 +166,9 @@ input <- dt$data_input(
 And now the vectors, or the variables, that were compared:
 
 ```{r}
-virginia <- dt$statistical_variable(label = "virginia",
+virginia <- dt$statistical_variable(label = "petal length virginia",
                                     has_format = "numeric")
-versicolor <- dt$statistical_variable(label = "versicolor",
+versicolor <- dt$statistical_variable(label = "petal length versicolor",
                                     has_format = "numeric")
 variables <- dt$outcome_variable(
                 label = "virginia vs versicolor",
@@ -187,6 +187,7 @@ Let us now write everything together in the final instance:
 
 ```{r}
 wilcoxon_inst <- dt$statistical_test_of_difference(
+                    label = "Wilcoxon iris petal length, virginia vs versicolor",
                     executes = soft_method,
                     has_specified_input = input,
                     evaluates = variables,
@@ -225,9 +226,9 @@ input <- dt$data_input(
             label = "Iris: virginia and versicolor",
             has_characteristic = sample_size, 
             source = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
-virginia <- dt$statistical_variable(label = "virginia",
+virginia <- dt$statistical_variable(label = "petal length virginia",
                                     has_format = "numeric")
-versicolor <- dt$statistical_variable(label = "versicolor",
+versicolor <- dt$statistical_variable(label = "petal length versicolor",
                                     has_format = "numeric")
 variables <- dt$outcome_variable(
                 label = "virginia vs versicolor",
@@ -235,7 +236,7 @@ variables <- dt$outcome_variable(
 df_result <- data.frame(W = 44.5, p = 2.2e-16, stringsAsFactors = FALSE)
 output <- dt$inferential_test_output(has_format = df_result)
 wilcoxon_inst <- dt$statistical_test_of_difference(
-                    label = "Wilcoxon iris petal length, virginia vs versicolor"
+                    label = "Wilcoxon iris petal length, virginia vs versicolor",
                     executes = soft_method,
                     has_specified_input = input,
                     evaluates = variables,
