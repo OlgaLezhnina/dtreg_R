@@ -19,9 +19,9 @@ library(dtreg)
 ```
 You can use dtreg for the following tasks:
 
-* Interact with data type registries (DTRs): currently, the ePIC and the ORKG DTRs.
+* Interact with data type registries (DTRs): currently, the [ePIC](https://fc4e-t4-3.github.io/) and the [ORKG](https://orkg.org/) DTRs.
 
-* Write down the results of your data analysis in accordance with a DTR schema.
+* Write your data as an instance of an [R6 class](https://cran.r-project.org/web/packages/R6/readme/README.html) in accordance with a DTR schema.
 
 * Convert the results into a machine-readable JSON-LD file. 
 
@@ -43,7 +43,7 @@ names(dt)
 ```
 ## 2. Create an instance 
 
-To write down the data analysis results, dtreg uses R6 classes. Therefore, you need to create an instance of a specific class.
+To write down your data in accordance with a DTR schema, dtreg uses [R6 classes](https://cran.r-project.org/web/packages/R6/readme/README.html). Therefore, you need to create an instance of a specific class.
 
 ### Fields 
 
@@ -72,7 +72,7 @@ If you want to write down the results of your data analysis, we recommend consul
 
 ### String, numeric, and data frame
 
-Most frequently used types are string, numeric, and data frame.
+The most frequently used types are string, numeric, and data frame.
 Strings are used for labels and comments, and URLs are also presented as strings:
 
 ```{r}
@@ -101,7 +101,7 @@ my_tuple <- sets::tuple(my_dataframe, "the Wilcoxon test results")
 output_tuple <- dt$inferential_test_output(has_format = my_tuple)
 ```
 
-These are most frequently used types of input that you write in a field. 
+These are the most frequently used types of input that you write in a field. 
 
 ### More than one input in a field
 
@@ -118,7 +118,7 @@ two_vars <- dt$statistical_test_of_difference(evaluates = c(var_1, var_2))
 
 In the example above you can see that a field of a schema might require another schema.
 This nested structure is important for making the data machine readable.
-It can be also written this way, and you can choose which is more convenient for you: 
+The example above can be also written this way, and you can choose which is more convenient for you: 
 
 ```{r}
 two_vars <- 
