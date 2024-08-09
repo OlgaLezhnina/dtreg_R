@@ -143,14 +143,17 @@ Let us write down the details of the software method we used:
 ```{r}
 software <- dt$software(label = "R",
                     versioninfo = "4.3.1")
+
 soft_library <- dt$software_library(
                    label = "stats::wilcoxon",
                    part_of = software,
                    versioninfo = "4.3.1",
                    has_support_URL = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test") 
+
 soft_method <- dt$software_method(
                   label = "Wilcoxon rank sum test",
-                  uses_software = soft_library)
+                  uses_software = soft_library,
+                  is_implemented_by = "URL_code")
 ```
 
 Now we can put in the information about the input data:
@@ -220,7 +223,8 @@ soft_library <- dt$software_library(
                    has_support_URL = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test") 
 soft_method <- dt$software_method(
                   label = "Wilcoxon rank sum test",
-                  uses_software = soft_library)
+                  uses_software = soft_library,
+                  is_implemented_by = "URL_code")
 sample_size <- dt$sample_size(has_specified_numeric_value = 50)
 input <- dt$data_input(
             label = "Iris: virginia and versicolor",
