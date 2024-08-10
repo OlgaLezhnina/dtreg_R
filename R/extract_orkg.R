@@ -55,6 +55,14 @@ extract_orkg <- function(datatype_id) {
       i <- i + 1
       all_props[i, ] <- specific_prop
     }
+    label_prop <- list(
+      "dtp_name" = "label",
+      "dtp_id" = "XXX",
+      "dtp_card_min" = 0,
+      "dtp_card_max" = 1,
+      "dtp_value_type" = "string"
+    )
+    all_props <- rbind(all_props, label_prop)
     extracted <- list(schema_df, all_props)
     extract_all[[dt_name]] <<- extracted
   }
