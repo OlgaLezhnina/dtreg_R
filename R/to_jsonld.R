@@ -79,8 +79,8 @@ df_structure <- function(df, label) {
   for (i in seq_len(ncol(df))) {
     column <- list()
     column[["@type"]] <- the$constants$column
-    column[["col_titles"]] <- colnames(df)[i]
     column[["col_number"]] <- i
+    column[["col_titles"]] <- colnames(df)[i]
     column[["@id"]] <- paste0("_:n", the$uid())
     index <- append(index, column[["@id"]])
     result[["columns"]] <-
@@ -92,10 +92,12 @@ df_structure <- function(df, label) {
     row[["@type"]] <- the$constants$row
     row[["row_number"]] <- i
     row[["row_titles"]] <- rownames(df)[i]
+    row[["@id"]] <- paste0("_:n", the$uid())
     row[["cells"]] <- list()
     for (y in seq_len(ncol(df))) {
       cell <- list()
       cell[["@type"]] <- the$constants$cell
+      cell[["@id"]] <- paste0("_:n", the$uid())
       if (is.na(df[[y]][[i]])) {
         cell["value"] <- NA
       } else {
