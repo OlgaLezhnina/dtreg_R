@@ -107,24 +107,24 @@ Epic <- R6::R6Class(
     #' @return Context to include in JSON-LD file
     add_context = function(prefix) {
       context_info <- list()
-      context_info[["doi:"]] <- prefix
-      context_info[["columns:"]] <-
+      context_info[["doi"]] <- prefix
+      context_info[["columns"]] <-
         paste0(prefix, "0424f6e7026fa4bc2c4a#columns")
-      context_info[["col_number:"]] <-
+      context_info[["col_number"]] <-
         paste0(prefix, "65ba00e95e60fb8971e6#number")
-      context_info[["col_titles:"]] <-
+      context_info[["col_titles"]] <-
         paste0(prefix, "65ba00e95e60fb8971e6#titles")
-      context_info[["rows:"]] <-
+      context_info[["rows"]] <-
         paste0(prefix, "0424f6e7026fa4bc2c4a#rows")
-      context_info[["row_number:"]] <-
+      context_info[["row_number"]] <-
         paste0(prefix, "9bf7a8e8909bfd491b38#number")
-      context_info[["row_titles:"]] <-
+      context_info[["row_titles"]] <-
         paste0(prefix, "9bf7a8e8909bfd491b38#titles")
-      context_info[["cells:"]] <-
+      context_info[["cells"]] <-
         paste0(prefix, "9bf7a8e8909bfd491b38#cells")
-      context_info[["column:"]] <-
+      context_info[["column"]] <-
         paste0(prefix, "4607bc7c42ac8db29bfc#column")
-      context_info[["value:"]] <-
+      context_info[["value"]] <-
         paste0(prefix, "4607bc7c42ac8db29bfc#value")
       return(context_info)
     },
@@ -192,22 +192,22 @@ Orkg <- R6::R6Class(
     #' @return Context to include in JSON-LD file
     add_context = function(prefix) {
       context_info <- list()
-      context_info[["orkgc:"]] <- paste0(prefix, "class/")
-      context_info[["orkgr:"]] <- paste0(prefix, "resource/")
-      context_info[["orkgp:"]] <- paste0(prefix, "property/")
-      context_info[["columns:"]] <- paste0(prefix, "property/", "CSVW_Columns")
-      context_info[["col_number:"]] <-
+      context_info[["orkgc"]] <- paste0(prefix, "class/")
+      context_info[["orkgr"]] <- paste0(prefix, "resource/")
+      context_info[["orkgp"]] <- paste0(prefix, "property/")
+      context_info[["columns"]] <- paste0(prefix, "property/", "CSVW_Columns")
+      context_info[["col_number"]] <-
         paste0(prefix, "property/", "CSVW_Number")
-      context_info[["col_titles:"]] <-
+      context_info[["col_titles"]] <-
         paste0(prefix, "property/", "CSVW_Titles")
-      context_info[["rows:"]] <- paste0(prefix, "property/", "CSVW_Rows")
-      context_info[["row_number:"]] <-
+      context_info[["rows"]] <- paste0(prefix, "property/", "CSVW_Rows")
+      context_info[["row_number"]] <-
         paste0(prefix, "property/", "CSVW_Number")
-      context_info[["row_titles:"]] <-
+      context_info[["row_titles"]] <-
         paste0(prefix, "property/", "CSVW_Titles")
-      context_info[["cells:"]] <- paste0(prefix, "property/", "CSVW_Cells")
-      context_info[["column:"]] <- paste0(prefix, "property/", "CSVW_Column")
-      context_info[["value:"]] <- paste0(prefix, "property/", "CSVW_Value")
+      context_info[["cells"]] <- paste0(prefix, "property/", "CSVW_Cells")
+      context_info[["column"]] <- paste0(prefix, "property/", "CSVW_Column")
+      context_info[["value"]] <- paste0(prefix, "property/", "CSVW_Value")
       context_info[["label"]] <- "http://www.w3.org/2000/01/rdf-schema#label"
       return(context_info)
     },
