@@ -13,6 +13,6 @@ test_that("load_datatype loads ePIC schema properties correctly", {
 test_that("load_datatype loads ORKG template properties correctly", {
   dt <- load_datatype("https://incubating.orkg.org/template/R855534")
   prop_names <- dt$inferential_test_output()$prop_names
-  expected <- c("has_format", "has_description", "comment")
+  expected <- c("has_format", "has_description", "comment", "label")
   expect_equal(prop_names, expected)
 })
