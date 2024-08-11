@@ -31,17 +31,18 @@ devtools::install_github("OlgaLezhnina/dtreg")
 
 ## Example
 
-This example shows you how to work with a DTR schema; you need to know
-the schema identifier. As an example, we use the ePIC datatype with the
-DOI <https://doi.org/21.T11969/74bc7748b8cd520908bc>. For the ORKG,
-please use the ORKG template URL, such as
+This example shows you how to work with a DTR schema. You need to know
+the schema identifier (see the help page XXX). For instance, the schema
+“inferential test output” requires the ePIC datatype with the DOI
+<https://doi.org/21.T11969/74bc7748b8cd520908bc>. For the ORKG, please
+use the ORKG template URL, such as
 <https://incubating.orkg.org/template/R855534>.
 
 ``` r
 library(dtreg)
 ## load the schema you need
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-## look at the schemata to select the one(s) you intend to use
+## look at the schemata you might need to use
 names(dt)
 #> [1] "string"                  "url"                    
 #> [3] "integer_in_string"       "column"                 
@@ -51,9 +52,16 @@ names(dt)
 dtreg::show_fields(dt$inferential_test_output())
 #> [1] "has_format"      "comment"         "has_description" "label"
 ## create your own instance by filling the fields of your choice
-my_inst <- dt$inferential_test_output(label = "my_results")
+my_label = "my results"
+my_df <- data.frame(A = 1, B = 2, stringsAsFactors = FALSE)
+url_1 <- "URL_1"
+url_2 <- "URL_2"
+my_inst <- dt$inferential_test_output(label = my_label,
+                                      has_description = c(url_1, url_2),
+                                      has_format = my_df)
 ## write the instance in JSON-LD format
 my_json <- dtreg::to_jsonld(my_inst)
 ```
 
-For more information, please see XXX.
+For more information, please see the help page XXX and the dtreg
+vignette NNN.
