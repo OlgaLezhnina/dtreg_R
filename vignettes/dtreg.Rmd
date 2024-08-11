@@ -25,17 +25,19 @@ You can use dtreg for the following tasks:
 
 * Convert the results into a machine-readable JSON-LD file. 
 
-## 1. Load a DTR schema 
+## 1. Load a DTR schema {#section1}
 
-To load a DTR schema, you need to know its identifier.
-For the EPIC, it is the datatype DOI, such as "https://doi.org/21.T11969/ff5e3f857788d20dd1aa".
-For the ORKG, it is the template URL, such as "https://incubating.orkg.org/template/R836000".
-If a valid identifier is used, you get an R object containing information about the DTR schema.
+To load a DTR schema, you need to know its identifier (see the help page XXX), such as the datatype DOI for the ePIC or the template URL for the ORKG.
+
+For instance, you intend to use the "statistical test of difference" schema; it has the ePIC DOI "https://doi.org/21.T11969/ff5e3f857788d20dd1aa".
+
+If a valid identifier is used, you get an R object containing information about the DTR schema:
 
 ```{r}
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/ff5e3f857788d20dd1aa")
 ```
-In addition to the schema you requested, you get related schemata, which could be  useful for reporting your results.
+
+In addition to the schema you requested (in this case, the "statistical test of difference"), you get schemata that you might need for using it.
 You can look at the list of these schemata:
 
 ```{r}
@@ -53,7 +55,7 @@ For doing that, you first need to know which fields you can use:
 dtreg::show_fields(dt$statistical_test_of_difference())
 ```
 
-For example, there is the field "label". If your instance included only a label, it would be:
+For example, this schema has the field "label". If your instance included only a label, it would be:
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -68,7 +70,7 @@ labelled_inst <- dt$statistical_test_of_difference(label = "my_test_results")
 ```
 
 However, the data you want to write are usually more complex than this.
-If you want to write down the results of your data analysis, we recommend consulting the help page XXX. There you can see whether a field of the schema requires another schema or a specific type of data (e.g., numeric).
+The help page XXX specifies which fields to use, and what input is required by a field (e.g., another schema or a specific type of data, such as numeric).
 
 ### String, numeric, and data frame
 
@@ -137,6 +139,7 @@ None of the fields are mandatory: you will not get an error message if you leave
 In this vignette, we report the results of the Wilcoxon rank sum test from the help page XXX.
 As we emphasize on the help page, even for this simple test, you might want to report more than the most basic version described here.
 Your actual results might include descriptive statistics, the effect size, and visualizations of the data.
+For this example, we use the statistical_test_of_difference datatype from the ePIC (see [Load a DTR schema](#section1) above).  
 
 Let us write down the details of the software method we used:
 
@@ -196,6 +199,8 @@ wilcoxon_inst <- dt$statistical_test_of_difference(
                     evaluates = variables,
                     has_specified_output = result)
 ```
+
+Please be attentive when writing the results. In case you misspell a variable, omit a comma separating two fields, forget a closing bracket, or make another seemingly tiny mistake, you will get an error message (something like "object 'inputt' not found"). You can experiment with such typos and see which error messages you get.     
 
 ## 3. Convert the instance into a JSON-LD file
 
