@@ -57,7 +57,7 @@ extract_orkg <- function(datatype_id) {
     }
     label_prop <- list(
       "dtp_name" = "label",
-      "dtp_id" = "XXX",
+      "dtp_id" = "label",
       "dtp_card_min" = 0,
       "dtp_card_max" = 1,
       "dtp_value_type" = "string"

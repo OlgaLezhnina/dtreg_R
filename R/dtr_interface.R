@@ -224,7 +224,11 @@ Orkg <- R6::R6Class(
     #' @param identifier The ORKG property identifier
     #' @return Type to include in JSON-LD file
     add_dtp_type = function(identifier) {
-      dtp_type <- paste0("orkgp:", identifier)
+      if (identifier == "label") {
+        dtp_type <- identifier
+      } else {
+        dtp_type <- paste0("orkgp:", identifier)
+      }
       return(dtp_type)
     },
     #' @description
