@@ -72,7 +72,7 @@ differ_input <- function(input) {
 df_structure <- function(df, label) {
   result <- list()
   result[["@type"]] <- the$constants$table
-  result[["label"]] <- label
+  result[["tab_label"]] <- label
   index <- list()
   result[["columns"]] <- list()
   for (i in seq_len(ncol(df))) {
