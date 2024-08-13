@@ -8,7 +8,7 @@ test_that("extract_orkg gives the specified template", {
                 "",
                 "$measurement_scale[[2]]",
                 "  dtp_name dtp_id dtp_card_min dtp_card_max dtp_value_type",
-                "1    label    XXX            0            1         string",
+                "1    label  label            0            1         string",
                 "",
                 "")
   expect_equal(string_representation, expected)
