@@ -211,7 +211,8 @@ Orkg <- R6::R6Class(
       context_info[["column"]] <- paste0(prefix, "property/", "CSVW_Column")
       context_info[["value"]] <- paste0(prefix, "property/", "CSVW_Value")
       context_info[["label"]] <- "http://www.w3.org/2000/01/rdf-schema#label"
-      context_info[["tab_label"]] <- "http://www.w3.org/2000/01/rdf-schema#label"
+      context_info[["tab_label"]] <-
+        "http://www.w3.org/2000/01/rdf-schema#label"
       return(context_info)
     },
     #' @description

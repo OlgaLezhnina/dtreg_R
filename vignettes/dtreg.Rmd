@@ -78,8 +78,7 @@ The most frequently used types are string, numeric, and data frame.
 Strings are used for labels and comments, and URLs are also presented as strings:
 
 ```{r}
-method_URL <- dt$software_method(
-                 has_support_URL = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test")
+method_url <- dt$software_method(has_support_url = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test")
 ```
 
 Numeric values are also frequently used:
@@ -123,13 +122,10 @@ This nested structure is important for making the data machine readable.
 The example above can be also written this way, and you can choose which is more convenient for you: 
 
 ```{r}
-two_vars <- 
-  dt$statistical_test_of_difference(
-    evaluates = c(
-      dt$statistical_variable(label = "var_1"),
-      dt$statistical_variable(label = "var_2")
-    )
-  )
+two_vars <- dt$statistical_test_of_difference(evaluates = c(
+  dt$statistical_variable(label = "var_1"),
+  dt$statistical_variable(label = "var_2")
+))
 ```
 
 None of the fields are mandatory: you will not get an error message if you leave any field, or all of them, empty. It makes sense, though, to create a useful JSON-LD file.
@@ -145,28 +141,30 @@ Let us write down the details of the software method we used:
 
 ```{r}
 software <- dt$software(label = "R",
-                    versioninfo = "4.3.1")
+                        versioninfo = "4.3.1")
 
 soft_library <- dt$software_library(
-                   label = "stats::wilcoxon",
-                   part_of = software,
-                   versioninfo = "4.3.1",
-                   has_support_URL = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test") 
+  label = "stats::wilcoxon",
+  part_of = software,
+  versioninfo = "4.3.1",
+  has_support_url = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test"
+)
 
 soft_method <- dt$software_method(
-                  label = "Wilcoxon rank sum test",
-                  uses_software = soft_library,
-                  is_implemented_by = "URL_code")
+  label = "Wilcoxon rank sum test",
+  uses_software = soft_library,
+  is_implemented_by = "URL_code"
+)
 ```
 
 Now we can put in the information about the input data:
 
 ```{r}
 sample_size <- dt$sample_size(has_specified_numeric_value = 50)
-input <- dt$data_input(
-            label = "Iris: virginia and versicolor",
-            has_characteristic = sample_size, 
-            source = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
+input <- dt$data_input(label = "Iris: virginia and versicolor",
+                       has_characteristic = sample_size,
+                       source =
+                         "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
 ```
 
 And now the vectors, or the variables, that were compared:
@@ -174,11 +172,11 @@ And now the vectors, or the variables, that were compared:
 ```{r}
 virginia <- dt$statistical_variable(label = "petal length virginia",
                                     has_format = "numeric")
-versicolor <- dt$statistical_variable(label = "petal length versicolor",
-                                    has_format = "numeric")
-variables <- dt$outcome_variable(
-                label = "virginia vs versicolor",
-                requires = c(virginia, versicolor))
+versicolor <-
+  dt$statistical_variable(label = "petal length versicolor",
+                          has_format = "numeric")
+variables <- dt$outcome_variable(label = "virginia vs versicolor",
+                                 requires = c(virginia, versicolor))
 ```
 
 Finally, we have the results of the test:
@@ -193,11 +191,12 @@ Let us now write everything together in the final instance:
 
 ```{r}
 wilcoxon_inst <- dt$statistical_test_of_difference(
-                    label = "Wilcoxon iris petal length, virginia vs versicolor",
-                    executes = soft_method,
-                    has_specified_input = input,
-                    evaluates = variables,
-                    has_specified_output = result)
+  label = "Wilcoxon petal length, virginia vs versicolor",
+  executes = soft_method,
+  has_specified_input = input,
+  evaluates = variables,
+  has_specified_output = result
+)
 ```
 
 Please be attentive when writing the results. In case you misspell a variable, omit a comma separating two fields, forget a closing bracket, or make another seemingly tiny mistake, you will get an error message (something like "object 'inputt' not found"). You can experiment with such typos and see which error messages you get.     
@@ -217,39 +216,45 @@ The code of the example above is given in one chunk here:
 
 ```{r}
 library(dtreg)
-dt <- dtreg::load_datatype("https://doi.org/21.T11969/ff5e3f857788d20dd1aa")
+dt <-
+  dtreg::load_datatype("https://doi.org/21.T11969/ff5e3f857788d20dd1aa")
 
 software <- dt$software(label = "R",
-                    versioninfo = "4.3.1")
+                        versioninfo = "4.3.1")
 soft_library <- dt$software_library(
-                   label = "stats::wilcoxon",
-                   part_of = software,
-                   versioninfo = "4.3.1",
-                   has_support_URL = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test") 
+  label = "stats::wilcoxon",
+  part_of = software,
+  versioninfo = "4.3.1",
+  has_support_url = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test"
+)
 soft_method <- dt$software_method(
-                  label = "Wilcoxon rank sum test",
-                  uses_software = soft_library,
-                  is_implemented_by = "URL_code")
+  label = "Wilcoxon rank sum test",
+  uses_software = soft_library,
+  is_implemented_by = "url_code"
+)
 sample_size <- dt$sample_size(has_specified_numeric_value = 50)
-input <- dt$data_input(
-            label = "Iris: virginia and versicolor",
-            has_characteristic = sample_size, 
-            source = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
+input <- dt$data_input(label = "Iris: virginia and versicolor",
+                       has_characteristic = sample_size,
+                       source = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
 virginia <- dt$statistical_variable(label = "petal length virginia",
                                     has_format = "numeric")
-versicolor <- dt$statistical_variable(label = "petal length versicolor",
-                                    has_format = "numeric")
-variables <- dt$outcome_variable(
-                label = "virginia vs versicolor",
-                requires = c(virginia, versicolor))
-df_result <- data.frame(W = 44.5, p = 2.2e-16, stringsAsFactors = FALSE)
+versicolor <-
+  dt$statistical_variable(label = "petal length versicolor",
+                          has_format = "numeric")
+variables <- dt$outcome_variable(label = "virginia vs versicolor",
+                                 requires = c(virginia, versicolor))
+df_result <-
+  data.frame(W = 44.5,
+             p = 2.2e-16,
+             stringsAsFactors = FALSE)
 output <- dt$inferential_test_output(has_format = df_result)
 wilcoxon_inst <- dt$statistical_test_of_difference(
-                    label = "Wilcoxon iris petal length, virginia vs versicolor",
-                    executes = soft_method,
-                    has_specified_input = input,
-                    evaluates = variables,
-                    has_specified_output = output)
+  label = "Wilcoxon iris petal length, virginia vs versicolor",
+  executes = soft_method,
+  has_specified_input = input,
+  evaluates = variables,
+  has_specified_output = output
+)
 
 wilcoxon_json <- dtreg::to_jsonld(wilcoxon_inst)
 ```
