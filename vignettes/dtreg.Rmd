@@ -90,11 +90,19 @@ sample_size <- dt$sample_size(has_specified_numeric_value = 50)
 Some fields, such as "has_format", require a data frame: 
 
 ```{r}
-my_dataframe <- data.frame(W = 44.5, p = 2.2e-16, stringsAsFactors = FALSE)
+my_dataframe <- data.frame(W = 44.5, p = 2.2e-16)
 output_dataframe <- dt$inferential_test_output(has_format = my_dataframe)
 ```
 
-By default, a data frame is assigned a generic name "Table". If you want to give your data frame a name, you can use a tuple. Please always include first the data frame and then the name as a string in the tuple. 
+Please check which elements you include in your data frame and how you assign the columns. When in doubt, look at your column with:
+
+```{r}
+class(my_dataframe$W)
+```
+
+The result should be either one of the [basic R data types](https://www.w3schools.com/r/r_data_types.asp) or an [R factor](https://www.w3schools.com/r/r_factors.asp).
+
+By default, dtreg assigns a data frame a generic name "Table". If you want to give your data frame a name, you can use a tuple. Please always include first the data frame and then the name as a string in the tuple. 
 
 ```{r}
 library(sets)
@@ -183,7 +191,7 @@ Finally, we have the results of the test:
 
 
 ```{r}
-df_result <- data.frame(W = 44.5, p = 2.2e-16, stringsAsFactors = FALSE)
+df_result <- data.frame(W = 44.5, p = 2.2e-16)
 output <- dt$inferential_test_output(has_format = df_result)
 ```
 
@@ -199,7 +207,7 @@ wilcoxon_inst <- dt$statistical_test_of_difference(
 )
 ```
 
-Please be attentive when writing the results. In case you misspell a variable, omit a comma separating two fields, forget a closing bracket, or make another seemingly tiny mistake, you will get an error message (something like "object 'inputt' not found"). You can experiment with such typos and see which error messages you get.     
+Please be attentive when writing the results. In case you misspell a variable, omit a comma separating two fields, forget a closing bracket, or make another seemingly tiny mistake, you will get an error message (something like "object 'inputt' not found"). You can experiment with such typos and see which error messages you get.
 
 ## 3. Convert the instance into a JSON-LD file
 
