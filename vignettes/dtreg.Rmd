@@ -37,7 +37,7 @@ If a valid identifier is used, you get an R object containing information about 
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/ff5e3f857788d20dd1aa")
 ```
 
-In addition to the schema you requested (in this case, the "statistical test of difference"), you get schemata that you might need for using it.
+In addition to the schema you requested (in this case, the "statistical test of difference"), you get schemata that you might need for using it (see [Nested structure](#section2)).
 You can look at the list of these schemata:
 
 ```{r}
@@ -49,7 +49,7 @@ To write down your data in accordance with a DTR schema, dtreg uses [R6 classes]
 
 ### Fields 
 
-For doing that, you first need to know which fields you can use: 
+For doing that, you first need to know which fields you can use for the selected schema: 
 
 ```{r}
 dtreg::show_fields(dt$statistical_test_of_difference())
@@ -74,7 +74,7 @@ The help page XXX specifies which fields to use, and what input is required by a
 
 ### String, numeric, and data frame
 
-The most frequently used types are string, numeric, and data frame.
+The most frequently used types of input are string, numeric, and data frame.
 Strings are used for labels and comments, and URLs are also presented as strings:
 
 ```{r}
@@ -123,7 +123,7 @@ var_2 <- dt$statistical_variable(label = "var_2")
 two_vars <- dt$statistical_test_of_difference(evaluates = c(var_1, var_2))
 ```
 
-### Nested structure
+### Nested structure {#section2}
 
 In the example above you can see that a field of a schema might require another schema.
 This nested structure is important for making the data machine readable.
