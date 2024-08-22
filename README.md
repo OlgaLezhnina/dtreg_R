@@ -33,10 +33,11 @@ devtools::install_github("OlgaLezhnina/dtreg")
 
 This brief example shows you how to work with a DTR schema; for more
 detailed description, you can use the dtreg vignette NNN. You need to
-know the schema identifier (see the help page XXX). For instance, the
-schema “inferential test output” requires the ePIC datatype with the DOI
-<https://doi.org/21.T11969/74bc7748b8cd520908bc>. For the ORKG, please
-use the ORKG template URL, such as
+know the schema identifier (see the [help
+page](https://orkg.org/help-center/article/47/reborn_articles) ). For
+instance, the schema “inferential test output” requires the ePIC
+datatype with the DOI <https://doi.org/21.T11969/74bc7748b8cd520908bc>.
+For the ORKG, please use the ORKG template URL, such as
 <https://incubating.orkg.org/template/R855534>.
 
 ``` r
@@ -65,5 +66,6 @@ my_inst <- dt$inferential_test_output(label = my_label,
 my_json <- dtreg::to_jsonld(my_inst)
 ```
 
-For more information, please see the help page XXX and the dtreg
-vignette NNN.
+For more information, please see the [help
+page](https://orkg.org/help-center/article/47/reborn_articles) and the
+dtreg vignette NNN.
