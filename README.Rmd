@@ -64,4 +64,18 @@ my_inst <- dt$inferential_test_output(label = my_label,
 my_json <- dtreg::to_jsonld(my_inst)
 ```
 
-For more information, please see the [help page](https://orkg.org/help-center/article/47/reborn_articles) and the dtreg vignette NNN.
+For more information, please see the [help page](https://orkg.org/help-center/article/47/reborn_articles) and the dtreg vignette. To access the vignette, you can run 
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  eval = FALSE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+```{r}
+vignette("dtreg", package="dtreg")
+```

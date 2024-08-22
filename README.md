@@ -68,4 +68,8 @@ my_json <- dtreg::to_jsonld(my_inst)
 
 For more information, please see the [help
 page](https://orkg.org/help-center/article/47/reborn_articles) and the
-dtreg vignette NNN.
+dtreg vignette. To access the vignette, you can run
+
+``` r
+vignette("dtreg", package="dtreg")
+```
