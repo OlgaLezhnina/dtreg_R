@@ -61,7 +61,7 @@ url_2 <- dt$url(label = "URL_2")
 my_inst <- dt$inferential_test_output(label = my_label,
                                       has_description = c(url_1, url_2),
                                       has_format = my_df)
-## write the instance in JSON-LD format
+## write the instance in JSON-LD format as a string
 my_json <- dtreg::to_jsonld(my_inst)
 
 ## the result can be saved as a JSON file
