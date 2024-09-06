@@ -11,7 +11,6 @@ Authors@R:
            comment = c(ORCID = "0000-0001-5492-3212"))
            )
 Description: You can load a schema from a data type registry (DTR) as an R object.
-    Currently, the ePIC and the ORKG DTRs are supported.
     Use this schema to write your data in JSON-LD format to make it machine readable.
 License: MIT + file LICENSE
 Encoding: UTF-8
