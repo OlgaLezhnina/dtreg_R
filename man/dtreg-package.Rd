@@ -6,7 +6,7 @@
 \alias{dtreg-package}
 \title{dtreg: Interact with Data Type Registries and Create Machine-Readable Data}
 \description{
-You can load a schema from a data type registry (DTR) as an R object. Use this schema to write your data in JSON-LD format to make it machine readable.
+You can load a schema from a DTR (data type registry) as an R object. Use this schema to write your data in JSON-LD (JavaScript Object Notation for Linked Data) format to make it machine readable.
 }
 \seealso{
 Useful links:
