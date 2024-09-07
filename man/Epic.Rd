@@ -3,164 +3,50 @@
 \name{Epic}
 \alias{Epic}
 \title{Epic}
-\description{
-R6 Class Representing the ePIC DTR
-}
-\keyword{internal}
-\section{Super class}{
-\code{\link[dtreg:DataTypeReg]{dtreg::DataTypeReg}} -> \code{Epic}
-}
-\section{Public fields}{
-\if{html}{\out{<div class="r6-fields">}}
-\describe{
-\item{\code{schema_info}}{An ePIC schema information}
-}
-\if{html}{\out{</div>}}
-}
-\section{Methods}{
-\subsection{Public methods}{
-\itemize{
-\item \href{#method-Epic-new}{\code{Epic$new()}}
-\item \href{#method-Epic-get_schema_info}{\code{Epic$get_schema_info()}}
-\item \href{#method-Epic-add_context}{\code{Epic$add_context()}}
-\item \href{#method-Epic-add_dt_type}{\code{Epic$add_dt_type()}}
-\item \href{#method-Epic-add_dtp_type}{\code{Epic$add_dtp_type()}}
-\item \href{#method-Epic-add_df_constants}{\code{Epic$add_df_constants()}}
-\item \href{#method-Epic-clone}{\code{Epic$clone()}}
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Epic-new"></a>}}
-\if{latex}{\out{\hypertarget{method-Epic-new}{}}}
-\subsection{Method \code{new()}}{
-Create a new object with the schema information
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$new(schema_info = NA)}\if{html}{\out{</div>}}
-}
+\arguments{
+\item{schema_info}{An ePIC schema information}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{schema_info}}{An ePIC schema information}
+\item{datatype_id}{The identifier of a datatype}
+
+\item{prefix}{The URL prefix}
+
+\item{identifier}{The ePIC property identifier}
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
+\value{
 A new object with the ePIC schema information
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Epic-get_schema_info"></a>}}
-\if{latex}{\out{\hypertarget{method-Epic-get_schema_info}{}}}
-\subsection{Method \code{get_schema_info()}}{
-Obtain information from an ePIC schema
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$get_schema_info(datatype_id)}\if{html}{\out{</div>}}
-}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{datatype_id}}{The identifier of a datatype}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
 Extracted information from an ePIC schema
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Epic-add_context"></a>}}
-\if{latex}{\out{\hypertarget{method-Epic-add_context}{}}}
-\subsection{Method \code{add_context()}}{
-Write ePIC-specific context for JSON-LD
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$add_context(prefix)}\if{html}{\out{</div>}}
-}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{prefix}}{The URL prefix}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-The ePIC-specific information is provided by the dtr
-}
-
-\subsection{Returns}{
 Context to include in JSON-LD file
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Epic-add_dt_type"></a>}}
-\if{latex}{\out{\hypertarget{method-Epic-add_dt_type}{}}}
-\subsection{Method \code{add_dt_type()}}{
-Write ePIC-specific schema type for writing JSON-LD
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$add_dt_type(identifier)}\if{html}{\out{</div>}}
-}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{identifier}}{The ePIC schema identifier}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
 Type to include in JSON-LD file
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Epic-add_dtp_type"></a>}}
-\if{latex}{\out{\hypertarget{method-Epic-add_dtp_type}{}}}
-\subsection{Method \code{add_dtp_type()}}{
-Write ePIC-specific property type for writing JSON-LD
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$add_dtp_type(identifier)}\if{html}{\out{</div>}}
-}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{identifier}}{The ePIC property identifier}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
 Type to include in JSON-LD file
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Epic-add_df_constants"></a>}}
-\if{latex}{\out{\hypertarget{method-Epic-add_df_constants}{}}}
-\subsection{Method \code{add_df_constants()}}{
-Write ePIC-specific dataframe constants for writing JSON-LD
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$add_df_constants()}\if{html}{\out{</div>}}
-}
 
-\subsection{Returns}{
 Dataframe constants to include in JSON-LD file
 }
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Epic-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-Epic-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Epic$clone(deep = FALSE)}\if{html}{\out{</div>}}
-}
+\description{
+R6 Class Representing the ePIC DTR
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
+Create a new object with the schema information
+
+Obtain information from an ePIC schema
+
+Write ePIC-specific context for JSON-LD
+
+Write ePIC-specific schema type for writing JSON-LD
+
+Write ePIC-specific property type for writing JSON-LD
+
+Write ePIC-specific dataframe constants for writing JSON-LD
+}
+\details{
+The ePIC-specific information is provided by the dtr
+}
+\section{Fields}{
+
 \describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
-}
+\item{\code{schema_info}}{An ePIC schema information}
+}}
+
+\keyword{internal}

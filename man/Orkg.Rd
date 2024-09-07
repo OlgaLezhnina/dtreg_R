@@ -3,164 +3,50 @@
 \name{Orkg}
 \alias{Orkg}
 \title{ORKG}
-\description{
-R6 Class Representing the ORKG DTR
-}
-\keyword{internal}
-\section{Super class}{
-\code{\link[dtreg:DataTypeReg]{dtreg::DataTypeReg}} -> \code{Orkg}
-}
-\section{Public fields}{
-\if{html}{\out{<div class="r6-fields">}}
-\describe{
-\item{\code{schema_info}}{An ORKG template information}
-}
-\if{html}{\out{</div>}}
-}
-\section{Methods}{
-\subsection{Public methods}{
-\itemize{
-\item \href{#method-Orkg-new}{\code{Orkg$new()}}
-\item \href{#method-Orkg-get_schema_info}{\code{Orkg$get_schema_info()}}
-\item \href{#method-Orkg-add_context}{\code{Orkg$add_context()}}
-\item \href{#method-Orkg-add_dt_type}{\code{Orkg$add_dt_type()}}
-\item \href{#method-Orkg-add_dtp_type}{\code{Orkg$add_dtp_type()}}
-\item \href{#method-Orkg-add_df_constants}{\code{Orkg$add_df_constants()}}
-\item \href{#method-Orkg-clone}{\code{Orkg$clone()}}
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Orkg-new"></a>}}
-\if{latex}{\out{\hypertarget{method-Orkg-new}{}}}
-\subsection{Method \code{new()}}{
-Create a new object with the schema information
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orkg$new(schema_info = NA)}\if{html}{\out{</div>}}
-}
+\arguments{
+\item{schema_info}{An ORKG template information}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{schema_info}}{An ORKG template information}
+\item{datatype_id}{The identifier of an ORKG template}
+
+\item{prefix}{The URL prefix}
+
+\item{identifier}{The ORKG property identifier}
 }
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
+\value{
 A new object with the ORKG template information
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Orkg-get_schema_info"></a>}}
-\if{latex}{\out{\hypertarget{method-Orkg-get_schema_info}{}}}
-\subsection{Method \code{get_schema_info()}}{
-Obtain information from an ORKG template
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orkg$get_schema_info(datatype_id)}\if{html}{\out{</div>}}
-}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{datatype_id}}{The identifier of an ORKG template}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
 Extracted information from an ORKG template
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Orkg-add_context"></a>}}
-\if{latex}{\out{\hypertarget{method-Orkg-add_context}{}}}
-\subsection{Method \code{add_context()}}{
-Write ORKG-specific context for JSON-LD
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orkg$add_context(prefix)}\if{html}{\out{</div>}}
-}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{prefix}}{The URL prefix}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Details}{
-The ORKG-specific information is provided by the dtr
-}
-
-\subsection{Returns}{
 Context to include in JSON-LD file
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Orkg-add_dt_type"></a>}}
-\if{latex}{\out{\hypertarget{method-Orkg-add_dt_type}{}}}
-\subsection{Method \code{add_dt_type()}}{
-Write ORKG-specific template type for writing JSON-LD
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orkg$add_dt_type(identifier)}\if{html}{\out{</div>}}
-}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{identifier}}{The ORKG template identifier}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
 Type to include in JSON-LD file
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Orkg-add_dtp_type"></a>}}
-\if{latex}{\out{\hypertarget{method-Orkg-add_dtp_type}{}}}
-\subsection{Method \code{add_dtp_type()}}{
-Write ORKG-specific property type for writing JSON-LD
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orkg$add_dtp_type(identifier)}\if{html}{\out{</div>}}
-}
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
-\describe{
-\item{\code{identifier}}{The ORKG property identifier}
-}
-\if{html}{\out{</div>}}
-}
-\subsection{Returns}{
 Type to include in JSON-LD file
-}
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Orkg-add_df_constants"></a>}}
-\if{latex}{\out{\hypertarget{method-Orkg-add_df_constants}{}}}
-\subsection{Method \code{add_df_constants()}}{
-Write ORKG-specific dataframe constants for writing JSON-LD
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orkg$add_df_constants()}\if{html}{\out{</div>}}
-}
 
-\subsection{Returns}{
 Constants to include in JSON-LD file
 }
-}
-\if{html}{\out{<hr>}}
-\if{html}{\out{<a id="method-Orkg-clone"></a>}}
-\if{latex}{\out{\hypertarget{method-Orkg-clone}{}}}
-\subsection{Method \code{clone()}}{
-The objects of this class are cloneable with this method.
-\subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{Orkg$clone(deep = FALSE)}\if{html}{\out{</div>}}
-}
+\description{
+R6 Class Representing the ORKG DTR
 
-\subsection{Arguments}{
-\if{html}{\out{<div class="arguments">}}
+Create a new object with the schema information
+
+Obtain information from an ORKG template
+
+Write ORKG-specific context for JSON-LD
+
+Write ORKG-specific template type for writing JSON-LD
+
+Write ORKG-specific property type for writing JSON-LD
+
+Write ORKG-specific dataframe constants for writing JSON-LD
+}
+\details{
+The ORKG-specific information is provided by the dtr
+}
+\section{Fields}{
+
 \describe{
-\item{\code{deep}}{Whether to make a deep clone.}
-}
-\if{html}{\out{</div>}}
-}
-}
-}
+\item{\code{schema_info}}{An ORKG template information}
+}}
+
+\keyword{internal}
