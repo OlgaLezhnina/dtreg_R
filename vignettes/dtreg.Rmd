@@ -21,7 +21,7 @@ You can use dtreg for the following tasks:
 
 * Interact with data type registries (DTRs): currently, the [ePIC](https://fc4e-t4-3.github.io/) and the [ORKG](https://orkg.org/) DTRs.
 
-* Write your data as an instance of an [R6 class](https://cran.r-project.org/web/packages/R6/readme/README.html) in accordance with a DTR schema.
+* Write your data as an instance of an [R6 class](https://cran.r-project.org/package=R6) in accordance with a DTR schema.
 
 * Convert the results into a machine-readable JSON-LD file. 
 
@@ -45,7 +45,7 @@ names(dt)
 ```
 ## 2. Create an instance 
 
-To write down your data in accordance with a DTR schema, dtreg uses [R6 classes](https://cran.r-project.org/web/packages/R6/readme/README.html). Therefore, you need to create an instance of a specific class.
+To write down your data in accordance with a DTR schema, dtreg uses [R6 classes](https://cran.r-project.org/package=R6). Therefore, you need to create an instance of a specific class.
 
 ### Fields 
 
