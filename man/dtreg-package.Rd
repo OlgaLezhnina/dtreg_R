@@ -25,5 +25,10 @@ Authors:
   \item Markus Stocker \email{markus.stocker@tib.eu} (\href{https://orcid.org/0000-0001-5492-3212}{ORCID})
 }
 
+Other contributors:
+\itemize{
+  \item Open Research Knowledge Graph Project and Contributors [copyright holder]
+}
+
 }
 \keyword{internal}

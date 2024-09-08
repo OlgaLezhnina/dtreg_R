@@ -7,7 +7,8 @@ Authors@R: c(
     person("Manuel", "Prinz", , "manuel.prinz@tib.eu", role = "aut",
            comment = c(ORCID = "0000-0003-2151-4556")),
     person("Markus", "Stocker", , "markus.stocker@tib.eu", role = "aut",
-           comment = c(ORCID = "0000-0001-5492-3212"))
+           comment = c(ORCID = "0000-0001-5492-3212")),
+    person("Open Research Knowledge Graph Project and Contributors", role = "cph")
   )
 Description: You can load a schema from a DTR (data type registry) as an R
     object.  Use this schema to write your data in JSON-LD (JavaScript
