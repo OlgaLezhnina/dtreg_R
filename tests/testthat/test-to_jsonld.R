@@ -31,6 +31,17 @@ test_that("df_structure writes missing values", {
   expect_equal(is.na(result$rows[[1]]$cells[[2]]$value), TRUE)
 })
 
+test_that("to_jsonld gives error when a field is a function", {
+  abc <- function(x) {
+    return(x + 1)
+  }
+  dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+  instance <- dt$inferential_test_output(has_format = abc)
+  expect_error(to_jsonld(instance),
+               "Input in  has_format  should not be a function",
+               fixed = TRUE)
+})
+
 test_that("to_jsonld writes an ePIC instance into JSONLD", {
   dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
   instance <- dt$inferential_test_output(has_format = dt$table(label = "Table"))
