@@ -19,7 +19,7 @@ load_datatype <- function(datatype_id) {
 #' Rewrite R6 classes to facilitate easier instance writing by the user
 #' @param r6_classes A list of R6 classes
 #' @return a list of objects for creating new instances
-#' @keywords internal
+#' @noRd
 #'
 write_proxies <- function(r6_classes) {
   proxies <- list()
@@ -34,7 +34,7 @@ write_proxies <- function(r6_classes) {
 #'
 #' @param datatype_id The identifier of a datatype schema, such as URL
 #' @return a list of R6 classes for the datatype
-#' @keywords internal
+#' @noRd
 #'
 write_r6_classes <- function(datatype_id) {
   selected_class <- select_dtr(datatype_id)

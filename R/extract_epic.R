@@ -2,7 +2,7 @@
 #'
 #' @param datatype_id The identifier of an ePIC schema
 #' @return An R object that contains information about the ePIC schema
-#' @keywords internal
+#' @noRd
 #'
 extract_epic <- function(datatype_id) {
   extract_all <- list()

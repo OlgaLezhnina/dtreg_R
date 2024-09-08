@@ -3,7 +3,7 @@
 #' Format a string to lowercase, spaces and dashes as underscores
 #' @param string A character vector
 #' @return A character vector formatted in the required way
-#' @keywords internal
+#' @noRd
 #'
 format_string  <- function(string) {
   return(stringr::str_replace_all(
@@ -17,7 +17,7 @@ format_string  <- function(string) {
 #' Get prefix of a URL string
 #' @param url_string A URL string
 #' @return The prefix string indicating a datatype
-#' @keywords internal
+#' @noRd
 #'
 get_prefix <- function(url_string) {
   part <- strsplit(url_string, split = "[/ //]+")[[1]]
@@ -33,7 +33,7 @@ get_prefix <- function(url_string) {
 #' @description Write cardinality of an ePIC property as a named list
 #' @param cardinality_string An ePIC string for cardinality
 #' @return A named list with min and max values as integers or NA
-#' @keywords internal
+#' @noRd
 #'
 specify_cardinality <- function(cardinality_string) {
   min_max <- list()
@@ -56,7 +56,7 @@ specify_cardinality <- function(cardinality_string) {
 #' @description
 #' Generate a counting function for assigning identifiers
 #' @return The counting function
-#' @keywords internal
+#' @noRd
 #'
 generate_uid <- function() {
   i <- 0

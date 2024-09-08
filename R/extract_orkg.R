@@ -2,7 +2,7 @@
 #'
 #' @param datatype_id The identifier of an ORKG template
 #' @return An R object that contains information about the ORKG template
-#' @keywords internal
+#' @noRd
 #'
 extract_orkg <- function(datatype_id) {
   part <- strsplit(datatype_id, split = "[/ //]+")[[1]]
