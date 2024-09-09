@@ -66,12 +66,12 @@ generate_uid <- function() {
   })
 }
 
-#' Show fields
+#' Show schema fields
 #' @description
-#' Show fields of a schema that can be used for creating an instance
-#' @param datatype An R object from dtreg::load_datatype
+#' Show which fields of a schema can be used for creating an instance
+#' @param datatype An R6 class from dtreg::load_datatype
 #'
-#' @return Fields that can be used in an instance
+#' @return A character vector of available fields
 #' @export
 #'
 #' @examples

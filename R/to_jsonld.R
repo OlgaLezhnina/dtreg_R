@@ -1,7 +1,7 @@
-#' Write JSON-LD
+#' Write an instance in the JSON-LD format
 #' @description
-#' Write an instance into JSON-LD file
-#' @param instance An instance of a datatype-related R6 class
+#' Write an instance of a schema-related class in the JSON-LD format as a string.
+#' @param instance An instance of an R6 class
 #' @return JSON string in JSON-LD format
 #' @export
 #' @examples

@@ -1,8 +1,10 @@
-#' Load datatype
+#' Load classes for the schema with the known identifier
 #' @description
-#' Load R objects with datatype schema information for creating a new instance
-#' @param datatype_id The identifier of a datatype schema, such as URL
-#' @return a list of schemata as R objects
+#' Load a list of R6 classes for a schema identifier, such as
+#' the datatype DOI or the template URL.
+#' The classes contain information on the requested schema and nested schemata.
+#' @param datatype_id The schema identifier, such as the DOI or the URL
+#' @return A list of R6 classes
 #' @export
 #'
 #' @examples
@@ -18,7 +20,7 @@ load_datatype <- function(datatype_id) {
 #' @description
 #' Rewrite R6 classes to facilitate easier instance writing by the user
 #' @param r6_classes A list of R6 classes
-#' @return a list of objects for creating new instances
+#' @return A list of objects for creating new instances
 #' @noRd
 #'
 write_proxies <- function(r6_classes) {
@@ -33,7 +35,7 @@ write_proxies <- function(r6_classes) {
 #' Write R6 classes for a specified datatype
 #'
 #' @param datatype_id The identifier of a datatype schema, such as URL
-#' @return a list of R6 classes for the datatype
+#' @return A list of R6 classes for the datatype
 #' @noRd
 #'
 write_r6_classes <- function(datatype_id) {

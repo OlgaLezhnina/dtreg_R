@@ -2,18 +2,20 @@
 % Please edit documentation in R/load_datatype.R
 \name{load_datatype}
 \alias{load_datatype}
-\title{Load datatype}
+\title{Load classes for the schema with the known identifier}
 \usage{
 load_datatype(datatype_id)
 }
 \arguments{
-\item{datatype_id}{The identifier of a datatype schema, such as URL}
+\item{datatype_id}{The schema identifier, such as the DOI or the URL}
 }
 \value{
-a list of schemata as R objects
+A list of R6 classes
 }
 \description{
-Load R objects with datatype schema information for creating a new instance
+Load a list of R6 classes for a schema identifier, such as
+the datatype DOI or the template URL.
+The classes contain information on the requested schema and nested schemata.
 }
 \examples{
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")

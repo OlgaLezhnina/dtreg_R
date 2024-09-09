@@ -2,18 +2,18 @@
 % Please edit documentation in R/helpers.R
 \name{show_fields}
 \alias{show_fields}
-\title{Show fields}
+\title{Show schema fields}
 \usage{
 show_fields(datatype)
 }
 \arguments{
-\item{datatype}{An R object from dtreg::load_datatype}
+\item{datatype}{An R6 class from dtreg::load_datatype}
 }
 \value{
-Fields that can be used in an instance
+A character vector of available fields
 }
 \description{
-Show fields of a schema that can be used for creating an instance
+Show which fields of a schema can be used for creating an instance
 }
 \examples{
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")

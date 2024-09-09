@@ -2,18 +2,18 @@
 % Please edit documentation in R/to_jsonld.R
 \name{to_jsonld}
 \alias{to_jsonld}
-\title{Write JSON-LD}
+\title{Write an instance in the JSON-LD format}
 \usage{
 to_jsonld(instance)
 }
 \arguments{
-\item{instance}{An instance of a datatype-related R6 class}
+\item{instance}{An instance of an R6 class}
 }
 \value{
 JSON string in JSON-LD format
 }
 \description{
-Write an instance into JSON-LD file
+Write an instance of a schema-related class in the JSON-LD format as a string.
 }
 \examples{
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
