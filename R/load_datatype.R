@@ -1,7 +1,7 @@
 #' Load classes for the schema with the known identifier
 #' @description
 #' Load a list of R6 classes for a schema identifier, such as
-#' the datatype DOI or the template URL.
+#' an ePIC datatype DOI or an ORKG template URL.
 #' The classes contain information on the requested schema and nested schemata.
 #' @param datatype_id The schema identifier, such as the DOI or the URL
 #' @return A list of R6 classes

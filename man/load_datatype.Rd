@@ -14,7 +14,7 @@ A list of R6 classes
 }
 \description{
 Load a list of R6 classes for a schema identifier, such as
-the datatype DOI or the template URL.
+an ePIC datatype DOI or an ORKG template URL.
 The classes contain information on the requested schema and nested schemata.
 }
 \examples{
