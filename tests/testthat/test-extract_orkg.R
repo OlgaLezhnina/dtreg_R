@@ -20,3 +20,9 @@ test_that("extract_orkg extracts properties correctly", {
   expected <- c("has_format", "has_description", "comment", "label")
   expect_equal(prop_names, expected)
 })
+
+test_that("extract_orkg extracts nested templates", {
+  dt <- dtreg:::extract_orkg("https://incubating.orkg.org/template/R903086")
+  expected <- c("statistical_variable", "sample_size", "data_input")
+  expect_equal(names(dt), expected)
+})
