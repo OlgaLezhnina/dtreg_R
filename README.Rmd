@@ -29,11 +29,19 @@ Currently, we support the [ePIC](https://fc4e-t4-3.github.io/) and the [ORKG](ht
 
 ## Installation
 
-You can install the development version of dtreg from [GitHub](https://github.com/) (TODO CRAN) with:
+The easiest way is to install dtreg from CRAN:
+
+``` r
+install.packages("dtreg")
+```
+### Development version
+
+You can install the development version of dtreg with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("OlgaLezhnina/dtreg")
+library(devtools)
+devtools::install_gitlab("TIBHannover/orkg/dtreg-r", build_vignettes = TRUE)
 ```
 
 ## Example
