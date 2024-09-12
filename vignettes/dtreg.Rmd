@@ -102,7 +102,7 @@ class(my_dataframe$W)
 
 The result should be either a [basic R data type](https://www.w3schools.com/r/r_data_types.asp) or an [R factor](https://www.w3schools.com/r/r_factors.asp).
 
-By default, dtreg assigns a data frame a generic name "Table". If you want to give your data frame a name, you can use a tuple. Please always include first the data frame and then the name as a string in the tuple: 
+By default, dtreg assigns a data frame a generic label "Table". If you want to give your data frame a label, you can use a tuple. Please always include first the data frame and then the name as a string in the tuple: 
 
 ```{r}
 library(sets)
