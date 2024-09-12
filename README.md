@@ -4,6 +4,11 @@
 # dtreg
 
 <!-- badges: start -->
+
+[![CRAN
+status](https://www.r-pkg.org/badges/version/dtreg)](https://CRAN.R-project.org/package=dtreg)
+[![Codecov test
+coverage](https://codecov.io/gh/OlgaLezhnina/dtreg_R/branch/master/graph/badge.svg)](https://app.codecov.io/gh/OlgaLezhnina/dtreg_R?branch=master)
 <!-- badges: end -->
 
 The goal of dtreg is to help the users interact with various data type
