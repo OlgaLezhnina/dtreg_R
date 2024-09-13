@@ -1,7 +1,7 @@
 #' Extract ORKG template information
 #'
-#' @param datatype_id The identifier of an ORKG template
-#' @return An R object that contains information about the ORKG template
+#' @param datatype_id An identifier of an ORKG template
+#' @return A named list that contains information about the ORKG template
 #' @noRd
 #'
 extract_orkg <- function(datatype_id) {

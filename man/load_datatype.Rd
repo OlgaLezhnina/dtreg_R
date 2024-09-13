@@ -2,12 +2,12 @@
 % Please edit documentation in R/load_datatype.R
 \name{load_datatype}
 \alias{load_datatype}
-\title{Load classes for the schema with the known identifier}
+\title{Load classes for a schema with the known identifier}
 \usage{
 load_datatype(datatype_id)
 }
 \arguments{
-\item{datatype_id}{The schema identifier, such as the DOI or the URL}
+\item{datatype_id}{A schema identifier, such as a DOI or a URL}
 }
 \value{
 A list of R6 classes
@@ -15,7 +15,7 @@ A list of R6 classes
 \description{
 Load a list of R6 classes for a schema identifier, such as
 an ePIC datatype DOI or an ORKG template URL.
-The classes contain information on the requested schema and nested schemata.
+The classes contain information of the requested schema and nested schemata.
 }
 \examples{
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")

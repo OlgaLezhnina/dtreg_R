@@ -1,7 +1,7 @@
 #' Write an instance in the JSON-LD format
 #' @description
 #' Write an instance of a schema-related class
-#' in the JSON-LD format as a string.
+#' in the JSON-LD format as a string
 #' @param instance An instance of an R6 class
 #' @return JSON string in JSON-LD format
 #' @export
@@ -67,7 +67,7 @@ differ_input <- function(input) {
 #' Dataframe structure
 #' @description
 #' Prepare a dataframe or a tuple for to_jsonld function
-#' @param df A dataframe
+#' @param df A dataframe or a tuple
 #' @param label A string
 #' @return A named list to be used by to_jsonld function
 #' @noRd

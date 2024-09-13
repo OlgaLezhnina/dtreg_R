@@ -14,7 +14,7 @@ JSON string in JSON-LD format
 }
 \description{
 Write an instance of a schema-related class
-in the JSON-LD format as a string.
+in the JSON-LD format as a string
 }
 \examples{
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
