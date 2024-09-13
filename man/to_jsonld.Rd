@@ -2,7 +2,7 @@
 % Please edit documentation in R/to_jsonld.R
 \name{to_jsonld}
 \alias{to_jsonld}
-\title{Write an instance in the JSON-LD format}
+\title{Write an instance in JSON-LD format}
 \usage{
 to_jsonld(instance)
 }
@@ -14,7 +14,7 @@ JSON string in JSON-LD format
 }
 \description{
 Write an instance of a schema-related class
-in the JSON-LD format as a string
+in JSON-LD format as a string
 }
 \examples{
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")

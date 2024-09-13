@@ -19,17 +19,17 @@ library(dtreg)
 ```
 You can use dtreg for the following tasks:
 
-* Interact with data type registries (DTRs): currently, the [ePIC](https://fc4e-t4-3.github.io/) and the [ORKG](https://orkg.org/) DTRs.
+* Interact with data type registries (DTRs): currently, the [ePIC](https://fc4e-t4-3.github.io/) and [ORKG](https://orkg.org/) DTRs.
 
 * Write your data as an instance of an [R6 class](https://cran.r-project.org/package=R6) in accordance with a DTR schema.
 
-* Convert the results into the machine-readable JSON-LD format. 
+* Convert the results into machine-readable JSON-LD format. 
 
 ## 1. Load a DTR schema {#section1}
 
 To load a DTR schema, you need to know its identifier (see the [help page](https://orkg.org/help-center/article/47/reborn_articles)), such as the ePIC datatype DOI or the ORKG template URL.
 
-For instance, you intend to use the "statistical test of difference" schema; it has the ePIC DOI "https://doi.org/21.T11969/ff5e3f857788d20dd1aa".
+For instance, let us imagine you intend to use the "statistical test of difference" schema; it has the ePIC DOI "https://doi.org/21.T11969/ff5e3f857788d20dd1aa".
 
 If a valid identifier is used, you get an R object containing information about the DTR schema:
 
@@ -70,7 +70,7 @@ labelled_inst <- dt$statistical_test_of_difference(label = "my_test_results")
 ```
 
 However, the data you want to write are usually more complex than this.
-The [help page](https://orkg.org/help-center/article/47/reborn_articles) specifies which fields to use, and what input is required by a field (e.g., another schema or a specific type of data, such as numeric).
+The [help page](https://orkg.org/help-center/article/47/reborn_articles) specifies which fields to use and what input is required by a field (e.g., another schema or a specific type of data, such as numeric).
 
 ### String, numeric, and data frame
 
@@ -115,7 +115,7 @@ These are the most frequently used types of input that you write in a field.
 ### More than one input in a field
 
 Sometimes a few objects should be written in one field.
-In this case simply concatenate them:
+In this case, simply concatenate them:
 
 ```{r}
 var_1 <- dt$statistical_variable(label = "var_1")
@@ -165,7 +165,7 @@ soft_method <- dt$software_method(
 )
 ```
 
-Now we can add the information about the input data:
+Now we can add information about the input data:
 
 ```{r}
 sample_size <- dt$sample_size(has_specified_numeric_value = 50)
@@ -209,9 +209,9 @@ wilcoxon_inst <- dt$statistical_test_of_difference(
 
 Please be attentive when writing the results. In case you misspell a variable, omit a comma separating two fields, forget a closing bracket, or make another seemingly tiny mistake, you will get an error message (something like "object 'inputt' not found"). You can experiment with such typos and see which error messages you get.
 
-## 3. Convert the instance into the JSON-LD format
+## 3. Convert the instance into JSON-LD format
 
-This stage is simple. This line gives you a string in the JSON-LD format:
+This stage is simple. This line gives you a string in JSON-LD format:
 
 ```{r}
 wilcoxon_json <- dtreg::to_jsonld(wilcoxon_instance)

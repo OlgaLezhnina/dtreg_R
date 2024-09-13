@@ -11,9 +11,9 @@ status](https://www.r-pkg.org/badges/version/dtreg)](https://CRAN.R-project.org/
 coverage](https://codecov.io/gh/OlgaLezhnina/dtreg_R/branch/master/graph/badge.svg)](https://app.codecov.io/gh/OlgaLezhnina/dtreg_R?branch=master)
 <!-- badges: end -->
 
-The goal of dtreg is to help the users interact with various data type
+The goal of dtreg is to help users interact with various data type
 registries (DTRs) and create machine-readable data. Currently, we
-support the [ePIC](https://fc4e-t4-3.github.io/) and the
+support the [ePIC](https://fc4e-t4-3.github.io/) and
 [ORKG](https://orkg.org/) DTRs.
 
 - First, load a DTR schema (an ePIC datatype or an ORKG template) as an
@@ -82,8 +82,8 @@ my_json <- dtreg::to_jsonld(my_inst)
 ```
 
 For more information, please see the [help
-page](https://orkg.org/help-center/article/47/reborn_articles) and the
-dtreg vignette. To access the vignette, you can run:
+page](https://orkg.org/help-center/article/47/reborn_articles) and dtreg
+vignette. To access the vignette, you can run:
 
 ``` r
 vignette("dtreg", package="dtreg")
