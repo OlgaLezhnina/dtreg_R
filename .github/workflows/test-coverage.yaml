@@ -11,6 +11,7 @@ name: test-coverage.yaml
 permissions: read-all
 
 jobs:
+
   test-coverage:
     runs-on: ubuntu-latest
     env:
@@ -29,7 +30,7 @@ jobs:
           extra-packages: any::covr, any::xml2
           needs: coverage
 
-     - name: Enable Repo on Coveralls
+      - name: Enable Repo on Coveralls
         id: enable_coveralls
         run: |
           curl -s -H "Accept: application/json" \
