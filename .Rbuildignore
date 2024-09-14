@@ -8,3 +8,4 @@
 ^Meta$
 ^dev$
 ^codecov\.yml$
+^\.github$
