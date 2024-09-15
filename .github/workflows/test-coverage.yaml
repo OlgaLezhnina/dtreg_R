@@ -11,6 +11,7 @@ jobs:
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       COVERALLS_TOKEN: ${{ secrets.COVERALLS_API }}
+      CI_BRANCH: "master"
 
     steps:
       - uses: actions/checkout@v4
