@@ -203,7 +203,7 @@ wilcoxon_inst <- dt$statistical_test_of_difference(
   executes = soft_method,
   has_specified_input = input,
   evaluates = variables,
-  has_specified_output = result
+  has_specified_output = output
 )
 ```
 
