@@ -57,7 +57,7 @@ extract_orkg <- function(datatype_id) {
         }
       }
       i <- i + 1
-      all_props[i,] <- specific_prop
+      all_props[i, ] <- specific_prop
     }
     label_prop <- list(
       "dtp_name" = "label",

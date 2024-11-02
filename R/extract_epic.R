@@ -43,7 +43,7 @@ extract_epic <- function(datatype_id) {
         }
       }
       i <- i + 1
-      all_props[i,] <- specific_prop
+      all_props[i, ] <- specific_prop
     }
     extracted <- list(schema_df, all_props)
     extract_all[[dt_name]] <<- extracted
