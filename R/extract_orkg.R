@@ -35,7 +35,11 @@ extract_orkg <- function(datatype_id) {
         specific_prop[["dtp_card_max"]] <- NA
       }
       if (is.null(prop$class$id)) {
-        specific_prop[["dtp_value_type"]] <- prop$datatype$id
+        if (is.null(prop$datatype$id)) {
+          specific_prop[["dtp_value_type"]] <- ""
+        } else {
+          specific_prop[["dtp_value_type"]] <- prop$datatype$id
+        }
       } else {
         specific_prop[["dtp_value_type"]] <- prop$class$id
         info_n <-
@@ -53,7 +57,7 @@ extract_orkg <- function(datatype_id) {
         }
       }
       i <- i + 1
-      all_props[i, ] <- specific_prop
+      all_props[i,] <- specific_prop
     }
     label_prop <- list(
       "dtp_name" = "label",
