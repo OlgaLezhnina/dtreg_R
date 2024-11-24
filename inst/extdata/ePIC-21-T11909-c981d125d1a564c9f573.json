@@ -1,0 +1,34 @@
+{
+  "software": [
+    [
+      {
+        "dt_name": "software",
+        "dt_id": "c981d125d1a564c9f573",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "c981d125d1a564c9f573#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "version_info",
+        "dtp_id": "c981d125d1a564c9f573#version_info",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "has_support_url",
+        "dtp_id": "c981d125d1a564c9f573#has_support_url",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      }
+    ]
+  ]
+}

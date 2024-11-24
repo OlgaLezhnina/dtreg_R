@@ -1,0 +1,62 @@
+{
+  "data_item": [
+    [
+      {
+        "dt_name": "data_item",
+        "dt_id": "aff130c76e68ead3862e",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "aff130c76e68ead3862e#label",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "source_url",
+        "dtp_id": "aff130c76e68ead3862e#source_url",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      },
+      {
+        "dtp_name": "source_table",
+        "dtp_id": "aff130c76e68ead3862e#source_table",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/0424f6e7026fa4bc2c4a"
+      },
+      {
+        "dtp_name": "has_part",
+        "dtp_id": "aff130c76e68ead3862e#has_part",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/cceac5fb8acf5ade2bf5"
+      },
+      {
+        "dtp_name": "has_characteristic",
+        "dtp_id": "aff130c76e68ead3862e#has_characteristic",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/31483624b5c80014b6c7"
+      },
+      {
+        "dtp_name": "has_expression",
+        "dtp_id": "aff130c76e68ead3862e#has_expression",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/1f20e66b17a6eb7c2baf"
+      },
+      {
+        "dtp_name": "comment",
+        "dtp_id": "aff130c76e68ead3862e#comment",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      }
+    ]
+  ]
+}

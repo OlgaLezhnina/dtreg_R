@@ -1,0 +1,41 @@
+{
+  "software_method": [
+    [
+      {
+        "dt_name": "software_method",
+        "dt_id": "abef9f1c0d48853f3e51",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "abef9f1c0d48853f3e51#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "part_of",
+        "dtp_id": "abef9f1c0d48853f3e51#part_of",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/4b99260369df9110f9bd"
+      },
+      {
+        "dtp_name": "is_implemented_by",
+        "dtp_id": "abef9f1c0d48853f3e51#is_implemented_by",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      },
+      {
+        "dtp_name": "has_support_url",
+        "dtp_id": "abef9f1c0d48853f3e51#has_support_url",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      }
+    ]
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "table": [
+    [
+      {
+        "dt_name": "table",
+        "dt_id": "0424f6e7026fa4bc2c4a",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "0424f6e7026fa4bc2c4a#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "columns",
+        "dtp_id": "0424f6e7026fa4bc2c4a#columns",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/65ba00e95e60fb8971e6"
+      },
+      {
+        "dtp_name": "rows",
+        "dtp_id": "0424f6e7026fa4bc2c4a#rows",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/9bf7a8e8909bfd491b38"
+      }
+    ]
+  ]
+}

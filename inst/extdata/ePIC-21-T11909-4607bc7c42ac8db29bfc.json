@@ -1,0 +1,27 @@
+{
+  "cell": [
+    [
+      {
+        "dt_name": "cell",
+        "dt_id": "4607bc7c42ac8db29bfc",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "value",
+        "dtp_id": "4607bc7c42ac8db29bfc#value",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "column",
+        "dtp_id": "4607bc7c42ac8db29bfc#column",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/fb2e379f820c6f8f9e82"
+      }
+    ]
+  ]
+}
