@@ -125,8 +125,8 @@
         "dtp_name": "is_implemented_by",
         "dtp_id": "abef9f1c0d48853f3e51#is_implemented_by",
         "dtp_card_min": 0,
-        "dtp_card_max": null,
-        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "has_support_url",
@@ -384,7 +384,7 @@
       {
         "dtp_name": "has_characteristic",
         "dtp_id": "aff130c76e68ead3862e#has_characteristic",
-        "dtp_card_min": 1,
+        "dtp_card_min": 0,
         "dtp_card_max": 1,
         "dtp_value_type": "21.T11969/31483624b5c80014b6c7"
       },
@@ -435,8 +435,8 @@
         "dtp_value_type": "21.T11969/abef9f1c0d48853f3e51"
       },
       {
-        "dtp_name": "relates_to",
-        "dtp_id": "b9335ce2c99ed87735a6#relates_to",
+        "dtp_name": "targets",
+        "dtp_id": "b9335ce2c99ed87735a6#targets",
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/cceac5fb8acf5ade2bf5"

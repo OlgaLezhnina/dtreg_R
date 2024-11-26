@@ -27,6 +27,166 @@
       }
     ]
   ],
+  "software": [
+    [
+      {
+        "dt_name": "software",
+        "dt_id": "c981d125d1a564c9f573",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "c981d125d1a564c9f573#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "version_info",
+        "dtp_id": "c981d125d1a564c9f573#version_info",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "has_support_url",
+        "dtp_id": "c981d125d1a564c9f573#has_support_url",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      }
+    ]
+  ],
+  "software_library": [
+    [
+      {
+        "dt_name": "software_library",
+        "dt_id": "4b99260369df9110f9bd",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "4b99260369df9110f9bd#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "version_info",
+        "dtp_id": "4b99260369df9110f9bd#version_info",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "part_of",
+        "dtp_id": "4b99260369df9110f9bd#part_of",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/c981d125d1a564c9f573"
+      },
+      {
+        "dtp_name": "has_support_url",
+        "dtp_id": "4b99260369df9110f9bd#has_support_url",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      }
+    ]
+  ],
+  "software_method": [
+    [
+      {
+        "dt_name": "software_method",
+        "dt_id": "abef9f1c0d48853f3e51",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "abef9f1c0d48853f3e51#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "part_of",
+        "dtp_id": "abef9f1c0d48853f3e51#part_of",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/4b99260369df9110f9bd"
+      },
+      {
+        "dtp_name": "is_implemented_by",
+        "dtp_id": "abef9f1c0d48853f3e51#is_implemented_by",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "has_support_url",
+        "dtp_id": "abef9f1c0d48853f3e51#has_support_url",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      }
+    ]
+  ],
+  "algorithm": [
+    [
+      {
+        "dt_name": "algorithm",
+        "dt_id": "02f02485ab679a9031f4",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "02f02485ab679a9031f4#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "see_also",
+        "dtp_id": "02f02485ab679a9031f4#see_also",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      }
+    ]
+  ],
+  "task": [
+    [
+      {
+        "dt_name": "task",
+        "dt_id": "7bb0ddf9221c03b806b0",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "7bb0ddf9221c03b806b0#label",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "see_also",
+        "dtp_id": "7bb0ddf9221c03b806b0#see_also",
+        "dtp_card_min": 0,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/e0efc41346cda4ba84ca"
+      }
+    ]
+  ],
   "integer_in_string": [
     [
       {
@@ -291,6 +451,59 @@
         "dtp_card_min": 0,
         "dtp_card_max": null,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      }
+    ]
+  ],
+  "algorithm_evaluation": [
+    [
+      {
+        "dt_name": "algorithm_evaluation",
+        "dt_id": "5e782e67e70d0b2a022a",
+        "dt_class": "Object"
+      }
+    ],
+    [
+      {
+        "dtp_name": "label",
+        "dtp_id": "5e782e67e70d0b2a022a#label",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
+      },
+      {
+        "dtp_name": "executes",
+        "dtp_id": "5e782e67e70d0b2a022a#executes",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/abef9f1c0d48853f3e51"
+      },
+      {
+        "dtp_name": "evaluates",
+        "dtp_id": "5e782e67e70d0b2a022a#evaluates",
+        "dtp_card_min": 1,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/02f02485ab679a9031f4"
+      },
+      {
+        "dtp_name": "evaluates_for",
+        "dtp_id": "5e782e67e70d0b2a022a#evaluates_for",
+        "dtp_card_min": 0,
+        "dtp_card_max": 1,
+        "dtp_value_type": "21.T11969/7bb0ddf9221c03b806b0"
+      },
+      {
+        "dtp_name": "has_input",
+        "dtp_id": "5e782e67e70d0b2a022a#has_input",
+        "dtp_card_min": 1,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/aff130c76e68ead3862e"
+      },
+      {
+        "dtp_name": "has_output",
+        "dtp_id": "5e782e67e70d0b2a022a#has_output",
+        "dtp_card_min": 1,
+        "dtp_card_max": null,
+        "dtp_value_type": "21.T11969/aff130c76e68ead3862e"
       }
     ]
   ]
