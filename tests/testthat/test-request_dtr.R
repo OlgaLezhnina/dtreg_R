@@ -4,6 +4,6 @@ test_that("request_dtr gets info from an epic schema", {
 })
 
 test_that("request_dtr gets info from an orkg template", {
-  info <- request_dtr("https://incubating.orkg.org//api/templates/R855534")
-  expect_equal(info$label, "inferential_test_output")
+  info <- request_dtr("https://orkg.org//api/templates/R758316")
+  expect_equal(info$label, "dtreg_test_template2")
 })
