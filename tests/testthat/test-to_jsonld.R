@@ -43,17 +43,41 @@ test_that("to_jsonld gives error when a field is a function", {
 })
 
 test_that("to_jsonld writes an ePIC instance into JSONLD", {
-  dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-  instance <- dt$inferential_test_output(has_format = dt$table(label = "Table"))
+  dt <- load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
+  df <- data.frame(A = 1, stringsAsFactors = FALSE)
+  instance <- dt$data_item(source_table = df)
   result <- to_jsonld(instance)
-  expected <- c(
-                "{",
+  expected <- c("{",
                 "  \"@id\": \"_:n1\",",
-                "  \"@type\": \"doi:74bc7748b8cd520908bc\",",
-                "  \"doi:74bc7748b8cd520908bc#has_format\": {",
-                "    \"@id\": \"_:n2\",",
+                "  \"@type\": \"doi:aff130c76e68ead3862e\",",
+                "  \"doi:aff130c76e68ead3862e#source_table\": {",
                 "    \"@type\": \"doi:0424f6e7026fa4bc2c4a\",",
-                "    \"doi:0424f6e7026fa4bc2c4a#label\": \"Table\"",
+                "    \"tab_label\": \"Table\",",
+                "    \"columns\": [",
+                "      {",
+                "        \"@type\": \"doi:65ba00e95e60fb8971e6\",",
+                "        \"col_number\": 1,",
+                "        \"col_titles\": \"A\",",
+                "        \"@id\": \"_:n2\"",
+                "      }",
+                "    ],",
+                "    \"rows\": [",
+                "      {",
+                "        \"@type\": \"doi:9bf7a8e8909bfd491b38\",",
+                "        \"row_number\": 1,",
+                "        \"row_titles\": \"1\",",
+                "        \"@id\": \"_:n3\",",
+                "        \"cells\": [",
+                "          {",
+                "            \"@type\": \"doi:4607bc7c42ac8db29bfc\",",
+                "            \"@id\": \"_:n4\",",
+                "            \"value\": \"1\",",
+                "            \"column\": \"_:n2\"",
+                "          }",
+                "        ]",
+                "      }",
+                "    ],",
+                "    \"@id\": \"_:n5\"",
                 "  },",
                 "  \"@context\": {",
                 "    \"doi\": \"https://doi.org/21.T11969/\",",
@@ -74,16 +98,15 @@ test_that("to_jsonld writes an ePIC instance into JSONLD", {
 })
 
 test_that("to_jsonld writes an ePIC instance with a list of nested component", {
-  dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+  dt <- load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
   url_1 <- dt$url()
   url_2 <- dt$url()
-  instance <- dt$inferential_test_output(has_description = c(url_1, url_2))
+  instance <- dt$data_item(has_expression = c(url_1, url_2))
   result <- to_jsonld(instance)
-  expected <- c(
-                "{",
+  expected <- c("{",
                 "  \"@id\": \"_:n1\",",
-                "  \"@type\": \"doi:74bc7748b8cd520908bc\",",
-                "  \"doi:74bc7748b8cd520908bc#has_description\": [",
+                "  \"@type\": \"doi:aff130c76e68ead3862e\",",
+                "  \"doi:aff130c76e68ead3862e#has_expression\": [",
                 "    {",
                 "      \"@id\": \"_:n2\",",
                 "      \"@type\": \"doi:e0efc41346cda4ba84ca\"",

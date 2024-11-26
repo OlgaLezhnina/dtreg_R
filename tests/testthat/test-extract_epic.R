@@ -12,8 +12,8 @@ test_that("extract_epic gives the specified schema", {
 })
 
 test_that("extract_epic extracts properties correctly", {
-  dt <- extract_epic("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-  prop_names <- dt$inferential_test_output[[2]]$dtp_name
-  expected <- c("label", "has_description", "comment", "has_format")
+  dt <- extract_epic("https://doi.org/21.T11969/31483624b5c80014b6c7")
+  prop_names <- dt$matrix_size[[2]]$dtp_name
+  expected <- c("number_of_rows", "number_of_columns")
   expect_equal(prop_names, expected)
 })
