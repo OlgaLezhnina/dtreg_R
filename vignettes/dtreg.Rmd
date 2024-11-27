@@ -29,15 +29,15 @@ You can use dtreg for the following tasks:
 
 To load a DTR schema, you need to know its identifier (see the [help page](https://orkg.org/help-center/article/47/reborn_articles)), such as the ePIC datatype DOI or the ORKG template URL.
 
-For instance, let us imagine you intend to use the "statistical test of difference" schema; it has the ePIC DOI "https://doi.org/21.T11969/ff5e3f857788d20dd1aa".
+For instance, let us imagine that you intend to report the results of Wilcoxon test. For that, you need the "group comparison" schema, which has the ePIC DOI "https://doi.org/21.T11969/b9335ce2c99ed87735a6".
 
 If a valid identifier is used, you get an R object containing information about the DTR schema:
 
 ```{r}
-dt <- dtreg::load_datatype("https://doi.org/21.T11969/ff5e3f857788d20dd1aa")
+dt <- dtreg::load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
 ```
 
-In addition to the schema you requested (in this case, the "statistical test of difference"), you get schemata that you might need for using it (see [Nested structure](#section2)).
+In addition to the schema you requested (in this case, the "group comparison"), you get schemata that you might need for using it (see [Nested structure](#section2)).
 You can look at the list of these schemata:
 
 ```{r}
@@ -52,7 +52,7 @@ To write down your data in accordance with a DTR schema, dtreg uses [R6 classes]
 For doing that, you first need to know which fields you can use for the selected schema: 
 
 ```{r}
-dtreg::show_fields(dt$statistical_test_of_difference())
+dtreg::show_fields(dt$group_comparison())
 ```
 
 For example, this schema has the field "label". If your instance included only a label, it would be:
@@ -66,7 +66,7 @@ knitr::opts_chunk$set(
 ```
 
 ```{r}
-labelled_inst <- dt$statistical_test_of_difference(label = "my_test_results")
+labelled_inst <- dt$group_comparison(label = "my_test_results")
 ```
 
 However, the data you want to write are usually more complex than this.
@@ -84,14 +84,15 @@ method_url <- dt$software_method(has_support_url = "https://www.rdocumentation.o
 Numeric values are also frequently used:
 
 ```{r}
-sample_size <- dt$sample_size(has_specified_numeric_value = 50)
+dimensions <- dt$matrix_size(number_of_rows = 50,
+                             number_of_columns = 2)
 ```
 
-Some fields, such as "has_format", require a data frame: 
+Some fields, such as "source_table", require a data frame: 
 
 ```{r}
 my_dataframe <- data.frame(W = 44.5, p = 2.2e-16)
-output_dataframe <- dt$inferential_test_output(has_format = my_dataframe)
+output_dataframe <- dt$data_item(source_table = my_dataframe)
 ```
 
 Please check which elements you include in your data frame and how you assign the columns. When in doubt, look at your column with:
@@ -107,7 +108,7 @@ By default, dtreg assigns a data frame a generic label "Table". If you want to g
 ```{r}
 library(sets)
 my_tuple <- sets::tuple(my_dataframe, "the Wilcoxon test results")
-output_tuple <- dt$inferential_test_output(has_format = my_tuple)
+output_tuple <- dt$data_item(source_table = my_tuple)
 ```
 
 These are the most frequently used types of input that you write in a field. 
@@ -118,9 +119,9 @@ Sometimes a few objects should be written in one field.
 In this case, simply concatenate them:
 
 ```{r}
-var_1 <- dt$statistical_variable(label = "var_1")
-var_2 <- dt$statistical_variable(label = "var_2")
-two_vars <- dt$statistical_test_of_difference(evaluates = c(var_1, var_2))
+var_1 <- dt$component(label = "var_1")
+var_2 <- dt$component(label = "var_2")
+two_vars <- dt$group_comparison(targets = c(var_1, var_2))
 ```
 
 ### Nested structure {#section2}
@@ -130,10 +131,8 @@ This nested structure is important for making the data machine readable.
 The example above can be also written this way, and you can choose which is more convenient for you: 
 
 ```{r}
-two_vars <- dt$statistical_test_of_difference(evaluates = c(
-  dt$statistical_variable(label = "var_1"),
-  dt$statistical_variable(label = "var_2")
-))
+two_vars <- dt$group_comparison(targets = c(dt$component(label = "var_1"),
+                                            dt$component(label = "var_2")))
 ```
 
 None of the fields are mandatory: you will not get an error message if you leave any field, or all of them, empty. It makes sense, though, to create a useful JSON-LD file.
@@ -160,31 +159,27 @@ soft_library <- dt$software_library(
 
 soft_method <- dt$software_method(
   label = "Wilcoxon rank sum test",
-  uses_software = soft_library,
-  is_implemented_by = "URL_code"
+  part_of = soft_library,
+  is_implemented_by = "stats::wilcox.test(versicolor$Petal.Length, virginica$Petal.Length)"
 )
 ```
 
 Now we can add information about the input data:
 
 ```{r}
-sample_size <- dt$sample_size(has_specified_numeric_value = 50)
-input <- dt$data_input(label = "Iris: virginia and versicolor",
-                       has_characteristic = sample_size,
-                       source =
+dimensions <- dt$matrix_size(number_of_rows = 50,
+                             number_of_columns = 2)
+input <- dt$data_item(label = "Iris: virginica and versicolor",
+                       has_characteristic = dimensions,
+                       source_url =
                          "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
 ```
 
 And now the vectors, or the variables, that were compared:
 
 ```{r}
-virginia <- dt$statistical_variable(label = "petal length virginia",
-                                    has_format = "numeric")
-versicolor <-
-  dt$statistical_variable(label = "petal length versicolor",
-                          has_format = "numeric")
-variables <- dt$outcome_variable(label = "virginia vs versicolor",
-                                 requires = c(virginia, versicolor))
+virginica <- dt$component(label = "petal length virginica")
+versicolor <- dt$component(label = "petal length versicolor")
 ```
 
 Finally, we have the results of the test:
@@ -192,18 +187,18 @@ Finally, we have the results of the test:
 
 ```{r}
 df_result <- data.frame(W = 44.5, p = 2.2e-16)
-output <- dt$inferential_test_output(has_format = df_result)
+output <- dt$data_item(source_table = df_result)
 ```
 
 Let us now write everything together in the final instance:
 
 ```{r}
-wilcoxon_inst <- dt$statistical_test_of_difference(
-  label = "Wilcoxon petal length, virginia vs versicolor",
+wilcoxon_inst <- dt$group_comparison(
+  label = "Wilcoxon petal length, virginica vs versicolor",
   executes = soft_method,
-  has_specified_input = input,
-  evaluates = variables,
-  has_specified_output = output
+  has_input = input,
+  targets = c(virginica, versicolor),
+  has_output = output
 )
 ```
 
@@ -230,7 +225,7 @@ The code of the example above is given in one chunk here:
 ```{r}
 library(dtreg)
 dt <-
-  dtreg::load_datatype("https://doi.org/21.T11969/ff5e3f857788d20dd1aa")
+  dtreg::load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
 
 software <- dt$software(label = "R",
                         versioninfo = "4.3.1")
@@ -242,31 +237,27 @@ soft_library <- dt$software_library(
 )
 soft_method <- dt$software_method(
   label = "Wilcoxon rank sum test",
-  uses_software = soft_library,
-  is_implemented_by = "url_code"
+  part_of = soft_library,
+  is_implemented_by = "stats::wilcox.test(versicolor$Petal.Length, virginica$Petal.Length)"
 )
-sample_size <- dt$sample_size(has_specified_numeric_value = 50)
-input <- dt$data_input(label = "Iris: virginia and versicolor",
-                       has_characteristic = sample_size,
-                       source = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
-virginia <- dt$statistical_variable(label = "petal length virginia",
-                                    has_format = "numeric")
-versicolor <-
-  dt$statistical_variable(label = "petal length versicolor",
-                          has_format = "numeric")
-variables <- dt$outcome_variable(label = "virginia vs versicolor",
-                                 requires = c(virginia, versicolor))
+dimensions <- dt$matrix_size(number_of_rows = 50,
+                             number_of_columns = 2)
+input <- dt$data_item(label = "Iris: virginica and versicolor",
+                       has_characteristic = dimensions,
+                       source_url = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
+virginica <- dt$component(label = "petal length virginica")
+versicolor <- dt$component(label = "petal length versicolor")
 df_result <-
   data.frame(W = 44.5,
              p = 2.2e-16,
              stringsAsFactors = FALSE)
-output <- dt$inferential_test_output(has_format = df_result)
-wilcoxon_inst <- dt$statistical_test_of_difference(
-  label = "Wilcoxon iris petal length, virginia vs versicolor",
+output <- dt$data_item(source_table = df_result)
+wilcoxon_inst <- dt$group_comparison(
+  label = "Wilcoxon iris petal length, virginica vs versicolor",
   executes = soft_method,
-  has_specified_input = input,
-  evaluates = variables,
-  has_specified_output = output
+  has_input = input,
+  targets = c(virginica, versicolor),
+  has_output = output
 )
 
 wilcoxon_json <- dtreg::to_jsonld(wilcoxon_inst)
