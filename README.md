@@ -47,33 +47,36 @@ devtools::install_gitlab("TIBHannover/orkg/dtreg-r", build_vignettes = TRUE)
 This brief example shows you how to work with a DTR schema. You need to
 know the schema identifier (see the [help
 page](https://orkg.org/help-center/article/47/reborn_articles) ). For
-instance, the schema “inferential test output” requires the ePIC
-datatype with the DOI <https://doi.org/21.T11969/74bc7748b8cd520908bc>.
-For the ORKG, please use the ORKG template URL, such as
-<https://incubating.orkg.org/template/R855534>.
+instance, the schema “data item” requires the ePIC datatype with the DOI
+<https://doi.org/21.T11969/aff130c76e68ead3862e>. For the ORKG, please
+use the ORKG template URL, such as <https://orkg.org/template/R758316>.
 
 ``` r
 library(dtreg)
 ## load the schema with the known identifier
-dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+dt <- dtreg::load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
 ## look at the schemata you might need to use
 names(dt)
-#> [1] "string"                  "url"                    
-#> [3] "integer_in_string"       "column"                 
-#> [5] "cell"                    "row"                    
-#> [7] "table"                   "inferential_test_output"
+#>  [1] "string"            "url"               "integer_in_string"
+#>  [4] "column"            "cell"              "row"              
+#>  [7] "table"             "component"         "matrix_size"      
+#> [10] "figure"            "data_item"
 ## check available fields for your schema
-dtreg::show_fields(dt$inferential_test_output())
-#> [1] "has_format"      "comment"         "has_description" "label"
+dtreg::show_fields(dt$data_item())
+#> [1] "comment"            "has_expression"     "has_characteristic"
+#> [4] "has_part"           "source_table"       "source_url"        
+#> [7] "label"
 ## create your own instance by filling the fields of your choice
 ## see the help page to know more about the fields
 my_label = "my results"
 my_df <- data.frame(A = 1, B = 2, stringsAsFactors = FALSE)
 url_1 <- dt$url(label = "URL_1")
 url_2 <- dt$url(label = "URL_2")
-my_inst <- dt$inferential_test_output(label = my_label,
-                                      has_description = c(url_1, url_2),
-                                      has_format = my_df)
+my_inst <- dt$data_item(
+  label = my_label,
+  has_expression = c(url_1, url_2),
+  source_table = my_df
+)
 ## write the instance in JSON-LD format as a string
 my_json <- dtreg::to_jsonld(my_inst)
 
