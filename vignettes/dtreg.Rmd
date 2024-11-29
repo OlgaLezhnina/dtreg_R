@@ -170,9 +170,9 @@ Now we can add information about the input data:
 dimensions <- dt$matrix_size(number_of_rows = 50,
                              number_of_columns = 2)
 input <- dt$data_item(label = "Iris: virginica and versicolor",
-                       has_characteristic = dimensions,
-                       source_url =
-                         "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
+                      has_characteristic = dimensions,
+                      source_url =
+                        "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
 ```
 
 And now the vectors, or the variables, that were compared:
@@ -243,8 +243,8 @@ soft_method <- dt$software_method(
 dimensions <- dt$matrix_size(number_of_rows = 50,
                              number_of_columns = 2)
 input <- dt$data_item(label = "Iris: virginica and versicolor",
-                       has_characteristic = dimensions,
-                       source_url = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
+                      has_characteristic = dimensions,
+                      source_url = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
 virginica <- dt$component(label = "petal length virginica")
 versicolor <- dt$component(label = "petal length versicolor")
 df_result <-
