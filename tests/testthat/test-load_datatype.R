@@ -11,6 +11,7 @@ test_that("load_datatype loads ePIC schema properties correctly", {
 })
 
 test_that("load_datatype loads ORKG template properties correctly", {
+  local_mocked_bindings(request_dtr = mocked_request_dtr)
   dt <- load_datatype("https://orkg.org/template/R758316")
   prop_names <- dt$dtreg_test_template2()$prop_names
   expected <- c("property3", "label")

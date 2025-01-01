@@ -166,6 +166,7 @@ test_that("to_jsonld writes an ePIC instance with a list of nested components", 
 
 
 test_that("to_jsonld writes an ORKG instance into JSONLD", {
+  local_mocked_bindings(request_dtr = mocked_request_dtr)
   dt <- load_datatype("https://orkg.org/template/R758316")
   instance <- dt$dtreg_test_template2(label = "test")
   result <- to_jsonld(instance)

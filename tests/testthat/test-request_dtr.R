@@ -4,6 +4,7 @@ test_that("request_dtr gets info from an epic schema", {
 })
 
 test_that("request_dtr gets info from an orkg template", {
-  info <- request_dtr("https://orkg.org//api/templates/R758316")
+  local_mocked_bindings(request_dtr = mocked_request_dtr)
+  info <- request_dtr("https://orkg.org/api/templates/R758316")
   expect_equal(info$label, "dtreg_test_template2")
 })
