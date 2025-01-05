@@ -26,7 +26,7 @@ to_jsonld <- function(instance) {
       if (is.null(instance_field)) {
         next
       } else if (is.function(instance_field)) {
-        stop(paste("Input in ", field, " should not be a function"))
+        stop(paste("Input in", field, "should not be a function"))
       } else if (is.list(instance_field) &&
                    inherits(instance_field[[1]], "R6")) {
         result[[prop_type]] <- lapply(instance_field, write_info)
