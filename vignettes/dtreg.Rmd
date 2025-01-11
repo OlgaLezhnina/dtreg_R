@@ -156,57 +156,54 @@ In this vignette, we show reporting data analysis results with dtreg. Let us rep
 
 ```{r}
 attach(iris)
-virg_vers <- iris[iris$Species == "virginica"|iris$Species == "versicolor",]
+virg_vers <- iris[iris$Species == "virginica" | iris$Species == "versicolor",]
 wilc <- stats::wilcox.test(virg_vers$Petal.Length ~ virg_vers$Species)
 ```
 
-We need to load (see [Load a DTR schema](#section1) above) the data_analysis ePIC datatype for the overall report, the data_preprocessing for selecting rows, and the group_comparison for Wilcoxon test:
+Here, we took the Iris dataset, selected rows with virginica and versicolor, and conducted Wilcoxon test comparing their petal length. Thus, we need to load (see [Load a DTR schema](#section1) above) the data_analysis ePIC datatype for the overall report, the data_preprocessing for selecting rows, and the group_comparison for Wilcoxon test:
 
 ```{r}
 dt_all <-
   dtreg::load_datatype("https://doi.org/21.T11969/feeb33ad3e4440682a4d")
-dt_prepr <-
+dt_prep <-
   dtreg::load_datatype("https://doi.org/21.T11969/37182ecfb4474942e255")
 dt_wilc <-
   dtreg::load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
 ```
 
-Let us write down the preprocessing instance. Here, the software method does not include a software library, as we were merely selecting rows; the input is the initial Iris dataset, and the output is the resulting dataset.  
+Let us write down the preprocessing instance. Here, the input is the initial Iris dataset, the output is the resulting dataset, and the software method is described without specifying a software library, as we were merely selecting rows.  
 
 ```{r}
-software <- dt_prepr$software(label = "R",
-                              versioninfo = "4.3.1")
-soft_method <- dt_prepr$software_method(label = "select rows",
-                                        part_of = software,
-                                        is_implemented_by = 'virg_vers <- iris[iris$Species == "virginica"|iris$Species == "versicolor",]')
+software <- dt_prep$software(label = "R",
+                             versioninfo = "4.3.1")
+soft_method <- dt_prep$software_method(label = "select rows",
+                                       part_of = software,
+                                       is_implemented_by = 'iris[iris$Species == "virginica" | iris$Species == "versicolor",]')
 
-dim_iris <- dt_prepr$matrix_size(number_of_rows = 150,
-                                 number_of_columns = 5)
+dim_iris <- dt_prep$matrix_size(number_of_rows = 150,
+                                number_of_columns = 5)
 
-input_prepr <- dt_prepr$data_item(label = "Iris dataset",
-                                  has_characteristic = dim_iris,
-                                  source_url = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
+input_prep <- dt_prep$data_item(label = "Iris dataset",
+                                has_characteristic = dim_iris,
+                                source_url = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
 
-dim_virg_vers <- dt_prepr$matrix_size(number_of_rows = 100,
-                                      number_of_columns = 5)
+dim_virg_vers <- dt_prep$matrix_size(number_of_rows = 100,
+                                     number_of_columns = 5)
 
-output_prepr <- dt_prepr$data_item(label = "virg_vers",
-                                   has_characteristic = dim_virg_vers)
-instance_prepr <-
-  dt_prepr$data_preprocessing(
+output_prep <- dt_prep$data_item(label = "virg_vers",
+                                 has_characteristic = dim_virg_vers)
+instance_prep <-
+  dt_prep$data_preprocessing(
     label = "select rows virginica and versicolor",
     executes = soft_method,
-    has_input = input_prepr,
-    has_output = output_prepr
+    has_input = input_prep,
+    has_output = output_prep
   )
 ```
 
 Let us now create an instance for Wilcoxon test. Here, we indicate the software library that we used to conduct the test, and we need to specify the target (dependent) variable. The input is the dataset created in the previous step, and the output is the result of Wilcoxon test.     
 
 ```{r}
-dt_wilc <-
-  load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
-
 software <- dt_wilc$software(label = "R",
                              versioninfo = "4.3.1")
 soft_library <- dt_wilc$software_library(
@@ -244,7 +241,8 @@ Now, we include both instances in the final data_analysis instance:
 instance_all <- dt_all$data_analysis(
   label = "my_data_analysis",
   is_implemented_by = "my_github_link",
-  has_part = c(instance_prepr, instance_wilc))
+  has_part = c(instance_prep, instance_wilc)
+)
 ```
 
 Finally, we convert the data_analysis instance into JSON-LD format and save the file:  
