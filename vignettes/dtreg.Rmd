@@ -156,11 +156,12 @@ In this vignette, we show reporting data analysis results with dtreg. Let us rep
 
 ```{r}
 attach(iris)
-virg_vers <- iris[iris$Species == "virginica" | iris$Species == "versicolor",]
-wilc <- stats::wilcox.test(virg_vers$Petal.Length ~ virg_vers$Species)
+virg <- iris[iris$Species == "virginica",]
+vers <- iris[iris$Species == "versicolor",]
+wilc <- stats::wilcox.test(vers$Petal.Length, virg$Petal.Length)
 ```
 
-Here, we took the Iris dataset, selected rows with virginica and versicolor, and conducted Wilcoxon test comparing their petal length. Thus, we need to load (see [Load a DTR schema](#section1) above) the data_analysis ePIC datatype for the overall report, the data_preprocessing for selecting rows, and the group_comparison for Wilcoxon test:
+Here, we took the Iris dataset, selected rows with virginica and versicolor as two separate dataframes, and conducted Wilcoxon test comparing their petal length. Thus, we need to load (see [Load a DTR schema](#section1) above) the data_analysis ePIC datatype for the overall report, the data_preprocessing for selecting rows, and the group_comparison for Wilcoxon test:
 
 ```{r}
 dt_all <-
@@ -171,14 +172,17 @@ dt_wilc <-
   dtreg::load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
 ```
 
-Let us write down the preprocessing instance. Here, the input is the initial Iris dataset, the output is the resulting dataset, and the software method is described without specifying a software library, as we were merely selecting rows.  
+Let us write down the preprocessing instance. Here, the input is the initial Iris dataset, the output consists of two resulting datasets, and the software method is described without specifying a software library, as we were merely selecting rows.  
 
 ```{r}
 software <- dt_prep$software(label = "R",
                              versioninfo = "4.3.1")
-soft_method <- dt_prep$software_method(label = "select rows",
-                                       part_of = software,
-                                       is_implemented_by = 'iris[iris$Species == "virginica" | iris$Species == "versicolor",]')
+soft_method <- dt_prep$software_method(
+  label = "select rows",
+  part_of = software,
+  is_implemented_by = "virg <- iris[iris$Species == 'virginica',]/n
+vers <- iris[iris$Species == 'versicolor',]"
+)
 
 dim_iris <- dt_prep$matrix_size(number_of_rows = 150,
                                 number_of_columns = 5)
@@ -187,21 +191,25 @@ input_prep <- dt_prep$data_item(label = "Iris dataset",
                                 has_characteristic = dim_iris,
                                 source_url = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
 
-dim_virg_vers <- dt_prep$matrix_size(number_of_rows = 100,
-                                     number_of_columns = 5)
+dim_virg <- dt_prep$matrix_size(number_of_rows = 50,
+                                number_of_columns = 5)
+dim_vers <- dt_prep$matrix_size(number_of_rows = 50,
+                                number_of_columns = 5)
 
-output_prep <- dt_prep$data_item(label = "virg_vers",
-                                 has_characteristic = dim_virg_vers)
+data_virg <- dt_prep$data_item(label = "virginica",
+                               has_characteristic = dim_virg)
+data_vers <- dt_prep$data_item(label = "versicolor",
+                               has_characteristic = dim_vers)
 instance_prep <-
   dt_prep$data_preprocessing(
     label = "select rows virginica and versicolor",
     executes = soft_method,
     has_input = input_prep,
-    has_output = output_prep
+    has_output = c(data_virg, data_vers)
   )
 ```
 
-Let us now create an instance for Wilcoxon test. Here, we indicate the software library that we used to conduct the test, and we need to specify the target (dependent) variable. The input is the dataset created in the previous step, and the output is the result of Wilcoxon test.     
+Let us now create an instance for Wilcoxon test. Here, we indicate the software library that we used to conduct the test, and we need to specify the target (dependent) variable. The inputs are two datasets created in the previous step, and the output is the result of Wilcoxon test.     
 
 ```{r}
 software <- dt_wilc$software(label = "R",
@@ -215,11 +223,7 @@ soft_library <- dt_wilc$software_library(
 soft_method <-
   dt_wilc$software_method(label = "Wilcoxon rank sum test",
                           part_of = soft_library,
-                          is_implemented_by = "stats::wilcox.test(virg_vers$Petal.Length ~ virg_vers$Species)")
-dim_virg_vers <- dt_wilc$matrix_size(number_of_rows = 100,
-                                     number_of_columns = 5)
-input <- dt_wilc$data_item(label = "virginica and versicolor",
-                           has_characteristic = dim_virg_vers)
+                          is_implemented_by = "stats::wilcox.test(vers$Petal.Length, virg$Petal.Length)")
 petal_length <- dt_wilc$component(label = "petal length")
 df_result <-
   data.frame(W = 44.5,
@@ -229,7 +233,7 @@ output <- dt_wilc$data_item(source_table = df_result)
 instance_wilc <- dt_wilc$group_comparison(
   label = "Wilcoxon iris petal length, virginica vs versicolor",
   executes = soft_method,
-  has_input = input,
+  has_input = c(data_virg, data_vers),
   targets = petal_length,
   has_output = output
 )
