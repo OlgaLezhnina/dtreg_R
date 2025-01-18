@@ -180,10 +180,11 @@ software <- dt_prep$software(label = "R",
 soft_method <- dt_prep$software_method(
   label = "select rows",
   part_of = software,
-  is_implemented_by = "virg <- iris[iris$Species == 'virginica',]/n
-vers <- iris[iris$Species == 'versicolor',]"
+  is_implemented_by = c(
+    "iris[iris$Species == 'virginica',]",
+    "iris[iris$Species == 'versicolor',]"
+  )
 )
-
 dim_iris <- dt_prep$matrix_size(number_of_rows = 150,
                                 number_of_columns = 5)
 
