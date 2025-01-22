@@ -3,7 +3,7 @@ mocked_request_epic <- function(route) {
         "https://doi.org/21.T11969/31483624b5c80014b6c7?locatt=view:json") {
     mocked_info <- info_epic_1
   } else if (route ==
-               "https://doi.org/21.T11969/3df63b7acb0522da685d?locatt=view:json") {
+               "https://doi.org/21.T11969/fb2e379f820c6f8f9e82?locatt=view:json") {
     mocked_info <- info_epic_2
   } else {
     stop("Please check the URL for mocking")
@@ -24,10 +24,31 @@ mocked_request_orkg <- function(route) {
   return(mocked_info)
 }
 
+info_epic_1 = list(
+  Identifier = '21.T11969/31483624b5c80014b6c7',
+  name = 'Matrix_Size',
+  Schema = list(Type = 'Object',
+                Properties = list(
+                  list(
+                    Name = 'number_of_rows',
+                    Type = '21.T11969/fb2e379f820c6f8f9e82',
+                    Properties = list(Cardinality = '1')
+                  ),
+                  list(
+                    Name = 'number_of_columns',
+                    Type = '21.T11969/fb2e379f820c6f8f9e82',
+                    Properties = list(Cardinality = '1')
+                  )
+                ))
+)
+
 info_epic_2 <- list(
-  Identifier = "21.T11969/3df63b7acb0522da685d",
-  name = "String",
-  Schema = list(Type = "String")
+  Identifier = "21.T11969/fb2e379f820c6f8f9e82",
+  name = "integer_in_string",
+  Schema = list(Type = "String", Properties = list(
+    list(Property = "pattern",
+         Value = "^[0-9]+$")
+  ))
 )
 
 info_template_1 <- list(

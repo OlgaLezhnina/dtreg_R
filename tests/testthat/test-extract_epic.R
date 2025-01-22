@@ -1,5 +1,4 @@
 test_that("extract_epic gives the specified schema", {
-  local_mocked_bindings(request_dtr = mocked_request_epic)
   result_extract_epic <- extract_epic("https://doi.org/21.T11969/3df63b7acb0522da685d")
   string_representation <- capture.output(print(result_extract_epic))
   expected <- c("$string",
