@@ -27,8 +27,8 @@ test_that("generate_uid returns a function", {
 })
 
 test_that("show_fields returns no fields", {
-  dt <- load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
-  no_fields <- show_fields(dt$pidinst_schemaobject())
+  dt <- load_datatype("https://doi.org/21.T11969/3df63b7acb0522da685d")
+  no_fields <- show_fields(dt$string())
   expect_equal(no_fields, NULL)
 })
 
