@@ -5,6 +5,8 @@ exclusions: list(
     object_name_linter = Inf),
   "vignettes/dtreg.Rmd" = list(
     line_length_linter = Inf),
+  "tests/testthat/helper-mocked.R" = list(
+    line_length_linter = Inf),
   "tests/testthat/test-helpers.R" = list(
     line_length_linter = Inf),
   "tests/testthat/test-request_dtr.R" = list(
