@@ -1,5 +1,5 @@
 test_that("extract_orkg gives the specified template", {
-  local_mocked_bindings(request_dtr = mocked_request_dtr)
+  local_mocked_bindings(request_dtr = mocked_request_orkg)
   result_extractor <- extract_orkg("https://orkg.org/template/R758316")
   string_representation <- capture.output(print(result_extractor))
   expected <- c("$dtreg_test_template2",
@@ -17,7 +17,7 @@ test_that("extract_orkg gives the specified template", {
 })
 
 test_that("extract_orkg extracts properties correctly", {
-  local_mocked_bindings(request_dtr = mocked_request_dtr)
+  local_mocked_bindings(request_dtr = mocked_request_orkg)
   dt <- extract_orkg("https://orkg.org/template/R758316")
   prop_names <- dt$dtreg_test_template2[[2]]$dtp_name
   expected <- c("property3", "label")
@@ -25,7 +25,7 @@ test_that("extract_orkg extracts properties correctly", {
 })
 
 test_that("extract_orkg extracts nested templates", {
-  local_mocked_bindings(request_dtr = mocked_request_dtr)
+  local_mocked_bindings(request_dtr = mocked_request_orkg)
   dt <- extract_orkg("https://orkg.org/template/R758315")
   expected <- c("dtreg_test_template2", "dtreg_test_template1")
   expect_equal(names(dt), expected)
