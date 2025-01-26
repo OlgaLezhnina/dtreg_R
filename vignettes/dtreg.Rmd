@@ -27,7 +27,7 @@ You can use dtreg for the following tasks:
 
 ## 1. Load a DTR schema {#section1}
 
-To load a DTR schema, you need to know its identifier (see the [help page](https://orkg.org/help-center/article/47/reborn_articles)), such as the ePIC datatype DOI or the ORKG template URL. For example, to report Wilcoxon test, you need the group_comparison schema, which has the ePIC DOI "https://doi.org/21.T11969/b9335ce2c99ed87735a6". If a valid identifier is used, you get an R object containing information about the DTR schema:
+To load a DTR schema, you need to know its identifier, such as the ePIC datatype DOI or the ORKG template URL (see the [help page](https://orkg.org/help-center/article/47/reborn_articles)). For example, to report Wilcoxon test, you need the group_comparison schema, which has the ePIC DOI "https://doi.org/21.T11969/b9335ce2c99ed87735a6". If a valid identifier is used, you get an R object containing information about the DTR schema:
 
 ```{r}
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
@@ -39,6 +39,9 @@ You can look at the list of these schemata:
 ```{r}
 names(dt)
 ```
+
+These are the same for most analytical schemata and can be reused within an R session, as we show in the [Example](#section3) below.  
+
 ## 2. Create an instance 
 
 To write down your data in accordance with a DTR schema, dtreg uses [R6 classes](https://cran.r-project.org/package=R6). Therefore, you need to create an instance of a specific class.
@@ -65,18 +68,35 @@ knitr::opts_chunk$set(
 labelled_inst <- dt$group_comparison(label = "my_test_results")
 ```
 
-However, the data you want to write are usually more complex than this.
-The [help page](https://orkg.org/help-center/article/47/reborn_articles) specifies which fields to use and what input is required by a field (e.g., another schema or a specific type of data, such as numeric).
+However, the data you want to write are usually more complex than this. While creating an instance, please pay attention to fields you use and types of input required by these fields (e.g., another schema or a specific type of data, such as numeric).
 
-### String, numeric, and data frame
+### Most common types of input
 
-The most frequently used types of input are string, numeric, and data frame.
+The most frequently used types of input are strings, numeric, and data frames. We briefly outline how to write them in instance fields.
+
+#### Strings
 Strings are used for labels and comments, and URLs are also presented as strings:
 
 ```{r}
 method_url <- dt$software_method(has_support_url = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test")
 ```
+A special case is a string used in the field "is_implemented_by". For the overall report in the data_analysis schema, it is simply a URL string of the code location (e.g., a GitHub repository). For other schemata, it is a string of code implementing a specific test. In most cases, it is one line: 
 
+```{r}
+method_line <-
+  dt$software_method(is_implemented_by = "stats::wilcox.test(var_1, var_2)") 
+```
+
+Sometimes, you want to report more than one line. In this case, please follow the convention:
+
+```{r}
+method_lines <-
+  dt$software_method(is_implemented_by = paste("first line of code",
+                                               "second line of code",
+                                               sep = "\n"))
+```
+
+#### Numeric
 Numeric values are also frequently used:
 
 ```{r}
@@ -84,6 +104,7 @@ dimensions <- dt$matrix_size(number_of_rows = 100,
                              number_of_columns = 5)
 ```
 
+#### Data frames and tuples
 Some fields, such as "source_table", require a data frame: 
 
 ```{r}
@@ -112,12 +133,12 @@ These are the most frequently used types of input that you write in a field.
 ### More than one input in a field
 
 Sometimes a few objects should be written in one field.
-In this case, simply concatenate them:
+In this case, simply use a list:
 
 ```{r}
 var_1 <- dt$component(label = "var_1")
 var_2 <- dt$component(label = "var_2")
-two_vars <- dt$group_comparison(targets = c(var_1, var_2))
+two_vars <- dt$group_comparison(targets = list(var_1, var_2))
 ```
 
 ### Nested structure {#section2}
@@ -127,9 +148,12 @@ This nested structure is important for making the data machine readable.
 The example above can be also written this way, and you can choose which is more convenient for you: 
 
 ```{r}
-two_vars <- dt$group_comparison(targets = c(dt$component(label = "var_1"),
-                                            dt$component(label = "var_2")))
+two_vars <-
+  dt$group_comparison(targets = list(dt$component(label = "var_1"),
+                                     dt$component(label = "var_2")))
 ```
+
+### General remarks on writing an instance
 
 Please be attentive when writing the results. In case you misspell a variable, omit a comma separating two fields, forget a closing bracket, or make another seemingly tiny mistake, you will get an error message (something like "object 'inputt' not found"). You can experiment with such typos and see which error messages you get.
 
@@ -150,95 +174,145 @@ write(my_instance_json, "my_instance_file.json")
 ```
 
 
-## Example: reporting data analysis with dtreg  
+## 4. Example: reporting data analysis with dtreg {#section3}
 
-In this vignette, we show reporting data analysis results with dtreg. Let us report the following analysis, which is simplified for the illustration purposes:
+In this vignette, we show reporting data analysis results with dtreg. The following code was simplified for the illustration purposes: 
 
 ```{r}
 attach(iris)
-virg <- iris[iris$Species == "virginica",]
-vers <- iris[iris$Species == "versicolor",]
+virg <- iris[iris$Species == "virginica", ]
+vers <- iris[iris$Species == "versicolor", ]
 wilc <- stats::wilcox.test(vers$Petal.Length, virg$Petal.Length)
+regr <- stats::lm(Petal.Length ~ Petal.Width, data = virg)
+res_regr <- summary(regr)
 ```
 
-Here, we took the Iris dataset, selected rows with virginica and versicolor as two separate dataframes, and conducted Wilcoxon test comparing their petal length. Thus, we need to load (see [Load a DTR schema](#section1) above) the data_analysis ePIC datatype for the overall report, the data_preprocessing for selecting rows, and the group_comparison for Wilcoxon test:
+Here, we selected virginica and versicolor rows of the Iris dataset as two separate data frames; conducted Wilcoxon test comparing petal length of these species; and explored the relationship between petal length and petal width in virginica with simple linear regression (SLR).  
+
+### Choose parts of analysis to address and schemata to load
+
+First of all, we select schemata based on what analytic methods we report. Let us omit preprocessing, which is rather trivial in this case, and focus on Wilcoxon test and SLR. For them, as the [help page](https://orkg.org/help-center/article/47/reborn_articles) specifies, we need group_comparison and the regression_analysis schemata. Also, for any data analysis, the overarching data_analysis schema is required. Let us load these (see [Load a DTR schema](#section1) above):
 
 ```{r}
-dt_all <-
-  dtreg::load_datatype("https://doi.org/21.T11969/feeb33ad3e4440682a4d")
-dt_prep <-
-  dtreg::load_datatype("https://doi.org/21.T11969/37182ecfb4474942e255")
 dt_wilc <-
   dtreg::load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
+dt_regr <-
+  dtreg::load_datatype("https://doi.org/21.T11969/286991b26f02d58ee490")
+dt_all <-
+  dtreg::load_datatype("https://doi.org/21.T11969/feeb33ad3e4440682a4d")
 ```
 
-Let us write down the preprocessing instance. Here, the input is the initial Iris dataset, the output consists of two resulting datasets, and the software method is described without specifying a software library, as we were merely selecting rows.  
+Now we can prepare to writing the instances.  
+
+### Prepare data frames with test results 
+
+Reporting the data analysis results transparently is important, and there is a trade-off between concise and comprehensive presentation. For Wilcoxon test, this data frame will suffice:     
 
 ```{r}
-software <- dt_prep$software(label = "R",
-                             versioninfo = "4.3.1")
-soft_method <- dt_prep$software_method(
-  label = "select rows",
-  part_of = software,
-  is_implemented_by = c(
-    "iris[iris$Species == 'virginica',]",
-    "iris[iris$Species == 'versicolor',]"
+wilc_result <- data.frame(W = 44.5,
+                          p = 2.2e-16,
+                          stringsAsFactors = FALSE)
+```
+
+For SLR, we have more information from the summary object that is crucial to report:
+
+```{r}
+regr_coeff <- data.frame(res_regr$coefficients)
+regr_model <-
+  data.frame(
+    F = 5.557,
+    numdf = 1,
+    dendf = 48,
+    p = 0.02254,
+    r.squared = 0.1038,
+    adj.r.squared = 0.08508,
+    stringsAsFactors = FALSE
   )
+rownames(regr_model) <- "value"
+```
+Please remember that this is a simplistic example, and in real tests you might want to report more details (e.g., the effect size for Wilcoxon test).
+
+### Find out which parts can be reused
+
+Schemata such as the data_item or software_method are used in all analytical schemata as their parts, and when an instance of such a class is converted into JSON-LD format, it does not matter, which larger analytical schema it belongs. It can be easily checked:
+
+```{r}
+inst_1 <- dt_wilc$data_item()
+json_1 <- dtreg::to_jsonld(inst_1)
+inst_2 <- dt_regr$data_item()
+json_2 <- dtreg::to_jsonld(inst_2)
+identical(json_1, json_2)
+```
+
+Therefore, some parts of the Wilcoxon instance can be reused in the SLR instance. These are (i) the data_item instance describing the "virg" dataset; (ii) the software_library instance describing software R and package "stats"; and (iii) the component instance indicating that our target variable is "Petal.Length":     
+
+```{r}
+data_virg <- dt_wilc$data_item(
+  label = "virg",
+  has_characteristic = dt_wilc$matrix_size(number_of_rows = 50,
+                                           number_of_columns = 5)
 )
-dim_iris <- dt_prep$matrix_size(number_of_rows = 150,
-                                number_of_columns = 5)
-
-input_prep <- dt_prep$data_item(label = "Iris dataset",
-                                has_characteristic = dim_iris,
-                                source_url = "https://search.r-project.org/CRAN/refmans/MVTests/html/iris.html")
-
-dim_virg <- dt_prep$matrix_size(number_of_rows = 50,
-                                number_of_columns = 5)
-dim_vers <- dt_prep$matrix_size(number_of_rows = 50,
-                                number_of_columns = 5)
-
-data_virg <- dt_prep$data_item(label = "virginica",
-                               has_characteristic = dim_virg)
-data_vers <- dt_prep$data_item(label = "versicolor",
-                               has_characteristic = dim_vers)
-instance_prep <-
-  dt_prep$data_preprocessing(
-    label = "select rows virginica and versicolor",
-    executes = soft_method,
-    has_input = input_prep,
-    has_output = c(data_virg, data_vers)
-  )
-```
-
-Let us now create an instance for Wilcoxon test. Here, we indicate the software library that we used to conduct the test, and we need to specify the target (dependent) variable. The inputs are two datasets created in the previous step, and the output is the result of Wilcoxon test.     
-
-```{r}
 software <- dt_wilc$software(label = "R",
                              versioninfo = "4.3.1")
 soft_library <- dt_wilc$software_library(
-  label = "stats::wilcoxon",
+  label = "stats",
   part_of = software,
   versioninfo = "4.3.1",
   has_support_url = "https://search.r-project.org/R/refmans/stats/html/wilcox.test.html"
 )
-soft_method <-
-  dt_wilc$software_method(label = "Wilcoxon rank sum test",
+petal_length <- dt_wilc$component(label = "Petal.Length")
+```
+
+### Write all instances with the information specified above
+
+Let us create the Wilcoxon instance:  
+
+```{r}
+soft_method_wilc <-
+  dt_wilc$software_method(label = "stats::wilcoxon",
                           part_of = soft_library,
-                          is_implemented_by = "stats::wilcox.test(vers$Petal.Length, virg$Petal.Length)")
-petal_length <- dt_wilc$component(label = "petal length")
-df_result <-
-  data.frame(W = 44.5,
-             p = 2.2e-16,
-             stringsAsFactors = FALSE)
-output <- dt_wilc$data_item(source_table = df_result)
+                          is_implemented_by =
+                            "stats::wilcox.test(vers$Petal.Length, virg$Petal.Length)")
+data_vers <- dt_wilc$data_item(
+  label = "vers",
+  has_characteristic = dt_wilc$matrix_size(number_of_rows = 50,
+                                           number_of_columns = 5)
+)
+output_wilc <- dt_wilc$data_item(source_table = wilc_result)
 instance_wilc <- dt_wilc$group_comparison(
-  label = "Wilcoxon iris petal length, virginica vs versicolor",
-  executes = soft_method,
-  has_input = c(data_virg, data_vers),
+  label = "Wilcoxon Petal.Length, virg vs vers",
+  executes = soft_method_wilc,
+  has_input = list(data_vers, data_virg),
   targets = petal_length,
-  has_output = output
+  has_output = output_wilc
 )
 ```
+
+Then we create the SLR instance:
+
+```{r}
+soft_method_regr <-
+  dt_regr$software_method(
+    label = "stats::lm",
+    part_of = soft_library,
+    is_implemented_by = paste(
+      "regr = stats::lm(Petal.Length ~ Petal.Width, data = virg)",
+      "res_regr = summary(regr)",
+      sep = "\n"
+    )
+  )
+output_regr <-
+  dt_regr$data_item(source_table = list(regr_coeff, regr_model))
+instance_regr <- dt_regr$regression_analysis(
+  label = "SLR Petal.Length vs Petal.Width, virg",
+  executes = soft_method_regr,
+  has_input = data_virg,
+  targets = petal_length,
+  has_output = output_regr
+)
+```
+
+### Write the data_analysis instance and convert into JSON-LD format
 
 Now, we include both instances in the final data_analysis instance:
 
@@ -246,7 +320,7 @@ Now, we include both instances in the final data_analysis instance:
 instance_all <- dt_all$data_analysis(
   label = "my_data_analysis",
   is_implemented_by = "my_github_link",
-  has_part = c(instance_prep, instance_wilc)
+  has_part = list(instance_wilc, instance_regr)
 )
 ```
 
@@ -256,3 +330,4 @@ Finally, we convert the data_analysis instance into JSON-LD format and save the 
 instance_all_json <- dtreg::to_jsonld(instance_all)
 write(instance_all_json, "instance_all_file.json")
 ```
+A new R package based on dtreg will pack this code into just a couple of lines for simplicity (you can look for the mrap package in CRAN soon). However, writing the results with dtreg as described here has its benefits, as it provides you with freedom of choice in presenting your results. 
