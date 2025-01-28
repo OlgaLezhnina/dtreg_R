@@ -69,7 +69,7 @@ url_1 <- dt$url(label = "URL_1")
 url_2 <- dt$url(label = "URL_2")
 my_inst <- dt$data_item(
   label = my_label,
-  has_expression = c(url_1, url_2),
+  has_expression = list(url_1, url_2),
   source_table = my_df
 )
 ## write the instance in JSON-LD format as a string
