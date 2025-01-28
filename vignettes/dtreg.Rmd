@@ -78,13 +78,13 @@ The most frequently used types of input are strings, numeric, and data frames. W
 Strings are used for labels and comments, and URLs are also presented as strings:
 
 ```{r}
-method_url <- dt$software_method(has_support_url = "https://www.rdocumentation.org/packages/stats/versions/3.6.2/topics/wilcox.test")
+method_url <- dt$software_method(has_support_url = "https://search.r-project.org/R/refmans/stats/html/00Index.html")
 ```
 A special case is a string used in the field "is_implemented_by". For the overall report in the data_analysis schema, it is simply a URL string of the code location (e.g., a GitHub repository). For other schemata, it is a string of code implementing a specific test. In most cases, it is one line: 
 
 ```{r}
 method_line <-
-  dt$software_method(is_implemented_by = "stats::wilcox.test(var_1, var_2)") 
+  dt$software_method(is_implemented_by = "stats::wilcox.test(var_1, var_2)")
 ```
 
 Sometimes, you want to report more than one line. In this case, please follow the convention:
@@ -176,22 +176,21 @@ write(my_instance_json, "my_instance_file.json")
 
 ## 4. Example: reporting data analysis with dtreg {#section3}
 
-In this vignette, we show reporting data analysis results with dtreg. The following code was simplified for the illustration purposes: 
+In this vignette, we show reporting data analysis results with dtreg. The following code was simplified for illustration purposes: 
 
 ```{r}
 attach(iris)
 virg <- iris[iris$Species == "virginica", ]
 vers <- iris[iris$Species == "versicolor", ]
 wilc <- stats::wilcox.test(vers$Petal.Length, virg$Petal.Length)
-regr <- stats::lm(Petal.Length ~ Petal.Width, data = virg)
-res_regr <- summary(regr)
+regr <- summary(stats::lm(Petal.Length ~ Petal.Width, data = virg))
 ```
 
-Here, we selected virginica and versicolor rows of the Iris dataset as two separate data frames; conducted Wilcoxon test comparing petal length of these species; and explored the relationship between petal length and petal width in virginica with simple linear regression (SLR).  
+Here, we selected virginica and versicolor rows of the Iris dataset as two separate data frames; conducted a Wilcoxon test comparing petal length of these species; and explored the relationship between petal length and petal width in virginica with a simple linear regression (SLR).  
 
 ### Choose parts of analysis to address and schemata to load
 
-First of all, we select schemata based on what analytic methods we report. Let us omit preprocessing, which is rather trivial in this case, and focus on Wilcoxon test and SLR. For them, as the [help page](https://orkg.org/help-center/article/47/reborn_articles) specifies, we need group_comparison and the regression_analysis schemata. Also, for any data analysis, the overarching data_analysis schema is required. Let us load these (see [Load a DTR schema](#section1) above):
+First of all, we select schemata based on what analytic methods we report. Let us omit preprocessing, which is rather trivial in this case, and focus on the Wilcoxon test and SLR. For them, as the [help page](https://orkg.org/help-center/article/47/reborn_articles) specifies, we need the group_comparison and regression_analysis schemata. Also, for any data analysis, the overarching data_analysis schema is required. Let us load these (see [Load a DTR schema](#section1) above):
 
 ```{r}
 dt_wilc <-
@@ -202,11 +201,11 @@ dt_all <-
   dtreg::load_datatype("https://doi.org/21.T11969/feeb33ad3e4440682a4d")
 ```
 
-Now we can prepare to writing the instances.  
+Now we can prepare to write the instances.  
 
 ### Prepare data frames with test results 
 
-Reporting the data analysis results transparently is important, and there is a trade-off between concise and comprehensive presentation. For Wilcoxon test, this data frame will suffice:     
+Reporting the data analysis results transparently is important, and there is a trade-off between concise and comprehensive presentation. For the Wilcoxon test, this data frame will suffice:     
 
 ```{r}
 wilc_result <- data.frame(W = 44.5,
@@ -214,10 +213,10 @@ wilc_result <- data.frame(W = 44.5,
                           stringsAsFactors = FALSE)
 ```
 
-For SLR, we have more information from the summary object that is crucial to report:
+For the SLR, we have more information from the summary object that is crucial to report:
 
 ```{r}
-regr_coeff <- data.frame(res_regr$coefficients)
+regr_coeff <- data.frame(regr$coefficients)
 regr_model <-
   data.frame(
     F = 5.557,
@@ -230,11 +229,11 @@ regr_model <-
   )
 rownames(regr_model) <- "value"
 ```
-Please remember that this is a simplistic example, and in real tests you might want to report more details (e.g., the effect size for Wilcoxon test).
+Please remember that this is a simplistic example, and in real tests you might want to report more details (e.g., the effect size for the Wilcoxon test).
 
-### Find out which parts can be reused
+### Find out which schemata parts can be reused
 
-Schemata such as the data_item or software_method are used in all analytical schemata as their parts, and when an instance of such a class is converted into JSON-LD format, it does not matter, which larger analytical schema it belongs. It can be easily checked:
+Schemata such as the data_item or software_method are parts used in all analytical schemata. When an instance of such a class is converted into JSON-LD format, it does not matter, to which larger analytical schema it belongs. This can be easily checked with the following code:
 
 ```{r}
 inst_1 <- dt_wilc$data_item()
@@ -244,12 +243,12 @@ json_2 <- dtreg::to_jsonld(inst_2)
 identical(json_1, json_2)
 ```
 
-Therefore, some parts of the Wilcoxon instance can be reused in the SLR instance. These are (i) the data_item instance describing the "virg" dataset; (ii) the software_library instance describing software R and package "stats"; and (iii) the component instance indicating that our target variable is "Petal.Length":     
+In this example, the Wilcoxon test and the SLR have the same input data, software library ("stats" in R), and target variable ("Petal.Length"). Therefore, some parts of the Wilcoxon instance can be reused in the SLR instance. These are (i) the data_item instance describing the Iris dataset; (ii) the software_library instance describing the software (R) and the package ("stats"); and (iii) the component instance indicating that our target variable is "Petal.Length":     
 
 ```{r}
-data_virg <- dt_wilc$data_item(
-  label = "virg",
-  has_characteristic = dt_wilc$matrix_size(number_of_rows = 50,
+data_iris <- dt_wilc$data_item(
+  label = "iris",
+  has_characteristic = dt_wilc$matrix_size(number_of_rows = 150,
                                            number_of_columns = 5)
 )
 software <- dt_wilc$software(label = "R",
@@ -258,7 +257,7 @@ soft_library <- dt_wilc$software_library(
   label = "stats",
   part_of = software,
   versioninfo = "4.3.1",
-  has_support_url = "https://search.r-project.org/R/refmans/stats/html/wilcox.test.html"
+  has_support_url = "https://search.r-project.org/R/refmans/stats/html/00Index.html"
 )
 petal_length <- dt_wilc$component(label = "Petal.Length")
 ```
@@ -272,17 +271,12 @@ soft_method_wilc <-
   dt_wilc$software_method(label = "stats::wilcoxon",
                           part_of = soft_library,
                           is_implemented_by =
-                            "stats::wilcox.test(vers$Petal.Length, virg$Petal.Length)")
-data_vers <- dt_wilc$data_item(
-  label = "vers",
-  has_characteristic = dt_wilc$matrix_size(number_of_rows = 50,
-                                           number_of_columns = 5)
-)
+                          "stats::wilcox.test(vers$Petal.Length, virg$Petal.Length)")
 output_wilc <- dt_wilc$data_item(source_table = wilc_result)
 instance_wilc <- dt_wilc$group_comparison(
   label = "Wilcoxon Petal.Length, virg vs vers",
   executes = soft_method_wilc,
-  has_input = list(data_vers, data_virg),
+  has_input = data_iris,
   targets = petal_length,
   has_output = output_wilc
 )
@@ -292,21 +286,16 @@ Then we create the SLR instance:
 
 ```{r}
 soft_method_regr <-
-  dt_regr$software_method(
-    label = "stats::lm",
-    part_of = soft_library,
-    is_implemented_by = paste(
-      "regr = stats::lm(Petal.Length ~ Petal.Width, data = virg)",
-      "res_regr = summary(regr)",
-      sep = "\n"
-    )
-  )
+  dt_regr$software_method(label = "stats::lm",
+                          part_of = soft_library,
+                          is_implemented_by =
+                          "summary(stats::lm(Petal.Length ~ Petal.Width, data = virg))")
 output_regr <-
   dt_regr$data_item(source_table = list(regr_coeff, regr_model))
 instance_regr <- dt_regr$regression_analysis(
   label = "SLR Petal.Length vs Petal.Width, virg",
   executes = soft_method_regr,
-  has_input = data_virg,
+  has_input = data_iris,
   targets = petal_length,
   has_output = output_regr
 )
@@ -330,4 +319,4 @@ Finally, we convert the data_analysis instance into JSON-LD format and save the 
 instance_all_json <- dtreg::to_jsonld(instance_all)
 write(instance_all_json, "instance_all_file.json")
 ```
-A new R package based on dtreg will pack this code into just a couple of lines for simplicity (you can look for the mrap package in CRAN soon). However, writing the results with dtreg as described here has its benefits, as it provides you with freedom of choice in presenting your results. 
+A new R package based on dtreg will pack this code into just a couple of lines for simplicity, and you can look for the mrap package in CRAN soon. However, writing the results with dtreg as described here has its benefits, as it provides you with freedom of choice in presenting your results. 
