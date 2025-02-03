@@ -319,4 +319,7 @@ Finally, we convert the data_analysis instance into JSON-LD format and save the 
 instance_all_json <- dtreg::to_jsonld(instance_all)
 write(instance_all_json, "instance_all_file.json")
 ```
-A new R package based on dtreg will pack this code into just a couple of lines for simplicity, and you can look for the mrap package in CRAN soon. However, writing the results with dtreg as described here has its benefits, as it provides you with freedom of choice in presenting your results. 
+
+### Additional comments
+
+The mrap package is a forthcoming R package based on dtreg that will simplify the process of producing machine-readable results by packing this code into just a couple of lines. This new package will be available in CRAN soon. While the goal of mrap is to streamline data analysis workflows, it’s worth noting that manually structuring your results using dtreg still has its benefits. For example, it gives you maximum control over how you would like to present and structure your results. 
