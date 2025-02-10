@@ -46,8 +46,8 @@ devtools::install_gitlab("TIBHannover/orkg/dtreg-r", build_vignettes = TRUE)
 
 This brief example shows you how to work with a DTR schema. You need to
 know the schema identifier (see the [help
-page](https://orkg.org/help-center/article/47/reborn_articles) ). For
-instance, the schema “data item” requires the ePIC datatype with the DOI
+page](https://reborn.orkg.org/pages/help) ). For instance, the schema
+“data item” requires the ePIC datatype with the DOI
 <https://doi.org/21.T11969/aff130c76e68ead3862e>. For the ORKG, please
 use the ORKG template URL, such as <https://orkg.org/template/R758316>.
 
@@ -85,8 +85,8 @@ my_json <- dtreg::to_jsonld(my_inst)
 ```
 
 For more information, please see the [help
-page](https://orkg.org/help-center/article/47/reborn_articles) and dtreg
-vignette. To access the vignette, you can run:
+page](https://reborn.orkg.org/pages/help) and dtreg vignette. To access
+the vignette, you can run:
 
 ``` r
 vignette("dtreg", package="dtreg")
