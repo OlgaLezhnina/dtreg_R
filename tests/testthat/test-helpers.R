@@ -33,7 +33,7 @@ test_that("show_fields returns no fields", {
 })
 
 test_that("show_fields returns expected fields", {
-  dt <- load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
+  dt <- load_datatype("https://doi.org/21.T11969/0424f6e7026fa4bc2c4a")
   shown_fields <- show_fields(dt$table())
   expect_equal(shown_fields, c("rows", "columns", "label"))
 })
