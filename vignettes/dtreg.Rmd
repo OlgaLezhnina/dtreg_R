@@ -27,7 +27,7 @@ You can use dtreg for the following tasks:
 
 ## 1. Load a DTR schema {#section1}
 
-To load a DTR schema, you need to know its identifier, such as the ePIC datatype DOI or the ORKG template URL (see the [help page](https://orkg.org/help-center/article/47/reborn_articles)). For example, to report Wilcoxon test, you need the group_comparison schema, which has the ePIC DOI "https://doi.org/21.T11969/b9335ce2c99ed87735a6". If a valid identifier is used, you get an R object containing information about the DTR schema:
+To load a DTR schema, you need to know its identifier (see the [help page](https://reborn.orkg.org/pages/help)). For example, to report Wilcoxon test, you need the group_comparison schema, which has the ePIC DOI "https://doi.org/21.T11969/b9335ce2c99ed87735a6". If a valid identifier is used, you get an R object containing information about the DTR schema:
 
 ```{r}
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
@@ -68,7 +68,7 @@ knitr::opts_chunk$set(
 labelled_inst <- dt$group_comparison(label = "my_test_results")
 ```
 
-However, the data you want to write are usually more complex than this. While creating an instance, please pay attention to fields you use and types of input required by these fields (e.g., another schema or a specific type of data, such as numeric).
+However, the data you want to write are usually more complex than this. While creating an instance, please pay attention to fields you use and types of input required by these fields (e.g., another schema or a specific type of data, such as numeric). Most analytical schemata in the ePIC DTR have the same fields: "label", "executes", "has_input", and "has_output". In addition, some have "targets" and "level" fields.   
 
 ### Most common types of input
 
@@ -190,7 +190,7 @@ Here, we selected virginica and versicolor rows of the Iris dataset as two separ
 
 ### Choose parts of analysis to address and schemata to load
 
-First of all, we select schemata based on what analytic methods we report. Let us omit preprocessing, which is rather trivial in this case, and focus on the Wilcoxon test and SLR. For them, as the [help page](https://orkg.org/help-center/article/47/reborn_articles) specifies, we need the group_comparison and regression_analysis schemata. Also, for any data analysis, the overarching data_analysis schema is required. Let us load these (see [Load a DTR schema](#section1) above):
+First of all, we select schemata based on what analytic methods we report. Let us omit preprocessing, which is rather trivial in this case, and focus on the Wilcoxon test and SLR. For them, as the [help page](https://reborn.orkg.org/pages/help) specifies, we need the group_comparison and regression_analysis schemata. Also, for any data analysis, the overarching data_analysis schema is required. Let us load these (see [Load a DTR schema](#section1) above):
 
 ```{r}
 dt_wilc <-
@@ -229,7 +229,7 @@ regr_model <-
   )
 rownames(regr_model) <- "value"
 ```
-Please remember that this is a simplistic example, and in real tests you might want to report more details (e.g., the effect size for the Wilcoxon test).
+Please remember that this is a simplistic example, and in real statistical tests you might want to report more details (e.g., the effect size for the Wilcoxon test).
 
 ### Find out which schemata parts can be reused
 
