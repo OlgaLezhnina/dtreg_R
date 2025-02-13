@@ -57,15 +57,8 @@ library(dtreg)
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
 ## look at the schemata you might need to use
 names(dt)
-#>  [1] "string"            "url"               "integer_in_string"
-#>  [4] "column"            "cell"              "row"              
-#>  [7] "table"             "component"         "matrix_size"      
-#> [10] "figure"            "data_item"
 ## check available fields for your schema
 dtreg::show_fields(dt$data_item())
-#> [1] "comment"            "has_expression"     "has_characteristic"
-#> [4] "has_part"           "source_table"       "source_url"        
-#> [7] "label"
 ## create your own instance by filling the fields of your choice
 ## see the help page to know more about the fields
 my_label = "my results"
