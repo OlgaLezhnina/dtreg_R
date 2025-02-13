@@ -8,7 +8,7 @@
 #' @export
 #'
 #' @examples
-#' dt <- dtreg::load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
+#' dt <- dtreg::load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
 #'
 load_datatype <- function(datatype_id) {
   r6_classes <- write_r6_classes(datatype_id)

@@ -18,6 +18,6 @@ an ePIC datatype DOI or an ORKG template URL.
 The classes contain information of the requested schema and nested schemata.
 }
 \examples{
-dt <- dtreg::load_datatype("https://doi.org/21.T11969/1ea0e148d9bbe08335cd")
+dt <- dtreg::load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
 
 }

@@ -16,7 +16,7 @@ A character vector of available fields
 Show which fields of a schema can be used for creating an instance
 }
 \examples{
-dt <- dtreg::load_datatype("https://doi.org/21.T11969/74bc7748b8cd520908bc")
-dtreg::show_fields(dt$inferential_test_output())
+dt <- dtreg::load_datatype("https://doi.org/21.T11969/aff130c76e68ead3862e")
+dtreg::show_fields(dt$data_item())
 
 }
