@@ -10,6 +10,7 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
+  eval = FALSE,
   comment = "#>"
 )
 ```
@@ -27,7 +28,7 @@ You can use dtreg for the following tasks:
 
 ## 1. Load a DTR schema {#section1}
 
-To load a DTR schema, you need to know its identifier (see the [help page](https://reborn.orkg.org/pages/help)). For example, to report Wilcoxon test, you need the group_comparison schema, which has the ePIC DOI "https://doi.org/21.T11969/b9335ce2c99ed87735a6". If a valid identifier is used, you get an R object containing information about the DTR schema:
+To load a DTR schema, you need to know its identifier (see the [help page](https://reborn.orkg.org/pages/help)). For example, to report Wilcoxon test, you need the group_comparison schema. If a valid identifier is used, you get an R object containing information about the DTR schema:
 
 ```{r}
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
@@ -55,14 +56,6 @@ dtreg::show_fields(dt$group_comparison())
 ```
 
 For example, this schema has the field "label". If your instance included only a label, it would be:
-
-```{r, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  eval = FALSE,
-  comment = "#>"
-)
-```
 
 ```{r}
 labelled_inst <- dt$group_comparison(label = "my_test_results")
@@ -161,16 +154,16 @@ None of the fields are mandatory: you will not get an error message if you leave
 
 ## 3. Convert the instance into JSON-LD format
 
-This stage is simple. This line gives you a string in JSON-LD format:
+This stage is simple. Let us use the labelled instance created above as an example. This line gives you a string in JSON-LD format:
 
 ```{r}
-my_instance_json <- dtreg::to_jsonld(my_instance)
+labelled_inst_json <- dtreg::to_jsonld(labelled_inst)
 ```
 
 You can save the result as a machine-readable JSON file in your working directory: 
 
 ```{r}
-write(my_instance_json, "my_instance_file.json")
+write(labelled_inst_json, "labelled_inst_file.json")
 ```
 
 
@@ -211,6 +204,7 @@ Reporting the data analysis results transparently is important, and there is a t
 wilc_result <- data.frame(W = 44.5,
                           p = 2.2e-16,
                           stringsAsFactors = FALSE)
+rownames(wilc_result) <- "value"
 ```
 
 For the SLR, we have more information from the summary object that is crucial to report:
