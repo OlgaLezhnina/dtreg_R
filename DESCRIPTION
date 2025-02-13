@@ -16,6 +16,8 @@ Description: You can load a schema from a DTR (data type registry) as an R
 License: MIT + file LICENSE
 URL: https://gitlab.com/TIBHannover/orkg/dtreg-r
 BugReports: https://gitlab.com/TIBHannover/orkg/dtreg-r/-/issues
+Depends:
+    R (>= 4.1.0)
 Imports: 
     httr2,
     jsonlite,
