@@ -125,7 +125,7 @@
         "dtp_name": "is_implemented_by",
         "dtp_id": "abef9f1c0d48853f3e51#is_implemented_by",
         "dtp_card_min": 0,
-        "dtp_card_max": 1,
+        "dtp_card_max": null,
         "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
