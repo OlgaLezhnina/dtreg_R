@@ -1,4 +1,8 @@
-# dtreg (development version)
+# dtreg 1.1.1
+
+* Unit tests mock the ORKG and ePIC API access.
+
+* Updated the vignette.
 
 # dtreg 1.1.0
 
