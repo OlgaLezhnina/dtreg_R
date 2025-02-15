@@ -1,4 +1,14 @@
 {
+  "string": [
+    [
+      {
+        "dt_name": "string",
+        "dt_id": "3df63b7acb0522da685d",
+        "dt_class": "String"
+      }
+    ],
+    []
+  ],
   "url": [
     [
       {
@@ -31,7 +41,7 @@
         "dtp_id": "feeb33ad3e4440682a4d#label",
         "dtp_card_min": 0,
         "dtp_card_max": 1,
-        "dtp_value_type": ""
+        "dtp_value_type": "21.T11969/3df63b7acb0522da685d"
       },
       {
         "dtp_name": "has_part",
