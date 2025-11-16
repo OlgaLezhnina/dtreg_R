@@ -28,7 +28,7 @@ You can use dtreg for the following tasks:
 
 ## 1. Load a DTR schema {#section1}
 
-To load a DTR schema, you need to know its identifier (see the [help page](https://reborn.orkg.org/pages/help)). For example, to report Wilcoxon test, you need the group_comparison schema. If a valid identifier is used, you get an R object containing information about the DTR schema:
+To load a DTR schema, you need to know its identifier (see the [help page](https://knowledgeloom.tib.eu/pages/help)). For example, to report Wilcoxon test, you need the group_comparison schema. If a valid identifier is used, you get an R object containing information about the DTR schema:
 
 ```{r}
 dt <- dtreg::load_datatype("https://doi.org/21.T11969/b9335ce2c99ed87735a6")
@@ -183,7 +183,7 @@ Here, we selected virginica and versicolor rows of the Iris dataset as two separ
 
 ### Choose parts of analysis to address and schemata to load
 
-First of all, we select schemata based on what analytic methods we report. Let us omit preprocessing, which is rather trivial in this case, and focus on the Wilcoxon test and SLR. For them, as the [help page](https://reborn.orkg.org/pages/help) specifies, we need the group_comparison and regression_analysis schemata. Also, for any data analysis, the overarching data_analysis schema is required. Let us load these (see [Load a DTR schema](#section1) above):
+First of all, we select schemata based on what analytic methods we report. Let us omit preprocessing, which is rather trivial in this case, and focus on the Wilcoxon test and SLR. For them, as the [help page](https://knowledgeloom.tib.eu/pages/help) specifies, we need the group_comparison and regression_analysis schemata. Also, for any data analysis, the overarching data_analysis schema is required. Let us load these (see [Load a DTR schema](#section1) above):
 
 ```{r}
 dt_wilc <-

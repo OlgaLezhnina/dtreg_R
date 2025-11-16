@@ -46,7 +46,7 @@ devtools::install_gitlab("TIBHannover/orkg/dtreg-r", build_vignettes = TRUE)
 
 This brief example shows you how to work with a DTR schema. You need to
 know the schema identifier (see the [help
-page](https://reborn.orkg.org/pages/help) ).
+page](https://knowledgeloom.tib.eu/pages/help) ).
 
 ``` r
 library(dtreg)
@@ -75,8 +75,8 @@ my_json <- dtreg::to_jsonld(my_inst)
 ```
 
 For more information, please see the [help
-page](https://reborn.orkg.org/pages/help) and dtreg vignette. To access
-the vignette, you can run:
+page](https://knowledgeloom.tib.eu/pages/help) and dtreg vignette. To
+access the vignette, you can run:
 
 ``` r
 vignette("dtreg", package="dtreg")
