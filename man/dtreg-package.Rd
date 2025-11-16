@@ -17,12 +17,12 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Olga Lezhnina \email{olga.lezhnina@tib.eu} (\href{https://orcid.org/0000-0003-2237-7725}{ORCID})
+\strong{Maintainer}: Markus Stocker \email{markus.stocker@tib.eu} (\href{https://orcid.org/0000-0001-5492-3212}{ORCID})
 
 Authors:
 \itemize{
+  \item Olga Lezhnina \email{olga.lezhnina@tib.eu} (\href{https://orcid.org/0000-0003-2237-7725}{ORCID})
   \item Manuel Prinz \email{manuel.prinz@tib.eu} (\href{https://orcid.org/0000-0003-2151-4556}{ORCID})
-  \item Markus Stocker \email{markus.stocker@tib.eu} (\href{https://orcid.org/0000-0001-5492-3212}{ORCID})
 }
 
 Other contributors:

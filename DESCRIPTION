@@ -2,11 +2,11 @@ Package: dtreg
 Title: Interact with Data Type Registries and Create Machine-Readable Data
 Version: 1.1.1
 Authors@R: c(
-    person("Olga", "Lezhnina", , "olga.lezhnina@tib.eu", role = c("aut", "cre"),
+    person("Olga", "Lezhnina", , "olga.lezhnina@tib.eu", role = "aut",
            comment = c(ORCID = "0000-0003-2237-7725")),
     person("Manuel", "Prinz", , "manuel.prinz@tib.eu", role = "aut",
            comment = c(ORCID = "0000-0003-2151-4556")),
-    person("Markus", "Stocker", , "markus.stocker@tib.eu", role = "aut",
+    person("Markus", "Stocker", , "markus.stocker@tib.eu", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-5492-3212")),
     person("Open Research Knowledge Graph Project and Contributors", role = "cph")
   )

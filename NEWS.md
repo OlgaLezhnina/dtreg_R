@@ -1,3 +1,11 @@
+# dtreg 1.1.2
+
+* Update the data analysis schema in static files.
+
+* Change the help page from reborn to Loom.
+
+* Change the maintainer.
+
 # dtreg 1.1.1
 
 * Unit tests mock the ORKG and ePIC API access.
