@@ -1,10 +1,10 @@
 # dtreg 1.1.2
 
-* Update the data analysis schema in static files.
+* Updated the data analysis schema in static files.
 
-* Change the help page from reborn to Loom.
+* Changed the help page from reborn to Loom.
 
-* Change the maintainer.
+* Changed the maintainer.
 
 # dtreg 1.1.1
 
