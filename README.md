@@ -7,8 +7,6 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dtreg)](https://CRAN.R-project.org/package=dtreg)
-[![Coverage
-Status](https://coveralls.io/repos/github/OlgaLezhnina/dtreg_R/badge.svg?branch=master)](https://coveralls.io/github/OlgaLezhnina/dtreg_R?branch=master)
 <!-- badges: end -->
 
 The goal of dtreg is to help users interact with various data type
