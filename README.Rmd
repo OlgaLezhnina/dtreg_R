@@ -46,7 +46,7 @@ You can install the development version of dtreg with:
 ``` r
 # install.packages("devtools")
 library(devtools)
-devtools::install_gitlab("TIBHannover/orkg/dtreg-r", build_vignettes = TRUE)
+devtools::install_gitlab("TIBHannover/lki/knowledge-loom/dtreg-r", build_vignettes = TRUE)
 ```
 
 ## Example

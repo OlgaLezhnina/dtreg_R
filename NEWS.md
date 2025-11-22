@@ -4,6 +4,8 @@
 
 * Changed the help page from reborn to Loom.
 
+* Changed the repository URL from orkg to Loom.
+
 * Changed the maintainer.
 
 # dtreg 1.1.1

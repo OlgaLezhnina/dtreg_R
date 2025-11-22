@@ -11,8 +11,8 @@ You can load a schema from a DTR (data type registry) as an R object. Use this s
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://gitlab.com/TIBHannover/orkg/dtreg-r}
-  \item Report bugs at \url{https://gitlab.com/TIBHannover/orkg/dtreg-r/-/issues}
+  \item \url{https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-r}
+  \item Report bugs at \url{https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-r/-/issues}
 }
 
 }
