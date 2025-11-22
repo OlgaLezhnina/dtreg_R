@@ -1,0 +1,11 @@
+default:
+  image: rocker/r-ver:latest
+
+testing:
+  stage: test
+  script:
+    - R -q -e 'install.packages("remotes")'
+    - R -q -e "remotes::install_deps(dependencies = TRUE)"
+    - R -q -e 'install.packages("covr")'
+    - Rscript -e 'cat(paste0(covr::percent_coverage(covr::package_coverage()), "%"))'
+  coverage: '/([0-9]{1,3}%)/'

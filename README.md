@@ -5,6 +5,7 @@
 
 <!-- badges: start -->
 
+![coverage](https://gitlab.com/TIBHannover/lki/knowledge-loom/dtreg-r/badges/master/coverage.svg)
 [![CRAN
 status](https://www.r-pkg.org/badges/version/dtreg)](https://CRAN.R-project.org/package=dtreg)
 <!-- badges: end -->

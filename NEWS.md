@@ -6,6 +6,8 @@
 
 * Changed the repository URL from orkg to Loom.
 
+* Moved coverage tests from GitHub plus Coveralls to GitLab CICD.
+
 * Changed the maintainer.
 
 # dtreg 1.1.1
